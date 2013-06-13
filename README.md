@@ -6,7 +6,7 @@ A collection of applications used for testing the Java buildpack.
 
 This project is built with Gradle. To build the artifacts:
 
-	./gradlew build
+	./gradlew
 
 This will produce a compressed artifacts in `<project>/build/libs` and exploded artifacts in `<project>/build/exploded`.
 
