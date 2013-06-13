@@ -1,0 +1,9 @@
+apply plugin: "java"
+
+
+task exploded(type: Copy) {
+	description = 'Creates an exploded version of the JAR file in $buildDir/exploded'
+
+	into "$buildDir/exploded"
+	with jar
+}

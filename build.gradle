@@ -1,0 +1,34 @@
+// All Project Configuration
+allprojects {
+	apply plugin: "eclipse"
+
+	repositories {
+		mavenCentral()
+	}
+}
+
+// Sub Project Configuration
+subprojects { project ->
+	afterEvaluate {
+		assemble.dependsOn << 'exploded'
+	}
+}
+
+// Root Project Configuration
+apply plugin: "base"
+apply plugin: "versions"
+
+
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+
+	dependencies {
+		classpath "com.github.ben-manes:gradle-versions-plugin:0.3"
+	}
+}
+
+task wrapper(type: Wrapper) {
+	gradleVersion = "1.6"
+}

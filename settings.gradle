@@ -1,0 +1,3 @@
+rootProject.name = "java-test-applications"
+
+include "java-main"

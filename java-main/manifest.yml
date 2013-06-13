@@ -1,0 +1,8 @@
+---
+applications:
+- name: java-main
+  memory: 64M
+  instances: 1
+  url: none
+  path: build/exploded
+  buildpack: https://github.com/cloudfoundry/java-buildpack
