@@ -19,15 +19,18 @@ package com.gopivotal.test;
 import java.lang.management.ManagementFactory;
 import java.util.List;
 
-public class JavaMain {
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-    public static void main(String[] args) throws InterruptedException {
+@Controller
+final class TestController {
+
+    @RequestMapping(method = RequestMethod.GET, value = "/")
+    @ResponseBody
+    String root() {
         List<String> inputArguments = ManagementFactory.getRuntimeMXBean().getInputArguments();
-        System.out.println("Input arguments: " + inputArguments);
-
-        System.out.println();
-        System.out.println("Sleeping for 5 minutes...");
-        Thread.sleep(5 * 60 * 1000);
+        return "Input arguments: " + inputArguments;
     }
-
 }

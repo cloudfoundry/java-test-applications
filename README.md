@@ -15,5 +15,10 @@ The `java-main` application is typical of applications that would be started wit
 
 * Specifies a `java.main.class` system property
 * Specifies a `java.opts` system property
-* Ouputs `java.lang:type=Runtime/InputArguments` to `System.out`
+* Outputs `java.lang:type=Runtime/InputArguments` to `System.out`
 
+
+## `web-application`
+The `web-application` application is typical of applications that use Spring MVC and Servlet 3.  It has the following characteristics:
+
+* Outputs `java.lang:type=Runtime/InputArguments` to the HTTP response

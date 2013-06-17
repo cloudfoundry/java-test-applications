@@ -1,0 +1,29 @@
+apply plugin: "war"
+
+ext {
+	logbackVersion = '1.0.13'
+	servletVersion = '3.0.1'
+	slf4jVersion = '1.7.5'
+	springVersion = '3.2.3.RELEASE'
+}
+
+dependencies {
+	runtime 		group: 'ch.qos.logback',		name: 'logback-classic',	version: logbackVersion
+	providedCompile	group: 'javax.servlet',			name: 'javax.servlet-api',	version: servletVersion
+	runtime 		group: 'org.slf4j',				name: 'slf4j-api',			version: slf4jVersion
+	runtime 		group: 'org.slf4j',				name: 'jcl-over-slf4j',		version: slf4jVersion
+	compile 		group: 'org.springframework',	name: 'spring-context',		version: springVersion
+	compile 		group: 'org.springframework',	name: 'spring-web',			version: springVersion
+	compile 		group: 'org.springframework',	name: 'spring-webmvc',		version: springVersion
+}
+
+configurations {
+	all*.exclude group: 'commons-logging', module: 'commons-logging'
+}
+
+task exploded(type: Copy) {
+	description = 'Creates an exploded version of the JAR file in $buildDir/exploded'
+
+	into "$buildDir/exploded"
+	with war
+}
