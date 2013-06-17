@@ -1,3 +1,4 @@
 rootProject.name = "java-test-applications"
 
 include "java-main"
+include "web-application"

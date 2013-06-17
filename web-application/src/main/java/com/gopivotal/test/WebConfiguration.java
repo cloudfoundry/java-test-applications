@@ -16,18 +16,17 @@
 
 package com.gopivotal.test;
 
-import java.lang.management.ManagementFactory;
-import java.util.List;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-public class JavaMain {
-
-    public static void main(String[] args) throws InterruptedException {
-        List<String> inputArguments = ManagementFactory.getRuntimeMXBean().getInputArguments();
-        System.out.println("Input arguments: " + inputArguments);
-
-        System.out.println();
-        System.out.println("Sleeping for 5 minutes...");
-        Thread.sleep(5 * 60 * 1000);
-    }
+/**
+ * Configuration of web components
+ */
+@Configuration
+@ComponentScan
+@EnableWebMvc
+public class WebConfiguration extends WebMvcConfigurerAdapter {
 
 }
