@@ -3,6 +3,5 @@ applications:
 - name: web-application
   memory: 128M
   instances: 1
-  url: web-application.cfapps.io
   path: build/exploded/
   buildpack: https://github.com/cloudfoundry/java-buildpack
