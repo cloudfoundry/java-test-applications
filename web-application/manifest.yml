@@ -1,7 +1,7 @@
 ---
 applications:
 - name: web-application
-  memory: 128M
+  memory: 1G
   instances: 1
   path: build/exploded/
   buildpack: https://github.com/cloudfoundry/java-buildpack
