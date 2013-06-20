@@ -22,3 +22,7 @@ The `java-main` application is typical of applications that would be started wit
 The `web-application` application is typical of applications that use Spring MVC and Servlet 3.  It has the following characteristics:
 
 * Outputs `java.lang:type=Runtime/InputArguments` to the HTTP response
+
+If the environment variable failinit is set, the application will fail to initialise:
+
+    cf set-env <application name> failinit true
