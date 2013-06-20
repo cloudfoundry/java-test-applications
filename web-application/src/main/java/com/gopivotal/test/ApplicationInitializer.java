@@ -28,6 +28,9 @@ public final class ApplicationInitializer implements WebApplicationInitializer {
 
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
+    	if (System.getenv().get("failinit") != null) {
+    		throw new ServletException("$failinit caused initialisation to fail");
+    	}
         AnnotationConfigWebApplicationContext webContext = new AnnotationConfigWebApplicationContext();
         webContext.register(WebConfiguration.class);
 
