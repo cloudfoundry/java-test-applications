@@ -1,5 +1,10 @@
 apply plugin: "java"
 
+jar {
+	manifest {
+		attributes("Main-Class": "com.gopivotal.test.JavaMain")
+	}
+}
 
 task exploded(type: Copy) {
 	description = 'Creates an exploded version of the JAR file in $buildDir/exploded'
