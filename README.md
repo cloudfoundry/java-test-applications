@@ -23,6 +23,6 @@ The `web-application` application is typical of applications that use Spring MVC
 
 * Outputs `java.lang:type=Runtime/InputArguments` to the HTTP response
 
-If the environment variable failinit is set, the application will fail to initialise:
+If the environment variable FAIL_INIT is set, the application will fail to initialise:
 
-    cf set-env <application name> failinit true
+    cf set-env <application name> FAIL_INIT true
