@@ -26,8 +26,28 @@ public class JavaMain {
         System.out.println("Input arguments: " + inputArguments);
 
         System.out.println();
+        
+        if (System.getenv().get("OOM") != null) {
+    		oom();
+    	}
+        
         System.out.println("Sleeping for 5 minutes...");
         Thread.sleep(5 * 60 * 1000);
     }
+
+	private static void oom() {
+		// Repeatedly exhaust the heap until the JVM is killed.
+		while (true) {
+			int i = 1;
+			try {
+				while (true) {
+					Object[] s = new Object[i];
+					i *= 2;
+				}
+			} catch (OutOfMemoryError oom) {
+				System.out.println("Out of memory, i = " + i);
+			}
+		}
+	}
 
 }

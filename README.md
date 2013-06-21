@@ -17,6 +17,9 @@ The `java-main` application is typical of applications that would be started wit
 * Specifies a `java.opts` system property
 * Outputs `java.lang:type=Runtime/InputArguments` to `System.out`
 
+If the environment variable OOM is set, the application will repeatedly exhaust the heap until the JVM is killed:
+
+    cf set-env <application name> OOM true
 
 ## `web-application`
 The `web-application` application is typical of applications that use Spring MVC and Servlet 3.  It has the following characteristics:
