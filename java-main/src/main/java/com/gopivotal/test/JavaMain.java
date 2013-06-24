@@ -27,7 +27,7 @@ public class JavaMain {
 
         System.out.println();
         
-        if (System.getenv().get("OOM") != null) {
+        if (System.getenv().get("FAIL_OOM") != null) {
     		oom();
     	}
         
