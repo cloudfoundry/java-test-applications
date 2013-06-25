@@ -48,6 +48,7 @@ Compile the application and create a standalone distribution:
     [play-application] $ compile
     ...
     [play-application] $ dist
+    ...
 
 The Play console may then be exited using `Ctrl-D`.
 
