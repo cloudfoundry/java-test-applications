@@ -46,6 +46,7 @@ public class JavaMain {
 				}
 			} catch (OutOfMemoryError oom) {
 				System.out.println("Out of memory, i = " + i);
+				System.out.flush();
 			}
 		}
 	}
