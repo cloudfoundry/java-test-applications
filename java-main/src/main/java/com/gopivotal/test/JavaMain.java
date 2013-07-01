@@ -17,13 +17,17 @@
 package com.gopivotal.test;
 
 import java.lang.management.ManagementFactory;
+import java.util.Arrays;
 import java.util.List;
 
 public class JavaMain {
 
     public static void main(String[] args) throws InterruptedException {
         List<String> inputArguments = ManagementFactory.getRuntimeMXBean().getInputArguments();
-        System.out.println("Input arguments: " + inputArguments);
+        System.out.println("JVM arguments: " + inputArguments);
+        if (args != null) {
+        	System.out.println("main method arguments: " + Arrays.asList(args));
+        }
 
         System.out.println();
         
@@ -41,7 +45,8 @@ public class JavaMain {
 			int i = 1;
 			try {
 				while (true) {
-					Object[] s = new Object[i];
+					@SuppressWarnings("unused")
+					Object[] _ = new Object[i];
 					i *= 2;
 				}
 			} catch (OutOfMemoryError oom) {
