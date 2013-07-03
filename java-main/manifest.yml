@@ -3,6 +3,5 @@ applications:
 - name: java-main
   memory: 1G
   instances: 1
-  url: none
-  path: build/exploded
+  path: build/libs/java-main-1.0.0.BUILD-SNAPSHOT.jar
   buildpack: https://github.com/cloudfoundry/java-buildpack

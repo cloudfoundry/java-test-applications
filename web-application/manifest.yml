@@ -3,5 +3,5 @@ applications:
 - name: web-application
   memory: 1G
   instances: 1
-  path: build/exploded/
+  path: build/libs/web-application-1.0.0.BUILD-SNAPSHOT.war
   buildpack: https://github.com/cloudfoundry/java-buildpack
