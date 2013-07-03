@@ -34,23 +34,13 @@ If the environment variable FAIL_INIT is set, the application will fail to initi
 
 ## `play-application`
 
-This is a standard sample application which was created by issuing:
+This is a standard sample Play Java application which was created by issuing:
 
     play new play-application
 
 To build and deploy this application, download and install the Play framework from [http://www.playframework.org](http://www.playframework.org),
-then change directory to `play-application` and start the Play console:
+then change directory to `play-application` and issue:
 
-    play
+    play dist
 
-Compile the application and create a standalone distribution:
-
-    [play-application] $ compile
-    ...
-    [play-application] $ dist
-    ...
-
-The Play console may then be exited using `Ctrl-D`.
-
-The packaged application is placed in `play-application/dist/play-application-1.0-SNAPSHOT.zip` but needs to be unzipped before being
-deployed to Cloud Foundry.
+The packaged application is placed in `play-application/dist/play-application-1.0-SNAPSHOT.zip` and can be passed to `cf push` using the `--path` parameter.
