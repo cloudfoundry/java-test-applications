@@ -1,18 +1,18 @@
 package controllers;
 
-import java.lang.management.ManagementFactory;
-import java.util.List;
+import play.api.modules.spring.Spring;
 
 import play.*;
 import play.mvc.*;
 
 import views.html.*;
+import util.Probe;
 
 public class Application extends Controller {
-  
+ 
     public static Result index() {
-    	List<String> inputArguments = ManagementFactory.getRuntimeMXBean().getInputArguments();
-        return ok(index.render("Input arguments: " + inputArguments));
+    	Probe probe = Spring.getBeanOfType(Probe.class);
+        return ok(index.render("Input arguments: " + probe.getInputArguments()));
     }
   
 }

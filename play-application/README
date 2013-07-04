@@ -1,4 +1,9 @@
-This is your new Play 2.1 application
-=====================================
+Test Play Application
+=====================
 
-This file will be packaged with your application, when using `play dist`.
+This application uses the Spring module for Play from:
+
+https://github.com/wsargent/play-2.0-spring-module
+
+This was built per the README with sbt 0.12.3. The resultant
+JAR is stored in the application's lib directory.

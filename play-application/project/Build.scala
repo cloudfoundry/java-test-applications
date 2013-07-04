@@ -11,7 +11,10 @@ object ApplicationBuild extends Build {
     // Add your project dependencies here,
     javaCore,
     javaJdbc,
-    javaEbean
+    javaEbean,
+    "org.springframework"    %    "spring-context"    %    "3.2.3.RELEASE",
+    "org.springframework"    %    "spring-core"       %    "3.2.3.RELEASE",
+    "org.springframework"    %    "spring-beans"      %    "3.2.3.RELEASE"
   )
 
   val main = play.Project(appName, appVersion, appDependencies).settings(
