@@ -19,6 +19,8 @@ The `java-main` application is typical of applications that would be started wit
 * Specifies a `java.opts` system property
 * Outputs `java.lang:type=Runtime/InputArguments` to `System.out`
 
+Since this application does not service web requests, you can select `none` for its subdomain and domain when you deploy it to Cloud Foundry.
+
 ## `web-application`
 The `web-application` application is typical of applications that use Spring MVC and Servlet 3.  It has the following characteristics:
 
@@ -47,7 +49,8 @@ Each test application contains a `manifest.yml` file which allows the built appl
 
     cf push
 
-To avoid clashing with the URLs of other applications, you should specify your own subdomain for the application.
+To avoid clashing with the URLs of other applications, you should specify your own subdomain for the application (unless the test application
+does not need a subdomain).
 
 ## Failure Testing
 
