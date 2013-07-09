@@ -21,6 +21,12 @@ import java.util.Arrays;
 import java.util.List;
 
 public class JavaMain {
+	
+	static {
+		if (System.getenv().get("FAIL_INIT") != null) {
+    		throw new RuntimeException("$FAIL_INIT caused initialisation to fail");
+    	}
+	}
 
     public static void main(String[] args) throws InterruptedException {
         List<String> inputArguments = ManagementFactory.getRuntimeMXBean().getInputArguments();
