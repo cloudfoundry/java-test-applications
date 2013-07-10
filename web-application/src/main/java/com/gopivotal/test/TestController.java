@@ -27,17 +27,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 final class TestController {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/")
-    @ResponseBody
-    String root() {
-    	 if (System.getenv().get("FAIL_OOM") != null) {
-     		oom();
-     	}
-        List<String> inputArguments = ManagementFactory.getRuntimeMXBean().getInputArguments();
-        return "Input arguments: " + inputArguments;
-    }
-    
-    private static void oom() {
+	@RequestMapping(method = RequestMethod.GET, value = "/")
+	@ResponseBody
+	String root() {
+		if (System.getenv().get("FAIL_OOM") != null) {
+			oom();
+		}
+		List<String> inputArguments = ManagementFactory.getRuntimeMXBean().getInputArguments();
+		return "Input arguments: " + inputArguments;
+	}
+
+	private static void oom() {
 		// Repeatedly exhaust the heap until the JVM is killed.
 		while (true) {
 			int i = 1;

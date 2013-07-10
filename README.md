@@ -2,52 +2,30 @@
 
 A collection of applications used for testing the Java buildpack.
 
+## Applications
+
+| Name | Output | Description
+| ---- | ------ | -----------
+`grails-application` | `java.lang:type=Runtime/InputArguments` to the HTTP response | A Grails application created by issuing `grails create-app`
+`java-main` | `java.lang:type=Runtime/InputArguments` to `System.out` | An application started with `java -jar`. _Since this application does not service web requests, you can select `none` for its subdomain and domain when you deploy it to Cloud Foundry._
+`play-application` | `java.lang:type=Runtime/InputArguments` to the HTTP response | A Play application created by issuing `play new play-application`
+`web-application` | `java.lang:type=Runtime/InputArguments` to the HTTP response | A web application that uses Spring MVC and Servlet 3
+
 ## Building
 
-This project is built with Gradle. To build the artifacts:
+This project is built with Gradle. To build the artifacts, run:
 
-	./gradlew
-
-This will produce a compressed artifacts in `<project>/build/libs` and exploded artifacts in `<project>/build/exploded`.
-
-Note that the Play application uses the sbt build system and must be built separately as described below.
-
-## `java-main`
-The `java-main` application is typical of applications that would be started with `java -jar`.  It has the following characteristics:
-
-* Specifies a `java.main.class` system property
-* Specifies a `java.opts` system property
-* Outputs `java.lang:type=Runtime/InputArguments` to `System.out`
-
-Since this application does not service web requests, you can select `none` for its subdomain and domain when you deploy it to Cloud Foundry.
-
-## `web-application`
-The `web-application` application is typical of applications that use Spring MVC and Servlet 3.  It has the following characteristics:
-
-* Outputs `java.lang:type=Runtime/InputArguments` to the HTTP response
-
-## `play-application`
-
-This is a based on a sample Play Java application created by issuing:
-
-    play new play-application
-
-It has the following characteristics:
-
-* Outputs `java.lang:type=Runtime/InputArguments` to the HTTP response
-	
-To build and deploy this application, download and install the Play framework from [http://www.playframework.org](http://www.playframework.org),
-then change directory to `play-application` and issue:
-
-    play dist
-
-The packaged application is placed in `play-application/dist/play-application-1.0-SNAPSHOT.zip`.
+```bash
+./gradlew
+```
 
 ## Deploying to Cloud Foundry
 
 Each test application contains a `manifest.yml` file which allows the built application to be deployed to Cloud Foundry by simply issuing:
 
-    cf push
+```bash
+cf push
+```
 
 To avoid clashing with the URLs of other applications, you should specify your own subdomain for the application (unless the test application
 does not need a subdomain).
@@ -56,10 +34,14 @@ does not need a subdomain).
 
 Failure testing is supported for each of the above applications by setting a suitable environment variable.
 
-If the environment variable FAIL_INIT is set, the application will fail to initialise:
+If the environment variable FAIL_INIT is set, the application will fail to initialize:
 
-    cf set-env <application name> FAIL_INIT true
+```bash
+cf set-env <application name> FAIL_INIT true
+```
 
 If the environment variable FAIL_OOM is set, the application will repeatedly exhaust the heap until the JVM is killed:
 
-    cf set-env <application name> FAIL_OOM true
+```bash
+cf set-env <application name> FAIL_OOM true
+```

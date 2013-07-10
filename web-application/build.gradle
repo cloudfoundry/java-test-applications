@@ -2,7 +2,7 @@ apply plugin: "war"
 
 ext {
 	logbackVersion = '1.0.13'
-	servletVersion = '3.0.1'
+	servletVersion = '3.1.0'
 	slf4jVersion = '1.7.5'
 	springVersion = '3.2.3.RELEASE'
 }
@@ -19,11 +19,4 @@ dependencies {
 
 configurations {
 	all*.exclude group: 'commons-logging', module: 'commons-logging'
-}
-
-task exploded(type: Copy) {
-	description = 'Creates an exploded version of the JAR file in $buildDir/exploded'
-
-	into "$buildDir/exploded"
-	with war
 }

@@ -21,29 +21,29 @@ import java.util.Arrays;
 import java.util.List;
 
 public class JavaMain {
-	
+
 	static {
 		if (System.getenv().get("FAIL_INIT") != null) {
-    		throw new RuntimeException("$FAIL_INIT caused initialisation to fail");
-    	}
+			throw new RuntimeException("$FAIL_INIT caused initialisation to fail");
+		}
 	}
 
-    public static void main(String[] args) throws InterruptedException {
-        List<String> inputArguments = ManagementFactory.getRuntimeMXBean().getInputArguments();
-        System.out.println("JVM arguments: " + inputArguments);
-        if (args != null) {
-        	System.out.println("main method arguments: " + Arrays.asList(args));
-        }
+	public static void main(String[] args) throws InterruptedException {
+		List<String> inputArguments = ManagementFactory.getRuntimeMXBean().getInputArguments();
+		System.out.println("JVM arguments: " + inputArguments);
+		if (args != null) {
+			System.out.println("main method arguments: " + Arrays.asList(args));
+		}
 
-        System.out.println();
-        
-        if (System.getenv().get("FAIL_OOM") != null) {
-    		oom();
-    	}
-        
-        System.out.println("Sleeping for 5 minutes...");
-        Thread.sleep(5 * 60 * 1000);
-    }
+		System.out.println();
+
+		if (System.getenv().get("FAIL_OOM") != null) {
+			oom();
+		}
+
+		System.out.println("Sleeping for 5 minutes...");
+		Thread.sleep(5 * 60 * 1000);
+	}
 
 	private static void oom() {
 		// Repeatedly exhaust the heap until the JVM is killed.
