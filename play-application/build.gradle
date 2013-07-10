@@ -1,0 +1,7 @@
+apply plugin: "base"
+
+task build(type:Exec) {
+    inputs.file 'app/controllers/Application.java'
+    outputs.file 'dist/play-application-1.0-SNAPSHOT.zip'
+    commandLine 'play', 'dist'
+}

@@ -7,13 +7,6 @@ allprojects {
 	}
 }
 
-// Sub Project Configuration
-subprojects { project ->
-	afterEvaluate {
-		assemble.dependsOn << 'exploded'
-	}
-}
-
 // Root Project Configuration
 apply plugin: "base"
 apply plugin: "versions"
