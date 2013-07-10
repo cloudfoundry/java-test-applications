@@ -4,12 +4,18 @@ A collection of applications used for testing the Java buildpack.
 
 ## Applications
 
-| Name | Output | Description
+| Name | Output Destination | Description
 | ---- | ------ | -----------
-`grails-application` | `java.lang:type=Runtime/InputArguments` to the HTTP response | A Grails application created by issuing `grails create-app`
-`java-main` | `java.lang:type=Runtime/InputArguments` to `System.out` | An application started with `java -jar`. _Since this application does not service web requests, you can select `none` for its subdomain and domain when you deploy it to Cloud Foundry._
-`play-application` | `java.lang:type=Runtime/InputArguments` to the HTTP response | A Play application created by issuing `play new play-application`
-`web-application` | `java.lang:type=Runtime/InputArguments` to the HTTP response | A web application that uses Spring MVC and Servlet 3
+`grails-application` | HTTP Response | A Grails application created by issuing `grails create-app`
+`java-main` | `System.out` | An application started with `java -jar`. _Since this application does not service web requests, you can select `none` for its subdomain and domain when you deploy it to Cloud Foundry._
+`play-application` | HTTP Response | A Play application created by issuing `play new play-application`
+`web-application` | HTTP Response | A web application that uses Spring MVC and Servlet 3
+
+### Output Content
+All applications output the following content:
+
+* `java.lang:type=Runtime/InputArguments`
+* `java.lang:type=Runtime/ClassPath`
 
 ## Building
 

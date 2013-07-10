@@ -8,6 +8,12 @@ import play.mvc.*;
 import views.html.*;
 import util.Probe;
 
+import java.lang.management.ManagementFactory;
+import java.lang.management.RuntimeMXBean;
+import java.util.HashMap;
+import java.util.Map;
+
+
 public class Application extends Controller {
 
 	static {
@@ -20,8 +26,15 @@ public class Application extends Controller {
 		if (System.getenv().get("FAIL_OOM") != null) {
 			oom();
 		}
+
 		Probe probe = Spring.getBeanOfType(Probe.class);
-		return ok(index.render("Input arguments: " + probe.getInputArguments()));
+
+		RuntimeMXBean runtimeMxBean = ManagementFactory.getRuntimeMXBean();
+		Map<String, Object> data = new HashMap<String, Object>();
+		data.put("Input Arguments", runtimeMxBean.getInputArguments());
+		data.put("Class Path", runtimeMxBean.getClassPath());
+
+		return ok(index.render(data.toString()));
 	}
 
 	private static void oom() {

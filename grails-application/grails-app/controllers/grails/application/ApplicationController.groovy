@@ -15,8 +15,12 @@ class ApplicationController {
 			oom()
 		}
 
-		def inputArguments = ManagementFactory.runtimeMXBean.inputArguments
-		render "Input arguments: ${inputArguments}"
+		def runtimeMxBean = ManagementFactory.getRuntimeMXBean();
+		def data = [:]
+		data["Input Arguments"] = runtimeMxBean.inputArguments
+		data["Class Path"] = runtimeMxBean.classPath
+
+		render data
 	}
 
 	def oom() {

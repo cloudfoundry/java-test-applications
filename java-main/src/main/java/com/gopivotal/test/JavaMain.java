@@ -17,8 +17,9 @@
 package com.gopivotal.test;
 
 import java.lang.management.ManagementFactory;
-import java.util.Arrays;
-import java.util.List;
+import java.lang.management.RuntimeMXBean;
+import java.util.HashMap;
+import java.util.Map;
 
 public class JavaMain {
 
@@ -29,17 +30,17 @@ public class JavaMain {
 	}
 
 	public static void main(String[] args) throws InterruptedException {
-		List<String> inputArguments = ManagementFactory.getRuntimeMXBean().getInputArguments();
-		System.out.println("JVM arguments: " + inputArguments);
-		if (args != null) {
-			System.out.println("main method arguments: " + Arrays.asList(args));
-		}
-
-		System.out.println();
-
 		if (System.getenv().get("FAIL_OOM") != null) {
 			oom();
 		}
+
+		RuntimeMXBean runtimeMxBean = ManagementFactory.getRuntimeMXBean();
+		Map<String, Object> data = new HashMap<String, Object>();
+		data.put("Input Arguments", runtimeMxBean.getInputArguments());
+		data.put("Class Path", runtimeMxBean.getClassPath());
+
+		System.out.println(data);
+		System.out.println();
 
 		System.out.println("Sleeping for 5 minutes...");
 		Thread.sleep(5 * 60 * 1000);
