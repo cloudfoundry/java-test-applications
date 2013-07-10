@@ -17,7 +17,9 @@
 package com.gopivotal.test;
 
 import java.lang.management.ManagementFactory;
-import java.util.List;
+import java.lang.management.RuntimeMXBean;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,8 +35,13 @@ final class TestController {
 		if (System.getenv().get("FAIL_OOM") != null) {
 			oom();
 		}
-		List<String> inputArguments = ManagementFactory.getRuntimeMXBean().getInputArguments();
-		return "Input arguments: " + inputArguments;
+
+		RuntimeMXBean runtimeMxBean = ManagementFactory.getRuntimeMXBean();
+		Map<String, Object> data = new HashMap<String, Object>();
+		data.put("Input Arguments", runtimeMxBean.getInputArguments());
+		data.put("Class Path", runtimeMxBean.getClassPath());
+
+		return data.toString();
 	}
 
 	private static void oom() {
