@@ -31,12 +31,14 @@ public class JavaMain {
 
 	public static void main(String[] args) throws InterruptedException {
 		if (System.getenv().get("FAIL_OOM") != null) {
-			oom();
+			System.err.println("Exhausting heap...");
+			byte[] _ = new byte[Integer.MAX_VALUE];
 		}
 
 		RuntimeMXBean runtimeMxBean = ManagementFactory.getRuntimeMXBean();
 		Map<String, Object> data = new HashMap<String, Object>();
 		data.put("Input Arguments", runtimeMxBean.getInputArguments());
+		data.put("Environment Variables", System.getenv());
 		data.put("Class Path", runtimeMxBean.getClassPath());
 
 		System.out.println(data);

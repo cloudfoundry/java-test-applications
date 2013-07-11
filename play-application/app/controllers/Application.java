@@ -24,7 +24,8 @@ public class Application extends Controller {
 
 	public static Result index() {
 		if (System.getenv().get("FAIL_OOM") != null) {
-			oom();
+			System.err.println("Exhausting heap...");
+			byte[] _ = new byte[Integer.MAX_VALUE];
 		}
 
 		Probe probe = Spring.getBeanOfType(Probe.class);
@@ -32,27 +33,11 @@ public class Application extends Controller {
 		RuntimeMXBean runtimeMxBean = ManagementFactory.getRuntimeMXBean();
 		Map<String, Object> data = new HashMap<String, Object>();
 		data.put("Class Path", runtimeMxBean.getClassPath().split(":"));
+		data.put("Environment Variables", System.getenv());
 		data.put("Input Arguments", runtimeMxBean.getInputArguments());
 		data.put("Request Headers", request().headers());
 
 		return ok(index.render(data));
-	}
-
-	private static void oom() {
-		// Repeatedly exhaust the heap until the JVM is killed.
-		while (true) {
-			int i = 1;
-			try {
-				while (true) {
-					@SuppressWarnings("unused")
-					Object[] _ = new Object[i];
-					i *= 2;
-				}
-			} catch (OutOfMemoryError oom) {
-				System.out.println("Out of memory, i = " + i);
-				System.out.flush();
-			}
-		}
 	}
 
 }
