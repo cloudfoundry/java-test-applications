@@ -15,12 +15,23 @@ class ApplicationController {
 			oom()
 		}
 
-		def runtimeMxBean = ManagementFactory.getRuntimeMXBean();
-		def data = [:]
+		def runtimeMxBean = ManagementFactory.getRuntimeMXBean()
+		def data = new TreeMap()
+		data["Class Path"] = runtimeMxBean.classPath.split(':')
 		data["Input Arguments"] = runtimeMxBean.inputArguments
-		data["Class Path"] = runtimeMxBean.classPath
+		data["Request Headers"] = headers
 
-		render data
+		return [data: data]
+	}
+
+	def getHeaders() {
+		def data = new TreeMap()
+
+		for(headerName in request.headerNames) {
+			data[headerName] = request.getHeader(headerName)
+		}
+
+		data
 	}
 
 	def oom() {

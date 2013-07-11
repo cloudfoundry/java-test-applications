@@ -10,8 +10,8 @@ import util.Probe;
 
 import java.lang.management.ManagementFactory;
 import java.lang.management.RuntimeMXBean;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 
 public class Application extends Controller {
@@ -31,10 +31,11 @@ public class Application extends Controller {
 
 		RuntimeMXBean runtimeMxBean = ManagementFactory.getRuntimeMXBean();
 		Map<String, Object> data = new HashMap<String, Object>();
+		data.put("Class Path", runtimeMxBean.getClassPath().split(":"));
 		data.put("Input Arguments", runtimeMxBean.getInputArguments());
-		data.put("Class Path", runtimeMxBean.getClassPath());
+		data.put("Request Headers", request().headers());
 
-		return ok(index.render(data.toString()));
+		return ok(index.render(data));
 	}
 
 	private static void oom() {

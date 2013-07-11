@@ -17,6 +17,10 @@ All applications output the following content:
 * `java.lang:type=Runtime/InputArguments`
 * `java.lang:type=Runtime/ClassPath`
 
+All web application output the following additional content:
+
+* All request headers
+
 ## Building
 
 This project is built with Gradle. To build the artifacts, run:
