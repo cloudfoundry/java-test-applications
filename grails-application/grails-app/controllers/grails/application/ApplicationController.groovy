@@ -12,12 +12,14 @@ class ApplicationController {
 
 	def index() {
 		if (System.getenv()['FAIL_OOM'] != null) {
-			oom()
+			System.err.println("Exhausting heap...");
+			byte[] _ = new byte[Integer.MAX_VALUE];
 		}
 
 		def runtimeMxBean = ManagementFactory.getRuntimeMXBean()
 		def data = new TreeMap()
 		data["Class Path"] = runtimeMxBean.classPath.split(':')
+		data["Environment Variables"] = System.getenv()
 		data["Input Arguments"] = runtimeMxBean.inputArguments
 		data["Request Headers"] = headers
 
@@ -34,19 +36,4 @@ class ApplicationController {
 		data
 	}
 
-	def oom() {
-		// Repeatedly exhaust the heap until the JVM is killed.
-		while (true) {
-			def i = 1
-			try {
-				while (true) {
-					Object[] _ = new Object[i]
-					i *= 2
-				}
-			} catch (OutOfMemoryError oom) {
-				println "Out of memory, i = ${i}"
-				System.out.flush()
-			}
-		}
-	}
 }
