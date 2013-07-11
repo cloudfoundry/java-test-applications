@@ -21,7 +21,7 @@ All applications output the following content:
 
 This project is built with Gradle. To build the artifacts, run:
 
-```bash
+```plain
 ./gradlew
 ```
 
@@ -29,7 +29,7 @@ This project is built with Gradle. To build the artifacts, run:
 
 Each test application contains a `manifest.yml` file which allows the built application to be deployed to Cloud Foundry by simply issuing:
 
-```bash
+```plain
 cf push
 ```
 
@@ -42,12 +42,12 @@ Failure testing is supported for each of the above applications by setting a sui
 
 If the environment variable FAIL_INIT is set, the application will fail to initialize:
 
-```bash
+```plain
 cf set-env <application name> FAIL_INIT true
 ```
 
 If the environment variable FAIL_OOM is set, the application will repeatedly exhaust the heap until the JVM is killed:
 
-```bash
+```plain
 cf set-env <application name> FAIL_OOM true
 ```
