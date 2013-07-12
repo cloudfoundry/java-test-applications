@@ -7,7 +7,8 @@ A collection of applications used for testing the Java buildpack.
 | Name | Output Destination | Description
 | ---- | ------ | -----------
 `grails-application` | HTTP Response | A Grails application created by issuing `grails create-app`
-`java-main` | `System.out` | An application started with `java -jar`. _Since this application does not service web requests, you can select `none` for its subdomain and domain when you deploy it to Cloud Foundry._
+`groovy-application` | `System.out` | An application started with `groovy`. _Since this application does not service web requests, you can select `none` for its subdomain and domain when you deploy it to Cloud Foundry._
+`java-application` | `System.out` | An application started with `java -jar`. _Since this application does not service web requests, you can select `none` for its subdomain and domain when you deploy it to Cloud Foundry._
 `play-application` | HTTP Response | A Play application created by issuing `play new play-application`
 `web-application` | HTTP Response | A web application that uses Spring MVC and Servlet 3
 

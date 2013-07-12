@@ -18,11 +18,9 @@ package com.gopivotal.test;
 
 import java.lang.management.ManagementFactory;
 import java.lang.management.RuntimeMXBean;
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.TreeMap;
 
 import org.springframework.http.HttpEntity;
@@ -34,59 +32,60 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 final class TestController {
 
-	@RequestMapping(method = RequestMethod.GET, value = "/")
-	@ResponseBody
-	String root(HttpEntity<String> requestEntity) {
-		if (System.getenv().get("FAIL_OOM") != null) {
-			System.err.println("Exhausting heap...");
-			byte[] _ = new byte[Integer.MAX_VALUE];
-		}
+    @SuppressWarnings("unused")
+    @RequestMapping(method = RequestMethod.GET, value = "/")
+    @ResponseBody
+    String root(HttpEntity<String> requestEntity) {
+        if (System.getenv().get("FAIL_OOM") != null) {
+            System.err.println("Exhausting heap...");
+            byte[] _ = new byte[Integer.MAX_VALUE];
+        }
 
-		RuntimeMXBean runtimeMxBean = ManagementFactory.getRuntimeMXBean();
-		Map<String, Object> data = new TreeMap<String, Object>();
-		data.put("Class Path", runtimeMxBean.getClassPath().split(":"));
-		data.put("Environment Variables", System.getenv());
-		data.put("Input Arguments", runtimeMxBean.getInputArguments());
-		data.put("Request Headers", requestEntity.getHeaders());
+        RuntimeMXBean runtimeMxBean = ManagementFactory.getRuntimeMXBean();
+        Map<String, Object> data = new TreeMap<String, Object>();
+        data.put("Class Path", runtimeMxBean.getClassPath().split(":"));
+        data.put("Environment Variables", System.getenv());
+        data.put("Input Arguments", runtimeMxBean.getInputArguments());
+        data.put("Request Headers", requestEntity.getHeaders());
 
-		return map(data);
-	}
+        return map(data);
+    }
 
-	private static String list(List<String> data) {
-		String content = "<ul>";
+    private static String list(List<String> data) {
+        String content = "<ul>";
 
-		for (String value : data) {
-			content += "<li>" + value + "</li>";
-		}
+        for (String value : data) {
+            content += "<li>" + value + "</li>";
+        }
 
-		content += "</ul>";
-		return content;
-	}
+        content += "</ul>";
+        return content;
+    }
 
-	@SuppressWarnings("unchecked")
-	private static String map(Map<String, Object> data) {
-		String content = "<table>";
+    @SuppressWarnings("unchecked")
+    private static String map(Map<String, Object> data) {
+        String content = "<table>";
 
-		for (String key : data.keySet()) {
-			content += "<tr><td>" + key + "</td><td>" ;
+        for (String key : data.keySet()) {
+            content += "<tr><td>" + key + "</td><td>";
 
-			Object value = data.get(key);
-			if (value instanceof List) {
-				content += list((List) value);
-			} else if (value.getClass().isArray()) {
-				content += list(Arrays.asList((String[]) value));
-			} else if (value instanceof Map) {
-				content += map((Map) value);
-			} else if (value instanceof String) {
-				content += value;
-			} else {
-				content += "Unknown value type '" + value.getClass().getSimpleName() + "'";
-			}
+            Object value = data.get(key);
+            if (value instanceof List) {
+                content += list((List<String>) value);
+            } else if (value.getClass().isArray()) {
+                content += list(Arrays.asList((String[]) value));
+            } else if (value instanceof Map) {
+                content += map((Map<String, Object>) value);
+            } else if (value instanceof String) {
+                content += value;
+            } else {
+                content += "Unknown value type '" + value.getClass().getSimpleName() + "'";
+            }
 
-			content += "</td></tr>";
-		}
+            content += "</td></tr>";
+        }
 
-		content += "</table>";
-		return content;
-	}
+        content += "</table>";
+        return content;
+    }
 }
