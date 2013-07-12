@@ -17,7 +17,7 @@
 package controllers;
 
 import java.lang.management.ManagementFactory;
-import java.lang.management.RuntimeMXBean;
+import java.util.Map;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -29,29 +29,42 @@ import views.html.index;
 
 public class Application extends Controller {
 
-    static {
-        if (System.getenv().get("FAIL_INIT") != null) {
-            throw new RuntimeException("$FAIL_INIT caused initialisation to fail");
+    private static final String DRIVER_KEY = "db.default.driver";
+
+	private static final String URL_KEY = "db.default.url";
+
+	private static final String USER_KEY = "db.default.user";
+
+	private static final String PASSWORD_KEY = "db.default.password";
+
+	static {
+		if (System.getenv().get("FAIL_INIT") != null) {
+			throw new RuntimeException("$FAIL_INIT caused initialisation to fail");
+		}
+	}
+
+	@SuppressWarnings("unused")
+	public static Result index() {
+		if (System.getenv().get("FAIL_OOM") != null) {
+			System.err.println("Provoking OOM...");
+			byte[] _ = new byte[Integer.MAX_VALUE];
+		}
+
+		Probe probe = Spring.getBeanOfType(Probe.class);
+
+		Map<String, String> systemProperties = new HashMap<String, String>();
+		for (Entry<Object, Object> propertyEntry : System.getProperties().entrySet()) {
+            systemProperties.put((String)propertyEntry.getKey(), (String)propertyEntry.getValue());
         }
-    }
 
-    @SuppressWarnings("unused")
-    public static Result index() {
-        if (System.getenv().get("FAIL_OOM") != null) {
-            System.err.println("Exhausting heap...");
-            byte[] _ = new byte[Integer.MAX_VALUE];
-        }
+		Map<String, Object> data = new HashMap<String, Object>();
+		data.put("Class Path", probe.getClassPath();
+		data.put("Environment Variables", System.getenv());
+		data.put("Input Arguments", probe.getInputArguments());
+		data.put("System Properties", systemProperties);
+		data.put("Request Headers", request().headers());
 
-        Spring.getBeanOfType(Probe.class);
-
-        RuntimeMXBean runtimeMxBean = ManagementFactory.getRuntimeMXBean();
-        Map<String, Object> data = new HashMap<String, Object>();
-        data.put("Class Path", runtimeMxBean.getClassPath().split(":"));
-        data.put("Environment Variables", System.getenv());
-        data.put("Input Arguments", runtimeMxBean.getInputArguments());
-        data.put("Request Headers", request().headers());
-
-        return ok(index.render(data));
-    }
+		return ok(index.render(data));
+	}
 
 }

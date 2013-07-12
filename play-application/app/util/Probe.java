@@ -17,18 +17,27 @@
 package util;
 
 import java.lang.management.ManagementFactory;
+import java.lang.management.RuntimeMXBean;
 import java.util.List;
 
 public class Probe {
 
     private final List<String> inputArguments;
 
-    public Probe() {
-        this.inputArguments = ManagementFactory.getRuntimeMXBean().getInputArguments();
-    }
+	private final Array<String> classpath;
+
+	public Probe() {
+		RuntimeMXBean runtimeMxBean = ManagementFactory.getRuntimeMXBean();
+		this.inputArguments = runtimeMxBean.getInputArguments();
+		this.classpath = runtimeMxBean.getClassPath().split(":");
+	}
 
     public List<String> getInputArguments() {
         return this.inputArguments;
     }
+
+	public Array<String> getClassPath() {
+		return this.classpath;
+	}
 
 }
