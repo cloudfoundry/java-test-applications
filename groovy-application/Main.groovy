@@ -28,7 +28,7 @@ class Main {
     static void main(String[] args) {
         if (System.getenv()['FAIL_OOM'] != null) {
             Thread.start {
-                println "Exhausting heap..."
+                println "Provoking OOM..."
                 byte[] _ = new byte[Integer.MAX_VALUE]
             }
         }

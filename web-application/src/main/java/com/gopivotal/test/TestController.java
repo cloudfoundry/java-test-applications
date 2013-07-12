@@ -37,7 +37,7 @@ final class TestController {
     @ResponseBody
     String root(HttpEntity<String> requestEntity) {
         if (System.getenv().get("FAIL_OOM") != null) {
-            System.err.println("Exhausting heap...");
+            System.err.println("Provoking OOM...");
             byte[] _ = new byte[Integer.MAX_VALUE];
         }
 

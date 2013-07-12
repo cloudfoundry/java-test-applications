@@ -12,7 +12,7 @@ class ApplicationController {
 
     def index() {
         if (System.getenv()['FAIL_OOM'] != null) {
-            println "Exhausting heap..."
+            println "Provoking OOM..."
             byte[] _ = new byte[Integer.MAX_VALUE]
         }
 

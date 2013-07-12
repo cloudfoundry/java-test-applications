@@ -40,7 +40,7 @@ public class Application {
                 @SuppressWarnings("unused")
                 @Override
                 public void run() {
-                    System.err.println("Exhausting heap...");
+                    System.err.println("Provoking OOM...");
                     byte[] _ = new byte[Integer.MAX_VALUE];
                 }
             }).start();
