@@ -24,7 +24,7 @@ public class Probe {
 
     private final List<String> inputArguments;
 
-	private final Array<String> classpath;
+	private final String[] classpath;
 
 	public Probe() {
 		RuntimeMXBean runtimeMxBean = ManagementFactory.getRuntimeMXBean();
@@ -36,7 +36,7 @@ public class Probe {
         return this.inputArguments;
     }
 
-	public Array<String> getClassPath() {
+	public String[] getClassPath() {
 		return this.classpath;
 	}
 

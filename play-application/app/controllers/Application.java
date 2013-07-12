@@ -18,6 +18,7 @@ package controllers;
 
 import java.lang.management.ManagementFactory;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -58,7 +59,7 @@ public class Application extends Controller {
         }
 
 		Map<String, Object> data = new HashMap<String, Object>();
-		data.put("Class Path", probe.getClassPath();
+		data.put("Class Path", probe.getClassPath());
 		data.put("Environment Variables", System.getenv());
 		data.put("Input Arguments", probe.getInputArguments());
 		data.put("System Properties", systemProperties);
