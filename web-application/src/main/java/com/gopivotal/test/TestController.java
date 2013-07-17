@@ -47,6 +47,7 @@ final class TestController {
         data.put("Environment Variables", System.getenv());
         data.put("Input Arguments", runtimeMxBean.getInputArguments());
         data.put("Request Headers", requestEntity.getHeaders());
+        data.put("System Properties", System.getProperties());
 
         return map(data);
     }

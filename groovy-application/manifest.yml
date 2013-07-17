@@ -1,0 +1,6 @@
+---
+applications:
+- name: groovy-application
+  memory: 1G
+  instances: 1
+  buildpack: https://github.com/cloudfoundry/java-buildpack
