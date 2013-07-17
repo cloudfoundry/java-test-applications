@@ -51,6 +51,7 @@ public class Application {
         data.put("Class Path", runtimeMxBean.getClassPath().split(":"));
         data.put("Environment Variables", System.getenv());
         data.put("Input Arguments", runtimeMxBean.getInputArguments());
+        data.put("System Properties", System.getProperties());
 
         map(data, new IndentingPrintStream(System.out));
 
