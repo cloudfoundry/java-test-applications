@@ -22,7 +22,7 @@ class ApplicationController {
         data["Environment Variables"] = System.getenv()
         data["Input Arguments"] = runtimeMxBean.inputArguments
         data["Request Headers"] = headers
-        data["System Properties"] = System.properties
+        data["System Properties"] = new TreeMap(System.properties)
 
         return [data: data]
     }

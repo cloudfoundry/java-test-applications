@@ -36,7 +36,6 @@ public class Application {
         if (System.getenv().get("FAIL_OOM") != null) {
             new Thread(new Runnable() {
 
-
                 @SuppressWarnings("unused")
                 @Override
                 public void run() {
@@ -51,7 +50,7 @@ public class Application {
         data.put("Class Path", runtimeMxBean.getClassPath().split(":"));
         data.put("Environment Variables", System.getenv());
         data.put("Input Arguments", runtimeMxBean.getInputArguments());
-        data.put("System Properties", System.getProperties());
+        data.put("System Properties", new TreeMap<Object, Object>(System.getProperties()));
 
         map(data, new IndentingPrintStream(System.out));
 

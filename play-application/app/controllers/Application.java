@@ -18,6 +18,7 @@ package controllers;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 import play.api.modules.spring.Spring;
 import play.mvc.Controller;
@@ -47,7 +48,7 @@ public class Application extends Controller {
         data.put("Environment Variables", System.getenv());
         data.put("Input Arguments", probe.getInputArguments());
         data.put("Request Headers", request().headers());
-        data.put("System Properties", System.getProperties());
+        data.put("System Properties", new TreeMap<Object, Object>(System.getProperties()));
 
         return ok(index.render(data));
     }

@@ -38,7 +38,7 @@ class Main {
         data["Class Path"] = runtimeMxBean.classPath.split(':')
         data["Environment Variables"] = System.getenv()
         data["Input Arguments"] = runtimeMxBean.inputArguments
-        data["System Properties"] = System.properties
+        data["System Properties"] = new TreeMap(System.properties)
 
         map(data, new IndentingPrintStream(System.out))
 
