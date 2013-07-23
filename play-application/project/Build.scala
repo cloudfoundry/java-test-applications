@@ -12,13 +12,14 @@ object ApplicationBuild extends Build {
     javaCore,
     javaJdbc,
     javaEbean,
+    javaJpa,
     "org.springframework"    %    "spring-context"    %    "3.2.3.RELEASE",
     "org.springframework"    %    "spring-core"       %    "3.2.3.RELEASE",
     "org.springframework"    %    "spring-beans"      %    "3.2.3.RELEASE"
   )
 
   val main = play.Project(appName, appVersion, appDependencies).settings(
-    // Add your own project settings here      
+    // Add your own project settings here
   )
 
 }

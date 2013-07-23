@@ -15,8 +15,10 @@ A collection of applications used for testing the Java buildpack.
 ### Output Content
 All applications output the following content:
 
-* `java.lang:type=Runtime/InputArguments`
 * `java.lang:type=Runtime/ClassPath`
+* `System.getenv()`
+* `java.lang:type=Runtime/InputArguments`
+* `System.getProperties()`
 
 All web application output the following additional content:
 
@@ -56,3 +58,22 @@ If the environment variable FAIL_OOM is set, the application will repeatedly exh
 ```plain
 cf set-env <application name> FAIL_OOM true
 ```
+
+## Running Tests
+To run the tests, do the following:
+
+```bash
+./gradlew
+```
+
+## Contributing
+[Pull requests][] are welcome; see the [contributor guidelines][] for details.
+
+[Pull requests]: http://help.github.com/send-pull-requests
+[contributor guidelines]: CONTRIBUTING.md
+
+## License
+The Tomcat Builder is released under version 2.0 of the [Apache License][].
+
+[Apache License]: http://www.apache.org/licenses/LICENSE-2.0
+
