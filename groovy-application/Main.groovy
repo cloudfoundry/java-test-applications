@@ -1,4 +1,5 @@
 /*
+ * Cloud Foundry Java Test Applications
  * Copyright 2013 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -57,7 +58,7 @@ class Main {
 
             def value = data[key]
             def indented = out.indent()
-            
+
             if(value instanceof List) {
                 list value, indented
             } else if (value.getClass().isArray()) {
