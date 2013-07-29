@@ -26,7 +26,7 @@ All web application output the following additional content:
 
 ## Building
 
-This project is built with Gradle. To build the artifacts, run:
+This project is built with Gradle. To build the artifacts, install Play and Grails and then run:
 
 ```plain
 ./gradlew
