@@ -1,0 +1,16 @@
+---
+language: java
+jdk:
+  - openjdk7
+  - openjdk6
+before_install:
+ - wget http://dist.springframework.org.s3.amazonaws.com/release/GRAILS/grails-2.2.3.zip -qO /tmp/grails.zip
+ - unzip -qd /tmp /tmp/grails.zip
+ - wget http://downloads.typesafe.com/play/2.1.2/play-2.1.2.zip -qO /tmp/play.zip
+ - unzip -qd /tmp /tmp/play.zip
+env:
+ global:
+   - "PATH=/tmp/grails-2.2.3/bin:/tmp/play-2.1.2:$PATH"
+script: ./gradlew
+notifications:
+  webhooks: http://ec2-54-229-6-54.eu-west-1.compute.amazonaws.com/projects/67c7b774-a278-4272-ac32-31845e7e8661/status
