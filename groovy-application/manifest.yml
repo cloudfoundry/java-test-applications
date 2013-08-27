@@ -3,4 +3,6 @@ applications:
 - name: groovy-application
   memory: 256M
   instances: 1
+  host: none
+  domain: none
   buildpack: https://github.com/cloudfoundry/java-buildpack

@@ -3,5 +3,7 @@ applications:
 - name: java-application
   memory: 128M
   instances: 1
+  host: none
+  domain: none
   path: build/libs/java-application-1.0.0.BUILD-SNAPSHOT.jar
   buildpack: https://github.com/cloudfoundry/java-buildpack
