@@ -1,9 +1,7 @@
 ---
 language: java
 jdk:
-  - openjdk8
-  - openjdk7
-  - openjdk6
+  - oraclejdk7
 before_install:
  - wget http://dist.springframework.org.s3.amazonaws.com/release/GRAILS/grails-2.3.0.zip -qO /tmp/grails.zip
  - unzip -qd /tmp /tmp/grails.zip
