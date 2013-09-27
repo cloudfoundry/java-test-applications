@@ -12,4 +12,4 @@ env:
    - "PATH=/tmp/grails-2.3.0/bin:/tmp/play-2.1.4:$PATH"
 script: ./gradlew
 notifications:
-  webhooks: http://ec2-54-229-6-54.eu-west-1.compute.amazonaws.com/projects/67c7b774-a278-4272-ac32-31845e7e8661/status
+  webhooks: http://build-monitor.cfapps.io/projects/JTA/webhook
