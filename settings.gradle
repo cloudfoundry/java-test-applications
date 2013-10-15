@@ -2,5 +2,6 @@ rootProject.name = "java-test-applications"
 
 include "grails-application"
 include "java-application"
+include "java-application-with-web-inf"
 include "play-application"
 include "web-application"
