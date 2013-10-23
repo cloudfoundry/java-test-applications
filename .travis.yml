@@ -3,13 +3,13 @@ language: java
 jdk:
   - oraclejdk7
 before_install:
- - wget http://dist.springframework.org.s3.amazonaws.com/release/GRAILS/grails-2.3.0.zip -qO /tmp/grails.zip
+ - wget http://dist.springframework.org.s3.amazonaws.com/release/GRAILS/grails-2.3.1.zip -qO /tmp/grails.zip
  - unzip -qd /tmp /tmp/grails.zip
  - wget http://downloads.typesafe.com/play/2.2.0/play-2.2.0.zip -qO /tmp/play.zip
  - unzip -qd /tmp /tmp/play.zip
 env:
  global:
-   - "PATH=/tmp/grails-2.3.0/bin:/tmp/play-2.2.0:$PATH"
+   - "PATH=/tmp/grails-2.3.1/bin:/tmp/play-2.2.0:$PATH"
 script: ./gradlew
 notifications:
   webhooks: http://build-monitor.cfapps.io/projects/JTA/webhook
