@@ -1,7 +1,7 @@
-build
-bin
 .classpath
+.gradle
 .project
 .settings
 .springBeans
-.gradle
+bin
+build

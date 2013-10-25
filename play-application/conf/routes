@@ -2,8 +2,7 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-# Home page
-GET     /                           controllers.Application.index()
-
-# Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
+GET /class-path             @com.gopivotal.cloudfoundry.test.ApplicationController.classPath()
+GET /environment-variables  @com.gopivotal.cloudfoundry.test.ApplicationController.environmentVariables()
+GET /input-arguments        @com.gopivotal.cloudfoundry.test.ApplicationController.inputArguments()
+GET /system-properties      @com.gopivotal.cloudfoundry.test.ApplicationController.systemProperties()

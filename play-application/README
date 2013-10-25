@@ -1,9 +1,0 @@
-Test Play Application
-=====================
-
-This application uses the Spring module for Play from:
-
-https://github.com/wsargent/play-2.0-spring-module
-
-This was built per the README with sbt 0.12.3. The resultant
-JAR is stored in the application's lib directory.

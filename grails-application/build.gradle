@@ -1,7 +1,9 @@
-apply plugin: "base"
+apply plugin: 'base'
 
-task build(type:Exec) {
-    inputs.file 'grails-app/controllers/grails/application/ApplicationController.groovy'
-    outputs.file 'target/grails-application-0.1.war'
-    commandLine 'grails', 'war'
+buildDir = 'target'
+
+task build(type:Exec, dependsOn: ':core:install') {
+    inputs.files fileTree(dir: '.', excludes: ['.classpath', '.properties', '.settings', 'target', 'target-eclipse'])
+    outputs.dir 'target'
+    commandLine './grailsw', '-non-interactive', '-plain-output', 'war'
 }

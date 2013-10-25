@@ -1,7 +1,10 @@
 rootProject.name = "java-test-applications"
 
-include "grails-application"
-include "java-application"
-include "java-application-with-web-inf"
-include "play-application"
-include "web-application"
+include 'core'
+include 'grails-application'
+include 'groovy-application'
+include 'java-main-application'
+include 'java-main-with-web-inf-application'
+include 'play-application'
+include 'spring-boot-cli-application'
+include 'web-application'

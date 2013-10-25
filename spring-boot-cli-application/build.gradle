@@ -1,0 +1,9 @@
+apply plugin: 'base'
+
+buildDir = '.grapes'
+
+task build(type:Exec, dependsOn: ':core:install') {
+    inputs.files fileTree(dir: '.', excludes: ['.classpath', '.grapes', '.properties', '.settings'])
+    outputs.dir '.grapes'
+    commandLine 'spring', 'run', '--local', 'ApplicationConfiguration.groovy'
+}
