@@ -1,29 +1,54 @@
 // All Project Configuration
 allprojects {
-	apply plugin: "eclipse"
+    buildscript {
+        repositories {
+            maven {
+                name 'Spring Milestone'
+                url 'http://repo.spring.io/milestone'
+            }
+            maven {
+                name 'Spring Snapshot'
+                url 'http://repo.spring.io/snapshot'
+            }
+            mavenCentral()
+        }
+    }
 
-	repositories {
-		mavenCentral()
-	}
+    ext {
+        junitVersion = '4.11'
+        mockitoVersion = '1.9.5'
+        springBootVersion = '0.5.0.BUILD-SNAPSHOT'
+    }
+
+    repositories {
+        maven {
+            name 'Spring Milestone'
+            url 'http://repo.spring.io/milestone'
+        }
+        maven {
+            name 'Spring Snapshot'
+            url 'http://repo.spring.io/snapshot'
+        }
+        mavenCentral()
+    }
 }
 
 // Root Project Configuration
-apply plugin: "base"
-apply plugin: "versions"
-
+apply plugin: 'base'
+apply plugin: 'versions'
 
 buildscript {
-	repositories {
-		mavenCentral()
-	}
+    repositories {
+        mavenCentral()
+    }
 
-	dependencies {
-		classpath "com.github.ben-manes:gradle-versions-plugin:0.4"
-	}
+    dependencies {
+        classpath 'com.github.ben-manes:gradle-versions-plugin:0.4'
+    }
 }
 
 task wrapper(type: Wrapper) {
-	gradleVersion = "1.8"
+    gradleVersion = '1.8'
 }
 
 defaultTasks 'build'

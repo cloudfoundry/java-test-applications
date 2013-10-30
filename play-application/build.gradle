@@ -1,7 +1,9 @@
-apply plugin: "base"
+apply plugin: 'base'
 
-task build(type:Exec) {
-    inputs.file 'app/controllers/Application.java'
-    outputs.file 'target/universal/play-application-1.0-SNAPSHOT.zip'
+buildDir = 'target'
+
+task build(type:Exec, dependsOn: ':core:install') {
+    inputs.files fileTree(dir: '.', excludes: ['.classpath', '.properties', '.settings', 'project/target', 'project/project/target', 'target'])
+    outputs.dir 'target'
     commandLine 'play', 'dist'
 }

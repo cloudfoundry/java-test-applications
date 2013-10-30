@@ -1,0 +1,17 @@
+apply plugin: 'base'
+
+buildDir = 'lib'
+
+configurations {
+    libs
+}
+
+dependencies {
+    libs "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
+    libs project(':core')
+}
+
+task build(type:Copy) {
+    from configurations.libs
+    into buildDir
+}

@@ -1,22 +1,27 @@
-apply plugin: "war"
+apply plugin: 'war'
+
+sourceCompatibility = 1.7
 
 ext {
-	logbackVersion = '1.0.13'
-	servletVersion = '3.1.0'
-	slf4jVersion = '1.7.5'
-	springVersion = '3.2.4.RELEASE'
+    jacksonVersion = '2.2.2'
+    logbackVersion = '1.0.13'
+    servletVersion = '3.1.0'
+    slf4jVersion   = '1.7.5'
+    springVersion  = '4.0.0.BUILD-SNAPSHOT'
 }
 
 dependencies {
-	runtime 		group: 'ch.qos.logback',		name: 'logback-classic',	version: logbackVersion
-	providedCompile	group: 'javax.servlet',			name: 'javax.servlet-api',	version: servletVersion
-	runtime 		group: 'org.slf4j',				name: 'slf4j-api',			version: slf4jVersion
-	runtime 		group: 'org.slf4j',				name: 'jcl-over-slf4j',		version: slf4jVersion
-	compile 		group: 'org.springframework',	name: 'spring-context',		version: springVersion
-	compile 		group: 'org.springframework',	name: 'spring-web',			version: springVersion
-	compile 		group: 'org.springframework',	name: 'spring-webmvc',		version: springVersion
+    runtime         "ch.qos.logback:logback-classic:$logbackVersion"
+    runtime         "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion"
+    providedCompile "javax.servlet:javax.servlet-api:$servletVersion"
+    runtime         "org.slf4j:slf4j-api:$slf4jVersion"
+    runtime         "org.slf4j:jcl-over-slf4j:$slf4jVersion"
+    compile         "org.springframework:spring-context:$springVersion"
+    compile         "org.springframework:spring-web:$springVersion"
+    compile         "org.springframework:spring-webmvc:$springVersion"
+    compile         project(':core')
 }
 
 configurations {
-	all*.exclude group: 'commons-logging', module: 'commons-logging'
+    all*.exclude group: 'commons-logging', module: 'commons-logging'
 }

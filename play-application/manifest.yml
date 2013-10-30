@@ -1,7 +1,7 @@
 ---
 applications:
 - name: play-application
-  memory: 512M
+  memory: 768M
   instances: 1
   path: target/universal/play-application-1.0-SNAPSHOT.zip
   buildpack: https://github.com/cloudfoundry/java-buildpack
