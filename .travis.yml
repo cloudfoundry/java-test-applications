@@ -5,10 +5,10 @@ jdk:
 env:
   global:
     - "PATH=/tmp/play-2.2.0:$PATH"
-    - "TERM=dummy"
 before_install:
   - "wget http://downloads.typesafe.com/play/2.2.0/play-2.2.0.zip -qO /tmp/play.zip"
   - "unzip -qd /tmp /tmp/play.zip"
-script: ./gradlew
+install: TERM=dumb ./gradlew assemble
+script: TERM=dumb ./gradlew
 notifications:
   webhooks: "http://build-monitor.cfapps.io/projects/JTA/webhook"
