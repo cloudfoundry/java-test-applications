@@ -2,12 +2,13 @@
 language: java
 jdk:
   - oraclejdk7
-before_install:
- - wget http://downloads.typesafe.com/play/2.2.0/play-2.2.0.zip -qO /tmp/play.zip
- - unzip -qd /tmp /tmp/play.zip
 env:
- global:
-   - "PATH=/tmp/play-2.2.0:$PATH"
+  global:
+    - "PATH=/tmp/play-2.2.0:$PATH"
+    - "TERM=dummy"
+before_install:
+  - "wget http://downloads.typesafe.com/play/2.2.0/play-2.2.0.zip -qO /tmp/play.zip"
+  - "unzip -qd /tmp /tmp/play.zip"
 script: ./gradlew
 notifications:
-  webhooks: http://build-monitor.cfapps.io/projects/JTA/webhook
+  webhooks: "http://build-monitor.cfapps.io/projects/JTA/webhook"
