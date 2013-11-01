@@ -48,7 +48,7 @@ public class MemoryUtils {
     /**
      * Generates an {@link OutOfMemoryError} if the {@code FAIL_OOM} environment variable is {@code true}. Otherwise
      * does nothing.
-     * 
+     *
      * @return
      */
     public byte[] outOfMemory() {

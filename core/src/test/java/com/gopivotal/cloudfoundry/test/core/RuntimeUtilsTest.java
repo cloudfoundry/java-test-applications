@@ -16,10 +16,7 @@
 
 package com.gopivotal.cloudfoundry.test.core;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import org.junit.Test;
 
 import java.lang.management.RuntimeMXBean;
 import java.util.ArrayList;
@@ -28,7 +25,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.junit.Test;
+import static org.mockito.Mockito.mock;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertSame;
+import static org.mockito.Mockito.when;
 
 public final class RuntimeUtilsTest {
 

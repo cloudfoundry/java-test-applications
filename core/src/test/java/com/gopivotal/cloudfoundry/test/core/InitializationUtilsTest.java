@@ -16,10 +16,10 @@
 
 package com.gopivotal.cloudfoundry.test.core;
 
+import org.junit.Test;
+
 import java.util.HashMap;
 import java.util.Map;
-
-import org.junit.Test;
 
 public final class InitializationUtilsTest {
 

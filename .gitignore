@@ -1,7 +1,5 @@
-.classpath
 .gradle
-.project
-.settings
-.springBeans
 bin
 build
+tasks.xml
+workspace.xml

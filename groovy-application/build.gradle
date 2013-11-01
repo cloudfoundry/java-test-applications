@@ -11,7 +11,7 @@ dependencies {
     libs project(':core')
 }
 
-task build(type:Copy) {
+task build(type: Copy) {
     from configurations.libs
     into buildDir
 }

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="spring-beans-4.0.0.RC1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/org.springframework/spring-beans/4.0.0.RC1/jar/bab1f389bfd168ac6a116d0a0efb256864f7c857/spring-beans-4.0.0.RC1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/org.springframework/spring-beans/4.0.0.RC1/source/f02a637a6feffff8711400826148ab25076c01f5/spring-beans-4.0.0.RC1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

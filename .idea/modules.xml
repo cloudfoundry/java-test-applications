@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/grails-application/grails-application.iml" filepath="$PROJECT_DIR$/grails-application/grails-application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/groovy-application/groovy-application.iml" filepath="$PROJECT_DIR$/groovy-application/groovy-application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-main-application/java-main-application.iml" filepath="$PROJECT_DIR$/java-main-application/java-main-application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-main-with-web-inf-application/java-main-with-web-inf-application.iml" filepath="$PROJECT_DIR$/java-main-with-web-inf-application/java-main-with-web-inf-application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-test-applications.iml" filepath="$PROJECT_DIR$/java-test-applications.iml" />
+      <module fileurl="file://$PROJECT_DIR$/play-application/play-application.iml" filepath="$PROJECT_DIR$/play-application/play-application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-cli-application/spring-boot-cli-application.iml" filepath="$PROJECT_DIR$/spring-boot-cli-application/spring-boot-cli-application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web-application/web-application.iml" filepath="$PROJECT_DIR$/web-application/web-application.iml" />
+    </modules>
+  </component>
+</project>
+

@@ -16,11 +16,11 @@
 
 package com.gopivotal.cloudfoundry.test.core;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-
 import java.util.HashMap;
 import java.util.Map;
+
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 public final class MemoryUtilsTest {
 

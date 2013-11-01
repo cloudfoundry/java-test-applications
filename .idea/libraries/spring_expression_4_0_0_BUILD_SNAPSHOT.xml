@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="spring-expression-4.0.0.BUILD-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/org.springframework/spring-expression/4.0.0.BUILD-SNAPSHOT/jar/70ce6312152fad56047e75ffc194fa125fc46240/spring-expression-4.0.0.BUILD-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/org.springframework/spring-expression/4.0.0.BUILD-SNAPSHOT/source/b334b821fe501db2260b4eed5ea9127e6ba23287/spring-expression-4.0.0.BUILD-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

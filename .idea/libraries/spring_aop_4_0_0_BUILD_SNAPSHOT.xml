@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="spring-aop-4.0.0.BUILD-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/org.springframework/spring-aop/4.0.0.BUILD-SNAPSHOT/jar/3bc129dbdb4efaf3dbaf4bc4ec6b41424abb1eb0/spring-aop-4.0.0.BUILD-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/org.springframework/spring-aop/4.0.0.BUILD-SNAPSHOT/source/59cf89c9827e355023201033cd20447a7c3ba7a6/spring-aop-4.0.0.BUILD-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
