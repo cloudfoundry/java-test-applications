@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="SBT: com.fasterxml.jackson.core:jackson-annotations:2.2.2">
+    <CLASSES>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/local/com.fasterxml.jackson.core/jackson-annotations/2.2.2/jars/jackson-annotations.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/com.fasterxml.jackson.core/jackson-annotations/docs/jackson-annotations-2.2.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/com.fasterxml.jackson.core/jackson-annotations/srcs/jackson-annotations-2.2.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

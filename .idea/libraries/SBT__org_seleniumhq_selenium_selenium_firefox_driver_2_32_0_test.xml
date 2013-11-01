@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="SBT: org.seleniumhq.selenium:selenium-firefox-driver:2.32.0:test">
+    <CLASSES>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/local/org.seleniumhq.selenium/selenium-firefox-driver/2.32.0/jars/selenium-firefox-driver.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/org.seleniumhq.selenium/selenium-firefox-driver/docs/selenium-firefox-driver-2.32.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/org.seleniumhq.selenium/selenium-firefox-driver/srcs/selenium-firefox-driver-2.32.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

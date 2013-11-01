@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="SBT: org.apache.commons:commons-exec:1.1:test">
+    <CLASSES>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/local/org.apache.commons/commons-exec/1.1/jars/commons-exec.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/org.apache.commons/commons-exec/docs/commons-exec-1.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/org.apache.commons/commons-exec/srcs/commons-exec-1.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

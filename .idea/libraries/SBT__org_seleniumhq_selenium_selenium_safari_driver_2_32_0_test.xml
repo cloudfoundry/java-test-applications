@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="SBT: org.seleniumhq.selenium:selenium-safari-driver:2.32.0:test">
+    <CLASSES>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/local/org.seleniumhq.selenium/selenium-safari-driver/2.32.0/jars/selenium-safari-driver.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/org.seleniumhq.selenium/selenium-safari-driver/docs/selenium-safari-driver-2.32.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/org.seleniumhq.selenium/selenium-safari-driver/srcs/selenium-safari-driver-2.32.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

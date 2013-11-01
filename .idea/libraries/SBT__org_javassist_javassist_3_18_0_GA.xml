@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="SBT: org.javassist:javassist:3.18.0-GA">
+    <CLASSES>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/org.javassist/javassist/jars/javassist-3.18.0-GA.jar!/" />
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/local/org.javassist/javassist/3.18.0-GA/bundles/javassist.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/org.javassist/javassist/srcs/javassist-3.18.0-GA-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

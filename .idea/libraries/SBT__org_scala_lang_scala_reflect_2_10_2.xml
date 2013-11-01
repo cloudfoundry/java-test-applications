@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="SBT: org.scala-lang:scala-reflect:2.10.2">
+    <CLASSES>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/local/org.scala-lang/scala-reflect/2.10.2/jars/scala-reflect.jar!/" />
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/framework/sbt/boot/scala-2.10.2/lib/scala-reflect.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/org.scala-lang/scala-reflect/docs/scala-reflect-2.10.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/org.scala-lang/scala-reflect/srcs/scala-reflect-2.10.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

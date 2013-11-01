@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="SBT: org.springframework:spring-core:3.2.4.RELEASE">
+    <CLASSES>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/org.springframework/spring-core/jars/spring-core-3.2.4.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/org.springframework/spring-core/docs/spring-core-3.2.4.RELEASE-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/org.springframework/spring-core/srcs/spring-core-3.2.4.RELEASE-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="SBT: javax.transaction:jta:1.1">
+    <CLASSES>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/local/javax.transaction/jta/1.1/jars/jta.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/javax.transaction/jta/srcs/jta-1.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

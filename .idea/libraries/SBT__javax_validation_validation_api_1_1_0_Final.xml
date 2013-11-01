@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="SBT: javax.validation:validation-api:1.1.0.Final">
+    <CLASSES>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/local/javax.validation/validation-api/1.1.0.Final/jars/validation-api.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/javax.validation/validation-api/docs/validation-api-1.1.0.Final-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/javax.validation/validation-api/srcs/validation-api-1.1.0.Final-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

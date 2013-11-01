@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="SBT: org.yaml:snakeyaml:1.12">
+    <CLASSES>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/org.yaml/snakeyaml/jars/snakeyaml-1.12.jar!/" />
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/local/org.yaml/snakeyaml/1.12/bundles/snakeyaml.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/org.yaml/snakeyaml/docs/snakeyaml-1.12-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/org.yaml/snakeyaml/srcs/snakeyaml-1.12-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

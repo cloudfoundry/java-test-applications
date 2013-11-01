@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="SBT: org.fluentlenium:fluentlenium-core:0.8.0:test">
+    <CLASSES>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/local/org.fluentlenium/fluentlenium-core/0.8.0/jars/fluentlenium-core.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/org.fluentlenium/fluentlenium-core/docs/fluentlenium-core-0.8.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/org.fluentlenium/fluentlenium-core/srcs/fluentlenium-core-0.8.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="SBT: xml-apis:xml-apis:1.4.01">
+    <CLASSES>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/local/xml-apis/xml-apis/1.4.01/jars/xml-apis.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/xml-apis/xml-apis/docs/xml-apis-1.4.01-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/xml-apis/xml-apis/srcs/xml-apis-1.4.01-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

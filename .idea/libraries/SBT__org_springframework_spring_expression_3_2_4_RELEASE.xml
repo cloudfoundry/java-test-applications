@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="SBT: org.springframework:spring-expression:3.2.4.RELEASE">
+    <CLASSES>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/org.springframework/spring-expression/jars/spring-expression-3.2.4.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/org.springframework/spring-expression/docs/spring-expression-3.2.4.RELEASE-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/org.springframework/spring-expression/srcs/spring-expression-3.2.4.RELEASE-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

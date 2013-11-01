@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="SBT: net.java.dev.jna:platform:3.4.0:test">
+    <CLASSES>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/local/net.java.dev.jna/platform/3.4.0/jars/platform.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/net.java.dev.jna/platform/docs/platform-3.4.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/net.java.dev.jna/platform/srcs/platform-3.4.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

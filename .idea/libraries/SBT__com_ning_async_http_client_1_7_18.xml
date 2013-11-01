@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="SBT: com.ning:async-http-client:1.7.18">
+    <CLASSES>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/local/com.ning/async-http-client/1.7.18/jars/async-http-client.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/com.ning/async-http-client/docs/async-http-client-1.7.18-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/com.ning/async-http-client/srcs/async-http-client-1.7.18-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

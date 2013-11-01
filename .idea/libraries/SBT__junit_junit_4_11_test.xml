@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="SBT: junit:junit:4.11:test">
+    <CLASSES>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/local/junit/junit/4.11/jars/junit.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/junit/junit/docs/junit-4.11-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/junit/junit/srcs/junit-4.11-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

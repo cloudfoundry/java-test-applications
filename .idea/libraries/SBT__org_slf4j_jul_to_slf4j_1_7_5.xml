@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="SBT: org.slf4j:jul-to-slf4j:1.7.5">
+    <CLASSES>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/local/org.slf4j/jul-to-slf4j/1.7.5/jars/jul-to-slf4j.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/org.slf4j/jul-to-slf4j/docs/jul-to-slf4j-1.7.5-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/org.slf4j/jul-to-slf4j/srcs/jul-to-slf4j-1.7.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

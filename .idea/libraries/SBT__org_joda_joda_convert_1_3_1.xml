@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="SBT: org.joda:joda-convert:1.3.1">
+    <CLASSES>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/local/org.joda/joda-convert/1.3.1/jars/joda-convert.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/org.joda/joda-convert/docs/joda-convert-1.3.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/org.joda/joda-convert/srcs/joda-convert-1.3.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

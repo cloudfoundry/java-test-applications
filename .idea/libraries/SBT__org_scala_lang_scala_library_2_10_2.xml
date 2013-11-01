@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="SBT: org.scala-lang:scala-library:2.10.2">
+    <CLASSES>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/local/org.scala-lang/scala-library/2.10.2/jars/scala-library.jar!/" />
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/framework/sbt/boot/scala-2.10.2/lib/scala-library.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/org.scala-lang/scala-library/docs/scala-library-2.10.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/org.scala-lang/scala-library/srcs/scala-library-2.10.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
