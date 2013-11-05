@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/play-application/play-application.iml" filepath="$PROJECT_DIR$/play-application/play-application.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-boot-cli-application/spring-boot-cli-application.iml" filepath="$PROJECT_DIR$/spring-boot-cli-application/spring-boot-cli-application.iml" />
       <module fileurl="file://$PROJECT_DIR$/web-application/web-application.iml" filepath="$PROJECT_DIR$/web-application/web-application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web-application-servlet-2/web-application-servlet-2.iml" filepath="$PROJECT_DIR$/web-application-servlet-2/web-application-servlet-2.iml" />
     </modules>
   </component>
 </project>
