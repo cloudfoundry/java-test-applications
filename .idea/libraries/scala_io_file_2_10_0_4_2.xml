@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="scala-io-file_2.10-0.4.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/com.github.scala-incubator.io/scala-io-file_2.10/0.4.2/jar/dab42c441077e275d18d9b8a48e23808e6879d4a/scala-io-file_2.10-0.4.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/com.github.scala-incubator.io/scala-io-file_2.10/0.4.2/source/ad50c83a465ebe1ab6b43d33785a7d583b5efeaa/scala-io-file_2.10-0.4.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

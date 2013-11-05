@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="SBT: com.gopivotal.cloudfoundry.test:core:1.0.0.BUILD-SNAPSHOT">
-    <CLASSES>
-      <root url="jar:///usr/local/Cellar/play/2.2.0/libexec/repository/cache/com.gopivotal.cloudfoundry.test/core/jars/core-1.0.0.BUILD-SNAPSHOT.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
