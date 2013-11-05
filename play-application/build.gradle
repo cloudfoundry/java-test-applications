@@ -1,8 +1,25 @@
-apply plugin: 'base'
+apply plugin: 'java'
 
-buildDir = 'target'
+sourceCompatibility = 1.7
 
-task build(type:Exec, dependsOn: ':core:install') {
+repositories {
+    maven {
+        name 'Typesafe'
+        url 'http://repo.typesafe.com/typesafe/repo'
+    }
+}
+
+ext {
+    springVersion  = '4.0.0.RC1'
+}
+
+dependencies {
+    compile         "org.springframework:spring-context:$springVersion"
+    compile         "com.typesafe.play:play_2.10:2.2.0"
+    compile         project(':core')
+}
+
+task build(overwrite:true, type:Exec, dependsOn: ':core:install') {
     inputs.files fileTree(dir: '.', excludes: ['.classpath', '.properties', '.settings', 'project/target', 'project/project/target', 'target'])
     outputs.dir 'target'
     commandLine 'play', 'dist'
