@@ -6,7 +6,6 @@ ext {
     jacksonVersion = '2.2.2'
     logbackVersion = '1.0.13'
     servletVersion = '3.1.0'
-    slf4jVersion   = '1.7.5'
     springVersion  = '4.0.0.RC1'
 }
 
@@ -26,4 +25,8 @@ dependencies {
 
 configurations {
     all*.exclude group: 'commons-logging', module: 'commons-logging'
+}
+
+war {
+    webXml = file('src/main/webapp/WEB-INF/web.xml')
 }
