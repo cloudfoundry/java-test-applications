@@ -8,23 +8,23 @@ A collection of applications used for testing the Java buildpack.
 | ---- | ------ | -----------
 `grails-application` | HTTP Response | A Grails application created by issuing `grails create-app`
 `groovy-application` | `System.out` | An application started with `groovy`. _Since this application does not service web requests, you can select `none` for its subdomain and domain when you deploy it to Cloud Foundry._
-`java-application` | `System.out` | An application started with `java -jar`. _Since this application does not service web requests, you can select `none` for its subdomain and domain when you deploy it to Cloud Foundry._
-`java-application-with-web-inf` | `System.out` | An application started with `java -jar`. _Since this application does not service web requests, you can select `none` for its subdomain and domain when you deploy it to Cloud Foundry._
+`java-main-application` | `System.out` | An application started with `java -jar`. _Since this application does not service web requests, you can select `none` for its subdomain and domain when you deploy it to Cloud Foundry._
+`java-main-with-web-inf-application` | `System.out` | An application started with `java -jar`. _Since this application does not service web requests, you can select `none` for its subdomain and domain when you deploy it to Cloud Foundry._
 `play-application` | HTTP Response | A Play application created by issuing `play new play-application`
-`spring-boot-application` | HTTP Response | A Spring Boot CLI web application
+`spring-boot-cli-application` | HTTP Response | A Spring Boot CLI web application
 `web-application` | HTTP Response | A web application that uses Spring MVC and Servlet 3
+`web-servlet-2-application` | HTTP Response | A web application that uses Spring MVC and Servlet 2
 
 ### Output Content
-All applications output the following content:
+All applications support the following REST operations:
 
-* `java.lang:type=Runtime/ClassPath`
-* `System.getenv()`
-* `java.lang:type=Runtime/InputArguments`
-* `System.getProperties()`
-
-All web application output the following additional content:
-
-* All request headers
+| URI | HTTP request | Description
+| ---- | ------ | -----------
+`/class-path` | GET | A list of JARs on the application classpath
+`/datasource-classname` | GET | The concrete class name of any datasource associated with the application
+`/environment-variables` | GET | A map of environment variable names to values
+`/input-arguments` | GET | A list of JVM input arguments
+`/system-properties` | GET | A map of system property names to values
 
 ## Building
 
