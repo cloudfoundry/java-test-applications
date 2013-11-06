@@ -1,7 +1,7 @@
 ---
 applications:
-- name: web-application-servlet-2
+- name: web-servlet-2-application
   memory: 512M
   instances: 1
-  path: build/libs/web-application-servlet-2-1.0.0.BUILD-SNAPSHOT.war
+  path: build/libs/web-servlet-2-application-1.0.0.BUILD-SNAPSHOT.war
   buildpack: https://github.com/cloudfoundry/java-buildpack
