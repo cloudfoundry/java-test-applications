@@ -26,7 +26,3 @@ dependencies {
 configurations {
     all*.exclude group: 'commons-logging', module: 'commons-logging'
 }
-
-war {
-    webXml = file('src/main/webapp/WEB-INF/web.xml')
-}
