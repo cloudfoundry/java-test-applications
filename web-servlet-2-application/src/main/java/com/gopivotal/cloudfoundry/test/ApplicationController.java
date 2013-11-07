@@ -34,14 +34,14 @@ final class ApplicationController {
 
     private final RuntimeUtils runtimeUtils;
 
-    private final DataSourceUtils dataSourceUtils;
+    private final DataSourceUtils DataSourceUtils;
 
     private final DataSource datasource;
 
     @Autowired
-    ApplicationController(RuntimeUtils runtimeUtils, DataSourceUtils dataSourceUtils, DataSource datasource) {
+    ApplicationController(RuntimeUtils runtimeUtils, DataSourceUtils DataSourceUtils, DataSource datasource) {
         this.runtimeUtils = runtimeUtils;
-        this.dataSourceUtils = dataSourceUtils;
+        this.DataSourceUtils = DataSourceUtils;
         this.datasource = datasource;
     }
 
@@ -67,7 +67,7 @@ final class ApplicationController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/datasource-classname")
     String datasourceClassName() {
-        return this.dataSourceUtils.getClassName(this.datasource);
+        return this.DataSourceUtils.getClassName(this.datasource);
     }
 
 }
