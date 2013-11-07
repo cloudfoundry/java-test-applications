@@ -20,16 +20,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.sql.DataSource;
-import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Utility class for analysing a datasource.
  */
-public class DatasourceUtils {
+public class DataSourceUtils {
 
-    private final Logger logger = LoggerFactory.getLogger(DatasourceUtils.class);
+    private final Logger logger = LoggerFactory.getLogger(DataSourceUtils.class);
 
     public String getClassName(DataSource datasource) {
         return datasource.getClass().getName();

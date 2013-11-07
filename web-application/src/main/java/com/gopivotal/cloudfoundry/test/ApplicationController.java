@@ -19,7 +19,7 @@ package com.gopivotal.cloudfoundry.test;
 import java.util.List;
 import java.util.Map;
 
-import com.gopivotal.cloudfoundry.test.core.DatasourceUtils;
+import com.gopivotal.cloudfoundry.test.core.DataSourceUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -34,14 +34,14 @@ final class ApplicationController {
 
     private final RuntimeUtils runtimeUtils;
 
-    private final DatasourceUtils datasourceUtils;
+    private final DataSourceUtils dataSourceUtils;
 
     private final DataSource datasource;
 
     @Autowired
-    ApplicationController(RuntimeUtils runtimeUtils, DatasourceUtils datasourceUtils, DataSource datasource) {
+    ApplicationController(RuntimeUtils runtimeUtils, DataSourceUtils dataSourceUtils, DataSource datasource) {
         this.runtimeUtils = runtimeUtils;
-        this.datasourceUtils = datasourceUtils;
+        this.dataSourceUtils = dataSourceUtils;
         this.datasource = datasource;
     }
 
@@ -67,7 +67,7 @@ final class ApplicationController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/datasource-classname")
     String datasourceClassName() {
-        return this.datasourceUtils.getClassName(this.datasource);
+        return this.dataSourceUtils.getClassName(this.datasource);
     }
 
 }
