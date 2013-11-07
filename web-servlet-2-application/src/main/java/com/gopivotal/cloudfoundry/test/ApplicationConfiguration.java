@@ -16,7 +16,7 @@
 
 package com.gopivotal.cloudfoundry.test;
 
-import com.gopivotal.cloudfoundry.test.core.DatasourceUtils;
+import com.gopivotal.cloudfoundry.test.core.DataSourceUtils;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -50,8 +50,8 @@ class ApplicationConfiguration {
     }
 
     @Bean
-    DatasourceUtils jdbcUtils() {
-        return new DatasourceUtils();
+    DataSourceUtils jdbcUtils() {
+        return new DataSourceUtils();
     }
 
     @Bean
