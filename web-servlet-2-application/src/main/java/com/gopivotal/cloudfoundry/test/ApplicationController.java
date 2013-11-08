@@ -16,33 +16,41 @@
 
 package com.gopivotal.cloudfoundry.test;
 
-import java.util.List;
-import java.util.Map;
-
 import com.gopivotal.cloudfoundry.test.core.DataSourceUtils;
+import com.gopivotal.cloudfoundry.test.core.HealthUtils;
+import com.gopivotal.cloudfoundry.test.core.RuntimeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.gopivotal.cloudfoundry.test.core.RuntimeUtils;
-
 import javax.sql.DataSource;
+import java.util.List;
+import java.util.Map;
 
 @RestController
 final class ApplicationController {
 
-    private final RuntimeUtils runtimeUtils;
-
-    private final DataSourceUtils DataSourceUtils;
-
     private final DataSource datasource;
 
+    private final DataSourceUtils dataSourceUtils;
+
+    private final HealthUtils healthUtils;
+
+    private final RuntimeUtils runtimeUtils;
+
     @Autowired
-    ApplicationController(RuntimeUtils runtimeUtils, DataSourceUtils DataSourceUtils, DataSource datasource) {
-        this.runtimeUtils = runtimeUtils;
-        this.DataSourceUtils = DataSourceUtils;
+    ApplicationController(DataSource datasource, DataSourceUtils dataSourceUtils, HealthUtils healthUtils,
+                          RuntimeUtils runtimeUtils) {
         this.datasource = datasource;
+        this.dataSourceUtils = dataSourceUtils;
+        this.healthUtils = healthUtils;
+        this.runtimeUtils = runtimeUtils;
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "")
+    String health() {
+        return this.healthUtils.health();
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/class-path")
@@ -67,7 +75,7 @@ final class ApplicationController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/datasource-classname")
     String datasourceClassName() {
-        return this.DataSourceUtils.getClassName(this.datasource);
+        return this.dataSourceUtils.getClassName(this.datasource);
     }
 
 }

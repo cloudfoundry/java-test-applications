@@ -14,33 +14,18 @@
  * limitations under the License.
  */
 
-package com.gopivotal.cloudfoundry.test
+package com.gopivotal.cloudfoundry.test.core;
 
-import grails.converters.JSON
+import org.junit.Test;
 
-class ApplicationController {
+import static org.junit.Assert.assertEquals;
 
-    def healthUtils
+public final class HealthUtilsTest {
 
-    def runtimeUtils
+    private final HealthUtils healthUtils = new HealthUtils();
 
-    def health() {
-        render this.healthUtils.health()
-    }
-
-    def classPath() {
-        render this.runtimeUtils.classPath() as JSON
-    }
-
-    def environmentVariables() {
-        render this.runtimeUtils.environmentVariables() as JSON
-    }
-
-    def inputArguments() {
-        render this.runtimeUtils.inputArguments() as JSON
-    }
-
-    def systemProperties() {
-        render this.runtimeUtils.systemProperties() as JSON
+    @Test
+    public void health() throws Exception {
+        assertEquals("ok", this.healthUtils.health());
     }
 }

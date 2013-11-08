@@ -16,6 +16,7 @@
 
 package com.gopivotal.cloudfoundry.test;
 
+import com.gopivotal.cloudfoundry.test.core.HealthUtils;
 import com.gopivotal.cloudfoundry.test.core.MemoryUtils;
 import com.gopivotal.cloudfoundry.test.core.RuntimeUtils;
 import org.springframework.context.annotation.Bean;
@@ -25,6 +26,11 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ComponentScan
 public class ApplicationConfiguration {
+
+    @Bean
+    HealthUtils healthUtils() {
+        return new HealthUtils();
+    }
 
     @Bean
     MemoryUtils memoryUtils() {
