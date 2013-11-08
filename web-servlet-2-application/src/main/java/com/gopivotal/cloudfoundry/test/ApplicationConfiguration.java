@@ -69,4 +69,5 @@ class ApplicationConfiguration {
     RuntimeUtils runtimeUtils() {
         return new RuntimeUtils();
     }
+
 }

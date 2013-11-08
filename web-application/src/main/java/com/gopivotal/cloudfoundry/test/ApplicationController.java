@@ -40,8 +40,8 @@ final class ApplicationController {
     private final RuntimeUtils runtimeUtils;
 
     @Autowired
-    ApplicationController(RuntimeUtils runtimeUtils, DataSourceUtils dataSourceUtils, DataSource datasource,
-                          HealthUtils healthUtils) {
+    ApplicationController(DataSource datasource, DataSourceUtils dataSourceUtils,
+                          HealthUtils healthUtils, RuntimeUtils runtimeUtils) {
         this.datasource = datasource;
         this.dataSourceUtils = dataSourceUtils;
         this.runtimeUtils = runtimeUtils;

@@ -19,9 +19,12 @@ import org.springframework.boot.SpringApplication
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.ComponentScan
 
+import com.gopivotal.cloudfoundry.test.core.DataSourceUtils
 import com.gopivotal.cloudfoundry.test.core.InitializationUtils
 import com.gopivotal.cloudfoundry.test.core.MemoryUtils
 import com.gopivotal.cloudfoundry.test.core.RuntimeUtils
+
+import java.beans.beancontext.BeanContext
 
 
 @ComponentScan
@@ -31,6 +34,11 @@ class ApplicationConfiguration {
     public static void main(String[] args) {
         new InitializationUtils().fail()
         SpringApplication.run(ApplicationConfiguration.class, args)
+    }
+
+    @Bean
+    def dataSourceUtils() {
+        return new DataSourceUtils()
     }
 
     @Bean

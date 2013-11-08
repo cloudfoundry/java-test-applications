@@ -6,8 +6,8 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/org.springframework.boot/spring-boot/0.5.0.BUILD-SNAPSHOT/source/5b2ffd44746d1fcc8f0e8bc994d66a8ea092f64d/spring-boot-0.5.0.BUILD-SNAPSHOT-sources.jar!/" />
       <root url="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/org.springframework.boot/spring-boot/0.5.0.BUILD-SNAPSHOT/source/f599d08fe6ff9ab16e610d9d406053207b305b2a/spring-boot-0.5.0.BUILD-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/org.springframework.boot/spring-boot/0.5.0.BUILD-SNAPSHOT/source/2ccf060e03365485c2bae863291e4d06c8425e95/spring-boot-0.5.0.BUILD-SNAPSHOT-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
