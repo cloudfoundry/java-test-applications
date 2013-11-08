@@ -16,14 +16,22 @@
 
 package com.gopivotal.cloudfoundry.test.core;
 
+import org.junit.Test;
+
 import javax.sql.DataSource;
 
-/**
- * Utility class for analysing a datasource.
- */
-public final class DataSourceUtils {
+import static org.mockito.Mockito.mock;
+import static org.junit.Assert.assertEquals;
 
-    public String getClassName(DataSource datasource) {
-        return datasource.getClass().getName();
+public final class DataSourceUtilsTest {
+
+    private final DataSourceUtils dataSourceUtils = new DataSourceUtils();
+
+    private final DataSource testDataSource = mock(DataSource.class);
+
+    @Test
+    public void className() {
+        assertEquals(testDataSource.getClass().getName(), this.dataSourceUtils.getClassName(testDataSource));
     }
+
 }

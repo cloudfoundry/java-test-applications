@@ -25,7 +25,7 @@ import java.util.Map;
 /**
  * Utility methods used to get information about the current runtime
  */
-public class RuntimeUtils {
+public final class RuntimeUtils {
 
     private final Map<String, String> environment;
 

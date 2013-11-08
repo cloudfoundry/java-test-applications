@@ -25,7 +25,7 @@ import java.util.concurrent.Executors;
 /**
  * Utility methods used during memory tests
  */
-public class MemoryUtils {
+public final class MemoryUtils {
 
     private final ExecutorService executor = Executors.newFixedThreadPool(1);
 
