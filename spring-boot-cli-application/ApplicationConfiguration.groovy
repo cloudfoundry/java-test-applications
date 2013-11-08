@@ -14,17 +14,21 @@
  * limitations under the License.
  */
 
+
 import com.gopivotal.cloudfoundry.test.core.DataSourceUtils
-import com.gopivotal.cloudfoundry.test.core.InitializationUtils
 import com.gopivotal.cloudfoundry.test.core.MemoryUtils
 import com.gopivotal.cloudfoundry.test.core.RuntimeUtils
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration
+import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.ComponentScan
 
 @ComponentScan
 @EnableAutoConfiguration
 @Grab('com.gopivotal.cloudfoundry.test:core:1.0.0.BUILD-SNAPSHOT')
-@Grab('com.h2database:h2:1.3.174')
-@Grab('mysql:mysql-connector-java:5.0.5')
-@Grab('org.springframework.boot:spring-boot-starter-jdbc:0.5.0.BUILD-SNAPSHOT')
+@Grab('h2')
+@Grab('mysql-connector-java')
+@Grab('spring-boot-starter-jdbc')
+@Grab('spring-boot-starter-web')
 class ApplicationConfiguration {
 
     @Bean

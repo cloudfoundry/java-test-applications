@@ -4,11 +4,11 @@ jdk:
   - oraclejdk7
 env:
   global:
-    - "PATH=/tmp/spring-0.5.0.M5/bin:/tmp/play-2.2.0:$PATH"
+    - "PATH=/tmp/spring-0.5.0.M6/bin:/tmp/play-2.2.1:$PATH"
 before_install:
-  - "wget http://downloads.typesafe.com/play/2.2.0/play-2.2.0.zip -qO /tmp/play.zip"
+  - "wget http://downloads.typesafe.com/play/2.2.1/play-2.2.1.zip -qO /tmp/play.zip"
   - "unzip -qd /tmp /tmp/play.zip"
-  - "curl https://repo.spring.io/milestone/org/springframework/boot/spring-boot-cli/0.5.0.M5/spring-boot-cli-0.5.0.M5-bin.tar.gz -s | tar xzf - -C /tmp"
+  - "curl https://repo.spring.io/milestone/org/springframework/boot/spring-boot-cli/0.5.0.M6/spring-boot-cli-0.5.0.M6-bin.tar.gz -s | tar xzf - -C /tmp"
 install: TERM=dumb ./gradlew assemble
 script: TERM=dumb ./gradlew
 notifications:

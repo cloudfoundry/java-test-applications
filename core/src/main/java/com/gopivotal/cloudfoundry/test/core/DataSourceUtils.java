@@ -19,7 +19,7 @@ package com.gopivotal.cloudfoundry.test.core;
 import javax.sql.DataSource;
 
 /**
- * Utility class for analysing a datasource.
+ * Utility class for analysing a {@link DataSource}.
  */
 public final class DataSourceUtils {
 

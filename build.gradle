@@ -20,7 +20,7 @@ allprojects {
         mockitoVersion = '1.9.5'
         mySqlVersion = '5.0.5'
         slf4jVersion   = '1.7.5'
-        springBootVersion = '0.5.0.BUILD-SNAPSHOT'
+        springBootVersion = '0.5.0.M6'
     }
 
     repositories {

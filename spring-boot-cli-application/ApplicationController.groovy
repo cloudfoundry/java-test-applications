@@ -15,7 +15,12 @@
  */
 
 import com.gopivotal.cloudfoundry.test.core.DataSourceUtils
+import com.gopivotal.cloudfoundry.test.core.HealthUtils
 import com.gopivotal.cloudfoundry.test.core.RuntimeUtils
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RequestMethod
+import org.springframework.web.bind.annotation.RestController
 
 import javax.sql.DataSource
 
@@ -26,13 +31,21 @@ class ApplicationController {
 
     def dataSourceUtils
 
+    def healthUtils
+
     def runtimeUtils
 
     @Autowired
-    ApplicationController(DataSource dataSource, DataSourceUtils dataSourceUtils, RuntimeUtils runtimeUtils) {
+    ApplicationController(DataSource dataSource, DataSourceUtils dataSourceUtils,  HealthUtils healthUtils, RuntimeUtils runtimeUtils) {
         this.dataSource = dataSource
         this.dataSourceUtils = dataSourceUtils
+        this.healthUtils = healthUtils
         this.runtimeUtils = runtimeUtils
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/")
+    def health() {
+        return this.healthUtils.health()
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/class-path")

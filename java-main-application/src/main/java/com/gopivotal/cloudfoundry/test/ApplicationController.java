@@ -16,8 +16,8 @@
 
 package com.gopivotal.cloudfoundry.test;
 
-import com.gopivotal.cloudfoundry.test.core.HealthUtils;
 import com.gopivotal.cloudfoundry.test.core.DataSourceUtils;
+import com.gopivotal.cloudfoundry.test.core.HealthUtils;
 import com.gopivotal.cloudfoundry.test.core.RuntimeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

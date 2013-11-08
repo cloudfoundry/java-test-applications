@@ -14,35 +14,31 @@
  * limitations under the License.
  */
 
+
+import com.gopivotal.cloudfoundry.test.core.DataSourceUtils
+import com.gopivotal.cloudfoundry.test.core.HealthUtils
+import com.gopivotal.cloudfoundry.test.core.MemoryUtils
+import com.gopivotal.cloudfoundry.test.core.RuntimeUtils
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
-import org.springframework.boot.SpringApplication
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.ComponentScan
 
-import com.gopivotal.cloudfoundry.test.core.DataSourceUtils
-import com.gopivotal.cloudfoundry.test.core.InitializationUtils
-import com.gopivotal.cloudfoundry.test.core.MemoryUtils
-import com.gopivotal.cloudfoundry.test.core.RuntimeUtils
-
-import java.beans.beancontext.BeanContext
-
-
 @ComponentScan
 @EnableAutoConfiguration
-class ApplicationConfiguration {
-
-    public static void main(String[] args) {
-        new InitializationUtils().fail()
-        SpringApplication.run(ApplicationConfiguration.class, args)
-    }
+public class ApplicationConfiguration {
 
     @Bean
-    def dataSourceUtils() {
+    static DataSourceUtils dataSourceUtils() {
         return new DataSourceUtils()
     }
 
     @Bean
-    def memoryUtils() {
+    static HealthUtils healthUtils() {
+        return new HealthUtils();
+    }
+
+    @Bean
+    static MemoryUtils memoryUtils() {
         def memory = new MemoryUtils()
         memory.outOfMemory()
 
@@ -50,7 +46,7 @@ class ApplicationConfiguration {
     }
 
     @Bean
-    def runtimeUtils() {
+    static RuntimeUtils runtimeUtils() {
         return new RuntimeUtils()
     }
 }
