@@ -14,33 +14,17 @@
  * limitations under the License.
  */
 
-package com.gopivotal.cloudfoundry.test
+package com.gopivotal.cloudfoundry.test.core;
 
-import grails.converters.JSON
+/**
+ * Utility methods for determining the health of an application
+ */
+public final class HealthUtils {
 
-class ApplicationController {
+    private static final String HEALTH = "ok";
 
-    def healthUtils
-
-    def runtimeUtils
-
-    def health() {
-        render this.healthUtils.health()
+    public String health() {
+        return HEALTH;
     }
 
-    def classPath() {
-        render this.runtimeUtils.classPath() as JSON
-    }
-
-    def environmentVariables() {
-        render this.runtimeUtils.environmentVariables() as JSON
-    }
-
-    def inputArguments() {
-        render this.runtimeUtils.inputArguments() as JSON
-    }
-
-    def systemProperties() {
-        render this.runtimeUtils.systemProperties() as JSON
-    }
 }

@@ -16,6 +16,7 @@
 
 package com.gopivotal.cloudfoundry.test;
 
+import com.gopivotal.cloudfoundry.test.core.HealthUtils;
 import com.gopivotal.cloudfoundry.test.core.RuntimeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,11 +29,19 @@ import java.util.Map;
 @RestController
 final class ApplicationController {
 
+    private final HealthUtils healthUtils;
+
     private final RuntimeUtils runtimeUtils;
 
     @Autowired
-    ApplicationController(RuntimeUtils runtimeUtils) {
+    ApplicationController(HealthUtils healthUtils, RuntimeUtils runtimeUtils) {
+        this.healthUtils = healthUtils;
         this.runtimeUtils = runtimeUtils;
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "")
+    String health() {
+        return this.healthUtils.health();
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/class-path")

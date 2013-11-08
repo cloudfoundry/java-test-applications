@@ -19,7 +19,8 @@ A collection of applications used for testing the Java buildpack.
 All applications support the following REST operations:
 
 | URI | HTTP request | Description
-| ---- | ------ | -----------
+| --- | ------------ | -----------
+`/` | GET | The health of the application
 `/class-path` | GET | A list of JARs on the application classpath
 `/datasource-classname` | GET | The concrete class name of any datasource associated with the application
 `/environment-variables` | GET | A map of environment variable names to values
@@ -42,8 +43,7 @@ Each test application contains a `manifest.yml` file which allows the built appl
 cf push
 ```
 
-To avoid clashing with the URLs of other applications, you should specify your own subdomain for the application (unless the test application
-does not need a subdomain).
+To avoid clashing with the URLs of other applications, you should specify your own subdomain for the application (unless the test application does not need a subdomain).
 
 ## Failure Testing
 

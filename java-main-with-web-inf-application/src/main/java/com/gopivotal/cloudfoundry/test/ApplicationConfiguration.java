@@ -16,6 +16,7 @@
 
 package com.gopivotal.cloudfoundry.test;
 
+import com.gopivotal.cloudfoundry.test.core.HealthUtils;
 import com.gopivotal.cloudfoundry.test.core.InitializationUtils;
 import com.gopivotal.cloudfoundry.test.core.MemoryUtils;
 import com.gopivotal.cloudfoundry.test.core.RuntimeUtils;
@@ -31,6 +32,11 @@ public class ApplicationConfiguration {
     public static void main(String[] args) {
         new InitializationUtils().fail();
         SpringApplication.run(ApplicationConfiguration.class, args);
+    }
+
+    @Bean
+    HealthUtils healthUtils() {
+        return new HealthUtils();
     }
 
     @Bean

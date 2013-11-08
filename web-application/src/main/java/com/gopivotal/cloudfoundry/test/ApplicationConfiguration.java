@@ -17,6 +17,9 @@
 package com.gopivotal.cloudfoundry.test;
 
 import com.gopivotal.cloudfoundry.test.core.DataSourceUtils;
+import com.gopivotal.cloudfoundry.test.core.HealthUtils;
+import com.gopivotal.cloudfoundry.test.core.MemoryUtils;
+import com.gopivotal.cloudfoundry.test.core.RuntimeUtils;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -26,15 +29,33 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
-import com.gopivotal.cloudfoundry.test.core.MemoryUtils;
-import com.gopivotal.cloudfoundry.test.core.RuntimeUtils;
-
 import javax.sql.DataSource;
 
 @Configuration
 @ComponentScan
 @EnableWebMvc
 class ApplicationConfiguration {
+
+    @Bean
+    DataSource dataSource() {
+        EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
+        return builder.setType(EmbeddedDatabaseType.H2).build();
+    }
+
+    @Bean
+    DataSourceUtils dataSourceUtils() {
+        return new DataSourceUtils();
+    }
+
+    @Bean
+    HealthUtils healthUtils() {
+        return new HealthUtils();
+    }
+
+    @Bean
+    JdbcOperations jdbcOperations(DataSource dataSource) {
+        return new JdbcTemplate(dataSource);
+    }
 
     @Bean
     MemoryUtils memoryUtils() {
@@ -47,21 +68,5 @@ class ApplicationConfiguration {
     @Bean
     RuntimeUtils runtimeUtils() {
         return new RuntimeUtils();
-    }
-
-    @Bean
-    DataSourceUtils jdbcUtils() {
-        return new DataSourceUtils();
-    }
-
-    @Bean
-    JdbcOperations jdbcOperations(DataSource dataSource) {
-        return new JdbcTemplate(dataSource);
-    }
-
-    @Bean
-    DataSource dataSource() {
-        EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
-        return builder.setType(EmbeddedDatabaseType.H2).build();
     }
 }

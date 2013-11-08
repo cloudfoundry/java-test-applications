@@ -7,3 +7,8 @@ task build(type:Exec, dependsOn: ':core:install') {
     outputs.dir 'target'
     commandLine './grailsw', '-non-interactive', '-plain-output', 'war'
 }
+
+task clean(overwrite:true, type:Exec) {
+    commandLine './grailsw', '-non-interactive', '-plain-output', 'clean'
+}
+

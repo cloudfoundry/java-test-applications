@@ -29,11 +29,11 @@ public class ApplicationGlobal extends GlobalSettings {
     @Override
     public void onStart(Application application) {
         new InitializationUtils().fail();
-        applicationContext = new AnnotationConfigApplicationContext(ApplicationConfiguration.class);
+        this.applicationContext = new AnnotationConfigApplicationContext(ApplicationConfiguration.class);
     }
 
     @Override
     public <A> A getControllerInstance(Class<A> clazz) {
-        return applicationContext.getBean(clazz);
+        return this.applicationContext.getBean(clazz);
     }
 }

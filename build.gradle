@@ -34,6 +34,8 @@ allprojects {
         }
         mavenCentral()
     }
+
+    defaultTasks 'build'
 }
 
 // Root Project Configuration
@@ -53,5 +55,3 @@ buildscript {
 task wrapper(type: Wrapper) {
     gradleVersion = '1.8'
 }
-
-defaultTasks 'build'

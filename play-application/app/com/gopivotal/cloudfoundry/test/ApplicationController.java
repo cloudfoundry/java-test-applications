@@ -16,6 +16,7 @@
 
 package com.gopivotal.cloudfoundry.test;
 
+import com.gopivotal.cloudfoundry.test.core.HealthUtils;
 import com.gopivotal.cloudfoundry.test.core.RuntimeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import play.libs.Json;
@@ -25,11 +26,18 @@ import play.mvc.Result;
 @org.springframework.stereotype.Controller
 public final class ApplicationController {
 
+    private final HealthUtils healthUtils;
+
     private final RuntimeUtils runtimeUtils;
 
     @Autowired
-    ApplicationController(RuntimeUtils runtimeUtils) {
+    ApplicationController(HealthUtils healthUtils, RuntimeUtils runtimeUtils) {
+        this.healthUtils = healthUtils;
         this.runtimeUtils = runtimeUtils;
+    }
+
+    public Result health() {
+        return Controller.ok(this.healthUtils.health());
     }
 
     public Result classPath() {

@@ -14,8 +14,6 @@ ext {
     springVersion  = '4.0.0.RC1'
 }
 
-buildDir 'target'
-
 idea {
     module {
         sourceDirs = [file('app')]
@@ -34,4 +32,8 @@ task build(overwrite:true, type:Exec, dependsOn: ':core:install') {
     inputs.files fileTree(dir: '.', excludes: ['.classpath', '.properties', '.settings', 'project/target', 'project/project/target', 'target'])
     outputs.dir 'target'
     commandLine 'play', 'dist'
+}
+
+task clean(overwrite:true, type:Exec) {
+    commandLine 'play', 'clean'
 }
