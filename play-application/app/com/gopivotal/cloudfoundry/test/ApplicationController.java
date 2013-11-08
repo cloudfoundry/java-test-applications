@@ -17,21 +17,31 @@
 package com.gopivotal.cloudfoundry.test;
 
 import com.gopivotal.cloudfoundry.test.core.HealthUtils;
+import com.gopivotal.cloudfoundry.test.core.DataSourceUtils;
 import com.gopivotal.cloudfoundry.test.core.RuntimeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
 
+import javax.sql.DataSource;
+
 @org.springframework.stereotype.Controller
 public final class ApplicationController {
 
     private final HealthUtils healthUtils;
 
+    private final DataSource datasource;
+
+    private final DataSourceUtils dataSourceUtils;
+
     private final RuntimeUtils runtimeUtils;
 
     @Autowired
-    ApplicationController(HealthUtils healthUtils, RuntimeUtils runtimeUtils) {
+    ApplicationController(DataSource datasource, DataSourceUtils dataSourceUtils,
+                          HealthUtils healthUtils, RuntimeUtils runtimeUtils) {
+        this.datasource = datasource;
+        this.dataSourceUtils = dataSourceUtils;
         this.healthUtils = healthUtils;
         this.runtimeUtils = runtimeUtils;
     }
@@ -41,19 +51,27 @@ public final class ApplicationController {
     }
 
     public Result classPath() {
-        return Controller.ok(Json.toJson(this.runtimeUtils.classPath()));
+        return toResult(this.runtimeUtils.classPath());
+    }
+
+    public Result dataSourceClassName() {
+        return toResult(this.dataSourceUtils.getClassName(this.datasource));
     }
 
     public Result environmentVariables() {
-        return Controller.ok(Json.toJson(this.runtimeUtils.environmentVariables()));
+        return toResult(this.runtimeUtils.environmentVariables());
     }
 
     public Result inputArguments() {
-        return Controller.ok(Json.toJson(this.runtimeUtils.inputArguments()));
+        return toResult(this.runtimeUtils.inputArguments());
     }
 
     public Result systemProperties() {
-        return Controller.ok(Json.toJson(this.runtimeUtils.systemProperties()));
+        return toResult(this.runtimeUtils.systemProperties());
+    }
+
+    private static <V> Result toResult(V value) {
+        return Controller.ok(Json.toJson(value));
     }
 
 }

@@ -17,12 +17,14 @@
 package com.gopivotal.cloudfoundry.test;
 
 import com.gopivotal.cloudfoundry.test.core.HealthUtils;
+import com.gopivotal.cloudfoundry.test.core.DataSourceUtils;
 import com.gopivotal.cloudfoundry.test.core.RuntimeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.sql.DataSource;
 import java.util.List;
 import java.util.Map;
 
@@ -31,12 +33,19 @@ final class ApplicationController {
 
     private final HealthUtils healthUtils;
 
+    private final DataSource datasource;
+
+    private final DataSourceUtils dataSourceUtils;
+
     private final RuntimeUtils runtimeUtils;
 
     @Autowired
-    ApplicationController(HealthUtils healthUtils, RuntimeUtils runtimeUtils) {
-        this.healthUtils = healthUtils;
+    ApplicationController(DataSource dataSource, DataSourceUtils dataSourceUtils, HealthUtils healthUtils,
+                          RuntimeUtils runtimeUtils) {
+        this.datasource = dataSource;
+        this.dataSourceUtils = dataSourceUtils;
         this.runtimeUtils = runtimeUtils;
+        this.healthUtils = healthUtils;
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/")
@@ -47,6 +56,11 @@ final class ApplicationController {
     @RequestMapping(method = RequestMethod.GET, value = "/class-path")
     List<String> classPath() {
         return this.runtimeUtils.classPath();
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/datasource-classname")
+    String dataSourceClassName() {
+        return this.dataSourceUtils.getClassName(this.datasource);
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/environment-variables")

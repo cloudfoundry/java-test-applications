@@ -17,6 +17,7 @@
 package com.gopivotal.cloudfoundry.test;
 
 import com.gopivotal.cloudfoundry.test.core.HealthUtils;
+import com.gopivotal.cloudfoundry.test.core.DataSourceUtils;
 import com.gopivotal.cloudfoundry.test.core.InitializationUtils;
 import com.gopivotal.cloudfoundry.test.core.MemoryUtils;
 import com.gopivotal.cloudfoundry.test.core.RuntimeUtils;
@@ -24,6 +25,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
+
+import javax.sql.DataSource;
 
 @ComponentScan
 @EnableAutoConfiguration
@@ -32,6 +37,17 @@ public class ApplicationConfiguration {
     public static void main(String[] args) {
         new InitializationUtils().fail();
         SpringApplication.run(ApplicationConfiguration.class, args);
+    }
+
+    @Bean
+    DataSource dataSource() {
+        EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
+        return builder.setType(EmbeddedDatabaseType.H2).build();
+    }
+
+    @Bean
+    DataSourceUtils dataSourceUtils() {
+        return new DataSourceUtils();
     }
 
     @Bean
@@ -51,4 +67,5 @@ public class ApplicationConfiguration {
     RuntimeUtils runtimeUtils() {
         return new RuntimeUtils();
     }
+
 }

@@ -22,6 +22,10 @@ class ApplicationController {
 
     def healthUtils
 
+    def dataSource
+
+    def dataSourceUtils
+
     def runtimeUtils
 
     def health() {
@@ -30,6 +34,10 @@ class ApplicationController {
 
     def classPath() {
         render this.runtimeUtils.classPath() as JSON
+    }
+
+   def dataSourceClassName() {
+        render this.dataSourceUtils.getClassName(this.dataSource)
     }
 
     def environmentVariables() {

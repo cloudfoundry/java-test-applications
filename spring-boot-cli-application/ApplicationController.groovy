@@ -14,21 +14,35 @@
  * limitations under the License.
  */
 
+import com.gopivotal.cloudfoundry.test.core.DataSourceUtils
 import com.gopivotal.cloudfoundry.test.core.RuntimeUtils
+
+import javax.sql.DataSource
 
 @RestController
 class ApplicationController {
 
+    def dataSource
+
+    def dataSourceUtils
+
     def runtimeUtils
 
     @Autowired
-    ApplicationController(RuntimeUtils runtimeUtils) {
+    ApplicationController(DataSource dataSource, DataSourceUtils dataSourceUtils, RuntimeUtils runtimeUtils) {
+        this.dataSource = dataSource
+        this.dataSourceUtils = dataSourceUtils
         this.runtimeUtils = runtimeUtils
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/class-path")
     List<String> classPath() {
         return this.runtimeUtils.classPath()
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/datasource-classname")
+    String dataSourceClassName() {
+        return this.dataSourceUtils.getClassName(this.dataSource)
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/environment-variables")

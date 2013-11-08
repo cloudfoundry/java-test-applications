@@ -19,21 +19,33 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.gopivotal.cloudfoundry.test.core.DataSourceUtils
 import com.gopivotal.cloudfoundry.test.core.RuntimeUtils
 
 @RestController
 class ApplicationController {
 
+    def dataSource
+
+    def dataSourceUtils
+
     def runtimeUtils
 
     @Autowired
-    ApplicationController(RuntimeUtils runtimeUtils) {
+    ApplicationController(DataSource dataSource, DataSoourceUtils dataSourceUtils, RuntimeUtils runtimeUtils) {
+        this.dataSource = dataSource
+        this.dataSourceUtils = dataSourceUtils
         this.runtimeUtils = runtimeUtils
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/class-path")
     def classPath() {
         return this.runtimeUtils.classPath()
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/datasource-classname")
+    def dataSourceClassName() {
+        return this.dataSourceUtils.getClassName(this.datasource)
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/environment-variables")

@@ -12,6 +12,7 @@ repositories {
 
 ext {
     springVersion  = '4.0.0.RC1'
+    playVersion = '2.2.0'
 }
 
 idea {
@@ -23,8 +24,8 @@ idea {
 }
 
 dependencies {
+    compile         "com.typesafe.play:play_2.10:$playVersion"
     compile         "org.springframework:spring-context:$springVersion"
-    compile         "com.typesafe.play:play_2.10:2.2.0"
     compile         project(':core')
 }
 

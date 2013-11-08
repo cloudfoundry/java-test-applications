@@ -6,8 +6,8 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/org.springframework.boot/spring-boot-autoconfigure/0.5.0.BUILD-SNAPSHOT/source/15001b605ba21d849408c4d60077985fb816ab29/spring-boot-autoconfigure-0.5.0.BUILD-SNAPSHOT-sources.jar!/" />
       <root url="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/org.springframework.boot/spring-boot-autoconfigure/0.5.0.BUILD-SNAPSHOT/source/aa7ae1d20fc3b2250607c545fb8a2a8e9c1422ff/spring-boot-autoconfigure-0.5.0.BUILD-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/org.springframework.boot/spring-boot-autoconfigure/0.5.0.BUILD-SNAPSHOT/source/1338f2c35908d1e0c3bbe033684184c033ec8b63/spring-boot-autoconfigure-0.5.0.BUILD-SNAPSHOT-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
