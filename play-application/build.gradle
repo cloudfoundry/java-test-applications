@@ -12,7 +12,7 @@ repositories {
 
 ext {
     springVersion  = '4.0.0.RC1'
-    playVersion = '2.2.0'
+    playVersion = '2.2.1'
 }
 
 idea {
@@ -24,9 +24,10 @@ idea {
 }
 
 dependencies {
-    compile         "com.typesafe.play:play_2.10:$playVersion"
-    compile         "org.springframework:spring-context:$springVersion"
-    compile         project(':core')
+    compile "com.typesafe.play:play_2.10:$playVersion"
+    compile "com.typesafe.play:play-java-jdbc_2.10:$playVersion"
+    compile "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
+    compile project(':core')
 }
 
 task build(overwrite:true, type:Exec, dependsOn: ':core:install') {

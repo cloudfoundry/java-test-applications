@@ -1,9 +1,44 @@
-apply plugin: 'base'
+apply plugin: 'groovy'
 
-buildDir = '.grapes'
+sourceSets {
+    main {
+        groovy {
+            srcDirs = ['.']
+        }
+        java {
+            srcDirs = []
+        }
+        resources {
+            srcDirs = []
+        }
+    }
 
-task build(type:Exec, dependsOn: ':core:install') {
+    test {
+        groovy {
+            srcDirs = []
+        }
+        java {
+            srcDirs = []
+        }
+        resources {
+            srcDirs = []
+        }
+    }
+
+}
+
+buildDir = 'repository'
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.1.9'
+    compile "org.springframework.boot:spring-boot-starter-jdbc:$springBootVersion"
+    compile "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
+    compile project(':core')
+}
+
+
+task build(overwrite: true, type:Exec, dependsOn: ':core:install') {
     inputs.files fileTree(dir: '.', excludes: ['.classpath', '.grapes', '.properties', '.settings'])
-    outputs.dir '.grapes'
+    outputs.dir 'repository'
     commandLine 'spring', 'run', '--local', 'ApplicationConfiguration.groovy'
 }

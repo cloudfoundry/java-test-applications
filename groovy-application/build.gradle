@@ -1,20 +1,50 @@
-apply plugin: 'base'
+apply plugin: 'groovy'
 
-buildDir = 'lib'
+sourceSets {
+    main {
+        groovy {
+            srcDirs = ['.']
+        }
+        java {
+            srcDirs = []
+        }
+        resources {
+            srcDirs = []
+        }
+    }
 
-configurations {
-    libs
+    main.output.classesDir = 'classes'
+
+    test {
+        groovy {
+            srcDirs = []
+        }
+        java {
+            srcDirs = []
+        }
+        resources {
+            srcDirs = []
+        }
+    }
+
 }
 
 dependencies {
-    libs "com.h2database:h2:$h2Version"
-    libs "mysql:mysql-connector-java:$mySqlVersion"
-    libs "org.springframework.boot:spring-boot-starter-jdbc:$springBootVersion"
-    libs "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
-    libs project(':core')
+    compile 'org.codehaus.groovy:groovy-all:2.1.9'
+    runtime "com.h2database:h2:$h2Version"
+    runtime "mysql:mysql-connector-java:$mySqlVersion"
+    compile "org.springframework.boot:spring-boot-starter-jdbc:$springBootVersion"
+    compile "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
+    compile project(':core')
 }
 
-task build(type: Copy) {
-    from configurations.libs
-    into buildDir
+task copyLibs(type: Copy) {
+    from configurations.runtime
+    into 'lib'
+}
+
+task build(overwrite: true, dependsOn: [compileGroovy, copyLibs])
+
+task clean(overwrite:true, type: Delete) {
+    delete 'build', 'classes', 'lib'
 }
