@@ -54,9 +54,14 @@ class ApplicationController {
         return this.runtimeUtils.classPath()
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/datasource-classname")
-    String dataSourceClassName() {
-        return this.dataSourceUtils.getClassName(this.dataSource)
+    @RequestMapping(method = RequestMethod.GET, value = "/datasource-check-access")
+    String checkDatabaseAccess() {
+        return this.dataSourceUtils.checkDatabaseAccess(this.dataSource)
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/datasource-url")
+    String dataSourceUrl() {
+        return this.dataSourceUtils.getUrl(this.dataSource);
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/environment-variables")

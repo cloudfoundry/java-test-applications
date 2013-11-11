@@ -33,7 +33,7 @@ final class ApplicationController {
 
     private final HealthUtils healthUtils;
 
-    private final DataSource datasource;
+    private final DataSource dataSource;
 
     private final DataSourceUtils dataSourceUtils;
 
@@ -41,7 +41,7 @@ final class ApplicationController {
 
     @Autowired
     ApplicationController(DataSource dataSource, DataSourceUtils dataSourceUtils, HealthUtils healthUtils, RuntimeUtils runtimeUtils) {
-        this.datasource = dataSource;
+        this.dataSource = dataSource;
         this.dataSourceUtils = dataSourceUtils;
         this.healthUtils = healthUtils;
         this.runtimeUtils = runtimeUtils;
@@ -57,9 +57,14 @@ final class ApplicationController {
         return this.runtimeUtils.classPath();
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/datasource-classname")
-    String dataSourceClassName() {
-        return dataSourceUtils.getClassName(this.datasource);
+    @RequestMapping(method = RequestMethod.GET, value = "/datasource-check-access")
+    String checkDatabaseAccess() {
+        return dataSourceUtils.checkDatabaseAccess(this.dataSource);
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/datasource-url")
+    String dataSourceUrl() {
+        return this.dataSourceUtils.getUrl(this.dataSource);
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/environment-variables")

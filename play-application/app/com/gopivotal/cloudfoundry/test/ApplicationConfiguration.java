@@ -27,6 +27,8 @@ import play.db.DB;
 
 import javax.sql.DataSource;
 
+import play.db.*;
+
 @Configuration
 @ComponentScan
 public class ApplicationConfiguration {

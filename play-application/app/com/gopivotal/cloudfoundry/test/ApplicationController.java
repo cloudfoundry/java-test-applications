@@ -31,16 +31,16 @@ public final class ApplicationController {
 
     private final HealthUtils healthUtils;
 
-    private final DataSource datasource;
+    private final DataSource dataSource;
 
     private final DataSourceUtils dataSourceUtils;
 
     private final RuntimeUtils runtimeUtils;
 
     @Autowired
-    ApplicationController(DataSource datasource, DataSourceUtils dataSourceUtils,
+    ApplicationController(DataSource dataSource, DataSourceUtils dataSourceUtils,
                           HealthUtils healthUtils, RuntimeUtils runtimeUtils) {
-        this.datasource = datasource;
+        this.dataSource = dataSource;
         this.dataSourceUtils = dataSourceUtils;
         this.healthUtils = healthUtils;
         this.runtimeUtils = runtimeUtils;
@@ -54,8 +54,12 @@ public final class ApplicationController {
         return toResult(this.runtimeUtils.classPath());
     }
 
-    public Result dataSourceClassName() {
-        return toResult(this.dataSourceUtils.getClassName(this.datasource));
+    public Result checkDatabaseAccess() {
+        return toResult(this.dataSourceUtils.checkDatabaseAccess(this.dataSource));
+    }
+
+    public Result dataSourceUrl() {
+        return toResult(this.dataSourceUtils.getUrl(this.dataSource));
     }
 
     public Result environmentVariables() {

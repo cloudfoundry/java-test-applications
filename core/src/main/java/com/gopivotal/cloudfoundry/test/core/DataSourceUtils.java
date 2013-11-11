@@ -18,12 +18,41 @@ package com.gopivotal.cloudfoundry.test.core;
 
 import javax.sql.DataSource;
 
+import org.springframework.jdbc.datasource.SimpleDriverDataSource;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 /**
  * Utility class for analysing a {@link DataSource}.
  */
 public final class DataSourceUtils {
 
-    public String getClassName(DataSource datasource) {
-        return datasource.getClass().getName();
+    private static final String SELECT_ONE = "SELECT 1";
+
+    public String checkDatabaseAccess(DataSource dataSource) {
+        try {
+            Connection connection = dataSource.getConnection();
+            PreparedStatement selectOne = connection.prepareStatement(SELECT_ONE);
+            selectOne.execute();
+            return "ok";
+        } catch (SQLException e) {
+            return "failed with " + e.getMessage();
+        }
+    }
+
+    public String getUrl(DataSource dataSource) {
+        String url;
+        if (dataSource instanceof org.apache.tomcat.dbcp.dbcp.BasicDataSource) {
+            url = ((org.apache.tomcat.dbcp.dbcp.BasicDataSource) dataSource).getUrl();
+        } else if (dataSource instanceof org.apache.commons.dbcp.BasicDataSource) {
+            url = ((org.apache.commons.dbcp.BasicDataSource) dataSource).getUrl();
+        } else if (dataSource instanceof SimpleDriverDataSource) {
+            url = ((SimpleDriverDataSource) dataSource).getUrl();
+        } else {
+            url = "indeterminate URL: unrecognised datasource class";
+        }
+        return url;
     }
 }
