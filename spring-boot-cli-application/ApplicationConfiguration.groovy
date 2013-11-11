@@ -16,6 +16,7 @@
 
 
 import com.gopivotal.cloudfoundry.test.core.DataSourceUtils
+import com.gopivotal.cloudfoundry.test.core.HealthUtils
 import com.gopivotal.cloudfoundry.test.core.MemoryUtils
 import com.gopivotal.cloudfoundry.test.core.RuntimeUtils
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
@@ -33,6 +34,11 @@ class ApplicationConfiguration {
     @Bean
     DataSourceUtils dataSourceUtils() {
         return new DataSourceUtils()
+    }
+
+    @Bean
+    HealthUtils healthUtils() {
+        return new HealthUtils()
     }
 
     @Bean

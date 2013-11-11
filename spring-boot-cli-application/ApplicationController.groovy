@@ -36,7 +36,8 @@ class ApplicationController {
     def runtimeUtils
 
     @Autowired
-    ApplicationController(DataSource dataSource, DataSourceUtils dataSourceUtils,  HealthUtils healthUtils, RuntimeUtils runtimeUtils) {
+    ApplicationController(DataSource dataSource, DataSourceUtils dataSourceUtils,  HealthUtils healthUtils,
+                          RuntimeUtils runtimeUtils) {
         this.dataSource = dataSource
         this.dataSourceUtils = dataSourceUtils
         this.healthUtils = healthUtils
