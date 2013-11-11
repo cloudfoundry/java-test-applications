@@ -6,7 +6,6 @@ ext {
     jacksonVersion = '2.2.2'
     logbackVersion = '1.0.13'
     servletVersion = '3.1.0'
-    springVersion  = '4.0.0.RC1'
 }
 
 dependencies {

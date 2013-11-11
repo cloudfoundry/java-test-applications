@@ -2,6 +2,10 @@ name := "play-application"
 
 version := "1.0-SNAPSHOT"
 
+resolvers += "Spring Milestone" at "http://repo.spring.io/milestone"
+
+resolvers += "Spring Snapshot" at "http://repo.spring.io/snapshot"
+
 libraryDependencies ++= Seq(
   "com.gopivotal.cloudfoundry.test" % "core" % "1.0.0.BUILD-SNAPSHOT",
   "com.h2database" % "h2" % "1.3.174",

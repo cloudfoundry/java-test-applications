@@ -22,7 +22,8 @@ All applications support the following REST operations:
 | --- | ------------ | -----------
 `/` | GET | The health of the application
 `/class-path` | GET | A list of JARs on the application classpath
-`/datasource-classname` | GET | The concrete class name of any datasource associated with the application
+`/datasource-check-access` | GET | The ability of the application to access the database
+`/datasource-url` | GET | The URL of the application's DataSource
 `/environment-variables` | GET | A map of environment variable names to values
 `/input-arguments` | GET | A list of JVM input arguments
 `/system-properties` | GET | A map of system property names to values

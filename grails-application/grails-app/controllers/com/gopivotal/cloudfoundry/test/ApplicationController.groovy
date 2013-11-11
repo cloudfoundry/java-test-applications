@@ -36,8 +36,12 @@ class ApplicationController {
         render this.runtimeUtils.classPath() as JSON
     }
 
-   def dataSourceClassName() {
-        render this.dataSourceUtils.getClassName(this.dataSource)
+   def checkDatabaseAccess() {
+        render this.dataSourceUtils.checkDatabaseAccess(this.dataSource)
+    }
+
+  def dataSourceUrl() {
+        render this.dataSourceUtils.getUrl(this.dataSource)
     }
 
     def environmentVariables() {

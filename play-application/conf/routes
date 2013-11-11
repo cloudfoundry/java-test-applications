@@ -2,9 +2,10 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-GET /                       @com.gopivotal.cloudfoundry.test.ApplicationController.health()
-GET /class-path             @com.gopivotal.cloudfoundry.test.ApplicationController.classPath()
-GET /datasource-classname   @com.gopivotal.cloudfoundry.test.ApplicationController.dataSourceClassName()
-GET /environment-variables  @com.gopivotal.cloudfoundry.test.ApplicationController.environmentVariables()
-GET /input-arguments        @com.gopivotal.cloudfoundry.test.ApplicationController.inputArguments()
-GET /system-properties      @com.gopivotal.cloudfoundry.test.ApplicationController.systemProperties()
+GET /                          @com.gopivotal.cloudfoundry.test.ApplicationController.health()
+GET /class-path                @com.gopivotal.cloudfoundry.test.ApplicationController.classPath()
+GET /datasource-check-access   @com.gopivotal.cloudfoundry.test.ApplicationController.checkDatabaseAccess()
+GET /datasource-url            @com.gopivotal.cloudfoundry.test.ApplicationController.dataSourceUrl()
+GET /environment-variables     @com.gopivotal.cloudfoundry.test.ApplicationController.environmentVariables()
+GET /input-arguments           @com.gopivotal.cloudfoundry.test.ApplicationController.inputArguments()
+GET /system-properties         @com.gopivotal.cloudfoundry.test.ApplicationController.systemProperties()
