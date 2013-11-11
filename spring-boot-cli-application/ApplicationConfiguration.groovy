@@ -28,7 +28,6 @@ import org.springframework.context.annotation.ComponentScan
 @Grab('h2')
 @Grab('mysql-connector-java')
 @Grab('spring-boot-starter-jdbc')
-@Grab('spring-boot-starter-web')
 class ApplicationConfiguration {
 
     @Bean
