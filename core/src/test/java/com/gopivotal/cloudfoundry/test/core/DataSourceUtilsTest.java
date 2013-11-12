@@ -16,20 +16,24 @@
 
 package com.gopivotal.cloudfoundry.test.core;
 
+import com.jolbox.bonecp.BoneCPDataSource;
 import org.junit.Test;
+import org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy;
+import org.springframework.jdbc.datasource.SimpleDriverDataSource;
+import org.springframework.jdbc.datasource.TransactionAwareDataSourceProxy;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabase;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseConfigurer;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory;
+import org.springframework.jdbc.datasource.embedded.DataSourceFactory;
 
 import javax.sql.DataSource;
-
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-
-import org.springframework.jdbc.datasource.SimpleDriverDataSource;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+
+import static org.mockito.Mockito.mock;
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.when;
 
 public final class DataSourceUtilsTest {
 
@@ -48,7 +52,7 @@ public final class DataSourceUtilsTest {
         when(this.testDataSource.getConnection()).thenReturn(this.testConnection);
         when(this.testConnection.prepareStatement("SELECT 1")).thenReturn(this.preparedStatement);
         when(this.preparedStatement.execute()).thenReturn(true);
-        assertEquals("ok", this.dataSourceUtils.checkDatabaseAccess(testDataSource));
+        assertEquals("ok", this.dataSourceUtils.checkDatabaseAccess(this.testDataSource));
     }
 
     @Test
@@ -56,35 +60,79 @@ public final class DataSourceUtilsTest {
         when(this.testDataSource.getConnection()).thenReturn(this.testConnection);
         when(this.testConnection.prepareStatement("SELECT 1")).thenReturn(this.preparedStatement);
         when(this.preparedStatement.execute()).thenThrow(new SQLException("test message"));
-        assertEquals("failed with test message", this.dataSourceUtils.checkDatabaseAccess(testDataSource));
+        assertEquals("failed with test message", this.dataSourceUtils.checkDatabaseAccess(this.testDataSource));
     }
 
     @Test
     public void tomcatDbcpUrl() {
-        org.apache.tomcat.dbcp.dbcp.BasicDataSource dataSource = mock(org.apache.tomcat.dbcp.dbcp.BasicDataSource
-                .class);
-        when(dataSource.getUrl()).thenReturn(TEST_URL);
+        org.apache.tomcat.dbcp.dbcp.BasicDataSource dataSource = new org.apache.tomcat.dbcp.dbcp.BasicDataSource();
+        dataSource.setUrl(TEST_URL);
         assertEquals(TEST_URL, this.dataSourceUtils.getUrl(dataSource));
     }
 
     @Test
     public void commonsDbcpUrl() {
-        org.apache.commons.dbcp.BasicDataSource dataSource = mock(org.apache.commons.dbcp.BasicDataSource.class);
-        when(dataSource.getUrl()).thenReturn(TEST_URL);
+        org.apache.commons.dbcp.BasicDataSource dataSource = new org.apache.commons.dbcp.BasicDataSource();
+        dataSource.setUrl(TEST_URL);
         assertEquals(TEST_URL, this.dataSourceUtils.getUrl(dataSource));
     }
 
     @Test
     public void simpleDriverUrl() {
-        SimpleDriverDataSource dataSource = mock(SimpleDriverDataSource.class);
-        when(dataSource.getUrl()).thenReturn(TEST_URL);
+        SimpleDriverDataSource dataSource = new SimpleDriverDataSource();
+        dataSource.setUrl(TEST_URL);
         assertEquals(TEST_URL, this.dataSourceUtils.getUrl(dataSource));
     }
 
     @Test
     public void indeterminateUrl() {
         DataSource dataSource = mock(DataSource.class);
-        assertEquals("indeterminate URL: unrecognised datasource class", this.dataSourceUtils.getUrl(dataSource));
+        assertEquals(String.format("Unable to determine URL for DataSource of type %s",
+                dataSource.getClass().getName()), this.dataSourceUtils.getUrl(dataSource));
+    }
+
+    @Test
+    public void boneCPUrl() {
+        BoneCPDataSource dataSource = new BoneCPDataSource();
+        dataSource.setJdbcUrl(TEST_URL);
+        assertEquals(TEST_URL, this.dataSourceUtils.getUrl(dataSource));
+    }
+
+    @Test
+    public void tomcatJdbcPoolUrl() {
+        org.apache.tomcat.jdbc.pool.DataSource dataSource = new org.apache.tomcat.jdbc.pool.DataSource();
+        dataSource.setUrl(TEST_URL);
+        assertEquals(TEST_URL, this.dataSourceUtils.getUrl(dataSource));
+    }
+
+    @Test
+    public void lazyConnectionUrl() {
+        BoneCPDataSource targetDataSource = new BoneCPDataSource();
+        targetDataSource.setJdbcUrl(TEST_URL);
+        LazyConnectionDataSourceProxy dataSource = new LazyConnectionDataSourceProxy(targetDataSource);
+        assertEquals(TEST_URL, this.dataSourceUtils.getUrl(dataSource));
+    }
+
+    @Test
+    public void transactionAwareUrl() {
+        BoneCPDataSource targetDataSource = new BoneCPDataSource();
+        targetDataSource.setJdbcUrl(TEST_URL);
+        TransactionAwareDataSourceProxy dataSource = new TransactionAwareDataSourceProxy(targetDataSource);
+        assertEquals(TEST_URL, this.dataSourceUtils.getUrl(dataSource));
+    }
+
+    @Test
+    public void embeddedDataSourceUrl() {
+        BoneCPDataSource targetDataSource = new BoneCPDataSource();
+        targetDataSource.setJdbcUrl(TEST_URL);
+        DataSourceFactory dataSourceFactory = mock(DataSourceFactory.class);
+        when(dataSourceFactory.getDataSource()).thenReturn(targetDataSource);
+
+        EmbeddedDatabaseFactory embeddedDatabaseFactory = new EmbeddedDatabaseFactory();
+        embeddedDatabaseFactory.setDataSourceFactory(dataSourceFactory);
+        embeddedDatabaseFactory.setDatabaseConfigurer(mock(EmbeddedDatabaseConfigurer.class));
+        EmbeddedDatabase dataSource = embeddedDatabaseFactory.getDatabase();
+        assertEquals(TEST_URL, this.dataSourceUtils.getUrl(dataSource));
     }
 
 }

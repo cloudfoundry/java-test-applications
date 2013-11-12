@@ -16,10 +16,10 @@
 
 package com.gopivotal.cloudfoundry.test.core;
 
+import org.springframework.util.ReflectionUtils;
+
 import javax.sql.DataSource;
-
-import org.springframework.jdbc.datasource.SimpleDriverDataSource;
-
+import java.lang.reflect.Field;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -43,16 +43,38 @@ public final class DataSourceUtils {
     }
 
     public String getUrl(DataSource dataSource) {
-        String url;
-        if (dataSource instanceof org.apache.tomcat.dbcp.dbcp.BasicDataSource) {
-            url = ((org.apache.tomcat.dbcp.dbcp.BasicDataSource) dataSource).getUrl();
-        } else if (dataSource instanceof org.apache.commons.dbcp.BasicDataSource) {
-            url = ((org.apache.commons.dbcp.BasicDataSource) dataSource).getUrl();
-        } else if (dataSource instanceof SimpleDriverDataSource) {
-            url = ((SimpleDriverDataSource) dataSource).getUrl();
-        } else {
-            url = "indeterminate URL: unrecognised datasource class";
+        if (isClass(dataSource, "com.jolbox.bonecp.BoneCPDataSource")) {
+            return ((com.jolbox.bonecp.BoneCPDataSource) dataSource).getJdbcUrl();
+        } else if (isClass(dataSource, "org.apache.commons.dbcp.BasicDataSource")) {
+            return ((org.apache.commons.dbcp.BasicDataSource) dataSource).getUrl();
+        } else if (isClass(dataSource, "org.apache.tomcat.dbcp.dbcp.BasicDataSource")) {
+            return ((org.apache.tomcat.dbcp.dbcp.BasicDataSource) dataSource).getUrl();
+        } else if (isClass(dataSource, "org.apache.tomcat.jdbc.pool.DataSource")) {
+            return ((org.apache.tomcat.jdbc.pool.DataSource) dataSource).getUrl();
+        } else if (isClass(dataSource, "org.springframework.jdbc.datasource.embedded" +
+                ".EmbeddedDatabaseFactory$EmbeddedDataSourceProxy")) {
+            try {
+                Field field = dataSource.getClass().getDeclaredField("dataSource");
+                ReflectionUtils.makeAccessible(field);
+
+                return getUrl((DataSource) field.get(dataSource));
+            } catch (NoSuchFieldException | IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        } else if (isClass(dataSource, "org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy")) {
+            return getUrl(((org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy) dataSource)
+                    .getTargetDataSource());
+        } else if (isClass(dataSource, "org.springframework.jdbc.datasource.SimpleDriverDataSource")) {
+            return ((org.springframework.jdbc.datasource.SimpleDriverDataSource) dataSource).getUrl();
+        } else if (isClass(dataSource, "org.springframework.jdbc.datasource.TransactionAwareDataSourceProxy")) {
+            return getUrl(((org.springframework.jdbc.datasource.TransactionAwareDataSourceProxy) dataSource)
+                    .getTargetDataSource());
         }
-        return url;
+
+        return String.format("Unable to determine URL for DataSource of type %s", dataSource.getClass().getName());
+    }
+
+    private boolean isClass(DataSource dataSource, String className) {
+        return dataSource.getClass().getName().equals(className);
     }
 }

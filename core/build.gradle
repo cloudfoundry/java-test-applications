@@ -4,20 +4,23 @@ apply plugin: 'maven'
 sourceCompatibility = 1.7
 
 ext {
+    bonecpVersion = '0.8.0.RELEASE'
     commonsDbcpVersion = '1.2.2'
     jacksonVersion = '2.2.2'
     logbackVersion = '1.0.13'
     servletVersion = '3.1.0'
-    tomcatDbcpVersion = '7.0.47'
+    tomcatVersion = '7.0.47'
 }
 
 dependencies {
+    compile     "com.jolbox:bonecp:$bonecpVersion"
     testCompile "junit:junit:$junitVersion"
     testCompile "org.mockito:mockito-core:$mockitoVersion"
     compile     "commons-dbcp:commons-dbcp:$commonsDbcpVersion"
     compile     "org.slf4j:slf4j-api:$slf4jVersion"
     compile     "org.springframework:spring-jdbc:$springVersion"
-    compile     "org.apache.tomcat:tomcat-dbcp:$tomcatDbcpVersion"
+    compile     "org.apache.tomcat:tomcat-dbcp:$tomcatVersion"
+    compile     "org.apache.tomcat:tomcat-jdbc:$tomcatVersion"
 }
 
 build.dependsOn install
