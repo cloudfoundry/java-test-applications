@@ -8,9 +8,9 @@ libraryDependencies ++= Seq(
   javaCore,
   javaJdbc,
   "mysql" % "mysql-connector-java" % "5.1.27",
-  "org.springframework" % "spring-context" % "3.0.4.RELEASE",
-  "org.springframework" % "spring-expression" % "3.0.4.RELEASE",
-  "org.springframework" % "spring-jdbc" % "3.0.4.RELEASE"
+  "org.springframework" % "spring-context" % "4.0.0.RC1",
+  "org.springframework" % "spring-expression" % "4.0.0.RC1",
+  "org.springframework" % "spring-jdbc" % "4.0.0.RC1"
 )
 
 play.Project.playJavaSettings
