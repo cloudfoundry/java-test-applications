@@ -9,6 +9,7 @@ libraryDependencies ++= Seq(
   javaJdbc,
   "mysql" % "mysql-connector-java" % "5.1.27",
   "org.springframework" % "spring-context" % "3.0.4.RELEASE",
+  "org.springframework" % "spring-expression" % "3.0.4.RELEASE",
   "org.springframework" % "spring-jdbc" % "3.0.4.RELEASE"
 )
 
