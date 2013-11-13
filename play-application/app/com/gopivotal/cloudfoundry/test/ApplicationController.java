@@ -47,7 +47,7 @@ public final class ApplicationController {
     }
 
     public Result health() {
-        return Controller.ok(this.healthUtils.health());
+        return toResult(this.healthUtils.health());
     }
 
     public Result classPath() {
@@ -76,6 +76,10 @@ public final class ApplicationController {
 
     private static <V> Result toResult(V value) {
         return Controller.ok(Json.toJson(value));
+    }
+
+    private static Result toResult(String value) {
+        return Controller.ok(value);
     }
 
 }
