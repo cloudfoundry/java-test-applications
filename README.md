@@ -30,7 +30,7 @@ All applications support the following REST operations:
 
 ## Building
 
-This project is built with Gradle. To build the artifacts, install Play and Grails and then run:
+This project is built with Gradle. To build the artifacts, install Play and Grails, install Spring Boot by following [these instructions](https://github.com/spring-projects/spring-boot), and then run:
 
 ```plain
 ./gradlew
