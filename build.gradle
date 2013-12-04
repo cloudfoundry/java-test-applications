@@ -41,6 +41,7 @@ allprojects {
 
 // Root Project Configuration
 apply plugin: 'base'
+apply plugin: 'idea'
 apply plugin: 'versions'
 
 buildscript {
@@ -50,6 +51,14 @@ buildscript {
 
     dependencies {
         classpath 'com.github.ben-manes:gradle-versions-plugin:0.4'
+    }
+}
+
+
+
+idea {
+    module {
+        excludeDirs = [file('.gradle'), file('.idea'), file('gradle')]
     }
 }
 
