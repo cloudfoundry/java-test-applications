@@ -18,13 +18,17 @@ class Application {
 
     @SuppressWarnings("GroovyAssignabilityCheck")
     public static void main(String[] args) {
-        def urls = Application.classLoader.rootLoader.URLs.findAll {
+        def classLoader = new GroovyClassLoader(null)
+        Application.classLoader.rootLoader.URLs.findAll {
             !it.path.endsWith('servlet-api-2.4.jar') && !it.path.endsWith('./')
+        }.each {
+            classLoader.addURL it
         }
-        urls.addAll new File('lib').listFiles().collect { it.toURI().toURL() }
-        urls << new File('classes').toURI().toURL()
 
-        def classLoader = new URLClassLoader(urls as URL[], (ClassLoader) null)
+        new File('lib').listFiles().each { classLoader.addURL it.toURI().toURL() }
+        classLoader.addClasspath '.'
+
+
         Thread.currentThread().setContextClassLoader(classLoader)
 
         def initializationUtils = Class.forName("com.gopivotal.cloudfoundry.test.core.InitializationUtils", true,

@@ -21,9 +21,9 @@ import com.gopivotal.cloudfoundry.test.core.MemoryUtils
 import com.gopivotal.cloudfoundry.test.core.RuntimeUtils
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.context.annotation.Bean
-import org.springframework.context.annotation.ComponentScan
 
-@ComponentScan
+import javax.sql.DataSource
+
 @EnableAutoConfiguration
 public class ApplicationConfiguration {
 
@@ -48,5 +48,11 @@ public class ApplicationConfiguration {
     @Bean
     static RuntimeUtils runtimeUtils() {
         return new RuntimeUtils()
+    }
+
+    @Bean
+    static ApplicationController applicationController(DataSource dataSource) {
+        return new ApplicationController(dataSource, dataSourceUtils(), healthUtils(),
+                runtimeUtils())
     }
 }

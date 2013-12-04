@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
+
 import com.gopivotal.cloudfoundry.test.core.DataSourceUtils
 import com.gopivotal.cloudfoundry.test.core.HealthUtils
 import com.gopivotal.cloudfoundry.test.core.RuntimeUtils
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
 import org.springframework.web.bind.annotation.RestController
@@ -35,7 +35,6 @@ class ApplicationController {
 
     def runtimeUtils
 
-    @Autowired
     ApplicationController(DataSource dataSource, DataSourceUtils dataSourceUtils, HealthUtils healthUtils,
                           RuntimeUtils runtimeUtils) {
         this.dataSource = dataSource

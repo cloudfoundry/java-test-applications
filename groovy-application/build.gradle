@@ -38,12 +38,10 @@ dependencies {
     compile project(':core')
 }
 
-task copyLibs(type: Copy) {
+task build(overwrite: true, type: Copy) {
     from configurations.runtime
     into 'lib'
 }
-
-task build(overwrite: true, dependsOn: [compileGroovy, copyLibs])
 
 task clean(overwrite:true, type: Delete) {
     delete 'build', 'classes', 'lib'
