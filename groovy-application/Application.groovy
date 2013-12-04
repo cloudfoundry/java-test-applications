@@ -14,33 +14,26 @@
  * limitations under the License.
  */
 
-class Application {
-
-    @SuppressWarnings("GroovyAssignabilityCheck")
-    public static void main(String[] args) {
-        def classLoader = new GroovyClassLoader(null)
-        Application.classLoader.rootLoader.URLs.findAll {
-            !it.path.endsWith('servlet-api-2.4.jar') && !it.path.endsWith('./')
-        }.each {
-            classLoader.addURL it
-        }
-
-        new File('lib').listFiles().each { classLoader.addURL it.toURI().toURL() }
-        classLoader.addClasspath '.'
-
-
-        Thread.currentThread().setContextClassLoader(classLoader)
-
-        def initializationUtils = Class.forName("com.gopivotal.cloudfoundry.test.core.InitializationUtils", true,
-                classLoader)
-        initializationUtils.getMethod("fail").invoke(initializationUtils.newInstance())
-
-        def springApplication = Class.forName("org.springframework.boot.SpringApplication", true, classLoader)
-        def applicationConfiguration = Class.forName("ApplicationConfiguration", true, classLoader)
-
-        args += '--server.port=' + System.env['PORT']
-
-        springApplication.getMethod("run", Object.class, String[].class).invoke(null, applicationConfiguration, args)
-    }
-
+def classLoader = new GroovyClassLoader(null)
+Application.classLoader.rootLoader.URLs.findAll {
+    !it.path.endsWith('servlet-api-2.4.jar') && !it.path.endsWith('./')
+}.each {
+    classLoader.addURL it
 }
+
+new File('lib').listFiles().each { classLoader.addURL it.toURI().toURL() }
+classLoader.addClasspath '.'
+
+
+Thread.currentThread().setContextClassLoader(classLoader)
+
+def initializationUtils = Class.forName("com.gopivotal.cloudfoundry.test.core.InitializationUtils", true, classLoader)
+initializationUtils.getMethod("fail").invoke(initializationUtils.newInstance())
+
+def springApplication = Class.forName("org.springframework.boot.SpringApplication", true, classLoader)
+def applicationConfiguration = Class.forName("ApplicationConfiguration", true, classLoader)
+
+args += '--server.port=' + System.env['PORT']
+
+springApplication.getMethod("run", Object.class, String[].class).invoke(null, applicationConfiguration,
+                                                                        args as String[])
