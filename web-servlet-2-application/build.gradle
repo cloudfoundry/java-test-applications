@@ -16,11 +16,7 @@ dependencies {
     runtime         "mysql:mysql-connector-java:$mySqlVersion"
     runtime         "org.slf4j:slf4j-api:$slf4jVersion"
     runtime         "org.slf4j:jcl-over-slf4j:$slf4jVersion"
-    compile         "org.springframework:spring-context:$springVersion"
-    compile         "org.springframework:spring-jdbc:$springVersion"
-    compile         "org.springframework:spring-web:$springVersion"
-    compile         "org.springframework:spring-webmvc:$springVersion"
-    compile         project(':core')
+    compile         project(':spring-common')    
 }
 
 configurations {

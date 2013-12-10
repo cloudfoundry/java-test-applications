@@ -1,0 +1,17 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+sourceCompatibility = 1.7
+
+ext {
+}
+
+dependencies {
+    compile     "org.springframework:spring-jdbc:$springVersion"
+    compile     "org.springframework:spring-context:$springVersion"
+    compile     "org.springframework:spring-web:$springVersion"
+    compile     "org.springframework:spring-webmvc:$springVersion"
+    compile     project(':core')
+}
+
+build.dependsOn install

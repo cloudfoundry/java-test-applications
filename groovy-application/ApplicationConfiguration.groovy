@@ -19,6 +19,8 @@ import com.gopivotal.cloudfoundry.test.core.DataSourceUtils
 import com.gopivotal.cloudfoundry.test.core.HealthUtils
 import com.gopivotal.cloudfoundry.test.core.MemoryUtils
 import com.gopivotal.cloudfoundry.test.core.RuntimeUtils
+import com.gopivotal.cloudfoundry.test.controller.ApplicationController
+import com.gopivotal.cloudfoundry.test.controller.DataSourceController
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.context.annotation.Bean
 
@@ -51,8 +53,14 @@ public class ApplicationConfiguration {
     }
 
     @Bean
-    static ApplicationController applicationController(DataSource dataSource) {
-        return new ApplicationController(dataSource, dataSourceUtils(), healthUtils(),
-                runtimeUtils())
+    static ApplicationController applicationController() {
+        return new ApplicationController(healthUtils(), runtimeUtils())
+    }
+
+    @Bean
+    static DataSourceController dataSourceController(DataSource dataSource) {
+        def dataSourceController = new DataSourceController(dataSourceUtils())
+        dataSourceController.setDataSource(dataSource)
+        return dataSourceController
     }
 }

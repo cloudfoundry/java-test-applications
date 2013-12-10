@@ -3,3 +3,9 @@ bin
 build
 tasks.xml
 workspace.xml
+.classpath
+.project
+.settings
+classes
+Servers
+.metadata

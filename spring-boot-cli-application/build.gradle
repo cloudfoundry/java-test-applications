@@ -33,7 +33,7 @@ dependencies {
     compile 'org.codehaus.groovy:groovy-all:2.1.9'
     compile "org.springframework.boot:spring-boot-starter-jdbc:$springBootVersion"
     compile "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
-    compile project(':core')
+    compile project(':spring-common')
 }
 
 
