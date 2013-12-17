@@ -23,9 +23,10 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.ComponentScan
 
-@ComponentScan
+@ComponentScan(basePackages="com.gopivotal.cloudfoundry.test.controller")
 @EnableAutoConfiguration
 @Grab('com.gopivotal.cloudfoundry.test:core:1.0.0.BUILD-SNAPSHOT')
+@Grab('com.gopivotal.cloudfoundry.test:spring-common:1.0.0.BUILD-SNAPSHOT')
 @Grab('h2')
 @Grab('mysql-connector-java')
 @Grab('spring-boot-starter-jdbc')

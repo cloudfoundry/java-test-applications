@@ -12,6 +12,6 @@ dependencies {
     compile "com.h2database:h2:$h2Version"
     compile "org.springframework.boot:spring-boot-starter-jdbc:$springBootVersion"
     compile "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
-    compile project(':core')
+    compile project(':spring-common')    
     runtime "mysql:mysql-connector-java:$mySqlVersion"
 }

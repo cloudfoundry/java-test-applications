@@ -27,36 +27,28 @@ import play.mvc.Result;
 import javax.sql.DataSource;
 
 @org.springframework.stereotype.Controller
-public final class ApplicationController {
+public final class DataSourceController {
 
-    private final HealthUtils healthUtils;
+    private DataSource dataSource;
 
-    private final RuntimeUtils runtimeUtils;
+    private final DataSourceUtils dataSourceUtils;
 
     @Autowired
-    ApplicationController(HealthUtils healthUtils, RuntimeUtils runtimeUtils) {
-        this.healthUtils = healthUtils;
-        this.runtimeUtils = runtimeUtils;
+    DataSourceController(DataSourceUtils dataSourceUtils) {
+        this.dataSourceUtils = dataSourceUtils;
+    }
+    
+    @Autowired(required=false)
+    public void setDataSource(DataSource dataSource) {
+    		this.dataSource = dataSource;
     }
 
-    public Result health() {
-        return toResult(this.healthUtils.health());
+    public Result checkDatabaseAccess() {
+        return toResult(this.dataSourceUtils.checkDatabaseAccess(this.dataSource));
     }
 
-    public Result classPath() {
-        return toResult(this.runtimeUtils.classPath());
-    }
-
-    public Result environmentVariables() {
-        return toResult(this.runtimeUtils.environmentVariables());
-    }
-
-    public Result inputArguments() {
-        return toResult(this.runtimeUtils.inputArguments());
-    }
-
-    public Result systemProperties() {
-        return toResult(this.runtimeUtils.systemProperties());
+    public Result dataSourceUrl() {
+        return toResult(this.dataSourceUtils.getUrl(this.dataSource));
     }
 
     private static <V> Result toResult(V value) {
