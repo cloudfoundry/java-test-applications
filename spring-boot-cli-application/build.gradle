@@ -37,7 +37,7 @@ dependencies {
 }
 
 
-task build(overwrite: true, type:Exec, dependsOn: ':core:install') {
+task build(overwrite: true, type:Exec, dependsOn: [':core:install', ':spring-common:install']) {
     inputs.files fileTree(dir: '.', excludes: ['.classpath', '.grapes', '.properties', '.settings'])
     outputs.dir 'repository'
     commandLine 'spring', 'run', '--local', 'ApplicationConfiguration.groovy'
