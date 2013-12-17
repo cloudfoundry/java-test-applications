@@ -32,6 +32,9 @@ public final class DataSourceUtils {
     private static final String SELECT_ONE = "SELECT 1";
 
     public String checkDatabaseAccess(DataSource dataSource) {
+        if (dataSource == null) {
+            return "No datasource found";
+        }
         try {
             Connection connection = dataSource.getConnection();
             PreparedStatement selectOne = connection.prepareStatement(SELECT_ONE);
@@ -43,6 +46,9 @@ public final class DataSourceUtils {
     }
 
     public String getUrl(DataSource dataSource) {
+        if (dataSource == null) {
+            return "No datasource found";
+        }
         if (isClass(dataSource, "com.jolbox.bonecp.BoneCPDataSource")) {
             return ((com.jolbox.bonecp.BoneCPDataSource) dataSource).getJdbcUrl();
         } else if (isClass(dataSource, "org.apache.commons.dbcp.BasicDataSource")) {

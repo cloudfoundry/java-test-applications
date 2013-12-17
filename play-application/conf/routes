@@ -4,8 +4,8 @@
 
 GET /                          @com.gopivotal.cloudfoundry.test.ApplicationController.health()
 GET /class-path                @com.gopivotal.cloudfoundry.test.ApplicationController.classPath()
-GET /datasource-check-access   @com.gopivotal.cloudfoundry.test.ApplicationController.checkDatabaseAccess()
-GET /datasource-url            @com.gopivotal.cloudfoundry.test.ApplicationController.dataSourceUrl()
 GET /environment-variables     @com.gopivotal.cloudfoundry.test.ApplicationController.environmentVariables()
 GET /input-arguments           @com.gopivotal.cloudfoundry.test.ApplicationController.inputArguments()
 GET /system-properties         @com.gopivotal.cloudfoundry.test.ApplicationController.systemProperties()
+GET /datasource/check-access   @com.gopivotal.cloudfoundry.test.DataSourceController.checkDatabaseAccess()
+GET /datasource/url            @com.gopivotal.cloudfoundry.test.DataSourceController.dataSourceUrl()

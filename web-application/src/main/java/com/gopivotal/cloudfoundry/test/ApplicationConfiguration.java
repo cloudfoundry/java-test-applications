@@ -32,7 +32,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import javax.sql.DataSource;
 
 @Configuration
-@ComponentScan
+@ComponentScan(basePackages="com.gopivotal.cloudfoundry.test.controller")
 @EnableWebMvc
 class ApplicationConfiguration {
 

@@ -14,41 +14,34 @@
  * limitations under the License.
  */
 
-package com.gopivotal.cloudfoundry.test;
+package com.gopivotal.cloudfoundry.test.controller;
 
-import com.gopivotal.cloudfoundry.test.core.DataSourceUtils;
-import com.gopivotal.cloudfoundry.test.core.HealthUtils;
-import com.gopivotal.cloudfoundry.test.core.RuntimeUtils;
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.sql.DataSource;
-import java.util.List;
-import java.util.Map;
+import com.gopivotal.cloudfoundry.test.core.HealthUtils;
+import com.gopivotal.cloudfoundry.test.core.RuntimeUtils;
 
 @RestController
-final class ApplicationController {
+final public class ApplicationController {
 
     private final HealthUtils healthUtils;
-
-    private final DataSource dataSource;
-
-    private final DataSourceUtils dataSourceUtils;
 
     private final RuntimeUtils runtimeUtils;
 
     @Autowired
-    ApplicationController(DataSource dataSource, DataSourceUtils dataSourceUtils, HealthUtils healthUtils,
+    ApplicationController(HealthUtils healthUtils,
                           RuntimeUtils runtimeUtils) {
-        this.dataSource = dataSource;
-        this.dataSourceUtils = dataSourceUtils;
-        this.runtimeUtils = runtimeUtils;
         this.healthUtils = healthUtils;
+        this.runtimeUtils = runtimeUtils;
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/")
+    @RequestMapping(method = RequestMethod.GET, value = "")
     String health() {
         return this.healthUtils.health();
     }
@@ -56,16 +49,6 @@ final class ApplicationController {
     @RequestMapping(method = RequestMethod.GET, value = "/class-path")
     List<String> classPath() {
         return this.runtimeUtils.classPath();
-    }
-
-    @RequestMapping(method = RequestMethod.GET, value = "/datasource-check-access")
-    String checkDatabaseAccess() {
-        return this.dataSourceUtils.checkDatabaseAccess(this.dataSource);
-    }
-
-    @RequestMapping(method = RequestMethod.GET, value = "/datasource-url")
-    String dataSourceUrl() {
-        return this.dataSourceUtils.getUrl(this.dataSource);
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/environment-variables")
@@ -82,5 +65,4 @@ final class ApplicationController {
     Map<Object, Object> systemProperties() {
         return this.runtimeUtils.systemProperties();
     }
-
 }

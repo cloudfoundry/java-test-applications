@@ -35,7 +35,7 @@ dependencies {
     runtime "mysql:mysql-connector-java:$mySqlVersion"
     compile "org.springframework.boot:spring-boot-starter-jdbc:$springBootVersion"
     compile "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
-    compile project(':core')
+    compile project(':spring-common')
 }
 
 task build(overwrite: true, type: Copy) {

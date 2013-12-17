@@ -18,29 +18,17 @@ package com.gopivotal.cloudfoundry.test
 
 import grails.converters.JSON
 
-class ApplicationController {
+class DataSourceController {
 
-    def healthUtils
+    def dataSource
 
-    def runtimeUtils
+    def dataSourceUtils
 
-    def health() {
-        render this.healthUtils.health()
+    def checkDatabaseAccess() {
+        render this.dataSourceUtils.checkDatabaseAccess(this.dataSource)
     }
 
-    def classPath() {
-        render this.runtimeUtils.classPath() as JSON
-    }
-
-    def environmentVariables() {
-        render this.runtimeUtils.environmentVariables() as JSON
-    }
-
-    def inputArguments() {
-        render this.runtimeUtils.inputArguments() as JSON
-    }
-
-    def systemProperties() {
-        render this.runtimeUtils.systemProperties() as JSON
+    def dataSourceUrl() {
+        render this.dataSourceUtils.getUrl(this.dataSource)
     }
 }
