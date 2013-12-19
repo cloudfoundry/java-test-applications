@@ -22,6 +22,8 @@ allprojects {
         slf4jVersion   = '1.7.5'
         springBootVersion = '0.5.0.M6'
         springVersion  = '4.0.0.RC2'
+        springDataRedisVersion = '1.0.3.RELEASE'
+        jedisVersion = '2.0.0'
     }
 
     repositories {

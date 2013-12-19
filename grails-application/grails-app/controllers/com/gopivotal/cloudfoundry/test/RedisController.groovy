@@ -14,19 +14,22 @@
  * limitations under the License.
  */
 
-package com.gopivotal.cloudfoundry.test.controller;
+package com.gopivotal.cloudfoundry.test
 
-import javax.sql.DataSource;
+import com.gopivotal.cloudfoundry.test.core.RedisUtils
+import grails.converters.JSON
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+class RedisController {
 
-import com.gopivotal.cloudfoundry.test.core.DataSourceUtils;
+    def redisConnectionFactory
 
-@RestController
-@RequestMapping("/datasource")
-final public class DataSourceController extends ServiceController<DataSource> {
-    public DataSourceController() {
-    		super(new DataSourceUtils());
+    def redisUtils = new RedisUtils()
+
+    def checkAccess() {
+        render this.redisUtils.checkAccess(this.redisConnectionFactory)
+    }
+
+    def url() {
+        render this.redisUtils.getUrl(this.redisConnectionFactory)
     }
 }

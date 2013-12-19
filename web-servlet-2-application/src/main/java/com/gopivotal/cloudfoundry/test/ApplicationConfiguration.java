@@ -16,20 +16,22 @@
 
 package com.gopivotal.cloudfoundry.test;
 
-import com.gopivotal.cloudfoundry.test.core.DataSourceUtils;
-import com.gopivotal.cloudfoundry.test.core.HealthUtils;
-import com.gopivotal.cloudfoundry.test.core.MemoryUtils;
-import com.gopivotal.cloudfoundry.test.core.RuntimeUtils;
+import javax.sql.DataSource;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
-import javax.sql.DataSource;
+import com.gopivotal.cloudfoundry.test.core.HealthUtils;
+import com.gopivotal.cloudfoundry.test.core.MemoryUtils;
+import com.gopivotal.cloudfoundry.test.core.RedisUtils.FakeRedisConnectionFactory;
+import com.gopivotal.cloudfoundry.test.core.RuntimeUtils;
 
 @Configuration
 @ComponentScan(basePackages="com.gopivotal.cloudfoundry.test.controller")
@@ -41,10 +43,10 @@ class ApplicationConfiguration {
         EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
         return builder.setType(EmbeddedDatabaseType.H2).build();
     }
-
+    
     @Bean
-    DataSourceUtils dataSourceUtils() {
-        return new DataSourceUtils();
+    RedisConnectionFactory redisConnectionFactory() {
+    		return new FakeRedisConnectionFactory();
     }
 
     @Bean

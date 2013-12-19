@@ -16,19 +16,21 @@
 
 package com.gopivotal.cloudfoundry.test
 
+import com.gopivotal.cloudfoundry.test.core.DataSourceUtils
+
 import grails.converters.JSON
 
 class DataSourceController {
 
     def dataSource
 
-    def dataSourceUtils
+    def dataSourceUtils = new DataSourceUtils()
 
-    def checkDatabaseAccess() {
-        render this.dataSourceUtils.checkDatabaseAccess(this.dataSource)
+    def checkAccess() {
+        render this.dataSourceUtils.checkAccess(this.dataSource)
     }
 
-    def dataSourceUrl() {
+    def url() {
         render this.dataSourceUtils.getUrl(this.dataSource)
     }
 }

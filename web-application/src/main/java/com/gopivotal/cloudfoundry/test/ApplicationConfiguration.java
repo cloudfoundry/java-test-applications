@@ -19,7 +19,9 @@ package com.gopivotal.cloudfoundry.test;
 import com.gopivotal.cloudfoundry.test.core.DataSourceUtils;
 import com.gopivotal.cloudfoundry.test.core.HealthUtils;
 import com.gopivotal.cloudfoundry.test.core.MemoryUtils;
+import com.gopivotal.cloudfoundry.test.core.RedisUtils;
 import com.gopivotal.cloudfoundry.test.core.RuntimeUtils;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -40,11 +42,6 @@ class ApplicationConfiguration {
     DataSource dataSource() {
         EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
         return builder.setType(EmbeddedDatabaseType.H2).build();
-    }
-
-    @Bean
-    DataSourceUtils dataSourceUtils() {
-        return new DataSourceUtils();
     }
 
     @Bean

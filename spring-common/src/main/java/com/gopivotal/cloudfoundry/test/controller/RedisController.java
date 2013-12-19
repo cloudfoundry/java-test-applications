@@ -16,17 +16,18 @@
 
 package com.gopivotal.cloudfoundry.test.controller;
 
-import javax.sql.DataSource;
-
+import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.gopivotal.cloudfoundry.test.core.DataSourceUtils;
+import com.gopivotal.cloudfoundry.test.core.RedisUtils;
 
 @RestController
-@RequestMapping("/datasource")
-final public class DataSourceController extends ServiceController<DataSource> {
-    public DataSourceController() {
-    		super(new DataSourceUtils());
-    }
+@RequestMapping("/redis")
+final public class RedisController extends ServiceController<RedisConnectionFactory> {
+
+	public RedisController() {
+		super(new RedisUtils());
+	}
+
 }

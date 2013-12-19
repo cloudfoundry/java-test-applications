@@ -27,11 +27,11 @@ import java.sql.SQLException;
 /**
  * Utility class for analysing a {@link DataSource}.
  */
-public final class DataSourceUtils {
+public final class DataSourceUtils implements ServiceUtils<DataSource> {
 
     private static final String SELECT_ONE = "SELECT 1";
 
-    public String checkDatabaseAccess(DataSource dataSource) {
+    public String checkAccess(DataSource dataSource) {
         if (dataSource == null) {
             return "No datasource found";
         }

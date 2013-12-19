@@ -15,7 +15,6 @@
  */
 
 
-import com.gopivotal.cloudfoundry.test.core.DataSourceUtils
 import com.gopivotal.cloudfoundry.test.core.HealthUtils
 import com.gopivotal.cloudfoundry.test.core.MemoryUtils
 import com.gopivotal.cloudfoundry.test.core.RuntimeUtils
@@ -31,11 +30,6 @@ import org.springframework.context.annotation.ComponentScan
 @Grab('mysql-connector-java')
 @Grab('spring-boot-starter-jdbc')
 class ApplicationConfiguration {
-
-    @Bean
-    DataSourceUtils dataSourceUtils() {
-        return new DataSourceUtils()
-    }
 
     @Bean
     HealthUtils healthUtils() {

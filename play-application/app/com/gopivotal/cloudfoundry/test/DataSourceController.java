@@ -31,23 +31,18 @@ public final class DataSourceController {
 
     private DataSource dataSource;
 
-    private final DataSourceUtils dataSourceUtils;
+    private final DataSourceUtils dataSourceUtils = new DataSourceUtils();
 
-    @Autowired
-    DataSourceController(DataSourceUtils dataSourceUtils) {
-        this.dataSourceUtils = dataSourceUtils;
-    }
-    
     @Autowired(required=false)
     public void setDataSource(DataSource dataSource) {
     		this.dataSource = dataSource;
     }
 
-    public Result checkDatabaseAccess() {
-        return toResult(this.dataSourceUtils.checkDatabaseAccess(this.dataSource));
+    public Result checkAccess() {
+        return toResult(this.dataSourceUtils.checkAccess(this.dataSource));
     }
 
-    public Result dataSourceUrl() {
+    public Result url() {
         return toResult(this.dataSourceUtils.getUrl(this.dataSource));
     }
 

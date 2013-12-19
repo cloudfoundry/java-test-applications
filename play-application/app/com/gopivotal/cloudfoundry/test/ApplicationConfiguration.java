@@ -16,13 +16,14 @@
 
 package com.gopivotal.cloudfoundry.test;
 
-import com.gopivotal.cloudfoundry.test.core.DataSourceUtils;
 import com.gopivotal.cloudfoundry.test.core.HealthUtils;
 import com.gopivotal.cloudfoundry.test.core.MemoryUtils;
 import com.gopivotal.cloudfoundry.test.core.RuntimeUtils;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+
 import play.db.DB;
 
 import javax.sql.DataSource;
@@ -32,16 +33,6 @@ import play.db.*;
 @Configuration
 @ComponentScan
 public class ApplicationConfiguration {
-
-    @Bean
-    DataSource dataSource() {
-        return DB.getDataSource();
-    }
-
-    @Bean
-    DataSourceUtils dataSourceUtils() {
-        return new DataSourceUtils();
-    }
 
     @Bean
     HealthUtils healthUtils() {

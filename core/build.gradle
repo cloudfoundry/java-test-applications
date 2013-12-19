@@ -18,9 +18,11 @@ dependencies {
     testCompile "org.mockito:mockito-core:$mockitoVersion"
     compile     "commons-dbcp:commons-dbcp:$commonsDbcpVersion"
     compile     "org.slf4j:slf4j-api:$slf4jVersion"
-    compile     "org.springframework:spring-jdbc:$springVersion"
     compile     "org.apache.tomcat:tomcat-dbcp:$tomcatVersion"
     compile     "org.apache.tomcat:tomcat-jdbc:$tomcatVersion"
+    compile     "org.springframework:spring-jdbc:$springVersion"
+    compile     "org.springframework.data:spring-data-redis:$springDataRedisVersion"
+    runtime		"redis.clients:jedis:$jedisVersion"
 }
 
 build.dependsOn install
