@@ -14,19 +14,9 @@
  * limitations under the License.
  */
 
-package com.gopivotal.cloudfoundry.test.controller;
+package com.gopivotal.cloudfoundry.test.core;
 
-import javax.sql.DataSource;
-
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.gopivotal.cloudfoundry.test.core.DataSourceUtils;
-
-@RestController
-@RequestMapping("/datasource")
-final public class DataSourceController extends ServiceController<DataSource> {
-    public DataSourceController() {
-    		super(new DataSourceUtils());
-    }
+public interface ServiceUtils<SC> {
+	public String checkAccess(SC serviceConnector);
+	public String getUrl(SC serviceConnector);
 }

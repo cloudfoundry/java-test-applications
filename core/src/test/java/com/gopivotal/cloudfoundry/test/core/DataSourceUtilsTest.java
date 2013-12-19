@@ -52,7 +52,7 @@ public final class DataSourceUtilsTest {
         when(this.testDataSource.getConnection()).thenReturn(this.testConnection);
         when(this.testConnection.prepareStatement("SELECT 1")).thenReturn(this.preparedStatement);
         when(this.preparedStatement.execute()).thenReturn(true);
-        assertEquals("ok", this.dataSourceUtils.checkDatabaseAccess(this.testDataSource));
+        assertEquals("ok", this.dataSourceUtils.checkAccess(this.testDataSource));
     }
 
     @Test
@@ -60,7 +60,7 @@ public final class DataSourceUtilsTest {
         when(this.testDataSource.getConnection()).thenReturn(this.testConnection);
         when(this.testConnection.prepareStatement("SELECT 1")).thenReturn(this.preparedStatement);
         when(this.preparedStatement.execute()).thenThrow(new SQLException("test message"));
-        assertEquals("failed with test message", this.dataSourceUtils.checkDatabaseAccess(this.testDataSource));
+        assertEquals("failed with test message", this.dataSourceUtils.checkAccess(this.testDataSource));
     }
 
     @Test

@@ -15,12 +15,14 @@
  */
 
 
-import com.gopivotal.cloudfoundry.test.core.DataSourceUtils
+import com.gopivotal.cloudfoundry.test.core.RedisUtils.FakeRedisConnectionFactory
+import org.springframework.data.redis.connection.RedisConnectionFactory
 import com.gopivotal.cloudfoundry.test.core.HealthUtils
 import com.gopivotal.cloudfoundry.test.core.MemoryUtils
 import com.gopivotal.cloudfoundry.test.core.RuntimeUtils
 import com.gopivotal.cloudfoundry.test.controller.ApplicationController
 import com.gopivotal.cloudfoundry.test.controller.DataSourceController
+import com.gopivotal.cloudfoundry.test.controller.RedisController
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.context.annotation.Bean
 
@@ -28,11 +30,6 @@ import javax.sql.DataSource
 
 @EnableAutoConfiguration
 public class ApplicationConfiguration {
-
-    @Bean
-    static DataSourceUtils dataSourceUtils() {
-        return new DataSourceUtils()
-    }
 
     @Bean
     static HealthUtils healthUtils() {
@@ -53,14 +50,28 @@ public class ApplicationConfiguration {
     }
 
     @Bean
+    static RedisConnectionFactory redisConnectionFactory() {
+        return new FakeRedisConnectionFactory()
+    }
+
+
+    @Bean
     static ApplicationController applicationController() {
         return new ApplicationController(healthUtils(), runtimeUtils())
     }
 
     @Bean
     static DataSourceController dataSourceController(DataSource dataSource) {
-        def dataSourceController = new DataSourceController(dataSourceUtils())
-        dataSourceController.setDataSource(dataSource)
+        def dataSourceController = new DataSourceController()
+        dataSourceController.setServiceConnector(dataSource)
         return dataSourceController
     }
+
+    @Bean
+    static RedisController redisController(RedisConnectionFactory redisConnectionFactory) {
+        def redisController = new RedisController()
+        redisController.setServiceConnector(redisConnectionFactory)
+        return redisController
+    }
+
 }
