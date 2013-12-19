@@ -16,7 +16,26 @@
 
 package com.gopivotal.cloudfoundry.test.core;
 
+/**
+ * Services abstraction.
+ */
 public interface ServiceUtils<SC> {
-	public String checkAccess(SC serviceConnector);
-	public String getUrl(SC serviceConnector);
+
+    /**
+     * Checks whether the service can be accessed.
+     *
+     * @param serviceConnector the service connector
+     *
+     * @return "ok" if and only if the service can be accessed
+     */
+    String checkAccess(SC serviceConnector);
+
+    /**
+     * Gets the URL of the service.
+     *
+     * @param serviceConnector the service connector
+     *
+     * @return a String representation of the service URL
+     */
+    String getUrl(SC serviceConnector);
 }

@@ -8,35 +8,41 @@
           <element id="module-output" name="web-servlet-2-application" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Gradle: jackson-databind-2.2.2" />
+          <element id="library" level="project" name="Gradle: jackson-annotations-2.2.2" />
+          <element id="library" level="project" name="Gradle: mysql-connector-java-5.0.5" />
+          <element id="library" level="project" name="Gradle: logback-classic-1.0.13" />
+          <element id="library" level="project" name="Gradle: logback-core-1.0.13" />
+          <element id="library" level="project" name="Gradle: slf4j-api-1.7.5" />
+          <element id="library" level="project" name="Gradle: jackson-core-2.2.2" />
+          <element id="library" level="project" name="Gradle: h2-1.3.174" />
+          <element id="library" level="project" name="Gradle: jcl-over-slf4j-1.7.5" />
+          <element id="archive" name="com.gopivotal.cloudfoundry.test-spring-common-1.0.0.BUILD-SNAPSHOT.jar">
+            <element id="module-output" name="spring-common" />
+          </element>
           <element id="archive" name="com.gopivotal.cloudfoundry.test-core-1.0.0.BUILD-SNAPSHOT.jar">
             <element id="module-output" name="core" />
           </element>
-          <element id="library" level="project" name="Gradle: spring-core-4.0.0.RC1" />
           <element id="library" level="project" name="Gradle: tomcat-dbcp-7.0.47" />
-          <element id="library" level="project" name="Gradle: spring-beans-4.0.0.RC1" />
           <element id="library" level="project" name="Gradle: tomcat-jdbc-7.0.47" />
           <element id="library" level="project" name="Gradle: guava-15.0" />
           <element id="library" level="project" name="Gradle: bonecp-0.8.0.RELEASE" />
           <element id="library" level="project" name="Gradle: aopalliance-1.0" />
           <element id="library" level="project" name="Gradle: commons-dbcp-1.2.2" />
-          <element id="library" level="project" name="Gradle: slf4j-api-1.7.5" />
-          <element id="library" level="project" name="Gradle: spring-jdbc-4.0.0.RC1" />
-          <element id="library" level="project" name="Gradle: commons-pool-1.3" />
           <element id="library" level="project" name="Gradle: tomcat-juli-7.0.47" />
-          <element id="library" level="project" name="Gradle: spring-tx-4.0.0.RC1" />
-          <element id="library" level="project" name="Gradle: spring-expression-4.0.0.RC1" />
-          <element id="library" level="project" name="Gradle: jackson-databind-2.2.2" />
-          <element id="library" level="project" name="Gradle: spring-context-4.0.0.RC1" />
-          <element id="library" level="project" name="Gradle: jackson-annotations-2.2.2" />
-          <element id="library" level="project" name="Gradle: mysql-connector-java-5.0.5" />
-          <element id="library" level="project" name="Gradle: logback-classic-1.0.13" />
-          <element id="library" level="project" name="Gradle: spring-web-4.0.0.RC1" />
-          <element id="library" level="project" name="Gradle: spring-webmvc-4.0.0.RC1" />
-          <element id="library" level="project" name="Gradle: logback-core-1.0.13" />
-          <element id="library" level="project" name="Gradle: jackson-core-2.2.2" />
-          <element id="library" level="project" name="Gradle: spring-aop-4.0.0.RC1" />
-          <element id="library" level="project" name="Gradle: h2-1.3.174" />
-          <element id="library" level="project" name="Gradle: jcl-over-slf4j-1.7.5" />
+          <element id="library" level="project" name="Gradle: commons-pool-1.5.5" />
+          <element id="library" level="project" name="Gradle: spring-core-4.0.0.RC2" />
+          <element id="library" level="project" name="Gradle: jedis-2.1.0" />
+          <element id="library" level="project" name="Gradle: spring-beans-4.0.0.RC2" />
+          <element id="library" level="project" name="Gradle: spring-tx-4.0.0.RC2" />
+          <element id="library" level="project" name="Gradle: spring-data-redis-1.0.3.RELEASE" />
+          <element id="library" level="project" name="Gradle: spring-context-support-3.1.4.RELEASE" />
+          <element id="library" level="project" name="Gradle: spring-jdbc-4.0.0.RC2" />
+          <element id="library" level="project" name="Gradle: spring-web-4.0.0.RC2" />
+          <element id="library" level="project" name="Gradle: spring-context-4.0.0.RC2" />
+          <element id="library" level="project" name="Gradle: spring-expression-4.0.0.RC2" />
+          <element id="library" level="project" name="Gradle: spring-aop-4.0.0.RC2" />
+          <element id="library" level="project" name="Gradle: spring-webmvc-4.0.0.RC2" />
         </element>
       </element>
       <element id="directory" name="META-INF">

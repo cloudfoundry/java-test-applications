@@ -16,6 +16,8 @@
 
 package com.gopivotal.cloudfoundry.test.controller;
 
+import com.gopivotal.cloudfoundry.test.core.ServiceUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,10 +26,10 @@ import com.gopivotal.cloudfoundry.test.core.RedisUtils;
 
 @RestController
 @RequestMapping("/redis")
-final public class RedisController extends ServiceController<RedisConnectionFactory> {
+public final class RedisController extends ServiceController<RedisConnectionFactory> {
 
-	public RedisController() {
-		super(new RedisUtils());
-	}
-
+    @Autowired
+    public RedisController(ServiceUtils<RedisConnectionFactory> serviceUtils, RedisConnectionFactory serviceConnector) {
+        super(serviceUtils, serviceConnector);
+    }
 }

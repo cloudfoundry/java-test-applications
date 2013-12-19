@@ -14,15 +14,13 @@
  * limitations under the License.
  */
 
-
-import com.gopivotal.cloudfoundry.test.core.HealthUtils
-import com.gopivotal.cloudfoundry.test.core.MemoryUtils
-import com.gopivotal.cloudfoundry.test.core.RuntimeUtils
+import com.gopivotal.cloudfoundry.test.core.FakeRedisConnectionFactory
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.ComponentScan
+import org.springframework.data.redis.connection.RedisConnectionFactory
 
-@ComponentScan(basePackages="com.gopivotal.cloudfoundry.test.controller")
+@ComponentScan(basePackages = "com.gopivotal.cloudfoundry.test")
 @EnableAutoConfiguration
 @Grab('com.gopivotal.cloudfoundry.test:core:1.0.0.BUILD-SNAPSHOT')
 @Grab('com.gopivotal.cloudfoundry.test:spring-common:1.0.0.BUILD-SNAPSHOT')
@@ -32,20 +30,8 @@ import org.springframework.context.annotation.ComponentScan
 class ApplicationConfiguration {
 
     @Bean
-    HealthUtils healthUtils() {
-        return new HealthUtils()
+    static RedisConnectionFactory redisConnectionFactory() {
+        return new FakeRedisConnectionFactory()
     }
 
-    @Bean
-    MemoryUtils memoryUtils() {
-        def memory = new MemoryUtils()
-        memory.outOfMemory()
-
-        return memory
-    }
-
-    @Bean
-    RuntimeUtils runtimeUtils() {
-        return new RuntimeUtils()
-    }
 }

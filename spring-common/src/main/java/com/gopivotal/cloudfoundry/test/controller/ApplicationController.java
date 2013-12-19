@@ -28,14 +28,14 @@ import com.gopivotal.cloudfoundry.test.core.HealthUtils;
 import com.gopivotal.cloudfoundry.test.core.RuntimeUtils;
 
 @RestController
-final public class ApplicationController {
+public final class ApplicationController {
 
     private final HealthUtils healthUtils;
 
     private final RuntimeUtils runtimeUtils;
 
     @Autowired
-    ApplicationController(HealthUtils healthUtils,
+    public ApplicationController(HealthUtils healthUtils,
                           RuntimeUtils runtimeUtils) {
         this.healthUtils = healthUtils;
         this.runtimeUtils = runtimeUtils;

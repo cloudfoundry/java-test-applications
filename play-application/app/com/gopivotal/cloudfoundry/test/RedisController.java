@@ -17,7 +17,9 @@
 package com.gopivotal.cloudfoundry.test;
 
 import com.gopivotal.cloudfoundry.test.core.DataSourceUtils;
+import com.gopivotal.cloudfoundry.test.core.RedisUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.connection.RedisConnectionFactory;
 import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -25,24 +27,24 @@ import play.mvc.Result;
 import javax.sql.DataSource;
 
 @org.springframework.stereotype.Controller
-public final class DataSourceController {
+public final class RedisController {
 
-    private final DataSource dataSource;
+    private final RedisConnectionFactory redisConnectionFactory;
 
-    private final DataSourceUtils dataSourceUtils;
+    private final RedisUtils redisUtils;
 
     @Autowired
-    public DataSourceController(DataSource dataSource, DataSourceUtils dataSourceUtils) {
-        this.dataSource = dataSource;
-        this.dataSourceUtils = dataSourceUtils;
+    public RedisController(RedisConnectionFactory redisConnectionFactory, RedisUtils redisUtils) {
+        this.redisConnectionFactory = redisConnectionFactory;
+        this.redisUtils = redisUtils;
     }
 
     public Result checkAccess() {
-        return toResult(this.dataSourceUtils.checkAccess(this.dataSource));
+        return toResult(this.redisUtils.checkAccess(this.redisConnectionFactory));
     }
 
     public Result url() {
-        return toResult(this.dataSourceUtils.getUrl(this.dataSource));
+        return toResult(this.redisUtils.getUrl(this.redisConnectionFactory));
     }
 
     private static <V> Result toResult(V value) {

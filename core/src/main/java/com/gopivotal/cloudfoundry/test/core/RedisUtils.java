@@ -1,68 +1,52 @@
+/*
+ * Copyright 2013 the original author or authors.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.gopivotal.cloudfoundry.test.core;
 
-import org.springframework.dao.DataAccessException;
 import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
-import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
+import org.springframework.stereotype.Component;
 
-public class RedisUtils implements ServiceUtils<RedisConnectionFactory> {
+@Component
+public class RedisUtils extends AbstractServiceUtils<RedisConnectionFactory> {
+
     public String checkAccess(RedisConnectionFactory redisConnectionFactory) {
-    		String errorMessage = validateRedisConnectionFactory(redisConnectionFactory);
-    		
-    		if (errorMessage != null) {
-    			return errorMessage;
-    		}
         try {
             RedisConnection connection = redisConnectionFactory.getConnection();
-            String echoMessage = "hello";
-            String reply = new String(connection.echo(echoMessage.getBytes()));
-            if (reply.equals(echoMessage)) {
-            		return "ok";
-            } else {
-            		return "redis connection failure: echo doesn't match the message";
-            }
+            connection.echo("hello".getBytes());
+            return "ok";
         } catch (Exception e) {
             return "failed with " + e.getMessage();
         }
     }
 
     public String getUrl(RedisConnectionFactory redisConnectionFactory) {
-		String errorMessage = validateRedisConnectionFactory(redisConnectionFactory);
-		
-		if (errorMessage != null) {
-			return errorMessage;
-		}
-    		String host = ((JedisConnectionFactory) redisConnectionFactory).getHostName();
-    		int port = ((JedisConnectionFactory) redisConnectionFactory).getPort();
-    		
-    		return String.format("redis://%s:%d", host, port);
-    }
-    
-    private String validateRedisConnectionFactory(RedisConnectionFactory redisConnectionFactory) {
-        if (redisConnectionFactory == null) {
-            return "redis://no-RedisConnectionFactory-found";
-        }
-        if (!(redisConnectionFactory instanceof JedisConnectionFactory)) {
-        		return "redis://RedisConnectionFactory-is-not-of-JedisConnectionFactory-type";
-        }
-        return null;
-    }
-    
-    /**
-     * Fake RedisConnectionFactory, since we don't have "in-memory" redis (equivalent to, say, H2 database)
-     * 
-     * Objects of this class can be used wherever auto-reconfiguration is expected to take place. If auto-reconfiguration
-     * works as expected, they will be replaced with real connection factory object. If not, tests will fail as expected.
-     */
-    public static class FakeRedisConnectionFactory implements RedisConnectionFactory {
-		@Override
-		public DataAccessException translateExceptionIfPossible(RuntimeException ex) {
-			return null;
-		}
+        if (isClass(redisConnectionFactory, "com.gopivotal.cloudfoundry.test.core.FakeRedisConnectionFactory")) {
+            return "redis://fake";
+        } else if (isClass(redisConnectionFactory, "org.springframework.data.redis.connection.jedis.JedisConnectionFactory")) {
+            org.springframework.data.redis.connection.jedis.JedisConnectionFactory jedisConnectionFactory = (org.springframework.data.redis.connection.jedis
+                    .JedisConnectionFactory) redisConnectionFactory;
+            String host = jedisConnectionFactory.getHostName();
+            int port = jedisConnectionFactory.getPort();
 
-		@Override
-		public RedisConnection getConnection() {
-			return null;
-		}
-	};
+            return String.format("redis://%s:%d", host, port);
+        }
+
+        return String.format("Unable to determine URL for RedisConnectionFactory of type %s",
+                redisConnectionFactory.getClass().getName());
+    }
+
 }

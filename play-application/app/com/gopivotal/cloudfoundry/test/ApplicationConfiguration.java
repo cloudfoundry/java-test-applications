@@ -16,6 +16,7 @@
 
 package com.gopivotal.cloudfoundry.test;
 
+import com.gopivotal.cloudfoundry.test.core.FakeRedisConnectionFactory;
 import com.gopivotal.cloudfoundry.test.core.HealthUtils;
 import com.gopivotal.cloudfoundry.test.core.MemoryUtils;
 import com.gopivotal.cloudfoundry.test.core.RuntimeUtils;
@@ -24,6 +25,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+import org.springframework.data.redis.connection.RedisConnectionFactory;
 import play.db.DB;
 
 import javax.sql.DataSource;
@@ -31,24 +33,17 @@ import javax.sql.DataSource;
 import play.db.*;
 
 @Configuration
-@ComponentScan
+@ComponentScan(basePackages="com.gopivotal.cloudfoundry.test")
 public class ApplicationConfiguration {
 
     @Bean
-    HealthUtils healthUtils() {
-        return new HealthUtils();
+    DataSource dataSource() {
+        return DB.getDataSource();
     }
 
     @Bean
-    MemoryUtils memoryUtils() {
-        MemoryUtils memory = new MemoryUtils();
-        memory.outOfMemory();
-
-        return memory;
+    RedisConnectionFactory redisConnectionFactory() {
+        return new FakeRedisConnectionFactory();
     }
 
-    @Bean
-    RuntimeUtils runtimeUtils() {
-        return new RuntimeUtils();
-    }
 }

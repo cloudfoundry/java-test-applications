@@ -14,22 +14,23 @@
  * limitations under the License.
  */
 
-
-import com.gopivotal.cloudfoundry.test.core.RedisUtils.FakeRedisConnectionFactory
-import org.springframework.data.redis.connection.RedisConnectionFactory
-import com.gopivotal.cloudfoundry.test.core.HealthUtils
-import com.gopivotal.cloudfoundry.test.core.MemoryUtils
-import com.gopivotal.cloudfoundry.test.core.RuntimeUtils
 import com.gopivotal.cloudfoundry.test.controller.ApplicationController
 import com.gopivotal.cloudfoundry.test.controller.DataSourceController
 import com.gopivotal.cloudfoundry.test.controller.RedisController
+import com.gopivotal.cloudfoundry.test.core.*
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.context.annotation.Bean
+import org.springframework.data.redis.connection.RedisConnectionFactory
 
 import javax.sql.DataSource
 
 @EnableAutoConfiguration
 public class ApplicationConfiguration {
+
+    @Bean
+    static DataSourceUtils dataSourceUtils() {
+        return new DataSourceUtils();
+    }
 
     @Bean
     static HealthUtils healthUtils() {
@@ -45,6 +46,11 @@ public class ApplicationConfiguration {
     }
 
     @Bean
+    static RedisUtils redisUtils() {
+        return new RedisUtils()
+    }
+
+    @Bean
     static RuntimeUtils runtimeUtils() {
         return new RuntimeUtils()
     }
@@ -54,7 +60,6 @@ public class ApplicationConfiguration {
         return new FakeRedisConnectionFactory()
     }
 
-
     @Bean
     static ApplicationController applicationController() {
         return new ApplicationController(healthUtils(), runtimeUtils())
@@ -62,16 +67,12 @@ public class ApplicationConfiguration {
 
     @Bean
     static DataSourceController dataSourceController(DataSource dataSource) {
-        def dataSourceController = new DataSourceController()
-        dataSourceController.setServiceConnector(dataSource)
-        return dataSourceController
+        return new DataSourceController(dataSourceUtils(), dataSource)
     }
 
     @Bean
     static RedisController redisController(RedisConnectionFactory redisConnectionFactory) {
-        def redisController = new RedisController()
-        redisController.setServiceConnector(redisConnectionFactory)
-        return redisController
+        return new RedisController(redisUtils(), redisConnectionFactory)
     }
 
 }

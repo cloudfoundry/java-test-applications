@@ -22,18 +22,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.gopivotal.cloudfoundry.test.core.ServiceUtils;
 
-public abstract class ServiceController<SC> {
-	private SC serviceConnector = null;
+abstract class ServiceController<SC> {
+	private final SC serviceConnector;
 	private final ServiceUtils<SC> serviceUtils; 
 	
-	public ServiceController(ServiceUtils<SC> serviceUtils) {
+    protected ServiceController(ServiceUtils<SC> serviceUtils, SC serviceConnector) {
 		this.serviceUtils = serviceUtils;
+        this.serviceConnector = serviceConnector;
 	}
-	
-    @Autowired(required=false) 
-    public void setServiceConnector(SC serviceConnector) {
-    		this.serviceConnector = serviceConnector;
-    }
 
     @RequestMapping(method = RequestMethod.GET, value = "/check-access")
     String checkAccess() {

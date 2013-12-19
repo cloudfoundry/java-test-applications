@@ -18,6 +18,8 @@ package com.gopivotal.cloudfoundry.test.controller;
 
 import javax.sql.DataSource;
 
+import com.gopivotal.cloudfoundry.test.core.ServiceUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,8 +27,10 @@ import com.gopivotal.cloudfoundry.test.core.DataSourceUtils;
 
 @RestController
 @RequestMapping("/datasource")
-final public class DataSourceController extends ServiceController<DataSource> {
-    public DataSourceController() {
-    		super(new DataSourceUtils());
+public final class DataSourceController extends ServiceController<DataSource> {
+
+    @Autowired
+    public DataSourceController(ServiceUtils<DataSource> serviceUtils, DataSource serviceConnector) {
+        super(serviceUtils, serviceConnector);
     }
 }

@@ -16,17 +16,11 @@
 
 package com.gopivotal.cloudfoundry.test;
 
-import com.gopivotal.cloudfoundry.test.core.DataSourceUtils;
-import com.gopivotal.cloudfoundry.test.core.HealthUtils;
-import com.gopivotal.cloudfoundry.test.core.MemoryUtils;
-import com.gopivotal.cloudfoundry.test.core.RedisUtils;
-import com.gopivotal.cloudfoundry.test.core.RuntimeUtils;
-
+import com.gopivotal.cloudfoundry.test.core.FakeRedisConnectionFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.jdbc.core.JdbcOperations;
-import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -34,7 +28,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import javax.sql.DataSource;
 
 @Configuration
-@ComponentScan(basePackages="com.gopivotal.cloudfoundry.test.controller")
+@ComponentScan(basePackages="com.gopivotal.cloudfoundry.test")
 @EnableWebMvc
 class ApplicationConfiguration {
 
@@ -45,25 +39,8 @@ class ApplicationConfiguration {
     }
 
     @Bean
-    HealthUtils healthUtils() {
-        return new HealthUtils();
+    RedisConnectionFactory redisConnectionFactory() {
+        return new FakeRedisConnectionFactory();
     }
 
-    @Bean
-    JdbcOperations jdbcOperations(DataSource dataSource) {
-        return new JdbcTemplate(dataSource);
-    }
-
-    @Bean
-    MemoryUtils memoryUtils() {
-        MemoryUtils memory = new MemoryUtils();
-        memory.outOfMemory();
-
-        return memory;
-    }
-
-    @Bean
-    RuntimeUtils runtimeUtils() {
-        return new RuntimeUtils();
-    }
 }

@@ -16,6 +16,9 @@
 
 package com.gopivotal.cloudfoundry.test.core;
 
+import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
 import java.util.Map;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
@@ -25,6 +28,7 @@ import java.util.concurrent.Executors;
 /**
  * Utility methods used during memory tests
  */
+@Component
 public final class MemoryUtils {
 
     private final ExecutorService executor = Executors.newFixedThreadPool(1);
@@ -51,6 +55,7 @@ public final class MemoryUtils {
      *
      * @return
      */
+    @PostConstruct
     public byte[] outOfMemory() {
         String value = this.environment.get("FAIL_OOM");
 

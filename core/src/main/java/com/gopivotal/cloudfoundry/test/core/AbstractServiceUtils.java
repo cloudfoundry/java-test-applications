@@ -16,18 +16,10 @@
 
 package com.gopivotal.cloudfoundry.test.core;
 
-import org.springframework.stereotype.Component;
+abstract class AbstractServiceUtils<SC>  implements ServiceUtils<SC> {
 
-/**
- * Utility methods for determining the health of an application
- */
-@Component
-public final class HealthUtils {
-
-    private static final String HEALTH = "ok";
-
-    public String health() {
-        return HEALTH;
+    protected final boolean isClass(SC serviceConnector, String className) {
+        return serviceConnector.getClass().getName().equals(className);
     }
 
 }

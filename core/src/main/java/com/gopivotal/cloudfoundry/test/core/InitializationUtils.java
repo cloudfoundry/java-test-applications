@@ -16,11 +16,14 @@
 
 package com.gopivotal.cloudfoundry.test.core;
 
+import org.springframework.stereotype.Component;
+
 import java.util.Map;
 
 /**
  * Utility methods used during application initialization
  */
+@Component
 public final class InitializationUtils {
 
     private final Map<String, String> environment;

@@ -16,6 +16,7 @@
 
 package com.gopivotal.cloudfoundry.test.core;
 
+import org.springframework.stereotype.Component;
 import org.springframework.util.ReflectionUtils;
 
 import javax.sql.DataSource;
@@ -27,14 +28,12 @@ import java.sql.SQLException;
 /**
  * Utility class for analysing a {@link DataSource}.
  */
-public final class DataSourceUtils implements ServiceUtils<DataSource> {
+@Component
+public final class DataSourceUtils extends AbstractServiceUtils<DataSource> {
 
     private static final String SELECT_ONE = "SELECT 1";
 
     public String checkAccess(DataSource dataSource) {
-        if (dataSource == null) {
-            return "No datasource found";
-        }
         try {
             Connection connection = dataSource.getConnection();
             PreparedStatement selectOne = connection.prepareStatement(SELECT_ONE);
@@ -46,9 +45,6 @@ public final class DataSourceUtils implements ServiceUtils<DataSource> {
     }
 
     public String getUrl(DataSource dataSource) {
-        if (dataSource == null) {
-            return "No datasource found";
-        }
         if (isClass(dataSource, "com.jolbox.bonecp.BoneCPDataSource")) {
             return ((com.jolbox.bonecp.BoneCPDataSource) dataSource).getJdbcUrl();
         } else if (isClass(dataSource, "org.apache.commons.dbcp.BasicDataSource")) {
@@ -80,7 +76,4 @@ public final class DataSourceUtils implements ServiceUtils<DataSource> {
         return String.format("Unable to determine URL for DataSource of type %s", dataSource.getClass().getName());
     }
 
-    private boolean isClass(DataSource dataSource, String className) {
-        return dataSource.getClass().getName().equals(className);
-    }
 }

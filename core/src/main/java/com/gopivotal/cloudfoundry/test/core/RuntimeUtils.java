@@ -16,6 +16,8 @@
 
 package com.gopivotal.cloudfoundry.test.core;
 
+import org.springframework.stereotype.Component;
+
 import java.lang.management.ManagementFactory;
 import java.lang.management.RuntimeMXBean;
 import java.util.Arrays;
@@ -25,6 +27,7 @@ import java.util.Map;
 /**
  * Utility methods used to get information about the current runtime
  */
+@Component
 public final class RuntimeUtils {
 
     private final Map<String, String> environment;

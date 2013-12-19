@@ -9,3 +9,5 @@ GET /input-arguments           @com.gopivotal.cloudfoundry.test.ApplicationContr
 GET /system-properties         @com.gopivotal.cloudfoundry.test.ApplicationController.systemProperties()
 GET /datasource/check-access   @com.gopivotal.cloudfoundry.test.DataSourceController.checkAccess()
 GET /datasource/url            @com.gopivotal.cloudfoundry.test.DataSourceController.url()
+GET /redis/check-access        @com.gopivotal.cloudfoundry.test.RedisController.checkAccess()
+GET /redis/url                 @com.gopivotal.cloudfoundry.test.RedisController.url()

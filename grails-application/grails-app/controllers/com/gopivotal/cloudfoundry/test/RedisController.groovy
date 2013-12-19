@@ -16,14 +16,11 @@
 
 package com.gopivotal.cloudfoundry.test
 
-import com.gopivotal.cloudfoundry.test.core.RedisUtils
-import grails.converters.JSON
-
 class RedisController {
 
     def redisConnectionFactory
 
-    def redisUtils = new RedisUtils()
+    def redisUtils
 
     def checkAccess() {
         render this.redisUtils.checkAccess(this.redisConnectionFactory)
