@@ -16,10 +16,13 @@
 
 package com.gopivotal.cloudfoundry.test;
 
+import com.gopivotal.cloudfoundry.test.core.FakeMongoDbFactory;
 import com.gopivotal.cloudfoundry.test.core.FakeRedisConnectionFactory;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.mongodb.MongoDbFactory;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
@@ -43,4 +46,9 @@ class ApplicationConfiguration {
         return new FakeRedisConnectionFactory();
     }
 
+    @Bean
+    MongoDbFactory mongoDbFactory() {
+        return new FakeMongoDbFactory();
+    }
+    
 }

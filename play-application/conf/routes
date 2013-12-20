@@ -11,3 +11,5 @@ GET /datasource/check-access   @com.gopivotal.cloudfoundry.test.DataSourceContro
 GET /datasource/url            @com.gopivotal.cloudfoundry.test.DataSourceController.url()
 GET /redis/check-access        @com.gopivotal.cloudfoundry.test.RedisController.checkAccess()
 GET /redis/url                 @com.gopivotal.cloudfoundry.test.RedisController.url()
+GET /mongodb/check-access      @com.gopivotal.cloudfoundry.test.MongoDbController.checkAccess()
+GET /mongodb/url               @com.gopivotal.cloudfoundry.test.MongoDbController.url()
