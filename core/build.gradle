@@ -22,6 +22,7 @@ dependencies {
     compile     "org.apache.tomcat:tomcat-jdbc:$tomcatVersion"
     compile     "org.springframework:spring-jdbc:$springVersion"
     compile     "org.springframework.data:spring-data-redis:$springDataRedisVersion"
+    compile     "org.springframework.data:spring-data-mongodb:$springDataMongoDbVersion"
     runtime		"redis.clients:jedis:$jedisVersion"
 }
 

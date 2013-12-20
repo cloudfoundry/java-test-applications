@@ -15,10 +15,12 @@
  */
 
 import com.gopivotal.cloudfoundry.test.core.FakeRedisConnectionFactory
+import com.gopivotal.cloudfoundry.test.core.FakeMongoDbFactory
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.ComponentScan
 import org.springframework.data.redis.connection.RedisConnectionFactory
+import org.springframework.data.mongodb.MongoDbFactory
 
 @ComponentScan(basePackages = "com.gopivotal.cloudfoundry.test")
 @EnableAutoConfiguration
@@ -32,6 +34,11 @@ class ApplicationConfiguration {
     @Bean
     static RedisConnectionFactory redisConnectionFactory() {
         return new FakeRedisConnectionFactory()
+    }
+
+    @Bean
+    static MongoDbFactory mongoDbFactory() {
+        return new FakeMongoDbFactory()
     }
 
 }

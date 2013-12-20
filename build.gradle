@@ -24,6 +24,7 @@ allprojects {
         springVersion  = '4.0.0.RC2'
         springDataRedisVersion = '1.0.3.RELEASE'
         jedisVersion = '2.0.0'
+        springDataMongoDbVersion = '1.3.3.RELEASE'
     }
 
     repositories {

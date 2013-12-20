@@ -17,18 +17,18 @@
 package com.gopivotal.cloudfoundry.test.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.connection.RedisConnectionFactory;
+import org.springframework.data.mongodb.MongoDbFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gopivotal.cloudfoundry.test.core.ServiceUtils;
 
 @RestController
-@RequestMapping("/redis")
-public final class RedisController extends ServiceController<RedisConnectionFactory> {
+@RequestMapping("/mongodb")
+public final class MongoDbController extends ServiceController<MongoDbFactory> {
 
     @Autowired
-    public RedisController(ServiceUtils<RedisConnectionFactory> serviceUtils, RedisConnectionFactory serviceConnector) {
-        super(serviceUtils, serviceConnector);
+    public MongoDbController(ServiceUtils<MongoDbFactory> serviceUtils, MongoDbFactory mongoDbFactory) {
+        super(serviceUtils, mongoDbFactory);
     }
 }

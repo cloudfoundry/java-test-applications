@@ -17,10 +17,12 @@
 import com.gopivotal.cloudfoundry.test.controller.ApplicationController
 import com.gopivotal.cloudfoundry.test.controller.DataSourceController
 import com.gopivotal.cloudfoundry.test.controller.RedisController
+import com.gopivotal.cloudfoundry.test.controller.MongoDbController
 import com.gopivotal.cloudfoundry.test.core.*
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.context.annotation.Bean
 import org.springframework.data.redis.connection.RedisConnectionFactory
+import org.springframework.data.mongodb.MongoDbFactory
 
 import javax.sql.DataSource
 
@@ -51,6 +53,11 @@ public class ApplicationConfiguration {
     }
 
     @Bean
+    static MongoDbUtils mongoDbUtils() {
+        return new MongoDbUtils()
+    }
+
+    @Bean
     static RuntimeUtils runtimeUtils() {
         return new RuntimeUtils()
     }
@@ -58,6 +65,11 @@ public class ApplicationConfiguration {
     @Bean
     static RedisConnectionFactory redisConnectionFactory() {
         return new FakeRedisConnectionFactory()
+    }
+
+    @Bean
+    static MongoDbFactory mongoDbFactory() {
+        return new FakeMongoDbFactory()
     }
 
     @Bean
@@ -73,6 +85,11 @@ public class ApplicationConfiguration {
     @Bean
     static RedisController redisController(RedisConnectionFactory redisConnectionFactory) {
         return new RedisController(redisUtils(), redisConnectionFactory)
+    }
+
+    @Bean
+    static MongoDbController mongoDbController(MongoDbFactory mongoDbFactory) {
+        return new MongoDbController(mongoDbUtils(), mongoDbFactory)
     }
 
 }

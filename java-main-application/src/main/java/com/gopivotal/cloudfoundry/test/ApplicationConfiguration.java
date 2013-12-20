@@ -16,23 +16,20 @@
 
 package com.gopivotal.cloudfoundry.test;
 
-import com.gopivotal.cloudfoundry.test.core.FakeRedisConnectionFactory;
+import javax.sql.DataSource;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
-
-import com.gopivotal.cloudfoundry.test.core.DataSourceUtils;
-import com.gopivotal.cloudfoundry.test.core.HealthUtils;
-import com.gopivotal.cloudfoundry.test.core.InitializationUtils;
-import com.gopivotal.cloudfoundry.test.core.MemoryUtils;
-import com.gopivotal.cloudfoundry.test.core.RedisUtils;
-import com.gopivotal.cloudfoundry.test.core.RuntimeUtils;
+import org.springframework.data.mongodb.MongoDbFactory;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
-import javax.sql.DataSource;
+import com.gopivotal.cloudfoundry.test.core.FakeMongoDbFactory;
+import com.gopivotal.cloudfoundry.test.core.FakeRedisConnectionFactory;
+import com.gopivotal.cloudfoundry.test.core.InitializationUtils;
 
 @ComponentScan(basePackages="com.gopivotal.cloudfoundry.test")
 @EnableAutoConfiguration
@@ -54,4 +51,9 @@ public class ApplicationConfiguration {
         return new FakeRedisConnectionFactory();
     }
 
+    @Bean
+    MongoDbFactory mongoDbFactory() {
+        return new FakeMongoDbFactory();
+    }
+    
 }
