@@ -18,6 +18,10 @@ package com.gopivotal.cloudfoundry.test;
 
 import com.gopivotal.cloudfoundry.test.core.FakeMongoDbFactory;
 import com.gopivotal.cloudfoundry.test.core.FakeRedisConnectionFactory;
+
+import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
+import org.springframework.amqp.rabbit.connection.ConnectionFactory;
+
 import com.gopivotal.cloudfoundry.test.core.HealthUtils;
 import com.gopivotal.cloudfoundry.test.core.MemoryUtils;
 import com.gopivotal.cloudfoundry.test.core.RuntimeUtils;
@@ -52,5 +56,9 @@ public class ApplicationConfiguration {
     MongoDbFactory mongoDbFactory() {
         return new FakeMongoDbFactory();
     }
-    
+
+    @Bean
+    ConnectionFactory rabbitConnectionFactory() {
+    		return new CachingConnectionFactory(null, 0);
+    }
 }

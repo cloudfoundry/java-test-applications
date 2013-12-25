@@ -23,6 +23,7 @@ dependencies {
     compile     "org.springframework:spring-jdbc:$springVersion"
     compile     "org.springframework.data:spring-data-redis:$springDataRedisVersion"
     compile     "org.springframework.data:spring-data-mongodb:$springDataMongoDbVersion"
+    compile     "org.springframework.amqp:spring-rabbit:$springAmqpVersion"
     runtime		"redis.clients:jedis:$jedisVersion"
 }
 
