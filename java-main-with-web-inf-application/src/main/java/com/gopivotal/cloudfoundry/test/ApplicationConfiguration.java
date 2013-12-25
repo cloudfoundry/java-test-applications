@@ -16,10 +16,10 @@
 
 package com.gopivotal.cloudfoundry.test;
 
-import com.gopivotal.cloudfoundry.test.core.FakeMongoDbFactory;
-import com.gopivotal.cloudfoundry.test.core.FakeRedisConnectionFactory;
-import com.gopivotal.cloudfoundry.test.core.InitializationUtils;
+import javax.sql.DataSource;
 
+import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
+import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
@@ -29,7 +29,9 @@ import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
-import javax.sql.DataSource;
+import com.gopivotal.cloudfoundry.test.core.FakeMongoDbFactory;
+import com.gopivotal.cloudfoundry.test.core.FakeRedisConnectionFactory;
+import com.gopivotal.cloudfoundry.test.core.InitializationUtils;
 
 @ComponentScan(basePackages="com.gopivotal.cloudfoundry.test")
 @EnableAutoConfiguration
@@ -54,6 +56,11 @@ public class ApplicationConfiguration {
     @Bean
     MongoDbFactory mongoDbFactory() {
         return new FakeMongoDbFactory();
+    }
+    
+    @Bean
+    ConnectionFactory rabbitConnectionFactory() {
+        return new CachingConnectionFactory(null, 0);
     }
     
 }

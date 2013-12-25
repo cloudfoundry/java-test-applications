@@ -8,6 +8,8 @@ import com.gopivotal.cloudfoundry.test.core.RedisUtils
 import com.gopivotal.cloudfoundry.test.core.MongoDbUtils
 import com.gopivotal.cloudfoundry.test.core.RuntimeUtils
 
+import org.springframework.amqp.rabbit.connection.CachingConnectionFactory
+
 beans = {
 
     dataSourceUtils(DataSourceUtils)
@@ -31,5 +33,7 @@ beans = {
     redisConnectionFactory(FakeRedisConnectionFactory)
 
     mongoDbFactory(FakeMongoDbFactory)
+
+    rabbitConnectionFactory(CachingConnectionFactory, null, 0)
 
 }
