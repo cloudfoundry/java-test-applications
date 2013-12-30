@@ -18,6 +18,8 @@ package com.gopivotal.cloudfoundry.test;
 
 import javax.sql.DataSource;
 
+import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
+import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
@@ -56,4 +58,8 @@ public class ApplicationConfiguration {
         return new FakeMongoDbFactory();
     }
     
+    @Bean
+    ConnectionFactory rabbitConnectionFactory() {
+        return new CachingConnectionFactory(null, 0);
+    }
 }

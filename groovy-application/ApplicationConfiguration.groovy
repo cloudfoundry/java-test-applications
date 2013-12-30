@@ -18,11 +18,14 @@ import com.gopivotal.cloudfoundry.test.controller.ApplicationController
 import com.gopivotal.cloudfoundry.test.controller.DataSourceController
 import com.gopivotal.cloudfoundry.test.controller.RedisController
 import com.gopivotal.cloudfoundry.test.controller.MongoDbController
+import com.gopivotal.cloudfoundry.test.controller.RabbitController
 import com.gopivotal.cloudfoundry.test.core.*
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.context.annotation.Bean
 import org.springframework.data.redis.connection.RedisConnectionFactory
 import org.springframework.data.mongodb.MongoDbFactory
+import org.springframework.amqp.rabbit.connection.ConnectionFactory
+import org.springframework.amqp.rabbit.connection.CachingConnectionFactory
 
 import javax.sql.DataSource
 
@@ -58,6 +61,11 @@ public class ApplicationConfiguration {
     }
 
     @Bean
+    static RabbitUtils rabbitUtils() {
+        return new RabbitUtils()
+    }
+
+    @Bean
     static RuntimeUtils runtimeUtils() {
         return new RuntimeUtils()
     }
@@ -70,6 +78,11 @@ public class ApplicationConfiguration {
     @Bean
     static MongoDbFactory mongoDbFactory() {
         return new FakeMongoDbFactory()
+    }
+
+    @Bean
+    static ConnectionFactory rabbitConnectionFactory() {
+        return new CachingConnectionFactory(null, 0)
     }
 
     @Bean
@@ -92,4 +105,8 @@ public class ApplicationConfiguration {
         return new MongoDbController(mongoDbUtils(), mongoDbFactory)
     }
 
+    @Bean
+    static RabbitController rabbitController(ConnectionFactory rabbitConnectionFactory) {
+        return new RabbitController(rabbitUtils(), rabbitConnectionFactory)
+    }
 }
