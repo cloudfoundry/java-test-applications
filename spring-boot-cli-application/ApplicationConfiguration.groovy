@@ -16,7 +16,6 @@
 
 import com.gopivotal.cloudfoundry.test.core.FakeRedisConnectionFactory
 import com.gopivotal.cloudfoundry.test.core.FakeMongoDbFactory
-import com.gopivotal.cloudfoundry.test.core.FakeRabbitConnectionFactory
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.context.annotation.Bean
