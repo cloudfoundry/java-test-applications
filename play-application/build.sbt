@@ -9,7 +9,10 @@ libraryDependencies ++= Seq(
   javaJdbc,
   "org.springframework" % "spring-context" % "4.0.0.RC1",
   "org.springframework" % "spring-expression" % "4.0.0.RC1",
-  "org.springframework" % "spring-jdbc" % "4.0.0.RC1"
+  "org.springframework" % "spring-jdbc" % "4.0.0.RC1",
+  "org.springframework" % "spring-context" % "4.0.0.RELEASE",
+  "org.springframework" % "spring-expression" % "4.0.0.RELEASE",
+  "org.springframework" % "spring-jdbc" % "4.0.0.RELEASE"
 )
 
 play.Project.playJavaSettings

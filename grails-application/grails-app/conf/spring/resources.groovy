@@ -17,7 +17,7 @@ beans = {
 
     redisUtils(RedisUtils)
 
-    mongoDbUtils(MongoDbUtils)    
+    mongoDbUtils(MongoDbUtils)
 
     rabbitUtils(RabbitUtils)
 

@@ -30,7 +30,7 @@ sourceSets {
 }
 
 dependencies {
-    compile 'org.codehaus.groovy:groovy-all:2.1.9'
+    compile "org.codehaus.groovy:groovy-all:$groovyVersion"
     runtime "com.h2database:h2:$h2Version"
     runtime "mysql:mysql-connector-java:$mySqlVersion"
     compile "org.springframework.boot:spring-boot-starter-jdbc:$springBootVersion"

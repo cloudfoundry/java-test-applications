@@ -36,4 +36,9 @@ public final class FakeRedisConnectionFactory implements RedisConnectionFactory 
     public RedisConnection getConnection() {
         return null;
     }
+
+    @Override
+    public boolean getConvertPipelineAndTxResults() {
+        return false;
+    }
 }

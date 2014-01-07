@@ -21,6 +21,7 @@ import org.springframework.util.ReflectionUtils;
 
 import javax.sql.DataSource;
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -46,34 +47,47 @@ public final class DataSourceUtils extends AbstractServiceUtils<DataSource> {
 
     public String getUrl(DataSource dataSource) {
         if (isClass(dataSource, "com.jolbox.bonecp.BoneCPDataSource")) {
-            return ((com.jolbox.bonecp.BoneCPDataSource) dataSource).getJdbcUrl();
+            return invokeMethod(dataSource, "getJdbcUrl");
         } else if (isClass(dataSource, "org.apache.commons.dbcp.BasicDataSource")) {
-            return ((org.apache.commons.dbcp.BasicDataSource) dataSource).getUrl();
+            return invokeMethod(dataSource, "getUrl");
         } else if (isClass(dataSource, "org.apache.tomcat.dbcp.dbcp.BasicDataSource")) {
-            return ((org.apache.tomcat.dbcp.dbcp.BasicDataSource) dataSource).getUrl();
+            return invokeMethod(dataSource, "getUrl");
         } else if (isClass(dataSource, "org.apache.tomcat.jdbc.pool.DataSource")) {
-            return ((org.apache.tomcat.jdbc.pool.DataSource) dataSource).getUrl();
+            return invokeMethod(dataSource, "getUrl");
         } else if (isClass(dataSource, "org.springframework.jdbc.datasource.embedded" +
                 ".EmbeddedDatabaseFactory$EmbeddedDataSourceProxy")) {
-            try {
-                Field field = dataSource.getClass().getDeclaredField("dataSource");
-                ReflectionUtils.makeAccessible(field);
-
-                return getUrl((DataSource) field.get(dataSource));
-            } catch (NoSuchFieldException | IllegalAccessException e) {
-                e.printStackTrace();
-            }
+            return getUrl(getDataSource(dataSource));
         } else if (isClass(dataSource, "org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy")) {
-            return getUrl(((org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy) dataSource)
-                    .getTargetDataSource());
+            return getUrl(getTargetDataSource(dataSource));
         } else if (isClass(dataSource, "org.springframework.jdbc.datasource.SimpleDriverDataSource")) {
-            return ((org.springframework.jdbc.datasource.SimpleDriverDataSource) dataSource).getUrl();
+            return invokeMethod(dataSource, "getUrl");
         } else if (isClass(dataSource, "org.springframework.jdbc.datasource.TransactionAwareDataSourceProxy")) {
-            return getUrl(((org.springframework.jdbc.datasource.TransactionAwareDataSourceProxy) dataSource)
-                    .getTargetDataSource());
+            return getUrl(getTargetDataSource(dataSource));
         }
 
         return String.format("Unable to determine URL for DataSource of type %s", dataSource.getClass().getName());
+    }
+
+    private String invokeMethod(DataSource dataSource, String methodName) {
+        Method method = ReflectionUtils.findMethod(dataSource.getClass(), methodName);
+        return (String) ReflectionUtils.invokeMethod(method, dataSource);
+    }
+
+    private DataSource getTargetDataSource(DataSource dataSource) {
+        Method method = ReflectionUtils.findMethod(dataSource.getClass(), "getTargetDataSource");
+        return (DataSource) ReflectionUtils.invokeMethod(method, dataSource);
+    }
+
+    private DataSource getDataSource(DataSource dataSource) {
+        try {
+            Field field = dataSource.getClass().getDeclaredField("dataSource");
+            ReflectionUtils.makeAccessible(field);
+
+            return (DataSource) field.get(dataSource);
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
     }
 
 }

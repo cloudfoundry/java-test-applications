@@ -16,11 +16,10 @@
 
 package com.gopivotal.cloudfoundry.test.core;
 
-import org.springframework.data.mongodb.MongoDbFactory;
-import org.springframework.stereotype.Component;
-
 import com.mongodb.DB;
 import com.mongodb.ServerAddress;
+import org.springframework.data.mongodb.MongoDbFactory;
+import org.springframework.stereotype.Component;
 
 @Component
 public class MongoDbUtils extends AbstractServiceUtils<MongoDbFactory> {
@@ -36,11 +35,11 @@ public class MongoDbUtils extends AbstractServiceUtils<MongoDbFactory> {
     }
 
     public String getUrl(MongoDbFactory mongoDbFactory) {
-    		ServerAddress serverAddress = mongoDbFactory.getDb().getMongo().getAddress();
-    		String host = serverAddress.getHost();
-    		int port = serverAddress.getPort();
-    		String db = mongoDbFactory.getDb().getName();
-    		return String.format("mongodb://%s:%d/%s", host, port, db);
+        ServerAddress serverAddress = mongoDbFactory.getDb().getMongo().getAddress();
+        String host = serverAddress.getHost();
+        int port = serverAddress.getPort();
+        String db = mongoDbFactory.getDb().getName();
+        return String.format("mongodb://%s:%d/%s", host, port, db);
     }
 
 }

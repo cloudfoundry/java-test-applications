@@ -2,13 +2,6 @@ apply plugin: 'war'
 
 sourceCompatibility = 1.7
 
-ext {
-    jacksonVersion = '2.2.2'
-    logbackVersion = '1.0.13'
-    servletVersion = '3.1.0'
-    slf4jVersion   = '1.7.5'
-    springVersion  = '4.0.0.RC1'
-}
 
 dependencies {
     runtime         "ch.qos.logback:logback-classic:$logbackVersion"
@@ -18,7 +11,7 @@ dependencies {
     runtime         "mysql:mysql-connector-java:$mySqlVersion"
     runtime         "org.slf4j:slf4j-api:$slf4jVersion"
     runtime         "org.slf4j:jcl-over-slf4j:$slf4jVersion"
-    compile         project(':spring-common')    
+    compile         project(':spring-common')
 }
 
 configurations {
