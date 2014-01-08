@@ -1,11 +1,6 @@
 .gradle
 bin
 build
-tasks.xml
-workspace.xml
-.classpath
-.project
-.settings
-classes
-Servers
-.metadata
+.idea/tasks.xml
+.idea/workspace.xml
+.idea/libraries
