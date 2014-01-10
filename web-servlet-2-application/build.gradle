@@ -13,7 +13,6 @@ dependencies {
     runtime         "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion"
     runtime         "com.h2database:h2:$h2Version"
     providedCompile "javax.servlet:javax.servlet-api:$servletVersion"
-    runtime         "mysql:mysql-connector-java:$mySqlVersion"
     runtime         "org.slf4j:slf4j-api:$slf4jVersion"
     runtime         "org.slf4j:jcl-over-slf4j:$slf4jVersion"
     compile         project(':spring-common')    

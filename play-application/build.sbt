@@ -7,7 +7,6 @@ libraryDependencies ++= Seq(
   "com.h2database" % "h2" % "1.3.174",
   javaCore,
   javaJdbc,
-  "mysql" % "mysql-connector-java" % "5.1.27",
   "org.springframework" % "spring-context" % "4.0.0.RC1",
   "org.springframework" % "spring-expression" % "4.0.0.RC1",
   "org.springframework" % "spring-jdbc" % "4.0.0.RC1"
