@@ -49,8 +49,8 @@ grails.project.dependency.resolution = {
     }
 
     dependencies { // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
-        runtime 'mysql:mysql-connector-java:5.1.24'
-        compile 'com.gopivotal.cloudfoundry.test:core:1.0.0.BUILD-SNAPSHOT' }
+        compile 'com.gopivotal.cloudfoundry.test:core:1.0.0.BUILD-SNAPSHOT' 
+    }
 
     plugins {
         // plugins for the build system only
