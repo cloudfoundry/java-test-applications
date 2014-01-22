@@ -32,8 +32,7 @@ public class RabbitUtils extends AbstractServiceUtils<ConnectionFactory> {
     }
 
     public String getUrl(ConnectionFactory connectionFactory) {
-    		return String.format("amqp://%s/%s", 
-    				             connectionFactory.getHost(), connectionFactory.getVirtualHost());
+    		return String.format("amqp://%s/%s", connectionFactory.getHost(), connectionFactory.getVirtualHost());
     }
 
 }

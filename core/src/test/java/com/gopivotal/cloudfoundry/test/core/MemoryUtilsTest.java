@@ -16,6 +16,8 @@
 
 package com.gopivotal.cloudfoundry.test.core;
 
+import org.junit.Test;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,12 +26,14 @@ import static org.junit.Assert.assertNull;
 
 public final class MemoryUtilsTest {
 
+    @Test
     public void outOfMemoryNull() {
         Map<String, String> environment = new HashMap<>();
 
         assertNull(new MemoryUtils(environment, 0).outOfMemory());
     }
 
+    @Test
     public void outOfMemoryFalse() {
         Map<String, String> environment = new HashMap<>();
         environment.put("FAIL_OOM", "false");
@@ -37,6 +41,7 @@ public final class MemoryUtilsTest {
         assertNull(new MemoryUtils(environment, 0).outOfMemory());
     }
 
+    @Test
     public void outOfMemoryTrue() {
         Map<String, String> environment = new HashMap<>();
         environment.put("FAIL_OOM", "true");

@@ -5,7 +5,7 @@ buildDir = 'target'
 task build(type:Exec, dependsOn: ':core:install') {
     inputs.files fileTree(dir: '.', excludes: ['.classpath', '.properties', '.settings', 'target', 'target-eclipse'])
     outputs.dir 'target'
-    commandLine './grailsw', '-non-interactive', '-plain-output', 'war'
+    commandLine './grailsw', '-non-interactive', '-plain-output', '--stacktrace', 'war'
 }
 
 task clean(overwrite:true, type:Exec) {

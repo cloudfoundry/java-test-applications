@@ -36,9 +36,10 @@ public class RedisUtils extends AbstractServiceUtils<RedisConnectionFactory> {
     public String getUrl(RedisConnectionFactory redisConnectionFactory) {
         if (isClass(redisConnectionFactory, "com.gopivotal.cloudfoundry.test.core.FakeRedisConnectionFactory")) {
             return "redis://fake";
-        } else if (isClass(redisConnectionFactory, "org.springframework.data.redis.connection.jedis.JedisConnectionFactory")) {
-            org.springframework.data.redis.connection.jedis.JedisConnectionFactory jedisConnectionFactory = (org.springframework.data.redis.connection.jedis
-                    .JedisConnectionFactory) redisConnectionFactory;
+        } else if (isClass(redisConnectionFactory, "org.springframework.data.redis.connection.jedis" +
+                ".JedisConnectionFactory")) {
+            org.springframework.data.redis.connection.jedis.JedisConnectionFactory jedisConnectionFactory =
+                    (org.springframework.data.redis.connection.jedis.JedisConnectionFactory) redisConnectionFactory;
             String host = jedisConnectionFactory.getHostName();
             int port = jedisConnectionFactory.getPort();
 

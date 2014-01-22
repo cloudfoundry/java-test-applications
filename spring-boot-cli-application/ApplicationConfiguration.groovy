@@ -43,7 +43,6 @@ class ApplicationConfiguration {
         return new FakeMongoDbFactory()
     }
 
-    
     @Bean
     static ConnectionFactory rabbitConnectionFactory() {
         return new CachingConnectionFactory(null, 0)

@@ -30,15 +30,14 @@ sourceSets {
 buildDir = 'repository'
 
 dependencies {
-    compile 'org.codehaus.groovy:groovy-all:2.1.9'
+    compile "org.codehaus.groovy:groovy-all:$groovyVersion"
     compile "org.springframework.boot:spring-boot-starter-jdbc:$springBootVersion"
     compile "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
     compile project(':spring-common')
 }
 
-
 task build(overwrite: true, type:Exec, dependsOn: [':core:install', ':spring-common:install']) {
-    inputs.files fileTree(dir: '.', excludes: ['.classpath', '.grapes', '.properties', '.settings'])
+    inputs.files fileTree(dir: '.')
     outputs.dir 'repository'
-    commandLine 'spring', 'run', '--local', 'ApplicationConfiguration.groovy'
+    commandLine 'spring', 'grab', 'ApplicationConfiguration.groovy', 'BootController.groovy'
 }

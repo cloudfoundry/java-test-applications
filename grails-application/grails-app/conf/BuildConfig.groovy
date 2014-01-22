@@ -49,12 +49,13 @@ grails.project.dependency.resolution = {
     }
 
     dependencies { // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
-        compile 'com.gopivotal.cloudfoundry.test:core:1.0.0.BUILD-SNAPSHOT' 
+        compile 'com.gopivotal.cloudfoundry.test:core:1.0.0.BUILD-SNAPSHOT'
+        compile 'org.springframework:spring-core:4.0.0.RELEASE'
     }
 
     plugins {
         // plugins for the build system only
-        build ":tomcat:7.0.42"
+        build ":tomcat:7.0.50"
 
         // plugins for the compile step
         // compile ":scaffolding:2.0.1"
