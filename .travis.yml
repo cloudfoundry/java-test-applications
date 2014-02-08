@@ -12,4 +12,7 @@ before_install:
 install: true
 script: TERM=dumb ./gradlew
 notifications:
-  webhooks: "http://build-monitor.cfapps.io/projects/JTA/webhook"
+  webhooks:
+    urls:
+      - http://build-monitor.cfapps.io/projects/JTA/webhook
+    on_start: true
