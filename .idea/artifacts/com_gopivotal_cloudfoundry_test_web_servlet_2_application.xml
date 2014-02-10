@@ -20,16 +20,16 @@
             <element id="module-output" name="core" />
           </element>
           <element id="library" level="project" name="Gradle: mongo-java-driver-2.10.1" />
-          <element id="library" level="project" name="Gradle: commons-pool-1.6" />
           <element id="library" level="project" name="Gradle: spring-data-mongodb-1.3.3.RELEASE" />
           <element id="library" level="project" name="Gradle: spring-data-commons-1.6.3.RELEASE" />
           <element id="library" level="project" name="Gradle: spring-amqp-1.2.0.RELEASE" />
           <element id="library" level="project" name="Gradle: spring-rabbit-1.2.0.RELEASE" />
           <element id="library" level="project" name="Gradle: spring-data-redis-1.1.0.RELEASE" />
           <element id="library" level="project" name="Gradle: amqp-client-3.1.3" />
-          <element id="library" level="project" name="Gradle: jedis-2.2.1" />
           <element id="library" level="project" name="Gradle: aopalliance-1.0" />
           <element id="library" level="project" name="Gradle: spring-context-support-3.1.4.RELEASE" />
+          <element id="library" level="project" name="Gradle: jedis-2.1.0" />
+          <element id="library" level="project" name="Gradle: commons-pool-1.5.5" />
           <element id="library" level="project" name="Gradle: spring-context-4.0.0.RELEASE" />
           <element id="library" level="project" name="Gradle: spring-aop-4.0.0.RELEASE" />
           <element id="library" level="project" name="Gradle: spring-jdbc-4.0.0.RELEASE" />
