@@ -65,14 +65,12 @@
     <orderEntry type="library" exported="" name="Gradle: jsr305-2.0.1" level="project" />
     <orderEntry type="library" exported="" name="Gradle: httpclient-4.0.1" level="project" />
     <orderEntry type="library" exported="" name="Gradle: play-java_2.10-2.2.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: logback-classic-1.0.13" level="project" />
     <orderEntry type="library" exported="" name="Gradle: validation-api-1.1.0.Final" level="project" />
     <orderEntry type="library" exported="" name="Gradle: javassist-3.18.0-GA" level="project" />
     <orderEntry type="library" exported="" name="Gradle: jul-to-slf4j-1.7.5" level="project" />
     <orderEntry type="library" exported="" name="Gradle: httpcore-4.0.1" level="project" />
     <orderEntry type="library" exported="" name="Gradle: templates_2.10-2.2.1" level="project" />
     <orderEntry type="library" exported="" name="Gradle: aopalliance-1.0" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: logback-core-1.0.13" level="project" />
     <orderEntry type="library" exported="" name="Gradle: scala-reflect-2.10.2" level="project" />
     <orderEntry type="library" exported="" name="Gradle: slf4j-api-1.7.5" level="project" />
     <orderEntry type="library" exported="" name="Gradle: akka-slf4j_2.10-2.2.0" level="project" />
@@ -80,24 +78,26 @@
     <orderEntry type="library" exported="" name="Gradle: jcl-over-slf4j-1.7.5" level="project" />
     <orderEntry type="library" exported="" name="Gradle: jackson-annotations-2.3.0" level="project" />
     <orderEntry type="library" exported="" name="Gradle: tomcat-embed-logging-juli-7.0.47" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: spring-boot-starter-0.5.0.M7" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: spring-aop-4.0.0.RELEASE" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: spring-beans-4.0.0.RELEASE" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: spring-boot-autoconfigure-0.5.0.M7" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: spring-web-4.0.0.RELEASE" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: spring-boot-0.5.0.M7" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: spring-core-4.0.0.RELEASE" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: jackson-core-2.3.0" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: spring-boot-starter-logging-0.5.0.M7" level="project" />
     <orderEntry type="library" exported="" name="Gradle: tomcat-embed-core-7.0.47" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: jackson-databind-2.3.0" level="project" />
     <orderEntry type="library" exported="" name="Gradle: log4j-over-slf4j-1.7.5" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: spring-context-4.0.0.RELEASE" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: spring-boot-starter-web-0.5.0.M7" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: spring-webmvc-4.0.0.RELEASE" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: spring-boot-starter-tomcat-0.5.0.M7" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: spring-expression-4.0.0.RELEASE" level="project" />
     <orderEntry type="library" exported="" name="Gradle: guava-14.0.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: spring-boot-starter-web-1.0.0.RC3" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: jackson-core-2.3.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: jackson-databind-2.3.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: logback-core-1.1.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: logback-classic-1.1.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: spring-core-4.0.1.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: spring-beans-4.0.1.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: spring-aop-4.0.1.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: spring-expression-4.0.1.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: spring-context-4.0.1.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: spring-boot-1.0.0.RC3" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: spring-boot-autoconfigure-1.0.0.RC3" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: spring-boot-starter-logging-1.0.0.RC3" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: spring-boot-starter-1.0.0.RC3" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: spring-boot-starter-tomcat-1.0.0.RC3" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: spring-web-4.0.1.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: spring-webmvc-4.0.1.RELEASE" level="project" />
   </component>
 </module>
 
