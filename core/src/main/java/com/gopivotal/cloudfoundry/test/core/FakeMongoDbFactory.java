@@ -16,6 +16,7 @@
 package com.gopivotal.cloudfoundry.test.core;
 
 import org.springframework.dao.DataAccessException;
+import org.springframework.dao.support.PersistenceExceptionTranslator;
 import org.springframework.data.mongodb.MongoDbFactory;
 
 import com.mongodb.DB;
@@ -37,5 +38,10 @@ public final class FakeMongoDbFactory implements MongoDbFactory {
 	public DB getDb(String dbName) throws DataAccessException {
 		return null;
 	}
+
+    @Override
+    public PersistenceExceptionTranslator getExceptionTranslator() {
+        return null;
+    }
 
 }

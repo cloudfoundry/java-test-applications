@@ -28,11 +28,11 @@ allprojects {
         playVersion = '2.2.1'
         servletVersion = '3.1.0'
         slf4jVersion   = '1.7.5'
-        springAmqpVersion = '1.2.0.RELEASE'
+        springAmqpVersion = '1.2.1.RELEASE'
         springBootVersion = '1.0.0.RC3'
-        springDataMongoDbVersion = '1.3.3.RELEASE'
-        springDataRedisVersion = '1.1.0.RELEASE'
-        springVersion  = '4.0.0.RELEASE'
+        springDataMongoDbVersion = '1.4.0.RC1'
+        springDataRedisVersion = '1.1.1.RELEASE'
+        springVersion  = '4.0.1.RELEASE'
         tomcatVersion = '7.0.50'
     }
 
