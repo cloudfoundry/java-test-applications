@@ -1,0 +1,18 @@
+buildscript {
+  dependencies {
+    classpath "io.ratpack:ratpack-gradle:$ratpackVersion"
+  }
+}
+
+apply plugin: 'ratpack-groovy'
+
+dependencies {
+    compile "org.codehaus.groovy:groovy-all:$groovyVersion"
+    runtime "com.h2database:h2:$h2Version"
+    runtime "mysql:mysql-connector-java:$mySqlVersion"
+    compile "io.ratpack:ratpack-groovy:$ratpackVersion"
+    compile "io.ratpack:ratpack-jackson:$ratpackVersion"
+    compile project(':spring-common')
+}
+
+build.dependsOn distZip

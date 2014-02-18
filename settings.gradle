@@ -1,12 +1,13 @@
-rootProject.name = "java-test-applications"
+rootProject.name = 'java-test-applications'
 
 include 'core'
-include 'spring-common'
 include 'grails-application'
 include 'groovy-application'
 include 'java-main-application'
 include 'play-application'
+include 'ratpack-application'
 include 'spring-boot-cli-application'
 include 'spring-boot-cli-jar-application'
+include 'spring-common'
 include 'web-application'
 include 'web-servlet-2-application'

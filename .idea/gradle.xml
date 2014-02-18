@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/groovy-application" />
             <option value="$PROJECT_DIR$/java-main-application" />
             <option value="$PROJECT_DIR$/play-application" />
+            <option value="$PROJECT_DIR$/ratpack-application" />
             <option value="$PROJECT_DIR$/spring-boot-cli-application" />
             <option value="$PROJECT_DIR$/spring-boot-cli-jar-application" />
             <option value="$PROJECT_DIR$/spring-common" />
