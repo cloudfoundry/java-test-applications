@@ -25,7 +25,7 @@ allprojects {
         logbackVersion = '1.0.13'
         mockitoVersion = '1.9.5'
         mySqlVersion = '5.1.28'
-        playVersion = '2.2.1'
+        playVersion = '2.2.2'
         ratpackVersion = '0.9.1'
         servletVersion = '3.1.0'
         slf4jVersion   = '1.7.5'
@@ -34,7 +34,7 @@ allprojects {
         springDataMongoDbVersion = '1.4.0.RC1'
         springDataRedisVersion = '1.1.1.RELEASE'
         springVersion  = '4.0.1.RELEASE'
-        tomcatVersion = '7.0.50'
+        tomcatVersion = '7.0.52'
     }
 
     repositories {
