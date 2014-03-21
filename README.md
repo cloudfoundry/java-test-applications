@@ -1,32 +1,40 @@
 # Java Test Applications
+[![Build Status](https://travis-ci.org/cloudfoundry/java-test-applications.svg?branch=master)](https://travis-ci.org/cloudfoundry/java-test-applications)
 
 A collection of applications used for testing the Java buildpack.
 
 ## Applications
 
-| Name | Output Destination | Description
-| ---- | ------ | -----------
-`grails-application` | HTTP Response | A Grails application created by issuing `grails create-app`
-`groovy-application` | `System.out` | An application started with `groovy`. _Since this application does not service web requests, you can select `none` for its subdomain and domain when you deploy it to Cloud Foundry._
-`java-main-application` | `System.out` | An application started with `java -jar`. _Since this application does not service web requests, you can select `none` for its subdomain and domain when you deploy it to Cloud Foundry._
-`java-main-with-web-inf-application` | `System.out` | An application started with `java -jar`. _Since this application does not service web requests, you can select `none` for its subdomain and domain when you deploy it to Cloud Foundry._
-`play-application` | HTTP Response | A Play application created by issuing `play new play-application`
-`spring-boot-cli-application` | HTTP Response | A Spring Boot CLI web application
-`web-application` | HTTP Response | A web application that uses Spring MVC and Servlet 3
-`web-servlet-2-application` | HTTP Response | A web application that uses Spring MVC and Servlet 2
+| Name | Description
+| ---- | -----------
+`grails-application` | A Grails application, deployed as a WAR
+`groovy-application` | An application started with `groovy`
+`java-main-application` | A Spring Boot application started with `java -jar`
+`play-application` | A Play Framework application, deployed as a `dist`
+`ratpack-application` | A Ratpack application, deployed as a `distZip`
+`spring-boot-cli-application` | A Spring Boot CLI application, deployed with `spring grab`
+`spring-boot-cli-jar-application` | A Spring Boot CLI application, deployed with `spring jar`
+`web-application` | A Spring MVC application using Servlet 3
+`web-servlet-2-application` | A Spring MVC application using Servlet 2
 
 ### Output Content
 All applications support the following REST operations:
 
-| URI | HTTP request | Description
-| --- | ------------ | -----------
-`/` | GET | The health of the application
-`/class-path` | GET | A list of JARs on the application classpath
-`/datasource-check-access` | GET | The ability of the application to access the database
-`/datasource-url` | GET | The URL of the application's DataSource
-`/environment-variables` | GET | A map of environment variable names to values
-`/input-arguments` | GET | A list of JVM input arguments
-`/system-properties` | GET | A map of system property names to values
+| URI | Description
+| --- | -----------
+`/` | The health of the application
+`/class-path` | The classpath of the application
+`/environment-variables` | The environment variables available to the application
+`/input-arguments` | The list of JVM input arguments for the application
+`/system-properties` | The system properties available to the application
+`/datasource/check-access` | The ability of the application to access a RDBMS
+`/datasource-url` | The URL of the application's `DataSource`
+`/redis/check-access` | The ability of the application to access Redis
+`/redis/url` | The URL of the application's Redis
+`/mongodb/check-access` | The ability of the application to access MongoDB
+`/mongodb/url` | The URL of the application's MongoDB
+`/rabbit/check-access` | The ability of the application to access RabbitMQ
+`/rabbit/url` | The URL of the application's RabbitMQ
 
 ## Building
 
