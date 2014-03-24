@@ -30,8 +30,8 @@ allprojects {
         servletVersion = '3.1.0'
         slf4jVersion   = '1.7.5'
         springAmqpVersion = '1.2.1.RELEASE'
-        springBootVersion = '1.0.0.RC3'
-        springDataMongoDbVersion = '1.4.0.RC1'
+        springBootVersion = '1.0.0.RC5'
+        springDataMongoDbVersion = '1.4.0.RELEASE'
         springDataRedisVersion = '1.1.1.RELEASE'
         springVersion  = '4.0.1.RELEASE'
         tomcatVersion = '7.0.52'
@@ -74,5 +74,5 @@ idea {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '1.10'
+    gradleVersion = '1.11'
 }
