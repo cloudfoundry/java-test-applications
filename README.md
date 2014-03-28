@@ -4,7 +4,6 @@
 A collection of applications used for testing the Java buildpack.
 
 ## Applications
-
 | Name | Description
 | ---- | -----------
 `grails-application` | A Grails application, deployed as a WAR
@@ -37,15 +36,20 @@ All applications support the following REST operations:
 `/rabbit/url` | The URL of the application's RabbitMQ
 
 ## Building
-
 This project is built with JDK 7 and Gradle. To build the artifacts, install JDK 7, Play, and Grails, install Spring Boot by following [these instructions](https://github.com/spring-projects/spring-boot), and then run:
 
 ```plain
 ./gradlew
 ```
 
-## Deploying to Cloud Foundry
+### Building Behind a Proxy
+Since this project downloads its dependencies from the internet, building behing a proxy requires some extra effort.  In order configure gradle properly, use the following system properties.  More information can be found [here][].
 
+```plain
+./gradlew -Dhttp.proxyHost=<HOST> -Dhttp.proxyPort=<PORT>
+```
+
+## Deploying to Cloud Foundry
 Each test application contains a `manifest.yml` file which allows the built application to be deployed to Cloud Foundry by simply issuing:
 
 ```plain
@@ -55,7 +59,6 @@ cf push
 To avoid clashing with the URLs of other applications, you should specify your own subdomain for the application (unless the test application does not need a subdomain).
 
 ## Failure Testing
-
 Failure testing is supported for each of the above applications by setting a suitable environment variable.
 
 If the environment variable FAIL_INIT is set, the application will fail to initialize:
@@ -80,11 +83,10 @@ To run the tests, do the following:
 ## Contributing
 [Pull requests][] are welcome; see the [contributor guidelines][] for details.
 
-[Pull requests]: http://help.github.com/send-pull-requests
-[contributor guidelines]: CONTRIBUTING.md
-
 ## License
 The Tomcat Builder is released under version 2.0 of the [Apache License][].
 
 [Apache License]: http://www.apache.org/licenses/LICENSE-2.0
-
+[contributor guidelines]: CONTRIBUTING.md
+[here]: http://stackoverflow.com/questions/5991194/gradle-proxy-configuration
+[Pull requests]: http://help.github.com/send-pull-requests
