@@ -3,6 +3,10 @@ allprojects {
     buildscript {
         repositories {
             maven {
+                name 'Spring Release'
+                url 'http://repo.spring.io/release'
+            }
+            maven {
                 name 'Spring Milestone'
                 url 'http://repo.spring.io/milestone'
             }
@@ -30,7 +34,7 @@ allprojects {
         servletVersion = '3.1.0'
         slf4jVersion   = '1.7.5'
         springAmqpVersion = '1.2.1.RELEASE'
-        springBootVersion = '1.0.0.RC5'
+        springBootVersion = '1.0.0.RELEASE'
         springDataMongoDbVersion = '1.4.0.RELEASE'
         springDataRedisVersion = '1.1.1.RELEASE'
         springVersion  = '4.0.1.RELEASE'
@@ -38,6 +42,10 @@ allprojects {
     }
 
     repositories {
+        maven {
+            name 'Spring Release'
+            url 'http://repo.spring.io/release'
+        }
         maven {
             name 'Spring Milestone'
             url 'http://repo.spring.io/milestone'
