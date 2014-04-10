@@ -10,6 +10,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/core" />
+            <option value="$PROJECT_DIR$/dist-zip-application" />
             <option value="$PROJECT_DIR$/grails-application" />
             <option value="$PROJECT_DIR$/groovy-application" />
             <option value="$PROJECT_DIR$/java-main-application" />

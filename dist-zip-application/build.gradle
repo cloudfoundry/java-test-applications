@@ -1,0 +1,20 @@
+buildscript {
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+
+sourceCompatibility = 1.7
+
+dependencies {
+    compile "com.h2database:h2:$h2Version"
+    compile "org.springframework.boot:spring-boot-starter-jdbc:$springBootVersion"
+    compile "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
+    compile project(':spring-common')
+    runtime "mysql:mysql-connector-java:$mySqlVersion"
+}
+
+build.finalizedBy distZip

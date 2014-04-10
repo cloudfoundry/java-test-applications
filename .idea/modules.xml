@@ -3,12 +3,14 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dist-zip-application/dist-zip-application.iml" filepath="$PROJECT_DIR$/dist-zip-application/dist-zip-application.iml" />
       <module fileurl="file://$PROJECT_DIR$/grails-application/grails-application.iml" filepath="$PROJECT_DIR$/grails-application/grails-application.iml" />
       <module fileurl="file://$PROJECT_DIR$/groovy-application/groovy-application.iml" filepath="$PROJECT_DIR$/groovy-application/groovy-application.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-main-application/java-main-application.iml" filepath="$PROJECT_DIR$/java-main-application/java-main-application.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-test-applications.iml" filepath="$PROJECT_DIR$/java-test-applications.iml" />
       <module fileurl="file://$PROJECT_DIR$/play-application/play-application.iml" filepath="$PROJECT_DIR$/play-application/play-application.iml" />
       <module fileurl="file://$PROJECT_DIR$/ratpack-application/ratpack-application.iml" filepath="$PROJECT_DIR$/ratpack-application/ratpack-application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/script-application/script-application.iml" filepath="$PROJECT_DIR$/script-application/script-application.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-boot-cli-application/spring-boot-cli-application.iml" filepath="$PROJECT_DIR$/spring-boot-cli-application/spring-boot-cli-application.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-boot-cli-jar-application/spring-boot-cli-jar-application.iml" filepath="$PROJECT_DIR$/spring-boot-cli-jar-application/spring-boot-cli-jar-application.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-common/spring-common.iml" filepath="$PROJECT_DIR$/spring-common/spring-common.iml" />
