@@ -17,4 +17,6 @@ dependencies {
     runtime "mysql:mysql-connector-java:$mySqlVersion"
 }
 
+mainClassName = "com.gopivotal.cloudfoundry.test.ApplicationConfiguration"
+
 build.finalizedBy distZip
