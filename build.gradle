@@ -30,7 +30,7 @@ allprojects {
         mockitoVersion = '1.9.5'
         mySqlVersion = '5.1.28'
         playVersion = '2.2.2'
-        ratpackVersion = '0.9.1'
+        ratpackVersion = '0.9.3'
         servletVersion = '3.1.0'
         slf4jVersion   = '1.7.5'
         springAmqpVersion = '1.2.1.RELEASE'
