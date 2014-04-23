@@ -35,11 +35,18 @@ public class MongoDbUtils extends AbstractServiceUtils<MongoDbFactory> {
     }
 
     public String getUrl(MongoDbFactory mongoDbFactory) {
-        ServerAddress serverAddress = mongoDbFactory.getDb().getMongo().getAddress();
-        String host = serverAddress.getHost();
-        int port = serverAddress.getPort();
-        String db = mongoDbFactory.getDb().getName();
-        return String.format("mongodb://%s:%d/%s", host, port, db);
+        DB mongoDb = mongoDbFactory.getDb();
+
+        if (mongoDb != null) {
+            ServerAddress serverAddress = mongoDb.getMongo().getAddress();
+            String host = serverAddress.getHost();
+            int port = serverAddress.getPort();
+            String db = mongoDb.getName();
+
+            return String.format("mongodb://%s:%d/%s", host, port, db);
+        }
+
+        return "mongodb://fake.connection";
     }
 
 }
