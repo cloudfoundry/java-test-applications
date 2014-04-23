@@ -27,7 +27,7 @@ All applications support the following REST operations:
 `/input-arguments` | The list of JVM input arguments for the application
 `/system-properties` | The system properties available to the application
 `/datasource/check-access` | The ability of the application to access a RDBMS
-`/datasource-url` | The URL of the application's `DataSource`
+`/datasource/url` | The URL of the application's `DataSource`
 `/redis/check-access` | The ability of the application to access Redis
 `/redis/url` | The URL of the application's Redis
 `/mongodb/check-access` | The ability of the application to access MongoDB
