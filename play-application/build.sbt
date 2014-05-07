@@ -4,15 +4,15 @@ version := "1.0-SNAPSHOT"
 
 libraryDependencies ++= Seq(
   "com.gopivotal.cloudfoundry.test" % "core" % "1.0.0.BUILD-SNAPSHOT",
-  "com.h2database" % "h2" % "1.3.174",
+  "com.h2database" % "h2" % "1.4.178",
   javaCore,
   javaJdbc,
-  "org.springframework" % "spring-context" % "4.0.1.RELEASE",
-  "org.springframework" % "spring-expression" % "4.0.1.RELEASE",
-  "org.springframework" % "spring-jdbc" % "4.0.1.RELEASE",
-  "org.springframework" % "spring-context" % "4.0.1.RELEASE",
-  "org.springframework" % "spring-expression" % "4.0.1.RELEASE",
-  "org.springframework" % "spring-jdbc" % "4.0.1.RELEASE"
+  "org.springframework" % "spring-context" % "4.0.4.RELEASE",
+  "org.springframework" % "spring-expression" % "4.0.4.RELEASE",
+  "org.springframework" % "spring-jdbc" % "4.0.4.RELEASE",
+  "org.springframework" % "spring-context" % "4.0.4.RELEASE",
+  "org.springframework" % "spring-expression" % "4.0.4.RELEASE",
+  "org.springframework" % "spring-jdbc" % "4.0.4.RELEASE"
 )
 
 play.Project.playJavaSettings

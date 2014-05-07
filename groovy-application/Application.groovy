@@ -19,9 +19,10 @@ import com.gopivotal.cloudfoundry.test.controller.*
 import com.gopivotal.cloudfoundry.test.core.*
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory
 import org.springframework.amqp.rabbit.connection.ConnectionFactory
-import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
+import org.springframework.boot.SpringApplication
 import org.springframework.context.annotation.Bean
+import org.springframework.core.io.ClassRelativeResourceLoader
 import org.springframework.data.mongodb.MongoDbFactory
 import org.springframework.data.redis.connection.RedisConnectionFactory
 
@@ -35,7 +36,7 @@ public class Application {
         new MemoryUtils().outOfMemory()
 
         args += '--server.port=' + System.env['PORT']
-        SpringApplication.run(Application.class, args)
+        new SpringApplication(new ClassRelativeResourceLoader(Application.class), Application.class).run(args)
     }
 
     @Bean

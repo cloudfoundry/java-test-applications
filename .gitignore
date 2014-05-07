@@ -1,6 +1,8 @@
 .gradle
-bin
-build
+.idea/libraries
 .idea/tasks.xml
 .idea/workspace.xml
-.idea/libraries
+.java-buildpack
+.java-buildpack.log
+bin
+build
