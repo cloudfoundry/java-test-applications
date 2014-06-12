@@ -8,7 +8,7 @@ env:
 before_install:
   - "wget http://downloads.typesafe.com/play/2.2.3/play-2.2.3.zip -qO /tmp/play.zip"
   - "unzip -qd /tmp /tmp/play.zip"
-  - "curl https://repo.spring.io/release/org/springframework/boot/spring-boot-cli/1.0.2.RELEASE/spring-boot-cli-1.1.1.RELEASE-bin.tar.gz -s | tar xzf - -C /tmp"
+  - "curl https://repo.spring.io/release/org/springframework/boot/spring-boot-cli/1.1.1.RELEASE/spring-boot-cli-1.1.1.RELEASE-bin.tar.gz -s | tar xzf - -C /tmp"
 install: true
 script: TERM=dumb ./gradlew
 notifications:
