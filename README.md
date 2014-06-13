@@ -6,6 +6,7 @@ A collection of applications used for testing the Java buildpack.
 ## Applications
 | Name | Description
 | ---- | -----------
+`dist-zip-application` | A Spring Boot application, deployed as a `distZip`
 `grails-application` | A Grails application, deployed as a WAR
 `groovy-application` | An application started with `groovy`
 `java-main-application` | A Spring Boot application started with `java -jar`

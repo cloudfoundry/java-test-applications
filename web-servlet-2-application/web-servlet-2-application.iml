@@ -28,15 +28,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" scope="RUNTIME" name="Gradle: jackson-annotations-2.3.0" level="project" />
-    <orderEntry type="library" exported="" scope="RUNTIME" name="Gradle: logback-classic-1.1.2" level="project" />
-    <orderEntry type="library" exported="" scope="RUNTIME" name="Gradle: jackson-databind-2.3.3" level="project" />
-    <orderEntry type="library" exported="" scope="RUNTIME" name="Gradle: h2-1.4.178" level="project" />
-    <orderEntry type="library" exported="" scope="RUNTIME" name="Gradle: slf4j-api-1.7.7" level="project" />
-    <orderEntry type="library" exported="" scope="RUNTIME" name="Gradle: jcl-over-slf4j-1.7.7" level="project" />
-    <orderEntry type="library" exported="" scope="RUNTIME" name="Gradle: logback-core-1.1.2" level="project" />
-    <orderEntry type="library" exported="" scope="RUNTIME" name="Gradle: jackson-core-2.3.3" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: javax.servlet-api-3.1.0" level="project" />
   </component>
 </module>
 

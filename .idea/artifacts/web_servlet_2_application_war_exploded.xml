@@ -1,19 +1,51 @@
 <component name="ArtifactManager">
-  <artifact type="war" name="Gradle : com.gopivotal.cloudfoundry.test:web-application : web-application-1.0.0.BUILD-SNAPSHOT.war">
-    <output-path>$PROJECT_DIR$/build/classes/artifacts/web-application</output-path>
-    <root id="archive" name="web-application-1.0.0.BUILD-SNAPSHOT.war">
-      <element id="javaee-facet-resources" facet="web-application/web/Web Gradle : web-application-1.0.0.BUILD-SNAPSHOT.war" />
+  <artifact type="exploded-war" name="web-servlet-2-application:war exploded">
+    <output-path>$PROJECT_DIR$/web-servlet-2-application/target/web-servlet-2-application-1.0.0.BUILD-SNAPSHOT</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="web-servlet-2-application/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="web-application" />
+          <element id="module-output" name="web-servlet-2-application" />
         </element>
         <element id="directory" name="lib">
-          <element id="archive" name="com.gopivotal.cloudfoundry.test-spring-common-1.0.0.BUILD-SNAPSHOT.jar">
+          <element id="archive" name="spring-common-1.0.0.BUILD-SNAPSHOT.jar">
             <element id="module-output" name="spring-common" />
           </element>
-          <element id="archive" name="com.gopivotal.cloudfoundry.test-core-1.0.0.BUILD-SNAPSHOT.jar">
+          <element id="archive" name="core-1.0.0.BUILD-SNAPSHOT.jar">
             <element id="module-output" name="core" />
           </element>
+          <element id="library" level="project" name="Maven: com.h2database:h2:1.3.175" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-web:1.1.1.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter:1.1.1.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot:1.1.1.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:4.0.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:4.0.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:4.0.5.RELEASE" />
+          <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:4.0.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:4.0.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-autoconfigure:1.1.1.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-logging:1.1.1.RELEASE" />
+          <element id="library" level="project" name="Maven: org.slf4j:jcl-over-slf4j:1.7.7" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.7" />
+          <element id="library" level="project" name="Maven: org.slf4j:jul-to-slf4j:1.7.7" />
+          <element id="library" level="project" name="Maven: org.slf4j:log4j-over-slf4j:1.7.7" />
+          <element id="library" level="project" name="Maven: ch.qos.logback:logback-classic:1.1.2" />
+          <element id="library" level="project" name="Maven: ch.qos.logback:logback-core:1.1.2" />
+          <element id="library" level="project" name="Maven: org.yaml:snakeyaml:1.13" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-tomcat:1.1.1.RELEASE" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-core:7.0.54" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-el:7.0.54" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-logging-juli:7.0.54" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.3.3" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.3.3" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.3.3" />
+          <element id="library" level="project" name="Maven: org.hibernate:hibernate-validator:5.0.3.Final" />
+          <element id="library" level="project" name="Maven: javax.validation:validation-api:1.1.0.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.logging:jboss-logging:3.1.1.GA" />
+          <element id="library" level="project" name="Maven: com.fasterxml:classmate:1.0.0" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-web:4.0.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.0.5.RELEASE" />
           <element id="library" level="project" name="Gradle: spring-rabbit-1.3.4.RELEASE" />
           <element id="library" level="project" name="Gradle: spring-data-mongodb-1.5.0.RELEASE" />
           <element id="library" level="project" name="Gradle: spring-data-redis-1.3.0.RELEASE" />
@@ -47,7 +79,6 @@
           <element id="library" level="project" name="Gradle: spring-boot-starter-logging-1.1.1.RELEASE" />
           <element id="library" level="project" name="Gradle: spring-boot-starter-1.1.1.RELEASE" />
           <element id="library" level="project" name="Gradle: snakeyaml-1.13" />
-          <element id="library" level="project" name="Gradle: tomcat-embed-core-7.0.54" />
           <element id="library" level="project" name="Gradle: tomcat-embed-el-7.0.54" />
           <element id="library" level="project" name="Gradle: tomcat-embed-logging-juli-7.0.54" />
           <element id="library" level="project" name="Gradle: spring-boot-starter-tomcat-1.1.1.RELEASE" />
@@ -61,9 +92,6 @@
           <element id="library" level="project" name="Gradle: spring-web-4.0.5.RELEASE" />
           <element id="library" level="project" name="Gradle: spring-webmvc-4.0.5.RELEASE" />
         </element>
-      </element>
-      <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/build/classes/artifacts/web-application/exploded/web-application-1.0.0.BUILD-SNAPSHOT.war/META-INF/MANIFEST.MF" />
       </element>
     </root>
   </artifact>

@@ -4,4 +4,4 @@ applications:
   memory: 768M
   instances: 1
   path: spring-boot-cli-jar-application-1.0.0.BUILD-SNAPSHOT.jar
-  buildpack: https://github.com/cloudfoundry/java-buildpack
+  buildpack: https://github.com/cloudfoundry/java-buildpack.git
