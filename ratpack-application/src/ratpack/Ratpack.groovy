@@ -38,8 +38,8 @@ ratpack {
     def redisUtils = new RedisUtils()
     def runtimeUtils = new RuntimeUtils()
 
-    modules {
-        register new JacksonModule()
+    bindings {
+        add new JacksonModule()
     }
 
     handlers {
