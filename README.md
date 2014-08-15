@@ -25,6 +25,7 @@ All applications support the following REST operations:
 `/` | The health of the application
 `/class-path` | The classpath of the application
 `/environment-variables` | The environment variables available to the application
+`/request-headers` | The http request headers of the current request
 `/input-arguments` | The list of JVM input arguments for the application
 `/system-properties` | The system properties available to the application
 `/datasource/check-access` | The ability of the application to access a RDBMS
@@ -37,7 +38,7 @@ All applications support the following REST operations:
 `/rabbit/url` | The URL of the application's RabbitMQ
 
 ## Building
-This project is built with JDK 7 and Gradle. To build the artifacts, install JDK 7, Play, and Grails, install Spring Boot by following [these instructions](https://github.com/spring-projects/spring-boot), and then run:
+This project is built with JDK 7 and Gradle. To build the artifacts, install JDK 7, Typesafe activator, and Grails, install Spring Boot by following [these instructions](https://github.com/spring-projects/spring-boot), and then run:
 
 ```plain
 ./gradlew

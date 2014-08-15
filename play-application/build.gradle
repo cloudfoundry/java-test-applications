@@ -38,15 +38,15 @@ task build_pre_pass(overwrite:true, type:Exec, dependsOn: ':core:install') {
     inputs.files fileTree(dir: '.', excludes: ['.classpath', '.properties', '.settings', 'project/target', 'project/project/target', 'target'])
     outputs.dir 'target'
     setIgnoreExitValue true
-    commandLine 'play', 'dist'
+    commandLine 'activator', 'dist'
 }
 
 task build(overwrite:true, type:Exec, dependsOn: 'build_pre_pass') {
     inputs.files fileTree(dir: '.', excludes: ['.classpath', '.properties', '.settings', 'project/target', 'project/project/target', 'target'])
     outputs.dir 'target'
-    commandLine 'play', 'dist'
+    commandLine 'activator', 'dist'
 }
 
 task clean(overwrite:true, type:Exec) {
-    commandLine 'play', 'clean'
+    commandLine 'activator', 'clean'
 }
