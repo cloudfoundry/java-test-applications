@@ -1,6 +1,6 @@
 ---
 applications:
-- name: web-application
+- name: cgfrost-web-application
   memory: 512M
   instances: 1
   path: build/libs/web-application-1.0.0.BUILD-SNAPSHOT.war

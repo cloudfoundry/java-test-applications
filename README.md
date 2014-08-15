@@ -25,6 +25,7 @@ All applications support the following REST operations:
 `/` | The health of the application
 `/class-path` | The classpath of the application
 `/environment-variables` | The environment variables available to the application
+`/request-headers` | The http request headers of the current request
 `/input-arguments` | The list of JVM input arguments for the application
 `/system-properties` | The system properties available to the application
 `/datasource/check-access` | The ability of the application to access a RDBMS

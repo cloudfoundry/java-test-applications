@@ -16,10 +16,12 @@
 
 package com.gopivotal.cloudfoundry.test.controller;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -65,4 +67,10 @@ public final class ApplicationController {
     Map<Object, Object> systemProperties() {
         return this.runtimeUtils.systemProperties();
     }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/request-headers")
+    Map<String, String> requestHeaders(HttpEntity<byte[]> requestEntity) {
+        return this.runtimeUtils.requestHeaders();
+    }
+
 }

@@ -17,11 +17,14 @@
 package com.gopivotal.cloudfoundry.test.core;
 
 import org.springframework.stereotype.Component;
+import org.springframework.http.HttpEntity;
+import org.springframework.util.StringUtils;
 
 import java.lang.management.ManagementFactory;
 import java.lang.management.RuntimeMXBean;
 import java.util.Arrays;
 import java.util.List;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -52,6 +55,15 @@ public final class RuntimeUtils {
 
     public Map<String, String> environmentVariables() {
         return this.environment;
+    }
+
+    public Map<String, String> requestHeaders(HttpEntity<byte[]> requestEntity) {
+        Map<String, String> headers = new HashMap<>();
+        for (String key: requestEntity.getHeaders().keySet()){
+            List<String> value = requestEntity.getHeaders().get(key);
+            headers.put(key, StringUtils.collectionToCommaDelimitedString(value));
+        }
+        return headers;
     }
 
     public List<String> inputArguments() {

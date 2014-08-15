@@ -51,6 +51,10 @@ public final class ApplicationController {
         return toResult(this.runtimeUtils.environmentVariables());
     }
 
+    public Result requestHeaders() {
+        return toResult(this.runtimeUtils.requestHeaders());
+    }
+
     public Result inputArguments() {
         return toResult(this.runtimeUtils.inputArguments());
     }
