@@ -15,4 +15,6 @@ libraryDependencies ++= Seq(
   "org.springframework" % "spring-jdbc" % "4.0.5.RELEASE"
 )
 
+resolvers += "Local Maven Repository" at "file://"+Path.userHome.absolutePath+"/.m2/repository"
+
 play.Project.playJavaSettings
