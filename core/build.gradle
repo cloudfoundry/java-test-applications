@@ -30,6 +30,7 @@ dependencies {
     compile "org.springframework:spring-context:$springVersion"
     compile "org.springframework:spring-core:$springVersion"
     compile "org.springframework:spring-jdbc:$springVersion"
+    compile "javax.servlet:javax.servlet-api:3.0.1"
 
     runtime "com.h2database:h2:$h2Version"
     runtime "redis.clients:jedis:$jedisVersion"
@@ -40,6 +41,7 @@ dependencies {
     testCompile "org.apache.tomcat:tomcat-dbcp:$tomcatVersion"
     testCompile "org.apache.tomcat:tomcat-jdbc:$tomcatVersion"
     testCompile "org.mockito:mockito-core:$mockitoVersion"
+    testCompile "org.springframework:spring-test:$springVersion"
 }
 
 build.dependsOn install

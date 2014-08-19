@@ -8,6 +8,9 @@
           <element id="module-output" name="web-application" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Gradle: spring-web-4.0.5.RELEASE" />
+          <element id="library" level="project" name="Gradle: spring-webmvc-4.0.5.RELEASE" />
+          <element id="library" level="project" name="Gradle: tomcat-embed-core-7.0.54" />
           <element id="archive" name="com.gopivotal.cloudfoundry.test-spring-common-1.0.0.BUILD-SNAPSHOT.jar">
             <element id="module-output" name="spring-common" />
           </element>
@@ -47,7 +50,6 @@
           <element id="library" level="project" name="Gradle: spring-boot-starter-logging-1.1.1.RELEASE" />
           <element id="library" level="project" name="Gradle: spring-boot-starter-1.1.1.RELEASE" />
           <element id="library" level="project" name="Gradle: snakeyaml-1.13" />
-          <element id="library" level="project" name="Gradle: tomcat-embed-core-7.0.54" />
           <element id="library" level="project" name="Gradle: tomcat-embed-el-7.0.54" />
           <element id="library" level="project" name="Gradle: tomcat-embed-logging-juli-7.0.54" />
           <element id="library" level="project" name="Gradle: spring-boot-starter-tomcat-1.1.1.RELEASE" />
@@ -58,8 +60,6 @@
           <element id="library" level="project" name="Gradle: jboss-logging-3.1.1.GA" />
           <element id="library" level="project" name="Gradle: classmate-1.0.0" />
           <element id="library" level="project" name="Gradle: hibernate-validator-5.0.3.Final" />
-          <element id="library" level="project" name="Gradle: spring-web-4.0.5.RELEASE" />
-          <element id="library" level="project" name="Gradle: spring-webmvc-4.0.5.RELEASE" />
         </element>
       </element>
       <element id="directory" name="META-INF">

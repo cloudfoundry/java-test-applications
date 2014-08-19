@@ -17,6 +17,7 @@
 package com.gopivotal.cloudfoundry.test.core;
 
 import org.junit.Test;
+import org.springframework.mock.web.MockHttpServletRequest;
 
 import java.lang.management.RuntimeMXBean;
 import java.util.ArrayList;
@@ -43,7 +44,6 @@ public final class RuntimeUtilsTest {
     @Test
     public void classPath() {
         when(this.runtimeMXBean.getClassPath()).thenReturn("alpha:bravo");
-
         assertEquals(Arrays.asList("alpha", "bravo"), this.runtimeUtils.classPath());
     }
 
@@ -53,10 +53,21 @@ public final class RuntimeUtilsTest {
     }
 
     @Test
+    public void requestHeaders() {
+        MockHttpServletRequest request = new MockHttpServletRequest();
+        request.addHeader("one", "two");
+        Map<String, String> parsedHeaders = this.runtimeUtils.requestHeaders(request);
+
+        Map<String, String> expectedResults = new HashMap<>();
+        expectedResults.put("one", "two");
+
+        assertEquals(expectedResults, parsedHeaders);
+    }
+
+    @Test
     public void inputArguments() {
         List<String> inputArguments = new ArrayList<>();
         when(this.runtimeMXBean.getInputArguments()).thenReturn(inputArguments);
-
         assertSame(inputArguments, this.runtimeUtils.inputArguments());
     }
 

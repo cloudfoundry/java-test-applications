@@ -8,18 +8,19 @@
           <element id="module-output" name="web-servlet-2-application" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Gradle: spring-context-4.0.5.RELEASE" />
+          <element id="library" level="project" name="Gradle: spring-webmvc-4.0.5.RELEASE" />
+          <element id="library" level="project" name="Gradle: spring-jdbc-4.0.5.RELEASE" />
+          <element id="library" level="project" name="Gradle: spring-data-redis-1.3.0.RELEASE" />
+          <element id="library" level="project" name="Gradle: spring-data-mongodb-1.5.0.RELEASE" />
+          <element id="library" level="project" name="Gradle: spring-rabbit-1.3.4.RELEASE" />
           <element id="archive" name="com.gopivotal.cloudfoundry.test-spring-common-1.0.0.BUILD-SNAPSHOT.jar">
             <element id="module-output" name="spring-common" />
           </element>
           <element id="archive" name="com.gopivotal.cloudfoundry.test-core-1.0.0.BUILD-SNAPSHOT.jar">
             <element id="module-output" name="core" />
           </element>
-          <element id="library" level="project" name="Gradle: spring-rabbit-1.3.4.RELEASE" />
-          <element id="library" level="project" name="Gradle: spring-data-mongodb-1.5.0.RELEASE" />
-          <element id="library" level="project" name="Gradle: spring-data-redis-1.3.0.RELEASE" />
-          <element id="library" level="project" name="Gradle: spring-context-4.0.5.RELEASE" />
           <element id="library" level="project" name="Gradle: spring-core-4.0.5.RELEASE" />
-          <element id="library" level="project" name="Gradle: spring-jdbc-4.0.5.RELEASE" />
           <element id="library" level="project" name="Gradle: spring-beans-4.0.5.RELEASE" />
           <element id="library" level="project" name="Gradle: aopalliance-1.0" />
           <element id="library" level="project" name="Gradle: spring-aop-4.0.5.RELEASE" />
@@ -59,7 +60,6 @@
           <element id="library" level="project" name="Gradle: classmate-1.0.0" />
           <element id="library" level="project" name="Gradle: hibernate-validator-5.0.3.Final" />
           <element id="library" level="project" name="Gradle: spring-web-4.0.5.RELEASE" />
-          <element id="library" level="project" name="Gradle: spring-webmvc-4.0.5.RELEASE" />
         </element>
       </element>
       <element id="directory" name="META-INF">
