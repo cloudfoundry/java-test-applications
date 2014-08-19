@@ -4,6 +4,7 @@ class UrlMappings {
         '/'                         (controller: 'Application', action: 'health')
         '/class-path'               (controller: 'Application', action: 'classPath')
         '/environment-variables'    (controller: 'Application', action: 'environmentVariables')
+        '/request-headers'          (controller: 'Application', action: 'requestHeaders')
         '/input-arguments'          (controller: 'Application', action: 'inputArguments')
         '/system-properties'        (controller: 'Application', action: 'systemProperties')
         '/datasource/check-access'  (controller: 'DataSource',  action: 'checkAccess')

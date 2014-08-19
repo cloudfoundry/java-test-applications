@@ -17,6 +17,7 @@
 package com.gopivotal.cloudfoundry.test.core;
 
 import org.junit.Test;
+import org.springframework.mock.web.MockHttpServletRequest;
 
 import java.lang.management.RuntimeMXBean;
 import java.util.ArrayList;
@@ -38,30 +39,41 @@ public final class RuntimeUtilsTest {
 
     private final Map<Object, Object> systemProperties = new HashMap<>();
 
-    private final RuntimeUtils runtimeUtils = new RuntimeUtils(this.environment, this.runtimeMXBean, this.systemProperties);
+    private final RuntimeUtils runtimeUtils = new RuntimeUtils(this.environment, this.runtimeMXBean,
+            this.systemProperties);
 
     @Test
     public void classPath() {
         when(this.runtimeMXBean.getClassPath()).thenReturn("alpha:bravo");
-
         assertEquals(Arrays.asList("alpha", "bravo"), this.runtimeUtils.classPath());
     }
 
     @Test
     public void environmentVariables() {
-        assertSame(this.environment, this.runtimeUtils.environmentVariables());
+        assertEquals(this.environment, this.runtimeUtils.environmentVariables());
+    }
+
+    @Test
+    public void requestHeaders() {
+        MockHttpServletRequest request = new MockHttpServletRequest();
+        request.addHeader("one", "two");
+        Map<String, List<String>> parsedHeaders = this.runtimeUtils.requestHeaders(request);
+
+        Map<String, List<String>> expectedResults = new HashMap<>();
+        expectedResults.put("one", Arrays.asList("two"));
+
+        assertEquals(expectedResults, parsedHeaders);
     }
 
     @Test
     public void inputArguments() {
         List<String> inputArguments = new ArrayList<>();
         when(this.runtimeMXBean.getInputArguments()).thenReturn(inputArguments);
-
         assertSame(inputArguments, this.runtimeUtils.inputArguments());
     }
 
     @Test
     public void systemProperties() {
-        assertSame(this.systemProperties, this.runtimeUtils.systemProperties());
+        assertEquals(this.systemProperties, this.runtimeUtils.systemProperties());
     }
 }

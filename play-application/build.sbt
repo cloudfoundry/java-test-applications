@@ -12,7 +12,8 @@ libraryDependencies ++= Seq(
   "org.springframework" % "spring-jdbc" % "4.0.5.RELEASE",
   "org.springframework" % "spring-context" % "4.0.5.RELEASE",
   "org.springframework" % "spring-expression" % "4.0.5.RELEASE",
-  "org.springframework" % "spring-jdbc" % "4.0.5.RELEASE"
+  "org.springframework" % "spring-jdbc" % "4.0.5.RELEASE",
+  "org.springframework" % "spring-web" % "4.0.5.RELEASE"
 )
 
 resolvers += "Local Maven Repository" at "file://"+Path.userHome.absolutePath+"/.m2/repository"

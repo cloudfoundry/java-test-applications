@@ -24,7 +24,8 @@ configurations {
 }
 
 dependencies {
-    compile  "org.springframework.amqp:spring-rabbit:$springAmqpVersion"
+    compile "javax.servlet:javax.servlet-api:$servletVersion"
+    compile "org.springframework.amqp:spring-rabbit:$springAmqpVersion"
     compile "org.springframework.data:spring-data-mongodb:$springDataMongoDbVersion"
     compile "org.springframework.data:spring-data-redis:$springDataRedisVersion"
     compile "org.springframework:spring-context:$springVersion"
@@ -40,6 +41,7 @@ dependencies {
     testCompile "org.apache.tomcat:tomcat-dbcp:$tomcatVersion"
     testCompile "org.apache.tomcat:tomcat-jdbc:$tomcatVersion"
     testCompile "org.mockito:mockito-core:$mockitoVersion"
+    testCompile "org.springframework:spring-test:$springVersion"
 }
 
 build.dependsOn install
