@@ -34,7 +34,14 @@ idea {
     }
 }
 
-task build(overwrite:true, type:Exec, dependsOn: ':core:install') {
+task build_pre_pass(overwrite:true, type:Exec, dependsOn: ':core:install') {
+    inputs.files fileTree(dir: '.', excludes: ['.classpath', '.properties', '.settings', 'project/target', 'project/project/target', 'target'])
+    outputs.dir 'target'
+    setIgnoreExitValue true
+    commandLine 'activator', 'dist'
+}
+
+task build(overwrite:true, type:Exec, dependsOn: 'build_pre_pass') {
     inputs.files fileTree(dir: '.', excludes: ['.classpath', '.properties', '.settings', 'project/target', 'project/project/target', 'target'])
     outputs.dir 'target'
     commandLine 'activator', 'dist'
