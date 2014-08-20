@@ -56,6 +56,14 @@ ratpack {
             render json(runtimeUtils.environmentVariables())
         }
 
+        get('request-headers') {
+            Map<String, List<String>> headers = new HashMap<>();
+            for(String headerName : request.getHeaders().getNames()){
+                headers.put(headerName, request.getHeaders().getAll(headerName))
+            }
+            render json(headers)
+        }
+
         get('input-arguments') {
             render json(runtimeUtils.inputArguments())
         }

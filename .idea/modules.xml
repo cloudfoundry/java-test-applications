@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/java-main-application/java-main-application.iml" filepath="$PROJECT_DIR$/java-main-application/java-main-application.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-test-applications.iml" filepath="$PROJECT_DIR$/java-test-applications.iml" />
       <module fileurl="file://$PROJECT_DIR$/play-application/play-application.iml" filepath="$PROJECT_DIR$/play-application/play-application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/play-application/.idea/modules/play-application-build.iml" filepath="$PROJECT_DIR$/play-application/.idea/modules/play-application-build.iml" />
       <module fileurl="file://$PROJECT_DIR$/ratpack-application/ratpack-application.iml" filepath="$PROJECT_DIR$/ratpack-application/ratpack-application.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-boot-cli-application/spring-boot-cli-application.iml" filepath="$PROJECT_DIR$/spring-boot-cli-application/spring-boot-cli-application.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-boot-cli-jar-application/spring-boot-cli-jar-application.iml" filepath="$PROJECT_DIR$/spring-boot-cli-jar-application/spring-boot-cli-jar-application.iml" />

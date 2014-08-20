@@ -16,16 +16,16 @@
 
 package com.gopivotal.cloudfoundry.test.controller;
 
-import java.util.List;
-import java.util.Map;
-
+import com.gopivotal.cloudfoundry.test.core.HealthUtils;
+import com.gopivotal.cloudfoundry.test.core.RuntimeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.gopivotal.cloudfoundry.test.core.HealthUtils;
-import com.gopivotal.cloudfoundry.test.core.RuntimeUtils;
+import javax.servlet.http.HttpServletRequest;
+import java.util.List;
+import java.util.Map;
 
 @RestController
 public final class ApplicationController {
@@ -36,7 +36,7 @@ public final class ApplicationController {
 
     @Autowired
     public ApplicationController(HealthUtils healthUtils,
-                          RuntimeUtils runtimeUtils) {
+                                 RuntimeUtils runtimeUtils) {
         this.healthUtils = healthUtils;
         this.runtimeUtils = runtimeUtils;
     }
@@ -56,6 +56,11 @@ public final class ApplicationController {
         return this.runtimeUtils.environmentVariables();
     }
 
+    @RequestMapping(method = RequestMethod.GET, value = "/request-headers")
+    Map<String, List<String>> requestHeaders(HttpServletRequest request) {
+        return this.runtimeUtils.requestHeaders(request);
+    }
+
     @RequestMapping(method = RequestMethod.GET, value = "/input-arguments")
     List<String> inputArguments() {
         return this.runtimeUtils.inputArguments();
@@ -65,4 +70,5 @@ public final class ApplicationController {
     Map<Object, Object> systemProperties() {
         return this.runtimeUtils.systemProperties();
     }
+
 }

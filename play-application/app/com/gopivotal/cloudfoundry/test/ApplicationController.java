@@ -17,14 +17,11 @@
 package com.gopivotal.cloudfoundry.test;
 
 import com.gopivotal.cloudfoundry.test.core.HealthUtils;
-import com.gopivotal.cloudfoundry.test.core.DataSourceUtils;
 import com.gopivotal.cloudfoundry.test.core.RuntimeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
-
-import javax.sql.DataSource;
 
 @org.springframework.stereotype.Controller
 public final class ApplicationController {
@@ -49,6 +46,10 @@ public final class ApplicationController {
 
     public Result environmentVariables() {
         return toResult(this.runtimeUtils.environmentVariables());
+    }
+
+    public Result requestHeaders() {
+        return toResult(Controller.request().headers());
     }
 
     public Result inputArguments() {

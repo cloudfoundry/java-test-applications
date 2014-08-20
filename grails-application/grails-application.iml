@@ -8,6 +8,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Gradle: groovy-all-2.3.2" level="project" />
+    <orderEntry type="library" name="Gradle: spring-web-4.0.5.RELEASE" level="project" />
   </component>
 </module>
 

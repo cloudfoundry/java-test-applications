@@ -22,10 +22,6 @@ import com.gopivotal.cloudfoundry.test.core.FakeRedisConnectionFactory;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 
-import com.gopivotal.cloudfoundry.test.core.HealthUtils;
-import com.gopivotal.cloudfoundry.test.core.MemoryUtils;
-import com.gopivotal.cloudfoundry.test.core.RuntimeUtils;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

@@ -18,11 +18,16 @@ package com.gopivotal.cloudfoundry.test.core;
 
 import org.springframework.stereotype.Component;
 
+import javax.servlet.http.HttpServletRequest;
 import java.lang.management.ManagementFactory;
 import java.lang.management.RuntimeMXBean;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Enumeration;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * Utility methods used to get information about the current runtime
@@ -51,7 +56,18 @@ public final class RuntimeUtils {
     }
 
     public Map<String, String> environmentVariables() {
-        return this.environment;
+        return new TreeMap<>(this.environment);
+    }
+
+    public Map<String, List<String>> requestHeaders(HttpServletRequest request) {
+        Map<String, List<String>> headers = new TreeMap<>();
+
+        for (Enumeration<String> names = request.getHeaderNames(); names.hasMoreElements(); ) {
+            String name = names.nextElement();
+            headers.put(name, getValuesAsList(request.getHeaders(name)));
+        }
+
+        return headers;
     }
 
     public List<String> inputArguments() {
@@ -59,7 +75,18 @@ public final class RuntimeUtils {
     }
 
     public Map<Object, Object> systemProperties() {
-        return this.systemProperties;
+        return new TreeMap<>(this.systemProperties);
+    }
+
+    private List<String> getValuesAsList(Enumeration<String> raw) {
+        List<String> values = new ArrayList<>();
+
+        for (; raw.hasMoreElements(); ) {
+            values.add(raw.nextElement());
+        }
+
+        Collections.sort(values);
+        return values;
     }
 
 }
