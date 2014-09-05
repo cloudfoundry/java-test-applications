@@ -6,36 +6,37 @@ A collection of applications used for testing the Java buildpack.
 ## Applications
 | Name | Description
 | ---- | -----------
-`dist-zip-application` | A Spring Boot application, deployed as a `distZip`
-`grails-application` | A Grails application, deployed as a WAR
-`groovy-application` | An application started with `groovy`
-`java-main-application` | A Spring Boot application started with `java -jar`
-`play-application` | A Play Framework application, deployed as a `dist`
-`ratpack-application` | A Ratpack application, deployed as a `distZip`
-`spring-boot-cli-application` | A Spring Boot CLI application, deployed with `spring grab`
-`spring-boot-cli-jar-application` | A Spring Boot CLI application, deployed with `spring jar`
-`web-application` | A Spring MVC application using Servlet 3
-`web-servlet-2-application` | A Spring MVC application using Servlet 2
+| `dist-zip-application` | A Spring Boot application, deployed as a `distZip`
+| `grails-application` | A Grails application, deployed as a WAR
+| `groovy-application` | An application started with `groovy`
+| `java-main-application` | A Spring Boot application started with `java -jar`
+| `play-application` | A Play Framework application, deployed as a `dist`
+| `ratpack-application` | A Ratpack application, deployed as a `distZip`
+| `spring-boot-cli-application` | A Spring Boot CLI application, deployed with `spring grab`
+| `spring-boot-cli-jar-application` | A Spring Boot CLI application, deployed with `spring jar`
+| `web-application` | A Spring MVC application using Servlet 3
+| `web-servlet-2-application` | A Spring MVC application using Servlet 2
 
 ### Output Content
 All applications support the following REST operations:
 
 | URI | Description
 | --- | -----------
-`/` | The health of the application
-`/class-path` | The classpath of the application
-`/environment-variables` | The environment variables available to the application
-`/request-headers` | The http request headers of the current request
-`/input-arguments` | The list of JVM input arguments for the application
-`/system-properties` | The system properties available to the application
-`/datasource/check-access` | The ability of the application to access a RDBMS
-`/datasource/url` | The URL of the application's `DataSource`
-`/redis/check-access` | The ability of the application to access Redis
-`/redis/url` | The URL of the application's Redis
-`/mongodb/check-access` | The ability of the application to access MongoDB
-`/mongodb/url` | The URL of the application's MongoDB
-`/rabbit/check-access` | The ability of the application to access RabbitMQ
-`/rabbit/url` | The URL of the application's RabbitMQ
+| `GET  /` | The health of the application
+| `GET  /class-path` | The classpath of the application
+| `GET  /datasource/check-access` | The ability of the application to access a RDBMS
+| `GET  /datasource/url` | The URL of the application's `DataSource`
+| `GET  /environment-variables` | The environment variables available to the application
+| `GET  /input-arguments` | The list of JVM input arguments for the application
+| `GET  /mongodb/check-access` | The ability of the application to access MongoDB
+| `GET  /mongodb/url` | The URL of the application's MongoDB
+| `POST /out-of-memory` | The URL to trigger an out of memory error
+| `GET  /rabbit/check-access` | The ability of the application to access RabbitMQ
+| `GET  /rabbit/url` | The URL of the application's RabbitMQ
+| `GET  /redis/check-access` | The ability of the application to access Redis
+| `GET  /redis/url` | The URL of the application's Redis
+| `GET  /request-headers` | The http request headers of the current request
+| `GET  /system-properties` | The system properties available to the application
 
 ## Building
 This project is built with JDK 7 and Gradle. To build the artifacts, install JDK 7, Typesafe activator, and Grails, install Spring Boot by following [these instructions](https://github.com/spring-projects/spring-boot), and then run:

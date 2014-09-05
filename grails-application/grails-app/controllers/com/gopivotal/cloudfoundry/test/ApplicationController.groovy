@@ -23,6 +23,8 @@ class ApplicationController {
 
     def healthUtils
 
+    def memoryUtils
+
     def runtimeUtils
 
     def health() {
@@ -35,6 +37,10 @@ class ApplicationController {
 
     def environmentVariables() {
         render this.runtimeUtils.environmentVariables() as JSON
+    }
+
+    def outOfMemory() {
+        render this.memoryUtils.outOfMemory()
     }
 
     def requestHeaders() {

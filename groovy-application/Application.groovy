@@ -33,7 +33,7 @@ public class Application {
 
     static void main(String[] args) {
         new InitializationUtils().fail()
-        new MemoryUtils().outOfMemory()
+        new MemoryUtils().outOfMemoryOnStart()
 
         args += '--server.port=' + System.env['PORT']
         new SpringApplication(new ClassRelativeResourceLoader(Application.class), Application.class).run(args)
@@ -52,7 +52,7 @@ public class Application {
     @Bean
     static MemoryUtils memoryUtils() {
         def memory = new MemoryUtils()
-        memory.outOfMemory()
+        memory.outOfMemoryOnStart()
 
         return memory
     }
@@ -94,7 +94,7 @@ public class Application {
 
     @Bean
     static ApplicationController applicationController() {
-        return new ApplicationController(healthUtils(), runtimeUtils())
+        return new ApplicationController(healthUtils(), memoryUtils(), runtimeUtils())
     }
 
     @Bean

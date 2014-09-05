@@ -25,7 +25,9 @@ import static ratpack.jackson.Jackson.json
 
 ratpack {
     new InitializationUtils().fail()
-    new MemoryUtils().outOfMemory()
+
+    def memoryUtils = new MemoryUtils()
+    memoryUtils.outOfMemoryOnStart()
 
     def connectionFactory = new CachingConnectionFactory(null, 0)
     def dataSource = new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2).build()
@@ -66,6 +68,10 @@ ratpack {
 
         get('input-arguments') {
             render json(runtimeUtils.inputArguments())
+        }
+
+        post('out-of-memory') {
+            response.send memoryUtils.outOfMemory()
         }
 
         get('system-properties') {
