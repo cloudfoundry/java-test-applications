@@ -30,7 +30,7 @@ public final class MemoryUtilsTest {
     public void outOfMemoryNull() {
         Map<String, String> environment = new HashMap<>();
 
-        assertNull(new MemoryUtils(environment, 0).outOfMemory());
+        assertNull(new MemoryUtils(environment, 0).outOfMemoryOnStart());
     }
 
     @Test
@@ -38,7 +38,7 @@ public final class MemoryUtilsTest {
         Map<String, String> environment = new HashMap<>();
         environment.put("FAIL_OOM", "false");
 
-        assertNull(new MemoryUtils(environment, 0).outOfMemory());
+        assertNull(new MemoryUtils(environment, 0).outOfMemoryOnStart());
     }
 
     @Test
@@ -46,6 +46,6 @@ public final class MemoryUtilsTest {
         Map<String, String> environment = new HashMap<>();
         environment.put("FAIL_OOM", "true");
 
-        assertNotNull(new MemoryUtils(environment, 0).outOfMemory());
+        assertNotNull(new MemoryUtils(environment, 0).outOfMemoryOnStart());
     }
 }

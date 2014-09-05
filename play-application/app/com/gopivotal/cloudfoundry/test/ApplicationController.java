@@ -17,6 +17,7 @@
 package com.gopivotal.cloudfoundry.test;
 
 import com.gopivotal.cloudfoundry.test.core.HealthUtils;
+import com.gopivotal.cloudfoundry.test.core.MemoryUtils;
 import com.gopivotal.cloudfoundry.test.core.RuntimeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import play.libs.Json;
@@ -28,11 +29,14 @@ public final class ApplicationController {
 
     private final HealthUtils healthUtils;
 
+    private final MemoryUtils memoryUtils;
+
     private final RuntimeUtils runtimeUtils;
 
     @Autowired
-    ApplicationController(HealthUtils healthUtils, RuntimeUtils runtimeUtils) {
+    ApplicationController(HealthUtils healthUtils, MemoryUtils memoryUtils, RuntimeUtils runtimeUtils) {
         this.healthUtils = healthUtils;
+        this.memoryUtils = memoryUtils;
         this.runtimeUtils = runtimeUtils;
     }
 
@@ -54,6 +58,10 @@ public final class ApplicationController {
 
     public Result inputArguments() {
         return toResult(this.runtimeUtils.inputArguments());
+    }
+
+    public Result outOfMemory() {
+        return toResult(this.memoryUtils.outOfMemory());
     }
 
     public Result systemProperties() {

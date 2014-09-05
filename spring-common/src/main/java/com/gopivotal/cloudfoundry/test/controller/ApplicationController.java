@@ -17,6 +17,7 @@
 package com.gopivotal.cloudfoundry.test.controller;
 
 import com.gopivotal.cloudfoundry.test.core.HealthUtils;
+import com.gopivotal.cloudfoundry.test.core.MemoryUtils;
 import com.gopivotal.cloudfoundry.test.core.RuntimeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,12 +33,14 @@ public final class ApplicationController {
 
     private final HealthUtils healthUtils;
 
+    private final MemoryUtils memoryUtils;
+
     private final RuntimeUtils runtimeUtils;
 
     @Autowired
-    public ApplicationController(HealthUtils healthUtils,
-                                 RuntimeUtils runtimeUtils) {
+    public ApplicationController(HealthUtils healthUtils, MemoryUtils memoryUtils, RuntimeUtils runtimeUtils) {
         this.healthUtils = healthUtils;
+        this.memoryUtils = memoryUtils;
         this.runtimeUtils = runtimeUtils;
     }
 
@@ -54,6 +57,11 @@ public final class ApplicationController {
     @RequestMapping(method = RequestMethod.GET, value = "/environment-variables")
     Map<String, String> environmentVariables() {
         return this.runtimeUtils.environmentVariables();
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value = "/out-of-memory")
+    void outOfMemory() {
+        this.memoryUtils.outOfMemory();
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/request-headers")
