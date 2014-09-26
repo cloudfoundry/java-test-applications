@@ -39,7 +39,14 @@ All applications support the following REST operations:
 | `GET  /system-properties` | The system properties available to the application
 
 ## Building
-This project is built with JDK 7 and Gradle. To build the artifacts, install JDK 7, Typesafe activator, and Grails, install Spring Boot by following [these instructions](https://github.com/spring-projects/spring-boot), and then run:
+
+Before building the project, the following tools must be installed: 
+* [JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+* [Spring Boot CLI](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-started-installing-the-cli)
+* [Grails](https://grails.org/download)
+* [Typesafe Activator](https://typesafe.com/platform/getstarted)
+
+This project is built with Gradle. After installing the pre-requisites, run:
 
 ```plain
 ./gradlew
