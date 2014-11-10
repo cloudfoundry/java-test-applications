@@ -1,7 +1,7 @@
 ---
 applications:
 - name: grails-application
-  memory: 512M
+  memory: 1G
   instances: 1
   path: target/grails-application-1.0.0.BUILD-SNAPSHOT.war
   buildpack: https://github.com/cloudfoundry/java-buildpack/archive/master.zip
