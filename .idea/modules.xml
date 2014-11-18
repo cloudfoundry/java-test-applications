@@ -11,6 +11,8 @@
       <module fileurl="file://$PROJECT_DIR$/play-application/play-application.iml" filepath="$PROJECT_DIR$/play-application/play-application.iml" />
       <module fileurl="file://$PROJECT_DIR$/play-application/.idea/modules/play-application-build.iml" filepath="$PROJECT_DIR$/play-application/.idea/modules/play-application-build.iml" />
       <module fileurl="file://$PROJECT_DIR$/ratpack-application/ratpack-application.iml" filepath="$PROJECT_DIR$/ratpack-application/ratpack-application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/play-application/.idea/modules/root.iml" filepath="$PROJECT_DIR$/play-application/.idea/modules/root.iml" />
+      <module fileurl="file://$PROJECT_DIR$/play-application/.idea/modules/root-build.iml" filepath="$PROJECT_DIR$/play-application/.idea/modules/root-build.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-boot-cli-application/spring-boot-cli-application.iml" filepath="$PROJECT_DIR$/spring-boot-cli-application/spring-boot-cli-application.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-boot-cli-jar-application/spring-boot-cli-jar-application.iml" filepath="$PROJECT_DIR$/spring-boot-cli-jar-application/spring-boot-cli-jar-application.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-common/spring-common.iml" filepath="$PROJECT_DIR$/spring-common/spring-common.iml" />
@@ -19,4 +21,3 @@
     </modules>
   </component>
 </project>
-
