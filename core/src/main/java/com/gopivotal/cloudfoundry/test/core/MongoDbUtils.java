@@ -16,6 +16,8 @@
 
 package com.gopivotal.cloudfoundry.test.core;
 
+import java.util.List;
+
 import com.mongodb.DB;
 import com.mongodb.ServerAddress;
 import org.springframework.data.mongodb.MongoDbFactory;
@@ -38,15 +40,26 @@ public class MongoDbUtils extends AbstractServiceUtils<MongoDbFactory> {
         DB mongoDb = mongoDbFactory.getDb();
 
         if (mongoDb != null) {
-            ServerAddress serverAddress = mongoDb.getMongo().getAddress();
-            String host = serverAddress.getHost();
-            int port = serverAddress.getPort();
-            String db = mongoDb.getName();
 
-            return String.format("mongodb://%s:%d/%s", host, port, db);
+            StringBuilder builder = new StringBuilder();
+            List<ServerAddress> serverAddresses = mongoDb.getMongo().getAllAddress();
+            builder.append(getServerString(mongoDb, serverAddresses.get(0)));
+
+            for (int i = 1; i < serverAddresses.size(); i++) {
+                builder.append(", " + getServerString(mongoDb, serverAddresses.get(i)));
+            }
+
+            return builder.toString();
         }
 
         return "mongodb://fake.connection";
+    }
+
+    private String getServerString(DB mongoDb, ServerAddress serverAddress) {
+        String host = serverAddress.getHost();
+        int port = serverAddress.getPort();
+        String name = mongoDb.getName();
+        return String.format("mongodb://%s:%d/%s", host, port, name);
     }
 
 }
