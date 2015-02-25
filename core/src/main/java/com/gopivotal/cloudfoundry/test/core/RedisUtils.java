@@ -24,12 +24,21 @@ import org.springframework.stereotype.Component;
 public class RedisUtils extends AbstractServiceUtils<RedisConnectionFactory> {
 
     public String checkAccess(RedisConnectionFactory redisConnectionFactory) {
+        RedisConnection connection = null;
         try {
-            RedisConnection connection = redisConnectionFactory.getConnection();
+            connection = redisConnectionFactory.getConnection();
             connection.echo("hello".getBytes());
             return "ok";
         } catch (Exception e) {
             return "failed with " + e.getMessage();
+        } finally {
+            try {
+                if(connection != null) {
+                    connection.close();
+                }
+            } catch (Exception e) {
+                return "Redis connection close failed with " + e.getMessage();
+            }
         }
     }
 
