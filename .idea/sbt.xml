@@ -10,9 +10,9 @@
             <option value="$PROJECT_DIR$/play-application/project" />
           </set>
         </option>
+        <option name="sbtVersion" value="0.13.6" />
         <option name="useAutoImport" value="true" />
       </SbtProjectSettings>
     </option>
-    <option name="sbtVersion" value="0.13.6" />
   </component>
 </project>
