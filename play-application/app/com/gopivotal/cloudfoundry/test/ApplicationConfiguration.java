@@ -35,7 +35,7 @@ import javax.sql.DataSource;
 import play.db.*;
 
 @Configuration
-@ComponentScan(basePackages="com.gopivotal.cloudfoundry.test")
+@ComponentScan(basePackages = "com.gopivotal.cloudfoundry.test")
 public class ApplicationConfiguration {
 
     @Bean
@@ -55,6 +55,6 @@ public class ApplicationConfiguration {
 
     @Bean
     ConnectionFactory rabbitConnectionFactory() {
-    		return new CachingConnectionFactory(null, 0);
+        return new CachingConnectionFactory(null, 0);
     }
 }

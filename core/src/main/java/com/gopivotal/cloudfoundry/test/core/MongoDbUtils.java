@@ -46,7 +46,7 @@ public class MongoDbUtils extends AbstractServiceUtils<MongoDbFactory> {
             builder.append(getServerString(mongoDb, serverAddresses.get(0)));
 
             for (int i = 1; i < serverAddresses.size(); i++) {
-                builder.append(", " + getServerString(mongoDb, serverAddresses.get(i)));
+                builder.append(", ").append(getServerString(mongoDb, serverAddresses.get(i)));
             }
 
             return builder.toString();

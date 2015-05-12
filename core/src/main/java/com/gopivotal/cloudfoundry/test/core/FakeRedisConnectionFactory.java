@@ -18,6 +18,7 @@ package com.gopivotal.cloudfoundry.test.core;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
+import org.springframework.data.redis.connection.RedisSentinelConnection;
 
 /**
  * Fake RedisConnectionFactory, since we don't have "in-memory" redis (equivalent to, say, H2 database)
@@ -40,5 +41,10 @@ public final class FakeRedisConnectionFactory implements RedisConnectionFactory 
     @Override
     public boolean getConvertPipelineAndTxResults() {
         return false;
+    }
+
+    @Override
+    public RedisSentinelConnection getSentinelConnection() {
+        return null;
     }
 }

@@ -67,7 +67,7 @@ public final class MemoryUtils {
      * Generates an {@link OutOfMemoryError} if the {@code FAIL_OOM} environment variable is {@code true}. Otherwise
      * does nothing.
      *
-     * @return
+     * @return Never returns as it will generate an {@link OutOfMemoryError}
      */
     @PostConstruct
     public byte[][] outOfMemoryOnStart() {

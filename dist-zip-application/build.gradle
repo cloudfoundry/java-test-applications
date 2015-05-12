@@ -22,12 +22,8 @@ buildscript {
 
 apply plugin: 'spring-boot'
 
-sourceCompatibility = 1.7
-
 dependencies {
     compile project(':spring-common')
 }
 
 mainClassName = "com.gopivotal.cloudfoundry.test.ApplicationConfiguration"
-
-build.finalizedBy distZip

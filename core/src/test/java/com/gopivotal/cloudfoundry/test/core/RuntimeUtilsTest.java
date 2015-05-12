@@ -22,6 +22,7 @@ import org.springframework.mock.web.MockHttpServletRequest;
 import java.lang.management.RuntimeMXBean;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -60,7 +61,7 @@ public final class RuntimeUtilsTest {
         Map<String, List<String>> parsedHeaders = this.runtimeUtils.requestHeaders(request);
 
         Map<String, List<String>> expectedResults = new HashMap<>();
-        expectedResults.put("one", Arrays.asList("two"));
+        expectedResults.put("one", Collections.singletonList("two"));
 
         assertEquals(expectedResults, parsedHeaders);
     }

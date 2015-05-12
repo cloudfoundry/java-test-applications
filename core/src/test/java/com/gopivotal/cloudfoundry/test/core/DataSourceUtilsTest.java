@@ -65,7 +65,7 @@ public final class DataSourceUtilsTest {
 
     @Test
     public void tomcatDbcpUrl() {
-        org.apache.tomcat.dbcp.dbcp.BasicDataSource dataSource = new org.apache.tomcat.dbcp.dbcp.BasicDataSource();
+        org.apache.tomcat.dbcp.dbcp2.BasicDataSource dataSource = new org.apache.tomcat.dbcp.dbcp2.BasicDataSource();
         dataSource.setUrl(TEST_URL);
         assertEquals(TEST_URL, this.dataSourceUtils.getUrl(dataSource));
     }

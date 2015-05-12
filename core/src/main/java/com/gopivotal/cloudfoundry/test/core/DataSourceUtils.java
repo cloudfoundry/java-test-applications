@@ -52,6 +52,8 @@ public final class DataSourceUtils extends AbstractServiceUtils<DataSource> {
             return invokeMethod(dataSource, "getUrl");
         } else if (isClass(dataSource, "org.apache.tomcat.dbcp.dbcp.BasicDataSource")) {
             return invokeMethod(dataSource, "getUrl");
+        } else if (isClass(dataSource, "org.apache.tomcat.dbcp.dbcp2.BasicDataSource")) {
+            return invokeMethod(dataSource, "getUrl");
         } else if (isClass(dataSource, "org.apache.tomcat.jdbc.pool.DataSource")) {
             return invokeMethod(dataSource, "getUrl");
         } else if (isClass(dataSource, "org.springframework.jdbc.datasource.embedded" +

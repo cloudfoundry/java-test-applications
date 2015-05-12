@@ -20,7 +20,7 @@ buildscript {
     }
 }
 
-apply plugin: 'ratpack-groovy'
+apply plugin: 'io.ratpack.ratpack-groovy'
 
 dependencies {
     compile project(':core')

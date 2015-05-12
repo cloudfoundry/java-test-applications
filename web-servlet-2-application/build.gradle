@@ -16,8 +16,6 @@
 
 apply plugin: 'war'
 
-sourceCompatibility = 1.7
-
 dependencies {
     compile project(':spring-common')
 }
