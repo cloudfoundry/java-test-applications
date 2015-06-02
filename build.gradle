@@ -14,6 +14,15 @@
  * limitations under the License.
  */
 
+buildscript {
+    repositories {
+        maven { url 'http://repo.spring.io/plugins-release' }
+    }
+    dependencies {
+        classpath 'org.springframework.build.gradle:propdeps-plugin:0.0.7'
+    }
+}
+
 allprojects {
     defaultTasks 'build'
 }
@@ -24,6 +33,11 @@ subprojects {
             mavenCentral()
         }
     }
+
+    apply plugin: 'propdeps'
+    apply plugin: 'propdeps-maven'
+    apply plugin: 'propdeps-idea'
+    apply plugin: 'propdeps-eclipse'
 
     ext {
         bonecpVersion = '0.8.0.RELEASE'

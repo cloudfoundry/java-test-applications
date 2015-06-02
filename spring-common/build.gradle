@@ -19,7 +19,11 @@ apply plugin: 'maven'
 
 dependencies {
     compile project(':core')
-    compile "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
+    compile("org.springframework.boot:spring-boot-starter-web:$springBootVersion") {
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
+    }
+
+    provided "javax.servlet:javax.servlet-api:$servletVersion"
 }
 
 build.dependsOn install

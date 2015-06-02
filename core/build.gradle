@@ -22,13 +22,14 @@ configurations {
 }
 
 dependencies {
-    compile "javax.servlet:javax.servlet-api:$servletVersion"
     compile "org.springframework.amqp:spring-rabbit:$springAmqpVersion"
     compile "org.springframework.data:spring-data-mongodb:$springDataMongoDbVersion"
     compile "org.springframework.data:spring-data-redis:$springDataRedisVersion"
     compile "org.springframework:spring-context:$springVersion"
     compile "org.springframework:spring-core:$springVersion"
     compile "org.springframework:spring-jdbc:$springVersion"
+
+    provided "javax.servlet:javax.servlet-api:$servletVersion"
 
     runtime "com.h2database:h2:$h2Version"
     runtime "redis.clients:jedis:$jedisVersion"
