@@ -24,6 +24,7 @@ apply plugin: 'spring-boot'
 
 dependencies {
     compile project(':spring-common')
+    provided "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
 }
 
 mainClassName = "com.gopivotal.cloudfoundry.test.ApplicationConfiguration"

@@ -20,11 +20,13 @@ buildscript {
     }
 }
 
-apply plugin: 'io.ratpack.ratpack-groovy'
+apply plugin: "io.ratpack.ratpack-groovy"
 
 dependencies {
     compile project(':core')
-    compile "io.ratpack:ratpack-jackson:$ratpackVersion"
+    compile ratpack.dependency("jackson")
+
+    provided "javax.servlet:javax.servlet-api:$servletVersion"
 }
 
 build.dependsOn distZip
