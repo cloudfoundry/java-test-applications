@@ -18,6 +18,7 @@ apply plugin: 'groovy'
 
 dependencies {
     compile project(':spring-common')
+    provided "org.springframework.boot:spring-boot-starter-tomcat:$springBootVersion"
 }
 
 task build(overwrite: true, type: Copy) {
