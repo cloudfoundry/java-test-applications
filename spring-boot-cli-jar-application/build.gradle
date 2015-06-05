@@ -18,9 +18,6 @@ apply plugin: 'groovy'
 
 dependencies {
     compile project(':spring-common')
-    
-    provided "org.springframework.boot:spring-boot-starter-tomcat:$springBootVersion"
-    provided "javax.servlet:javax.servlet-api:$servletVersion"
 }
 
 task build(overwrite: true, type:Exec, dependsOn: ':spring-common:build') {

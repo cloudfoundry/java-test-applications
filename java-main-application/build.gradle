@@ -24,7 +24,5 @@ apply plugin: 'spring-boot'
 
 dependencies {
     compile project(':spring-common')
-    
-    provided "org.springframework.boot:spring-boot-starter-tomcat:$springBootVersion"
-    provided "javax.servlet:javax.servlet-api:$servletVersion"
+    runtime "org.springframework.boot:spring-boot-starter-tomcat:$springBootVersion"
 }
