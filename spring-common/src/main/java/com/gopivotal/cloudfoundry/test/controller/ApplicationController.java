@@ -79,4 +79,9 @@ public final class ApplicationController {
         return this.runtimeUtils.systemProperties();
     }
 
+    @RequestMapping(method = RequestMethod.GET, value = "/security-providers")
+    List<String> securityProviders() {
+        return this.runtimeUtils.securityProviders();
+    }
+
 }

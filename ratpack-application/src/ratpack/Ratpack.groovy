@@ -74,6 +74,10 @@ ratpack {
             response.send memoryUtils.outOfMemory()
         }
 
+        get('security-providers') {
+            render json(runtimeUtils.securityProviders())
+        }
+
         get('system-properties') {
             render json(runtimeUtils.systemProperties())
         }

@@ -20,6 +20,7 @@ import org.junit.Test;
 import org.springframework.mock.web.MockHttpServletRequest;
 
 import java.lang.management.RuntimeMXBean;
+import java.security.Provider;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -40,8 +41,10 @@ public final class RuntimeUtilsTest {
 
     private final Map<Object, Object> systemProperties = new HashMap<>();
 
+    private Provider[] securityProviders = new Provider[0];
+
     private final RuntimeUtils runtimeUtils = new RuntimeUtils(this.environment, this.runtimeMXBean,
-            this.systemProperties);
+            this.securityProviders, this.systemProperties);
 
     @Test
     public void classPath() {
@@ -71,6 +74,11 @@ public final class RuntimeUtilsTest {
         List<String> inputArguments = new ArrayList<>();
         when(this.runtimeMXBean.getInputArguments()).thenReturn(inputArguments);
         assertSame(inputArguments, this.runtimeUtils.inputArguments());
+    }
+
+    @Test
+    public void securityProviders() {
+        assertEquals(Collections.EMPTY_LIST, this.runtimeUtils.securityProviders());
     }
 
     @Test

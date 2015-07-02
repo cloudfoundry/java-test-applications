@@ -15,9 +15,7 @@
  */
 
 package com.gopivotal.cloudfoundry.test
-
 import grails.converters.JSON
-import org.springframework.http.HttpEntity
 
 class ApplicationController {
 
@@ -49,6 +47,10 @@ class ApplicationController {
 
     def inputArguments() {
         render this.runtimeUtils.inputArguments() as JSON
+    }
+
+    def securityProviders() {
+        render this.runtimeUtils.securityProviders() as JSON
     }
 
     def systemProperties() {

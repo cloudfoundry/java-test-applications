@@ -15,6 +15,7 @@ class UrlMappings {
         '/redis/check-access'      (controller: 'Redis',       action: 'checkAccess')
         '/redis/url'               (controller: 'Redis',       action: 'url')
         '/request-headers'         (controller: 'Application', action: 'requestHeaders')
+        '/security-providers'      (controller: 'Application', action: 'securityProviders')
         '/system-properties'       (controller: 'Application', action: 'systemProperties')
     }
 }

@@ -50,18 +50,18 @@ grails.project.dependency.resolution = {
 
     dependencies { // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
         compile 'com.gopivotal.cloudfoundry.test:core:1.0.0.BUILD-SNAPSHOT'
-        compile 'org.springframework:spring-aop:4.1.6.RELEASE'
-        compile 'org.springframework:spring-aspects:4.1.6.RELEASE'
-        compile 'org.springframework:spring-beans:4.1.6.RELEASE'
-        compile 'org.springframework:spring-context:4.1.6.RELEASE'
-        compile 'org.springframework:spring-context-support:4.1.6.RELEASE'
-        compile 'org.springframework:spring-core:4.1.6.RELEASE'
-        compile 'org.springframework:spring-expression:4.1.6.RELEASE'
-        compile 'org.springframework:spring-jdbc:4.1.6.RELEASE'
-        compile 'org.springframework:spring-messaging:4.1.6.RELEASE'
-        compile 'org.springframework:spring-tx:4.1.6.RELEASE'
-        compile 'org.springframework:spring-web:4.1.6.RELEASE'
-        compile 'org.springframework:spring-webmvc:4.1.6.RELEASE'
+        compile 'org.springframework:spring-aop:4.1.7.RELEASE'
+        compile 'org.springframework:spring-aspects:4.1.7.RELEASE'
+        compile 'org.springframework:spring-beans:4.1.7.RELEASE'
+        compile 'org.springframework:spring-context:4.1.7.RELEASE'
+        compile 'org.springframework:spring-context-support:4.1.7.RELEASE'
+        compile 'org.springframework:spring-core:4.1.7.RELEASE'
+        compile 'org.springframework:spring-expression:4.1.7.RELEASE'
+        compile 'org.springframework:spring-jdbc:4.1.7.RELEASE'
+        compile 'org.springframework:spring-messaging:4.1.7.RELEASE'
+        compile 'org.springframework:spring-tx:4.1.7.RELEASE'
+        compile 'org.springframework:spring-web:4.1.7.RELEASE'
+        compile 'org.springframework:spring-webmvc:4.1.7.RELEASE'
     }
 
     plugins {

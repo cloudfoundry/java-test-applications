@@ -36,6 +36,7 @@ All applications support the following REST operations:
 | `GET  /redis/check-access` | The ability of the application to access Redis
 | `GET  /redis/url` | The URL of the application's Redis
 | `GET  /request-headers` | The http request headers of the current request
+| `GET  /security-providers` | The system security providers available to the application
 | `GET  /system-properties` | The system properties available to the application
 
 ## Building

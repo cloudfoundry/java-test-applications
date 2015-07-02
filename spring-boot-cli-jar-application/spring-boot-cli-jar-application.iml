@@ -17,5 +17,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="spring-common" exported="" />
+    <orderEntry type="library" name="Gradle: org.codehaus.groovy:groovy-all:2.4.3" level="project" />
   </component>
 </module>

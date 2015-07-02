@@ -21,6 +21,8 @@ import org.springframework.stereotype.Component;
 import javax.servlet.http.HttpServletRequest;
 import java.lang.management.ManagementFactory;
 import java.lang.management.RuntimeMXBean;
+import java.security.Provider;
+import java.security.Security;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -41,13 +43,19 @@ public final class RuntimeUtils {
 
     private final Map<Object, Object> systemProperties;
 
+    private final Provider[] securityProviders;
+
     public RuntimeUtils() {
-        this(System.getenv(), ManagementFactory.getRuntimeMXBean(), System.getProperties());
+        this(System.getenv(), ManagementFactory.getRuntimeMXBean(), Security.getProviders(), 
+                System.getProperties());
     }
 
-    RuntimeUtils(Map<String, String> environment, RuntimeMXBean runtimeMXBean, Map<Object, Object> systemProperties) {
+    RuntimeUtils(Map<String, String> environment, RuntimeMXBean runtimeMXBean, Provider[] securityProviders, 
+                 Map<Object, Object> 
+            systemProperties) {
         this.environment = environment;
         this.runtimeMXBean = runtimeMXBean;
+        this.securityProviders = securityProviders;
         this.systemProperties = systemProperties;
     }
 
@@ -76,6 +84,14 @@ public final class RuntimeUtils {
 
     public Map<Object, Object> systemProperties() {
         return new TreeMap<>(this.systemProperties);
+    }
+
+    public List<String> securityProviders() {
+        List<String> providerNames= new ArrayList<>();
+        for (Provider p : this.securityProviders) {
+            providerNames.add(p.toString());
+        }
+        return providerNames;
     }
 
     private List<String> getValuesAsList(Enumeration<String> raw) {

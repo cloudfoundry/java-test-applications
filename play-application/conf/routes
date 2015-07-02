@@ -16,4 +16,5 @@ GET  /rabbit/url              @com.gopivotal.cloudfoundry.test.RabbitController.
 GET  /redis/check-access      @com.gopivotal.cloudfoundry.test.RedisController.checkAccess()
 GET  /redis/url               @com.gopivotal.cloudfoundry.test.RedisController.url()
 GET  /request-headers         @com.gopivotal.cloudfoundry.test.ApplicationController.requestHeaders()
+GET  /security-providers      @com.gopivotal.cloudfoundry.test.ApplicationController.securityProviders()
 GET  /system-properties       @com.gopivotal.cloudfoundry.test.ApplicationController.systemProperties()

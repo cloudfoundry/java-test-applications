@@ -18,15 +18,9 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="core" exported="" />
-    <orderEntry type="library" exported="" name="Gradle: io.ratpack:ratpack-core:0.9.16" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: io.ratpack:ratpack-groovy:0.9.16" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: io.ratpack:ratpack-jackson:0.9.16" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.5.2" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: io.netty:netty-handler:4.1.0.Beta4" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jdk7:2.5.2" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: io.netty:netty-transport-native-epoll:4.1.0.Beta4:linux-x86_64" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.5.2" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: io.netty:netty-codec-http:4.1.0.Beta4" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.slf4j:slf4j-api:1.7.12" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.google.guava:guava:18.0" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.5.2" level="project" />
@@ -34,22 +28,29 @@
     <orderEntry type="library" exported="" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-guava:2.5.2" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.reactivestreams:reactive-streams:1.0.0" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.5.2" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: io.ratpack:ratpack-guice:0.9.16" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.codehaus.groovy:groovy-all:2.4.3" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.5.2" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: io.netty:netty-buffer:4.1.0.Beta4" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: io.netty:netty-transport:4.1.0.Beta4" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: io.netty:netty-codec:4.1.0.Beta4" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: io.netty:netty-common:4.1.0.Beta4" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.yaml:snakeyaml:1.12" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.google.inject.extensions:guice-multibindings:4.0-beta5" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.google.inject:guice:4.0-beta5" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: io.netty:netty-resolver:4.1.0.Beta4" level="project" />
     <orderEntry type="library" exported="" name="Gradle: javax.inject:javax.inject:1" level="project" />
     <orderEntry type="library" exported="" name="Gradle: aopalliance:aopalliance:1.0" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.5.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: io.ratpack:ratpack-test:0.9.16" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: io.ratpack:ratpack-groovy-test:0.9.16" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.slf4j:jcl-over-slf4j:1.7.12" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: javax.servlet:javax.servlet-api:3.1.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: io.ratpack:ratpack-core:0.9.17" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: io.ratpack:ratpack-groovy:0.9.17" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: io.ratpack:ratpack-jackson:0.9.17" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: io.netty:netty-handler:4.1.0.Beta5" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: io.netty:netty-transport-native-epoll:4.1.0.Beta5:linux-x86_64" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: io.netty:netty-codec-http:4.1.0.Beta5" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: io.ratpack:ratpack-guice:0.9.17" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: io.netty:netty-buffer:4.1.0.Beta5" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: io.netty:netty-transport:4.1.0.Beta5" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: io.netty:netty-codec:4.1.0.Beta5" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: io.netty:netty-common:4.1.0.Beta5" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.google.inject.extensions:guice-multibindings:4.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.google.inject:guice:4.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: io.netty:netty-resolver:4.1.0.Beta5" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: io.ratpack:ratpack-test:0.9.17" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: io.ratpack:ratpack-groovy-test:0.9.17" level="project" />
   </component>
 </module>

@@ -64,6 +64,10 @@ public final class ApplicationController {
         return toResult(this.memoryUtils.outOfMemory());
     }
 
+    public Result securityProviders() {
+        return toResult(this.runtimeUtils.securityProviders());
+    }
+
     public Result systemProperties() {
         return toResult(this.runtimeUtils.systemProperties());
     }
