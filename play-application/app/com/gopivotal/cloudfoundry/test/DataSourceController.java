@@ -17,21 +17,20 @@
 package com.gopivotal.cloudfoundry.test;
 
 import com.gopivotal.cloudfoundry.test.core.DataSourceUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
 
+import javax.inject.Inject;
 import javax.sql.DataSource;
 
-@org.springframework.stereotype.Controller
 public final class DataSourceController {
 
     private final DataSource dataSource;
 
     private final DataSourceUtils dataSourceUtils;
 
-    @Autowired
+    @Inject
     public DataSourceController(DataSource dataSource, DataSourceUtils dataSourceUtils) {
         this.dataSource = dataSource;
         this.dataSourceUtils = dataSourceUtils;

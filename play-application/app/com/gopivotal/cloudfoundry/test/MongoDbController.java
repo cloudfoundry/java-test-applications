@@ -16,24 +16,21 @@
 
 package com.gopivotal.cloudfoundry.test;
 
-import com.gopivotal.cloudfoundry.test.core.DataSourceUtils;
 import com.gopivotal.cloudfoundry.test.core.MongoDbUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.MongoDbFactory;
 import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
 
-import javax.sql.DataSource;
+import javax.inject.Inject;
 
-@org.springframework.stereotype.Controller
 public final class MongoDbController {
 
     private final MongoDbFactory mongoDbFactory;
 
     private final MongoDbUtils mongoDbUtils;
 
-    @Autowired
+    @Inject
     public MongoDbController(MongoDbFactory mongoDbFactory, MongoDbUtils mongoDbUtils) {
         this.mongoDbFactory = mongoDbFactory;
         this.mongoDbUtils = mongoDbUtils;

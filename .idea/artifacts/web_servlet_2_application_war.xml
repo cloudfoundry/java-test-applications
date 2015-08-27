@@ -50,6 +50,31 @@
           <element id="library" level="project" name="Gradle: hibernate-validator-5.0.3.Final" />
           <element id="library" level="project" name="Gradle: spring-web-4.0.5.RELEASE" />
           <element id="library" level="project" name="Gradle: spring-webmvc-4.0.5.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework.amqp:spring-rabbit:1.4.5.RELEASE" />
+          <element id="library" level="project" name="Gradle: com.rabbitmq:amqp-client:3.5.1" />
+          <element id="library" level="project" name="Gradle: org.springframework.retry:spring-retry:1.1.2.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework.amqp:spring-amqp:1.4.5.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-messaging:4.1.6.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.mongodb:mongo-java-driver:2.13.0" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-context-support:4.0.9.RELEASE" />
+          <element id="library" level="project" name="Gradle: aopalliance:aopalliance:1.0" />
+          <element id="library" level="project" name="Gradle: com.h2database:h2:1.4.187" />
+          <element id="library" level="project" name="Gradle: org.apache.commons:commons-pool2:2.3" />
+          <element id="library" level="project" name="Gradle: redis.clients:jedis:2.6.3" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-context:4.2.0.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-core:4.2.0.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-jdbc:4.2.0.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-tx:4.2.0.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-beans:4.2.0.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-aop:4.2.0.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-expression:4.2.0.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework.data:spring-data-mongodb:1.7.2.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework.data:spring-data-redis:1.5.2.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework.data:spring-data-commons:1.10.2.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.slf4j:slf4j-api:1.7.12" />
+          <element id="library" level="project" name="Gradle: org.slf4j:jcl-over-slf4j:1.7.12" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-messaging:4.2.0.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-context-support:4.2.0.RELEASE" />
         </element>
       </element>
     </root>

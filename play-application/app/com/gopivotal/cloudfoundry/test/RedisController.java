@@ -16,24 +16,21 @@
 
 package com.gopivotal.cloudfoundry.test;
 
-import com.gopivotal.cloudfoundry.test.core.DataSourceUtils;
 import com.gopivotal.cloudfoundry.test.core.RedisUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
 
-import javax.sql.DataSource;
+import javax.inject.Inject;
 
-@org.springframework.stereotype.Controller
 public final class RedisController {
 
     private final RedisConnectionFactory redisConnectionFactory;
 
     private final RedisUtils redisUtils;
 
-    @Autowired
+    @Inject
     public RedisController(RedisConnectionFactory redisConnectionFactory, RedisUtils redisUtils) {
         this.redisConnectionFactory = redisConnectionFactory;
         this.redisUtils = redisUtils;

@@ -19,12 +19,12 @@ package com.gopivotal.cloudfoundry.test;
 import com.gopivotal.cloudfoundry.test.core.HealthUtils;
 import com.gopivotal.cloudfoundry.test.core.MemoryUtils;
 import com.gopivotal.cloudfoundry.test.core.RuntimeUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
 
-@org.springframework.stereotype.Controller
+import javax.inject.Inject;
+
 public final class ApplicationController {
 
     private final HealthUtils healthUtils;
@@ -33,7 +33,7 @@ public final class ApplicationController {
 
     private final RuntimeUtils runtimeUtils;
 
-    @Autowired
+    @Inject
     ApplicationController(HealthUtils healthUtils, MemoryUtils memoryUtils, RuntimeUtils runtimeUtils) {
         this.healthUtils = healthUtils;
         this.memoryUtils = memoryUtils;

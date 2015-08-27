@@ -49,11 +49,11 @@ subprojects {
         ratpackVersion = '0.9.17'
         servletVersion = '3.1.0'
         springAmqpVersion = '1.4.5.RELEASE'
-        springBootVersion = '1.2.4.RELEASE'
-        springDataMongoDbVersion = '1.7.1.RELEASE'
-        springDataRedisVersion = '1.5.1.RELEASE'
-        springVersion = '4.1.7.RELEASE'
-        tomcatVersion = '8.0.23'
+        springBootVersion = '1.2.5.RELEASE'
+        springDataMongoDbVersion = '1.7.2.RELEASE'
+        springDataRedisVersion = '1.5.2.RELEASE'
+        springVersion = '4.2.0.RELEASE'
+        tomcatVersion = '8.0.26'
     }
 
     repositories {
@@ -71,5 +71,5 @@ idea {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.4'
+    gradleVersion = '2.6'
 }

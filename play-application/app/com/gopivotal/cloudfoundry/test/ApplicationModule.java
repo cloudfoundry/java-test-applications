@@ -16,45 +16,32 @@
 
 package com.gopivotal.cloudfoundry.test;
 
+import com.google.inject.AbstractModule;
 import com.gopivotal.cloudfoundry.test.core.FakeMongoDbFactory;
 import com.gopivotal.cloudfoundry.test.core.FakeRedisConnectionFactory;
-
+import com.gopivotal.cloudfoundry.test.core.InitializationUtils;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
-
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.MongoDbFactory;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
-
-import play.db.DB;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
 import javax.sql.DataSource;
 
-import play.db.*;
+public class ApplicationModule extends AbstractModule {
 
-@Configuration
-@ComponentScan(basePackages = "com.gopivotal.cloudfoundry.test")
-public class ApplicationConfiguration {
-
-    @Bean
-    DataSource dataSource() {
-        return DB.getDataSource();
+    public ApplicationModule() {
+        new InitializationUtils().fail();
     }
 
-    @Bean
-    RedisConnectionFactory redisConnectionFactory() {
-        return new FakeRedisConnectionFactory();
+    @Override
+    protected void configure() {
+        EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
+        bind(DataSource.class).toInstance(builder.setType(EmbeddedDatabaseType.H2).build());
+        bind(RedisConnectionFactory.class).to(FakeRedisConnectionFactory.class);
+        bind(MongoDbFactory.class).to(FakeMongoDbFactory.class);
+        bind(ConnectionFactory.class).to(CachingConnectionFactory.class);
     }
 
-    @Bean
-    MongoDbFactory mongoDbFactory() {
-        return new FakeMongoDbFactory();
-    }
-
-    @Bean
-    ConnectionFactory rabbitConnectionFactory() {
-        return new CachingConnectionFactory(null, 0);
-    }
 }

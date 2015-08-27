@@ -16,24 +16,21 @@
 
 package com.gopivotal.cloudfoundry.test;
 
-import com.gopivotal.cloudfoundry.test.core.DataSourceUtils;
 import com.gopivotal.cloudfoundry.test.core.RabbitUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
 
-import javax.sql.DataSource;
+import javax.inject.Inject;
 
-@org.springframework.stereotype.Controller
 public final class RabbitController {
 
     private final ConnectionFactory rabbitConnectionFactory;
 
     private final RabbitUtils rabbitUtils;
 
-    @Autowired
+    @Inject
     public RabbitController(ConnectionFactory rabbitConnectionFactory, RabbitUtils rabbitUtils) {
         this.rabbitConnectionFactory = rabbitConnectionFactory;
         this.rabbitUtils = rabbitUtils;

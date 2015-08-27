@@ -1,6 +1,5 @@
 .gradle
 .idea/libraries
-.idea/tasks.xml
 .idea/workspace.xml
 .java-buildpack
 .java-buildpack.log
