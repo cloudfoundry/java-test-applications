@@ -65,6 +65,8 @@ public final class DataSourceUtils extends AbstractServiceUtils<DataSource> {
             return invokeMethod(dataSource, "getUrl");
         } else if (isClass(dataSource, "org.springframework.jdbc.datasource.TransactionAwareDataSourceProxy")) {
             return getUrl(getTargetDataSource(dataSource));
+        } else if (isClass(dataSource, "com.zaxxer.hikari.HikariDataSource")) {
+            return invokeMethod(dataSource, "getJdbcUrl");
         }
 
         return String.format("Unable to determine URL for DataSource of type %s", dataSource.getClass().getName());

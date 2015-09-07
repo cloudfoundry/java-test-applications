@@ -17,6 +17,7 @@
 package com.gopivotal.cloudfoundry.test;
 
 import com.google.inject.AbstractModule;
+import com.google.inject.Provider;
 import com.gopivotal.cloudfoundry.test.core.FakeMongoDbFactory;
 import com.gopivotal.cloudfoundry.test.core.FakeRedisConnectionFactory;
 import com.gopivotal.cloudfoundry.test.core.InitializationUtils;
@@ -24,24 +25,33 @@ import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.data.mongodb.MongoDbFactory;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
+import play.db.DB;
 
 import javax.sql.DataSource;
 
 public class ApplicationModule extends AbstractModule {
 
+    private DataSourceProvider provider;
+
     public ApplicationModule() {
         new InitializationUtils().fail();
+        this.provider = new DataSourceProvider();
     }
 
     @Override
     protected void configure() {
-        EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
-        bind(DataSource.class).toInstance(builder.setType(EmbeddedDatabaseType.H2).build());
+        bind(DataSource.class).toProvider(this.provider);
         bind(RedisConnectionFactory.class).to(FakeRedisConnectionFactory.class);
         bind(MongoDbFactory.class).to(FakeMongoDbFactory.class);
         bind(ConnectionFactory.class).to(CachingConnectionFactory.class);
+    }
+
+    private class DataSourceProvider implements Provider<DataSource> {
+
+        @Override
+        public DataSource get() {
+            return DB.getDataSource();
+        }
     }
 
 }

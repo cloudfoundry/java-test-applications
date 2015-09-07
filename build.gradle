@@ -52,6 +52,7 @@ subprojects {
         springBootVersion = '1.2.5.RELEASE'
         springDataMongoDbVersion = '1.7.2.RELEASE'
         springDataRedisVersion = '1.5.2.RELEASE'
+        springCloudVersion = '1.2.0.RELEASE'
         springVersion = '4.2.0.RELEASE'
         tomcatVersion = '8.0.26'
     }

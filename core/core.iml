@@ -39,10 +39,7 @@
     <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-beans:4.2.0.RELEASE" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-aop:4.2.0.RELEASE" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-expression:4.2.0.RELEASE" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.apache.tomcat:tomcat-dbcp:8.0.24" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.apache.tomcat:tomcat-jdbc:8.0.24" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.springframework:spring-test:4.2.0.RELEASE" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.apache.tomcat:tomcat-juli:8.0.24" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.springframework.data:spring-data-mongodb:1.7.2.RELEASE" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.springframework.data:spring-data-redis:1.5.2.RELEASE" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.springframework.data:spring-data-commons:1.10.2.RELEASE" level="project" />
@@ -50,5 +47,8 @@
     <orderEntry type="library" exported="" name="Gradle: org.slf4j:jcl-over-slf4j:1.7.12" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-messaging:4.2.0.RELEASE" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-context-support:4.2.0.RELEASE" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.apache.tomcat:tomcat-dbcp:8.0.26" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.apache.tomcat:tomcat-jdbc:8.0.26" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.apache.tomcat:tomcat-juli:8.0.26" level="project" />
   </component>
 </module>
