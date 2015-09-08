@@ -23,6 +23,9 @@ import com.gopivotal.cloudfoundry.test.core.FakeRedisConnectionFactory;
 import com.gopivotal.cloudfoundry.test.core.InitializationUtils;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
+import org.springframework.cloud.Cloud;
+import org.springframework.cloud.CloudException;
+import org.springframework.cloud.CloudFactory;
 import org.springframework.data.mongodb.MongoDbFactory;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import play.db.DB;
@@ -32,10 +35,13 @@ import javax.sql.DataSource;
 public class ApplicationModule extends AbstractModule {
 
     private DataSourceProvider provider;
+    private Cloud cloud;
 
     public ApplicationModule() {
         new InitializationUtils().fail();
         this.provider = new DataSourceProvider();
+        CloudFactory cloudFactory = new CloudFactory();
+        this.cloud = cloudFactory.getCloud();
     }
 
     @Override
@@ -50,7 +56,11 @@ public class ApplicationModule extends AbstractModule {
 
         @Override
         public DataSource get() {
-            return DB.getDataSource();
+            try {
+                return cloud.getSingletonServiceConnector(DataSource.class, null);
+            } catch (CloudException e) {
+                return DB.getDataSource();
+            }
         }
     }
 
