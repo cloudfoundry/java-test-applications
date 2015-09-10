@@ -132,7 +132,6 @@
     <orderEntry type="library" name="SBT: org.springframework.amqp:spring-rabbit:1.4.5.RELEASE:jar" level="project" />
     <orderEntry type="library" name="SBT: org.springframework.cloud:spring-cloud-cloudfoundry-connector:1.2.0.RELEASE:jar" level="project" />
     <orderEntry type="library" name="SBT: org.springframework.cloud:spring-cloud-core:1.2.0.RELEASE:jar" level="project" />
-    <orderEntry type="library" name="SBT: org.springframework.cloud:spring-cloud-localconfig-connector:1.2.0.RELEASE:jar" level="project" />
     <orderEntry type="library" name="SBT: org.springframework.data:spring-data-commons:1.10.2.RELEASE:jar" level="project" />
     <orderEntry type="library" name="SBT: org.springframework.data:spring-data-mongodb:1.7.2.RELEASE:jar" level="project" />
     <orderEntry type="library" name="SBT: org.springframework.data:spring-data-redis:1.5.2.RELEASE:jar" level="project" />
@@ -146,5 +145,6 @@
     <orderEntry type="library" scope="TEST" name="SBT: xalan:xalan:2.7.1:jar" level="project" />
     <orderEntry type="library" name="SBT: xerces:xercesImpl:2.11.0:jar" level="project" />
     <orderEntry type="library" name="SBT: xml-apis:xml-apis:1.4.01:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.springframework.cloud:spring-cloud-spring-service-connector:1.2.0.RELEASE:jar" level="project" />
   </component>
 </module>

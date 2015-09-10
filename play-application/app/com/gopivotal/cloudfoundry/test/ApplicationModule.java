@@ -35,13 +35,16 @@ import javax.sql.DataSource;
 public class ApplicationModule extends AbstractModule {
 
     private DataSourceProvider provider;
-    private Cloud cloud;
 
     public ApplicationModule() {
         new InitializationUtils().fail();
-        this.provider = new DataSourceProvider();
-        CloudFactory cloudFactory = new CloudFactory();
-        this.cloud = cloudFactory.getCloud();
+        Cloud cloud = null;
+        try {
+            cloud = new CloudFactory().getCloud();
+        } catch (CloudException e) {
+            // no-op, this will happen when running locally as there will be no Cloud to find.
+        }
+        this.provider = new DataSourceProvider(cloud);
     }
 
     @Override
@@ -54,10 +57,19 @@ public class ApplicationModule extends AbstractModule {
 
     private class DataSourceProvider implements Provider<DataSource> {
 
+        private Cloud cloud;
+
+        public DataSourceProvider(Cloud cloud) {
+            this.cloud = cloud;
+        }
+
         @Override
         public DataSource get() {
+            if (this.cloud == null) {
+                return DB.getDataSource();
+            }
             try {
-                return cloud.getSingletonServiceConnector(DataSource.class, null);
+                return this.cloud.getSingletonServiceConnector(DataSource.class, null);
             } catch (CloudException e) {
                 return DB.getDataSource();
             }

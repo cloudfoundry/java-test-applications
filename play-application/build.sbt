@@ -12,7 +12,8 @@ libraryDependencies ++= Seq(
   "org.springframework.data" % "spring-data-mongodb" % "1.7.2.RELEASE",
   "org.springframework.amqp" % "spring-amqp" % "1.4.5.RELEASE",
   "org.springframework.amqp" % "spring-rabbit" % "1.4.5.RELEASE",
-  "org.springframework.cloud" % "spring-cloud-cloudfoundry-connector" % "1.2.0.RELEASE"
+  "org.springframework.cloud" % "spring-cloud-cloudfoundry-connector" % "1.2.0.RELEASE",
+  "org.springframework.cloud" % "spring-cloud-spring-service-connector" % "1.2.0.RELEASE"
 
 )
 

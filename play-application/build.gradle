@@ -28,6 +28,7 @@ dependencies {
     compile "org.springframework.amqp:spring-amqp:$springAmqpVersion"
     compile "org.springframework.amqp:spring-rabbit:$springAmqpVersion"
     compile "org.springframework.cloud:spring-cloud-cloudfoundry-connector:$springCloudVersion"
+    compile "org.springframework.cloud:spring-cloud-spring-service-connector:$springCloudVersion"
     compile "org.springframework.data:spring-data-mongodb:$springDataMongoDbVersion"
     compile "org.springframework.data:spring-data-redis:$springDataRedisVersion"
     compile "org.springframework.data:spring-data-commons:$springDataRedisVersion"
