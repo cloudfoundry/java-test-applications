@@ -1,0 +1,7 @@
+apply plugin: 'war'
+
+dependencies {
+    compile project(':core')
+    compile "com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:$jacksonVersion"
+    provided "org.apache.openejb:javaee-api:$javaeeApiVersion"
+}
