@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 the original author or authors.
+ * Copyright 2015 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,18 +14,11 @@
  * limitations under the License.
  */
 
-rootProject.name = 'java-test-applications'
+package com.gopivotal.cloudfoundry.test;
 
-include 'core'
-include 'dist-zip-application'
-include 'grails-application'
-include 'groovy-application'
-include 'java-main-application'
-include 'play-application'
-include 'ratpack-application'
-include 'spring-boot-cli-application'
-include 'spring-boot-cli-jar-application'
-include 'spring-common'
-include 'web-application'
-include 'web-servlet-2-application'
-include 'ejb-application'
+import javax.ws.rs.ApplicationPath;
+import javax.ws.rs.core.Application;
+
+@ApplicationPath("/")
+public class RestActivator extends Application {
+}

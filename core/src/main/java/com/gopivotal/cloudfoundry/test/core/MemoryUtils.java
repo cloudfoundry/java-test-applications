@@ -35,7 +35,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * Utility methods used during memory tests
  */
 @Component
-public final class MemoryUtils {
+public class MemoryUtils {
 
     private static final double BYTE = 1;
 
@@ -63,13 +63,17 @@ public final class MemoryUtils {
         this.outOfMemorySize = outOfMemorySize;
     }
 
+    @PostConstruct
+    public void onStart() {
+        outOfMemoryOnStart();
+    }
+
     /**
      * Generates an {@link OutOfMemoryError} if the {@code FAIL_OOM} environment variable is {@code true}. Otherwise
      * does nothing.
      *
      * @return Never returns as it will generate an {@link OutOfMemoryError}
      */
-    @PostConstruct
     public byte[][] outOfMemoryOnStart() {
         String value = this.environment.get("FAIL_OOM");
 

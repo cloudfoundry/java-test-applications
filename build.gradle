@@ -55,6 +55,8 @@ subprojects {
         springCloudVersion = '1.2.0.RELEASE'
         springVersion = '4.2.0.RELEASE'
         tomcatVersion = '8.0.26'
+        javaeeApiVersion = '6.0-6'
+        jacksonVersion = '2.6.5'
     }
 
     repositories {
