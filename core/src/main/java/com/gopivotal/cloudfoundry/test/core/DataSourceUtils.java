@@ -58,7 +58,7 @@ public final class DataSourceUtils extends AbstractServiceUtils<DataSource> {
             return invokeMethod(dataSource, "getUrl");
         } else if (isClass(dataSource, "org.springframework.jdbc.datasource.embedded" +
                 ".EmbeddedDatabaseFactory$EmbeddedDataSourceProxy")) {
-            return getUrl(getDataSource(dataSource));
+            return getUrl(getDataSource(dataSource, "dataSource"));
         } else if (isClass(dataSource, "org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy")) {
             return getUrl(getTargetDataSource(dataSource));
         } else if (isClass(dataSource, "org.springframework.jdbc.datasource.SimpleDriverDataSource")) {
@@ -67,6 +67,10 @@ public final class DataSourceUtils extends AbstractServiceUtils<DataSource> {
             return getUrl(getTargetDataSource(dataSource));
         } else if (isClass(dataSource, "com.zaxxer.hikari.HikariDataSource")) {
             return invokeMethod(dataSource, "getJdbcUrl");
+        } else if (isClass(dataSource, "org.apache.openejb.resource.jdbc.managed.local.ManagedDataSource")) {
+            return getUrl(getDataSource(dataSource, "delegate"));
+        } else if (isClass(dataSource, "org.apache.tomee.jdbc.TomEEDataSourceCreator$TomEEDataSource")) {
+            return invokeMethod(dataSource, "getUrl");
         }
 
         return String.format("Unable to determine URL for DataSource of type %s", dataSource.getClass().getName());
@@ -82,9 +86,9 @@ public final class DataSourceUtils extends AbstractServiceUtils<DataSource> {
         return (DataSource) ReflectionUtils.invokeMethod(method, dataSource);
     }
 
-    private DataSource getDataSource(DataSource dataSource) {
+    private DataSource getDataSource(DataSource dataSource, String fieldName) {
         try {
-            Field field = dataSource.getClass().getDeclaredField("dataSource");
+            Field field = dataSource.getClass().getDeclaredField(fieldName);
             ReflectionUtils.makeAccessible(field);
 
             return (DataSource) field.get(dataSource);

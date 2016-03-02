@@ -1,0 +1,9 @@
+---
+applications:
+- name: ejb-application
+  memory: 512M
+  instances: 1
+  path: build/libs/ejb-application-1.0.0.BUILD-SNAPSHOT.war
+  buildpack: https://github.com/cloudfoundry-community/tomee-buildpack.git
+  env:
+    JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '{enabled: false}'
