@@ -1,3 +1,3 @@
-@Controller 
+@Controller
 class BootController {
 }

@@ -18,4 +18,7 @@ apply plugin: 'war'
 
 dependencies {
     compile project(':spring-common')
+    compile 'org.springframework:spring-webmvc'
+
+    runtime 'org.springframework.boot:spring-boot-starter-actuator'
 }

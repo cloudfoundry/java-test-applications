@@ -14,23 +14,21 @@
  * limitations under the License.
  */
 
-import com.gopivotal.cloudfoundry.test.core.FakeRedisConnectionFactory
+
 import com.gopivotal.cloudfoundry.test.core.FakeMongoDbFactory
+import com.gopivotal.cloudfoundry.test.core.FakeRedisConnectionFactory
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory
+import org.springframework.amqp.rabbit.connection.ConnectionFactory
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.ComponentScan
-import org.springframework.data.redis.connection.RedisConnectionFactory
 import org.springframework.data.mongodb.MongoDbFactory
-import org.springframework.amqp.rabbit.connection.ConnectionFactory
+import org.springframework.data.redis.connection.RedisConnectionFactory
 
 @ComponentScan(basePackages = "com.gopivotal.cloudfoundry.test")
 @EnableAutoConfiguration
 @Grab('com.gopivotal.cloudfoundry.test:core:1.0.0.BUILD-SNAPSHOT')
 @Grab('com.gopivotal.cloudfoundry.test:spring-common:1.0.0.BUILD-SNAPSHOT')
-@Grab('h2')
-@Grab('mysql-connector-java')
-@Grab('spring-boot-starter-jdbc')
 class ApplicationConfiguration {
 
     @Bean

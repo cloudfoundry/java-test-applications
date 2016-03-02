@@ -14,11 +14,19 @@
  * limitations under the License.
  */
 
-import com.gopivotal.cloudfoundry.test.core.*
+import com.gopivotal.cloudfoundry.test.core.DataSourceUtils
+import com.gopivotal.cloudfoundry.test.core.FakeMongoDbFactory
+import com.gopivotal.cloudfoundry.test.core.FakeRedisConnectionFactory
+import com.gopivotal.cloudfoundry.test.core.HealthUtils
+import com.gopivotal.cloudfoundry.test.core.InitializationUtils
+import com.gopivotal.cloudfoundry.test.core.MemoryUtils
+import com.gopivotal.cloudfoundry.test.core.MongoDbUtils
+import com.gopivotal.cloudfoundry.test.core.RabbitUtils
+import com.gopivotal.cloudfoundry.test.core.RedisUtils
+import com.gopivotal.cloudfoundry.test.core.RuntimeUtils
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType
-import ratpack.jackson.JacksonModule
 
 import static ratpack.groovy.Groovy.ratpack
 import static ratpack.jackson.Jackson.json
@@ -40,10 +48,6 @@ ratpack {
     def redisUtils = new RedisUtils()
     def runtimeUtils = new RuntimeUtils()
 
-    bindings {
-        add new JacksonModule()
-    }
-
     handlers {
 
         get('') {
@@ -60,7 +64,7 @@ ratpack {
 
         get('request-headers') {
             Map<String, List<String>> headers = new HashMap<>();
-            for(String headerName : request.getHeaders().getNames()){
+            for (String headerName : request.getHeaders().getNames()) {
                 headers.put(headerName, request.getHeaders().getAll(headerName))
             }
             render json(headers)

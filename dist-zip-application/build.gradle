@@ -14,17 +14,12 @@
  * limitations under the License.
  */
 
-buildscript {
-    dependencies {
-        classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
-    }
-}
-
+apply plugin: 'application'
 apply plugin: 'spring-boot'
 
 dependencies {
     compile project(':spring-common')
-    provided "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
-}
+    compile 'org.springframework.boot:spring-boot-starter-web'
 
-mainClassName = "com.gopivotal.cloudfoundry.test.ApplicationConfiguration"
+    runtime 'org.springframework.boot:spring-boot-starter-actuator'
+}

@@ -15,18 +15,18 @@
  */
 
 buildscript {
+    repositories {
+        jcenter()
+    }
+
     dependencies {
-        classpath "io.ratpack:ratpack-gradle:$ratpackVersion"
+        classpath "io.ratpack:ratpack-gradle:${property('ratpack.version')}"
     }
 }
 
-apply plugin: "io.ratpack.ratpack-groovy"
+apply plugin: 'io.ratpack.ratpack-groovy'
 
 dependencies {
     compile project(':core')
-    compile ratpack.dependency("jackson")
-
-    provided "javax.servlet:javax.servlet-api:$servletVersion"
+    compile 'org.springframework:spring-jdbc'
 }
-
-build.dependsOn distZip

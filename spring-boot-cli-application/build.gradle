@@ -20,7 +20,7 @@ dependencies {
     compile project(':spring-common')
 }
 
-task build(overwrite: true, type:Exec, dependsOn: ':spring-common:build') {
+task build(overwrite: true, type: Exec, dependsOn: ':spring-common:build') {
     inputs.files fileTree(dir: '.')
     outputs.dir 'repository'
     commandLine 'spring', 'grab', 'ApplicationConfiguration.groovy', 'BootController.groovy'

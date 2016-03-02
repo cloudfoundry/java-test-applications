@@ -15,34 +15,24 @@
  */
 
 apply plugin: 'java'
-apply plugin: 'maven'
-
-configurations {
-    all*.exclude group: 'commons-logging', module: 'commons-logging'
-}
 
 dependencies {
-    compile "org.springframework.amqp:spring-rabbit:$springAmqpVersion"
-    compile "org.springframework.data:spring-data-mongodb:$springDataMongoDbVersion"
-    compile "org.springframework.data:spring-data-redis:$springDataRedisVersion"
-    compile "org.springframework:spring-context:$springVersion"
-    compile "org.springframework:spring-core:$springVersion"
-    compile "org.springframework:spring-jdbc:$springVersion"
-    compile "org.springframework:spring-messaging:$springVersion"
-    compile "org.springframework:spring-context-support:$springVersion"
+    compile 'javax.servlet:javax.servlet-api'
+    compile 'org.springframework.amqp:spring-rabbit'
+    compile 'org.springframework.data:spring-data-mongodb'
+    compile 'org.springframework.data:spring-data-redis'
+    compile 'org.springframework:spring-context'
+    compile 'org.springframework:spring-core'
 
-    provided "javax.servlet:javax.servlet-api:$servletVersion"
+    runtime 'com.h2database:h2'
+    runtime 'redis.clients:jedis'
 
-    runtime "com.h2database:h2:$h2Version"
-    runtime "redis.clients:jedis:$jedisVersion"
-
-    testCompile "com.jolbox:bonecp:$bonecpVersion"
-    testCompile "commons-dbcp:commons-dbcp:$commonsDbcpVersion"
-    testCompile "junit:junit:$junitVersion"
-    testCompile "org.apache.tomcat:tomcat-dbcp:$tomcatVersion"
-    testCompile "org.apache.tomcat:tomcat-jdbc:$tomcatVersion"
-    testCompile "org.mockito:mockito-core:$mockitoVersion"
-    testCompile "org.springframework:spring-test:$springVersion"
+    testCompile "com.jolbox:bonecp:${property('bonecp.version')}"
+    testCompile 'commons-dbcp:commons-dbcp'
+    testCompile 'junit:junit'
+    testCompile 'org.apache.tomcat:tomcat-dbcp'
+    testCompile 'org.apache.tomcat:tomcat-jdbc'
+    testCompile 'org.mockito:mockito-core'
+    testCompile 'org.springframework:spring-jdbc'
+    testCompile 'org.springframework:spring-test'
 }
-
-build.dependsOn install

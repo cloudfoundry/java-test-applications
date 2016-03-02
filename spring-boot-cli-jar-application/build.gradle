@@ -20,7 +20,7 @@ dependencies {
     compile project(':spring-common')
 }
 
-task build(overwrite: true, type:Exec, dependsOn: ':spring-common:build') {
+task build(overwrite: true, type: Exec, dependsOn: ':spring-common:build') {
     inputs.files fileTree(dir: '.')
     outputs.file new File('spring-boot-cli-jar-application-1.0.0.BUILD-SNAPSHOT.jar')
     commandLine 'spring', 'jar', 'spring-boot-cli-jar-application-1.0.0.BUILD-SNAPSHOT.jar', 'ApplicationConfiguration.groovy', 'BootController.groovy'

@@ -16,61 +16,39 @@
 
 buildscript {
     repositories {
-        maven { url 'http://repo.spring.io/plugins-release' }
+        jcenter()
+        maven { url 'http://repo.spring.io/snapshot' }
+        maven { url 'http://repo.spring.io/milestone' }
     }
-    dependencies {
-        classpath 'org.springframework.build.gradle:propdeps-plugin:0.0.7'
-    }
-}
 
-allprojects {
-    defaultTasks 'build'
+    dependencies {
+        classpath 'io.spring.gradle:dependency-management-plugin:0.5.3.RELEASE'
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${property('spring-boot.version')}"
+    }
 }
 
 subprojects {
-    buildscript {
-        repositories {
-            mavenCentral()
-        }
-    }
-
-    apply plugin: 'propdeps'
-    apply plugin: 'propdeps-maven'
-    apply plugin: 'propdeps-idea'
-    apply plugin: 'propdeps-eclipse'
-
-    ext {
-        bonecpVersion = '0.8.0.RELEASE'
-        commonsDbcpVersion = '1.4'
-        h2Version = '1.4.187'
-        jedisVersion = '2.6.3'
-        junitVersion = '4.12'
-        mockitoVersion = '1.10.19'
-        ratpackVersion = '0.9.17'
-        servletVersion = '3.1.0'
-        springAmqpVersion = '1.4.5.RELEASE'
-        springBootVersion = '1.2.5.RELEASE'
-        springDataMongoDbVersion = '1.7.2.RELEASE'
-        springDataRedisVersion = '1.5.2.RELEASE'
-        springCloudVersion = '1.2.0.RELEASE'
-        springVersion = '4.2.0.RELEASE'
-        tomcatVersion = '8.0.26'
-    }
+    apply plugin: 'io.spring.dependency-management'
 
     repositories {
         mavenCentral()
     }
-}
 
-apply plugin: 'base'
-apply plugin: 'idea'
-
-idea {
-    module {
-        excludeDirs = [file('.gradle'), file('.idea'), file('build'), file('gradle')]
+    dependencyManagement {
+        imports {
+            mavenBom 'io.spring.platform:platform-bom:2.0.2.RELEASE'
+        }
     }
+
+    repositories {
+        jcenter()
+        mavenCentral()
+        maven { url 'http://repo.spring.io/snapshot' }
+        maven { url 'http://repo.spring.io/milestone' }
+    }
+
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.6'
+    gradleVersion = '2.11'
 }

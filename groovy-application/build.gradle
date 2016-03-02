@@ -18,14 +18,17 @@ apply plugin: 'groovy'
 
 dependencies {
     compile project(':spring-common')
-    provided "org.springframework.boot:spring-boot-starter-tomcat:$springBootVersion"
+    compile 'org.springframework.boot:spring-boot-starter-web'
 }
 
-task build(overwrite: true, type: Copy) {
+task copyLibs(overwrite: true, type: Copy) {
     from configurations.runtime
     into 'lib'
 }
 
-task clean(overwrite:true, type: Delete) {
+task cleanArtifacts(overwrite: true, type: Delete) {
     delete 'build', 'classes', 'lib'
 }
+
+build.dependsOn copyLibs
+clean.dependsOn cleanArtifacts
