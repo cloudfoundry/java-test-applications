@@ -10,6 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/dist-zip-application" />
+            <option value="$PROJECT_DIR$/ejb-application" />
             <option value="$PROJECT_DIR$/groovy-application" />
             <option value="$PROJECT_DIR$/java-main-application" />
             <option value="$PROJECT_DIR$/ratpack-application" />
@@ -26,6 +27,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/dist-zip-application" />
+            <option value="$PROJECT_DIR$/ejb-application" />
             <option value="$PROJECT_DIR$/groovy-application" />
             <option value="$PROJECT_DIR$/java-main-application" />
             <option value="$PROJECT_DIR$/ratpack-application" />
