@@ -1,5 +1,4 @@
 # Java Test Applications
-[![Build Status](https://travis-ci.org/cloudfoundry/java-test-applications.svg?branch=master)](https://travis-ci.org/cloudfoundry/java-test-applications)
 
 A collection of applications used for testing the Java buildpack.
 
@@ -41,7 +40,7 @@ All applications support the following REST operations:
 
 ## Building
 
-Before building the project, the following tools must be installed: 
+Before building the project, the following tools must be installed:
 * [JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 * [Spring Boot CLI](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-started-installing-the-cli)
 * [Grails](https://grails.org/download)
