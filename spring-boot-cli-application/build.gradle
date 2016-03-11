@@ -20,10 +20,11 @@ dependencies {
     compile project(':spring-common')
 }
 
-task build(overwrite: true, type: Exec, dependsOn: ':spring-common:build') {
+task cliBuild(type: Exec, dependsOn: ':spring-common:build') {
     inputs.files fileTree(dir: '.')
     outputs.dir 'repository'
     commandLine 'spring', 'grab', 'ApplicationConfiguration.groovy', 'BootController.groovy'
 }
 
-task clean.dependsOn { cleanBuild }
+build.dependsOn cliBuild
+clean.dependsOn cleanCliBuild

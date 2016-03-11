@@ -15,9 +15,12 @@
  */
 
 apply plugin: 'java'
+apply plugin: 'maven'
 
 dependencies {
     compile project(':core')
 
     runtime 'org.springframework:spring-jdbc'
 }
+
+build.dependsOn install

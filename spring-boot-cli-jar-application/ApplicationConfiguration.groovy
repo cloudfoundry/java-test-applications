@@ -27,8 +27,8 @@ import org.springframework.data.redis.connection.RedisConnectionFactory
 
 @ComponentScan(basePackages = "com.gopivotal.cloudfoundry.test")
 @EnableAutoConfiguration
-@Grab('com.gopivotal.cloudfoundry.test:core:1.0.0.BUILD-SNAPSHOT')
-@Grab('com.gopivotal.cloudfoundry.test:spring-common:1.0.0.BUILD-SNAPSHOT')
+@Grab('org.cloudfoundry.test:core:1.0.0.BUILD-SNAPSHOT')
+@Grab('org.cloudfoundry.test:spring-common:1.0.0.BUILD-SNAPSHOT')
 class ApplicationConfiguration {
 
     @Bean
