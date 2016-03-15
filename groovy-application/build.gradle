@@ -32,3 +32,5 @@ task cleanArtifacts(overwrite: true, type: Delete) {
 
 build.dependsOn copyLibs
 clean.dependsOn cleanArtifacts
+
+build.taskDependencies.values -= 'assemble'

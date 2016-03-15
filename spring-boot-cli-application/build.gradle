@@ -28,3 +28,5 @@ task cliBuild(type: Exec, dependsOn: ':spring-common:build') {
 
 build.dependsOn cliBuild
 clean.dependsOn cleanCliBuild
+
+build.taskDependencies.values -= 'assemble'
