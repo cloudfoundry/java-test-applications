@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":spring-boot-cli-jar-application:main" external.linked.project.path="$MODULE_DIR$/../../../spring-boot-cli-jar-application" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="org.cloudfoundry.test" external.system.module.type="sourceSet" external.system.module.version="1.0.0.BUILD-SNAPSHOT" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_7" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/../../../spring-boot-cli-jar-application/build/classes/main" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../spring-boot-cli-jar-application/src/main">
+      <sourceFolder url="file://$MODULE_DIR$/../../../spring-boot-cli-jar-application/src/main/groovy" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../spring-boot-cli-jar-application/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../spring-boot-cli-jar-application/src/main/resources" type="java-resource" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="spring-common_main" />
+    <orderEntry type="module" module-name="core_main" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-jdbc:4.2.4.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: javax.servlet:javax.servlet-api:3.1.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.amqp:spring-rabbit:1.5.3.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-mongodb:1.8.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-redis:1.6.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-context:4.2.4.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-core:4.2.4.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: com.h2database:h2:1.4.190" level="project" />
+    <orderEntry type="library" name="Gradle: redis.clients:jedis:2.7.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-beans:4.2.4.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-tx:4.2.4.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-messaging:4.2.4.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.retry:spring-retry:1.1.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.amqp:spring-amqp:1.5.3.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: com.rabbitmq:http-client:1.0.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-web:4.2.4.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: com.rabbitmq:amqp-client:3.4.4" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-expression:4.2.4.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-commons:1.11.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.mongodb:mongo-java-driver:2.13.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.13" level="project" />
+    <orderEntry type="library" name="Gradle: org.slf4j:jcl-over-slf4j:1.7.13" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-context-support:4.2.4.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-aop:4.2.4.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.commons:commons-pool2:2.4.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.httpcomponents:httpclient:4.5.1" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.6.5" level="project" />
+    <orderEntry type="library" name="Gradle: aopalliance:aopalliance:1.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.httpcomponents:httpcore:4.4.4" level="project" />
+    <orderEntry type="library" name="Gradle: commons-codec:commons-codec:1.10" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.6.5" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.6.5" level="project" />
+  </component>
+</module>

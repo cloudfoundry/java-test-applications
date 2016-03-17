@@ -12,11 +12,36 @@
       <entry name="!?*.flex" />
       <entry name="!?*.kt" />
       <entry name="!?*.clj" />
+      <entry name="!?*.aj" />
     </wildcardResourcePatterns>
     <annotationProcessing>
       <profile default="true" name="Default" enabled="false">
         <processorPath useClasspath="true" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="core_main" target="1.7" />
+      <module name="core_test" target="1.7" />
+      <module name="dist-zip-application_main" target="1.7" />
+      <module name="dist-zip-application_test" target="1.7" />
+      <module name="ejb-application_main" target="1.7" />
+      <module name="ejb-application_test" target="1.7" />
+      <module name="groovy-application_main" target="1.7" />
+      <module name="groovy-application_test" target="1.7" />
+      <module name="java-main-application_main" target="1.7" />
+      <module name="java-main-application_test" target="1.7" />
+      <module name="ratpack-application_main" target="1.7" />
+      <module name="ratpack-application_test" target="1.7" />
+      <module name="spring-boot-cli-application_main" target="1.7" />
+      <module name="spring-boot-cli-application_test" target="1.7" />
+      <module name="spring-boot-cli-jar-application_main" target="1.7" />
+      <module name="spring-boot-cli-jar-application_test" target="1.7" />
+      <module name="spring-common_main" target="1.7" />
+      <module name="spring-common_test" target="1.7" />
+      <module name="web-application_main" target="1.7" />
+      <module name="web-application_test" target="1.7" />
+      <module name="web-servlet-2-application_main" target="1.7" />
+      <module name="web-servlet-2-application_test" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
