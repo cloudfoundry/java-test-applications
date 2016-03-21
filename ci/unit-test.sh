@@ -1,9 +1,8 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 set -e
 
 export TERM=${TERM:-dumb}
 
-pushd java-test-applications
-  ./gradlew build
-popd
+cd java-test-applications
+./gradlew -Dorg.gradle.native=false build
