@@ -7,7 +7,7 @@
         </encoder>
     </appender>
 
-    <logger name="com.gopivotal.cloudfoundry.test" level="${LOGGING_LEVEL:-INFO}"/>
+    <logger name="org.cloudfoundry.java.test" level="${LOGGING_LEVEL:-INFO}"/>
 
     <root level="WARN">
         <appender-ref ref="STDOUT"/>

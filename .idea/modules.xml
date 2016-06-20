@@ -3,39 +3,17 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/core.iml" group="core" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/core_main.iml" filepath="$PROJECT_DIR$/.idea/modules/core/core_main.iml" group="core" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/core_test.iml" filepath="$PROJECT_DIR$/.idea/modules/core/core_test.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/dist-zip-application/dist-zip-application.iml" filepath="$PROJECT_DIR$/.idea/modules/dist-zip-application/dist-zip-application.iml" group="dist-zip-application" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dist-zip-application/dist-zip-application_main.iml" filepath="$PROJECT_DIR$/.idea/modules/dist-zip-application/dist-zip-application_main.iml" group="dist-zip-application" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dist-zip-application/dist-zip-application_test.iml" filepath="$PROJECT_DIR$/.idea/modules/dist-zip-application/dist-zip-application_test.iml" group="dist-zip-application" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ejb-application/ejb-application.iml" filepath="$PROJECT_DIR$/.idea/modules/ejb-application/ejb-application.iml" group="ejb-application" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ejb-application/ejb-application_main.iml" filepath="$PROJECT_DIR$/.idea/modules/ejb-application/ejb-application_main.iml" group="ejb-application" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ejb-application/ejb-application_test.iml" filepath="$PROJECT_DIR$/.idea/modules/ejb-application/ejb-application_test.iml" group="ejb-application" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/groovy-application/groovy-application.iml" filepath="$PROJECT_DIR$/.idea/modules/groovy-application/groovy-application.iml" group="groovy-application" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/groovy-application/groovy-application_main.iml" filepath="$PROJECT_DIR$/.idea/modules/groovy-application/groovy-application_main.iml" group="groovy-application" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/groovy-application/groovy-application_test.iml" filepath="$PROJECT_DIR$/.idea/modules/groovy-application/groovy-application_test.iml" group="groovy-application" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/java-main-application/java-main-application.iml" filepath="$PROJECT_DIR$/.idea/modules/java-main-application/java-main-application.iml" group="java-main-application" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/java-main-application/java-main-application_main.iml" filepath="$PROJECT_DIR$/.idea/modules/java-main-application/java-main-application_main.iml" group="java-main-application" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/java-main-application/java-main-application_test.iml" filepath="$PROJECT_DIR$/.idea/modules/java-main-application/java-main-application_test.iml" group="java-main-application" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/java-test-applications.iml" filepath="$PROJECT_DIR$/.idea/modules/java-test-applications.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ratpack-application/ratpack-application.iml" filepath="$PROJECT_DIR$/.idea/modules/ratpack-application/ratpack-application.iml" group="ratpack-application" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ratpack-application/ratpack-application_main.iml" filepath="$PROJECT_DIR$/.idea/modules/ratpack-application/ratpack-application_main.iml" group="ratpack-application" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ratpack-application/ratpack-application_test.iml" filepath="$PROJECT_DIR$/.idea/modules/ratpack-application/ratpack-application_test.iml" group="ratpack-application" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring-boot-cli-application/spring-boot-cli-application.iml" filepath="$PROJECT_DIR$/.idea/modules/spring-boot-cli-application/spring-boot-cli-application.iml" group="spring-boot-cli-application" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring-boot-cli-application/spring-boot-cli-application_main.iml" filepath="$PROJECT_DIR$/.idea/modules/spring-boot-cli-application/spring-boot-cli-application_main.iml" group="spring-boot-cli-application" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring-boot-cli-application/spring-boot-cli-application_test.iml" filepath="$PROJECT_DIR$/.idea/modules/spring-boot-cli-application/spring-boot-cli-application_test.iml" group="spring-boot-cli-application" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring-boot-cli-jar-application/spring-boot-cli-jar-application.iml" filepath="$PROJECT_DIR$/.idea/modules/spring-boot-cli-jar-application/spring-boot-cli-jar-application.iml" group="spring-boot-cli-jar-application" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring-boot-cli-jar-application/spring-boot-cli-jar-application_main.iml" filepath="$PROJECT_DIR$/.idea/modules/spring-boot-cli-jar-application/spring-boot-cli-jar-application_main.iml" group="spring-boot-cli-jar-application" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring-boot-cli-jar-application/spring-boot-cli-jar-application_test.iml" filepath="$PROJECT_DIR$/.idea/modules/spring-boot-cli-jar-application/spring-boot-cli-jar-application_test.iml" group="spring-boot-cli-jar-application" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring-common/spring-common.iml" filepath="$PROJECT_DIR$/.idea/modules/spring-common/spring-common.iml" group="spring-common" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring-common/spring-common_main.iml" filepath="$PROJECT_DIR$/.idea/modules/spring-common/spring-common_main.iml" group="spring-common" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring-common/spring-common_test.iml" filepath="$PROJECT_DIR$/.idea/modules/spring-common/spring-common_test.iml" group="spring-common" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/web-application/web-application.iml" filepath="$PROJECT_DIR$/.idea/modules/web-application/web-application.iml" group="web-application" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/web-application/web-application_main.iml" filepath="$PROJECT_DIR$/.idea/modules/web-application/web-application_main.iml" group="web-application" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/web-application/web-application_test.iml" filepath="$PROJECT_DIR$/.idea/modules/web-application/web-application_test.iml" group="web-application" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/web-servlet-2-application/web-servlet-2-application.iml" filepath="$PROJECT_DIR$/.idea/modules/web-servlet-2-application/web-servlet-2-application.iml" group="web-servlet-2-application" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/web-servlet-2-application/web-servlet-2-application_main.iml" filepath="$PROJECT_DIR$/.idea/modules/web-servlet-2-application/web-servlet-2-application_main.iml" group="web-servlet-2-application" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/web-servlet-2-application/web-servlet-2-application_test.iml" filepath="$PROJECT_DIR$/.idea/modules/web-servlet-2-application/web-servlet-2-application_test.iml" group="web-servlet-2-application" />
     </modules>
   </component>
 </project>

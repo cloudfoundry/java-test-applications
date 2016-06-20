@@ -15,8 +15,8 @@
  */
 
 
-import com.gopivotal.cloudfoundry.test.core.FakeMongoDbFactory
-import com.gopivotal.cloudfoundry.test.core.FakeRedisConnectionFactory
+import org.cloudfoundry.java.test.core.FakeMongoDbFactory
+import org.cloudfoundry.java.test.core.FakeRedisConnectionFactory
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory
 import org.springframework.amqp.rabbit.connection.ConnectionFactory
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
@@ -25,7 +25,7 @@ import org.springframework.context.annotation.ComponentScan
 import org.springframework.data.mongodb.MongoDbFactory
 import org.springframework.data.redis.connection.RedisConnectionFactory
 
-@ComponentScan(basePackages = "com.gopivotal.cloudfoundry.test")
+@ComponentScan(basePackages = "org.cloudfoundry.java.test")
 @EnableAutoConfiguration
 @Grab('org.cloudfoundry.test:core:1.0.0.BUILD-SNAPSHOT')
 @Grab('org.cloudfoundry.test:spring-common:1.0.0.BUILD-SNAPSHOT')
