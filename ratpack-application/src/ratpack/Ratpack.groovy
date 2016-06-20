@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-import com.gopivotal.cloudfoundry.test.core.DataSourceUtils
-import com.gopivotal.cloudfoundry.test.core.FakeMongoDbFactory
-import com.gopivotal.cloudfoundry.test.core.FakeRedisConnectionFactory
-import com.gopivotal.cloudfoundry.test.core.HealthUtils
-import com.gopivotal.cloudfoundry.test.core.InitializationUtils
-import com.gopivotal.cloudfoundry.test.core.MemoryUtils
-import com.gopivotal.cloudfoundry.test.core.MongoDbUtils
-import com.gopivotal.cloudfoundry.test.core.RabbitUtils
-import com.gopivotal.cloudfoundry.test.core.RedisUtils
-import com.gopivotal.cloudfoundry.test.core.RuntimeUtils
+import org.cloudfoundry.java.test.core.DataSourceUtils
+import org.cloudfoundry.java.test.core.FakeMongoDbFactory
+import org.cloudfoundry.java.test.core.FakeRedisConnectionFactory
+import org.cloudfoundry.java.test.core.HealthUtils
+import org.cloudfoundry.java.test.core.InitializationUtils
+import org.cloudfoundry.java.test.core.MemoryUtils
+import org.cloudfoundry.java.test.core.MongoDbUtils
+import org.cloudfoundry.java.test.core.RabbitUtils
+import org.cloudfoundry.java.test.core.RedisUtils
+import org.cloudfoundry.java.test.core.RuntimeUtils
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType
