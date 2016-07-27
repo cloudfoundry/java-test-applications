@@ -3,6 +3,6 @@ applications:
 - name: spring-boot-cli-application
   memory: 768M
   instances: 1
-  path: build/libs/spring-boot-cli-application-1.0.0.BUILD-SNAPSHOT.jar
+  path: '.'
   buildpack: https://github.com/cloudfoundry/java-buildpack.git
   stack: cflinuxfs2

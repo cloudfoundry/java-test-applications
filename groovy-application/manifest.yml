@@ -3,6 +3,6 @@ applications:
 - name: groovy-application
   memory: 768M
   instances: 1
-  path: build/libs/groovy-application-1.0.0.BUILD-SNAPSHOT.jar
+  path: '.'
   buildpack: https://github.com/cloudfoundry/java-buildpack.git
   stack: cflinuxfs2
