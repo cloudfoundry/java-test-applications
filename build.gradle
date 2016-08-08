@@ -22,10 +22,14 @@ buildscript {
     }
 
     dependencies {
-        classpath "io.spring.gradle:dependency-management-plugin:${property('dependency-management-plugin.version')}"
         classpath "org.springframework.boot:spring-boot-gradle-plugin:${property('spring-boot.version')}"
     }
 }
+
+plugins {
+    id "io.spring.dependency-management" version "0.6.0.RELEASE"
+}
+
 
 subprojects {
     apply plugin: 'io.spring.dependency-management'
@@ -36,7 +40,7 @@ subprojects {
 
     dependencyManagement {
         imports {
-            mavenBom 'io.spring.platform:platform-bom:2.0.2.RELEASE'
+            mavenBom 'io.spring.platform:platform-bom:2.0.7.RELEASE'
         }
     }
 
@@ -50,5 +54,5 @@ subprojects {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.9'
+    gradleVersion = '2.14.1'
 }
