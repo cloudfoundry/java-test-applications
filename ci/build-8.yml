@@ -5,6 +5,7 @@ image_resource:
   type: docker-image
   source:
     repository: cfje/java-test-applications
+    tag:        java-8
 
 inputs:
 - name: java-test-applications
