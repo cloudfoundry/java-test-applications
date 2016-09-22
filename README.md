@@ -49,7 +49,7 @@ Before building the project, the following tools must be installed:
 This project is built with Gradle. After installing the pre-requisites, run:
 
 ```plain
-./gradlew assemble
+./gradlew
 ```
 
 ### Building Behind a Proxy
