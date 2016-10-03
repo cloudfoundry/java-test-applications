@@ -27,7 +27,7 @@ buildscript {
 }
 
 plugins {
-    id "io.spring.dependency-management" version "0.6.0.RELEASE"
+    id "io.spring.dependency-management" version "0.6.1.RELEASE"
 }
 
 
@@ -40,7 +40,7 @@ subprojects {
 
     dependencyManagement {
         imports {
-            mavenBom 'io.spring.platform:platform-bom:2.0.7.RELEASE'
+            mavenBom 'io.spring.platform:platform-bom:2.0.8.RELEASE'
         }
     }
 
