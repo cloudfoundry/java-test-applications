@@ -45,10 +45,14 @@ public final class DataSourceUtils extends AbstractServiceUtils<DataSource> {
         }
     }
 
+//
+
     public String getUrl(DataSource dataSource) {
         if (isClass(dataSource, "com.jolbox.bonecp.BoneCPDataSource")) {
             return invokeMethod(dataSource, "getJdbcUrl");
         } else if (isClass(dataSource, "org.apache.commons.dbcp.BasicDataSource")) {
+            return invokeMethod(dataSource, "getUrl");
+        } else if (isClass(dataSource, "org.apache.commons.dbcp2.BasicDataSource")) {
             return invokeMethod(dataSource, "getUrl");
         } else if (isClass(dataSource, "org.apache.tomcat.dbcp.dbcp.BasicDataSource")) {
             return invokeMethod(dataSource, "getUrl");
