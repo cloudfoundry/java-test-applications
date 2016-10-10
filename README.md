@@ -6,7 +6,6 @@ A collection of applications used for testing the Java buildpack.
 | Name | Description
 | ---- | -----------
 | `dist-zip-application` | A Spring Boot application, deployed as a `distZip`
-| `grails-application` | A Grails application, deployed as a WAR
 | `groovy-application` | An application started with `groovy`
 | `java-main-application` | A Spring Boot application started with `java -jar`
 | `play-application` | A Play Framework application, deployed as a `dist`
@@ -43,7 +42,6 @@ All applications support the following REST operations:
 Before building the project, the following tools must be installed:
 * [JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 * [Spring Boot CLI](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-started-installing-the-cli)
-* [Grails](https://grails.org/download)
 * [Typesafe Activator](https://typesafe.com/platform/getstarted)
 
 This project is built with Gradle. After installing the pre-requisites, run:
