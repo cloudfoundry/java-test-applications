@@ -1,10 +1,15 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="Gradle : org.cloudfoundry.test : web-application-1.0.0.BUILD-SNAPSHOT.war (exploded)">
-    <output-path>$PROJECT_DIR$/build/classes/artifacts/web-application/exploded/web-application-1.0.0.BUILD-SNAPSHOT.war</output-path>
+    <output-path>$PROJECT_DIR$/web-application/build/libs/exploded/web-application-1.0.0.BUILD-SNAPSHOT.war</output-path>
     <properties id="gradle-properties">
-      <options external-project-path="$PROJECT_DIR$" />
+      <options external-project-path="$PROJECT_DIR$">
+        <manifest>TWFuaWZlc3QtVmVyc2lvbjogMS4wDQoNCg==</manifest>
+      </options>
     </properties>
     <root id="root">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/web-application/build/libs/exploded/web-application-1.0.0.BUILD-SNAPSHOT.war/META-INF/MANIFEST.MF" />
+      </element>
       <element id="javaee-facet-resources" facet="web-application_main/web/Web Gradle : web-application-1.0.0.BUILD-SNAPSHOT.war" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -48,8 +53,8 @@
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.6.7" />
           <element id="library" level="project" name="Gradle: aopalliance:aopalliance:1.0" />
           <element id="library" level="project" name="Gradle: org.apache.httpcomponents:httpcore:4.4.5" />
-          <element id="library" level="project" name="Gradle: commons-codec:commons-codec:1.10" />
           <element id="library" level="project" name="Gradle: org.apache.commons:commons-pool2:2.4.2" />
+          <element id="library" level="project" name="Gradle: commons-codec:commons-codec:1.10" />
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.6.7" />
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.6.7" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-jdbc:4.2.8.RELEASE" />
@@ -66,9 +71,6 @@
           <element id="library" level="project" name="Gradle: org.slf4j:log4j-over-slf4j:1.7.21" />
           <element id="library" level="project" name="Gradle: ch.qos.logback:logback-core:1.1.7" />
         </element>
-      </element>
-      <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/build/classes/artifacts/web-application/exploded/web-application-1.0.0.BUILD-SNAPSHOT.war/META-INF/MANIFEST.MF" />
       </element>
     </root>
   </artifact>

@@ -32,7 +32,7 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
 import javax.sql.DataSource;
 
-@ComponentScan(basePackages="org.cloudfoundry.java.test")
+@ComponentScan(basePackages = "org.cloudfoundry.java.test")
 @EnableAutoConfiguration
 public class ApplicationConfiguration {
 

@@ -1,10 +1,15 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="Gradle : org.cloudfoundry.test : ejb-application-1.0.0.BUILD-SNAPSHOT.war (exploded)">
-    <output-path>$PROJECT_DIR$/build/classes/artifacts/ejb-application/exploded/ejb-application-1.0.0.BUILD-SNAPSHOT.war</output-path>
+    <output-path>$PROJECT_DIR$/ejb-application/build/libs/exploded/ejb-application-1.0.0.BUILD-SNAPSHOT.war</output-path>
     <properties id="gradle-properties">
-      <options external-project-path="$PROJECT_DIR$" />
+      <options external-project-path="$PROJECT_DIR$">
+        <manifest>TWFuaWZlc3QtVmVyc2lvbjogMS4wDQoNCg==</manifest>
+      </options>
     </properties>
     <root id="root">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/ejb-application/build/libs/exploded/ejb-application-1.0.0.BUILD-SNAPSHOT.war/META-INF/MANIFEST.MF" />
+      </element>
       <element id="javaee-facet-resources" facet="ejb-application_main/web/Web Gradle : ejb-application-1.0.0.BUILD-SNAPSHOT.war" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -44,8 +49,8 @@
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.6.7" />
           <element id="library" level="project" name="Gradle: aopalliance:aopalliance:1.0" />
           <element id="library" level="project" name="Gradle: org.apache.httpcomponents:httpcore:4.4.5" />
-          <element id="library" level="project" name="Gradle: commons-codec:commons-codec:1.10" />
           <element id="library" level="project" name="Gradle: org.apache.commons:commons-pool2:2.4.2" />
+          <element id="library" level="project" name="Gradle: commons-codec:commons-codec:1.10" />
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.6.7" />
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.6.7" />
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.6.7" />
@@ -53,9 +58,6 @@
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:2.6.7" />
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.6.7" />
         </element>
-      </element>
-      <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/build/classes/artifacts/ejb-application/exploded/ejb-application-1.0.0.BUILD-SNAPSHOT.war/META-INF/MANIFEST.MF" />
       </element>
     </root>
   </artifact>
