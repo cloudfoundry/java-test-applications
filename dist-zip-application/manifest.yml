@@ -1,7 +1,7 @@
 ---
 applications:
 - name: dist-zip-application
-  memory: 512M
+  memory: 768M
   instances: 1
   path: build/distributions/dist-zip-application-1.0.0.BUILD-SNAPSHOT.zip
   buildpack: https://github.com/cloudfoundry/java-buildpack.git
