@@ -12,5 +12,8 @@ inputs:
 outputs:
 - name: java-test-applications-built
 
+caches:
+- path: gradle
+
 run:
   path: java-test-applications/ci/build.sh

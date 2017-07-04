@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 
-set -e
+set -e -u
 
 export TERM=${TERM:-dumb}
 
 cd java-test-applications
-./gradlew -Dorg.gradle.native=false build
+./gradlew -Dgradle.user.home=../gradle -Dorg.gradle.native=false build

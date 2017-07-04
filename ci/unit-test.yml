@@ -9,5 +9,8 @@ image_resource:
 inputs:
 - name: java-test-applications
 
+caches:
+- path: gradle
+
 run:
   path: java-test-applications/ci/unit-test.sh
