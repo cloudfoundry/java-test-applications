@@ -4,7 +4,9 @@ set -e -u
 
 export TERM=${TERM:-dumb}
 
+ln -fs $PWD/gradle $HOME/.gradle
+
 git clone java-test-applications java-test-applications-built
 
 cd java-test-applications-built
-./gradlew -Dgradle.user.home=../gradle -Dorg.gradle.native=false build -x test
+./gradlew -Dorg.gradle.native=false build -x test
