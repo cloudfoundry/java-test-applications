@@ -1,0 +1,19 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: cfje/java-test-applications
+
+inputs:
+- name: java-test-applications
+
+outputs:
+- name: java-test-applications-built
+
+caches:
+- path: gradle
+
+run:
+  path: java-test-applications/ci/build.sh
