@@ -4,7 +4,7 @@ set -e -u
 
 export TERM=${TERM:-dumb}
 
-ln -fs $PWD/gradle $HOME/.gradle
+[[ -d $PWD/gradle && ! -d $HOME/.gradle ]] && ln -s $PWD/gradle $HOME/.gradle
 
 git clone java-test-applications java-test-applications-built
 
