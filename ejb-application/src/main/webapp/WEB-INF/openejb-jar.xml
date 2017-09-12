@@ -1,7 +1,0 @@
-<openejb-jar xmlns="http://www.openejb.org/openejb-jar/1.1">
-  <pojo-deployment class-name="jaxrs-application">
-    <properties>
-      cxf.jaxrs.providers = com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider
-    </properties>
-  </pojo-deployment>
-</openejb-jar>

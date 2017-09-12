@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 the original author or authors.
+ * Copyright 2014-2017 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +14,8 @@
  * limitations under the License.
  */
 
-buildscript {
-    repositories {
-        jcenter()
-    }
-
-    dependencies {
-        classpath "io.ratpack:ratpack-gradle:${property('ratpack.version')}"
-    }
-}
-
 apply plugin: 'io.ratpack.ratpack-groovy'
 
 dependencies {
     compile project(':core')
-    compile 'org.springframework:spring-jdbc'
 }

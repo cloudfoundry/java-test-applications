@@ -5,6 +5,7 @@
     <content url="file://$MODULE_DIR$/../../../ejb-application">
       <excludeFolder url="file://$MODULE_DIR$/../../../ejb-application/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/../../../ejb-application/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../ejb-application/out" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

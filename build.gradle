@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 the original author or authors.
+ * Copyright 2014-2017 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,44 +15,47 @@
  */
 
 buildscript {
+    ext {
+        ratpackVersion    = '1.5.0'
+        springBootVersion = '1.5.8.RELEASE'
+    }
+
     repositories {
         jcenter()
-        maven { url 'http://repo.spring.io/snapshot' }
-        maven { url 'http://repo.spring.io/milestone' }
+        mavenCentral()
+        maven { url 'https://repo.spring.io/milestone' }
+        maven { url 'https://repo.spring.io/snapshot' }
     }
 
     dependencies {
-        classpath "org.springframework.boot:spring-boot-gradle-plugin:${property('spring-boot.version')}"
+        classpath "io.ratpack:ratpack-gradle:${ratpackVersion}"
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
     }
 }
 
 plugins {
-    id "io.spring.dependency-management" version "0.6.1.RELEASE"
+    id 'io.spring.dependency-management' version '1.0.3.RELEASE'
 }
-
 
 subprojects {
     apply plugin: 'io.spring.dependency-management'
 
+    group   = 'org.cloudfoundry.test'
+    version = '1.0.0.BUILD-SNAPSHOT'
+
     repositories {
         mavenCentral()
+        maven { url 'https://repo.spring.io/snapshot' }
+        maven { url 'https://repo.spring.io/milestone' }
     }
 
     dependencyManagement {
         imports {
-            mavenBom 'io.spring.platform:platform-bom:2.0.8.RELEASE'
+            mavenBom 'io.spring.platform:platform-bom:Brussels-SR5'
+        }
+
+        dependencies {
+            dependency 'org.apache.openejb:javaee-api:6.0-6'
         }
     }
-
-    repositories {
-        jcenter()
-        mavenCentral()
-        maven { url 'http://repo.spring.io/snapshot' }
-        maven { url 'http://repo.spring.io/milestone' }
-    }
-
-}
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '3.1'
 }

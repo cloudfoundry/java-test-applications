@@ -17,7 +17,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/java-main-application/java-main-application.iml" filepath="$PROJECT_DIR$/.idea/modules/java-main-application/java-main-application.iml" group="java-main-application" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/java-main-application/java-main-application_main.iml" filepath="$PROJECT_DIR$/.idea/modules/java-main-application/java-main-application_main.iml" group="java-main-application" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/java-main-application/java-main-application_test.iml" filepath="$PROJECT_DIR$/.idea/modules/java-main-application/java-main-application_test.iml" group="java-main-application" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/java-test-applications.iml" filepath="$PROJECT_DIR$/.idea/modules/java-test-applications.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-test-applications.iml" filepath="$PROJECT_DIR$/java-test-applications.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ratpack-application/ratpack-application.iml" filepath="$PROJECT_DIR$/.idea/modules/ratpack-application/ratpack-application.iml" group="ratpack-application" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ratpack-application/ratpack-application_main.iml" filepath="$PROJECT_DIR$/.idea/modules/ratpack-application/ratpack-application_main.iml" group="ratpack-application" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ratpack-application/ratpack-application_test.iml" filepath="$PROJECT_DIR$/.idea/modules/ratpack-application/ratpack-application_test.iml" group="ratpack-application" />

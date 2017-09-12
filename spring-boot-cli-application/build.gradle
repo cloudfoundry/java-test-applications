@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 the original author or authors.
+ * Copyright 2014-2017 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,16 +17,16 @@
 apply plugin: 'groovy'
 
 dependencies {
-    compile project(':spring-common')
+    compile project(':core')
 }
 
-task cliBuild(type: Exec, dependsOn: ':spring-common:build') {
-    inputs.files fileTree(dir: '.')
+task repository(type: Exec, dependsOn: ':spring-common:install') {
+    inputs.file 'ApplicationConfiguration.groovy'
     outputs.dir 'repository'
-    commandLine 'spring', 'grab', 'ApplicationConfiguration.groovy', 'BootController.groovy'
+    commandLine 'spring', 'grab', 'ApplicationConfiguration.groovy'
 }
 
-build.dependsOn cliBuild
-clean.dependsOn cleanCliBuild
+jar.enabled = false
 
-build.taskDependencies.values -= 'assemble'
+build.dependsOn repository
+clean.dependsOn cleanRepository

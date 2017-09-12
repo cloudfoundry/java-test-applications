@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 the original author or authors.
+ * Copyright 2014-2017 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,24 +18,16 @@ apply plugin: 'java'
 apply plugin: 'maven'
 
 dependencies {
-    compile 'javax.servlet:javax.servlet-api'
+    compile 'com.h2database:h2'
+    compile 'com.zaxxer:HikariCP'
+    compile 'org.apache.tomcat.embed:tomcat-embed-core'
+    compile 'org.mongodb:mongodb-driver'
     compile 'org.springframework.amqp:spring-rabbit'
     compile 'org.springframework.data:spring-data-mongodb'
     compile 'org.springframework.data:spring-data-redis'
-    compile 'org.springframework:spring-context'
-    compile 'org.springframework:spring-core'
+    compile 'org.springframework:spring-jdbc'
+    compile 'redis.clients:jedis'
 
-    runtime 'com.h2database:h2'
-    runtime 'redis.clients:jedis'
-
-    testCompile "com.jolbox:bonecp:${property('bonecp.version')}"
-    testCompile 'commons-dbcp:commons-dbcp'
-    testCompile 'junit:junit'
-    testCompile 'org.apache.tomcat:tomcat-dbcp'
     testCompile 'org.apache.tomcat:tomcat-jdbc'
-    testCompile 'org.mockito:mockito-core'
-    testCompile 'org.springframework:spring-jdbc'
-    testCompile 'org.springframework:spring-test'
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
 }
-
-build.dependsOn install

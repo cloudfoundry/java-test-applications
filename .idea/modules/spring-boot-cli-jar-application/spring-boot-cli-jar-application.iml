@@ -5,6 +5,7 @@
     <content url="file://$MODULE_DIR$/../../../spring-boot-cli-jar-application">
       <excludeFolder url="file://$MODULE_DIR$/../../../spring-boot-cli-jar-application/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/../../../spring-boot-cli-jar-application/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../spring-boot-cli-jar-application/out" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

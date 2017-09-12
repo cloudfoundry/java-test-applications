@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 the original author or authors.
+ * Copyright 2014-2017 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,15 +17,14 @@
 apply plugin: 'groovy'
 
 dependencies {
-    compile project(':spring-common')
+    compile project(':core')
 }
 
-task cliBuild(type: Exec, dependsOn: ':spring-common:build') {
-    inputs.files fileTree(dir: '.')
-    outputs.file new File('spring-boot-cli-jar-application-1.0.0.BUILD-SNAPSHOT.jar')
-    commandLine 'spring', 'jar', 'spring-boot-cli-jar-application-1.0.0.BUILD-SNAPSHOT.jar', 'ApplicationConfiguration.groovy', 'BootController.groovy'
+task jar(overwrite: true, type: Exec, dependsOn: ':spring-common:install') {
+    inputs.file 'ApplicationConfiguration.groovy'
+    outputs.files 'spring-boot-cli-jar-application-1.0.0.BUILD-SNAPSHOT.jar', 'spring-boot-cli-jar-application-1.0.0.BUILD-SNAPSHOT.jar.original'
+    commandLine 'spring', 'jar', 'spring-boot-cli-jar-application-1.0.0.BUILD-SNAPSHOT.jar', 'ApplicationConfiguration.groovy'
 }
 
-build.dependsOn cliBuild
-clean.dependsOn cleanCliBuild
-
+build.dependsOn jar
+clean.dependsOn cleanJar

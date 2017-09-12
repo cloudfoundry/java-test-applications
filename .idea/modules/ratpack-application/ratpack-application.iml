@@ -5,6 +5,7 @@
     <content url="file://$MODULE_DIR$/../../../ratpack-application">
       <excludeFolder url="file://$MODULE_DIR$/../../../ratpack-application/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/../../../ratpack-application/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../ratpack-application/out" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

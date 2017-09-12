@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 the original author or authors.
+ * Copyright 2014-2017 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,8 +19,11 @@ apply plugin: 'maven'
 
 dependencies {
     compile project(':core')
-
-    runtime 'org.springframework:spring-jdbc'
+    compile 'org.springframework.boot:spring-boot-starter-amqp'
+    compile 'org.springframework.boot:spring-boot-starter-data-mongodb'
+    compile 'org.springframework.boot:spring-boot-starter-data-redis'
+    compile 'org.springframework.boot:spring-boot-starter-jdbc'
+    compile 'org.springframework.boot:spring-boot-starter-web'
 }
 
-build.dependsOn install
+install.dependsOn ':core:install'
