@@ -20,6 +20,7 @@ import org.cloudfoundry.test.fake.FakeRedisConnectionFactory;
 import org.junit.Test;
 import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
+import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -61,8 +62,7 @@ public final class RedisUtilsTest {
 
     @Test
     public void jedisUrl() {
-        JedisConnectionFactory jedisConnectionFactory = new JedisConnectionFactory();
-        jedisConnectionFactory.setHostName("test-host");
+        JedisConnectionFactory jedisConnectionFactory = new JedisConnectionFactory(new RedisStandaloneConfiguration("test-host"));
         assertThat(this.redisUtils.getUrl(jedisConnectionFactory)).isEqualTo("redis://test-host:6379");
     }
 

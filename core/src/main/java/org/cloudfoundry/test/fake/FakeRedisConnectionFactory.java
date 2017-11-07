@@ -22,6 +22,7 @@ import org.springframework.data.redis.connection.RedisClusterConnection;
 import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.connection.RedisSentinelConnection;
+import org.springframework.lang.Nullable;
 
 /**
  * Fake RedisConnectionFactory, since we don't have "in-memory" redis (equivalent to, say, H2 database)
@@ -52,6 +53,7 @@ public final class FakeRedisConnectionFactory implements RedisConnectionFactory 
         return null;
     }
 
+    @Nullable
     @Override
     public DataAccessException translateExceptionIfPossible(RuntimeException ex) {
         return null;

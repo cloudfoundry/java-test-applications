@@ -16,6 +16,8 @@
 
 package org.cloudfoundry.test.core;
 
+import com.mongodb.MongoClient;
+import com.mongodb.connection.Cluster;
 import org.springframework.data.mongodb.MongoDbFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -53,7 +55,9 @@ public final class MongoDbUtils extends AbstractServiceUtils<MongoDbFactory> {
     }
 
     private String extractUrl(MongoDbFactory mongoDbFactory) {
-        return mongoDbFactory.getDb().getMongo().getAllAddress().stream()
+        Cluster cluster = invokeMethod(this.<MongoClient>getField(mongoDbFactory, "mongoClient"), "getCluster");
+
+        return cluster.getSettings().getHosts().stream()
             .map(serverAddress -> String.format("mongodb://%s:%d/%s", serverAddress.getHost(), serverAddress.getPort(), mongoDbFactory.getDb().getName()))
             .collect(Collectors.joining(","));
     }

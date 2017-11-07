@@ -17,6 +17,7 @@
 package org.cloudfoundry.test.fake;
 
 import com.mongodb.DB;
+import com.mongodb.client.MongoDatabase;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.support.PersistenceExceptionTranslator;
 import org.springframework.data.mongodb.MongoDbFactory;
@@ -29,19 +30,23 @@ import org.springframework.data.mongodb.MongoDbFactory;
  */
 public final class FakeMongoDbFactory implements MongoDbFactory {
 
-
     @Override
-    public DB getDb() throws DataAccessException {
+    public MongoDatabase getDb() throws DataAccessException {
         return null;
     }
 
     @Override
-    public DB getDb(String dbName) throws DataAccessException {
+    public MongoDatabase getDb(String dbName) throws DataAccessException {
         return null;
     }
 
     @Override
     public PersistenceExceptionTranslator getExceptionTranslator() {
+        return null;
+    }
+
+    @Override
+    public DB getLegacyDb() {
         return null;
     }
 

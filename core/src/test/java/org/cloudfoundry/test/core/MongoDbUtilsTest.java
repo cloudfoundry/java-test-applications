@@ -22,8 +22,6 @@ import org.junit.Test;
 import org.springframework.data.mongodb.MongoDbFactory;
 import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
 
-import java.net.UnknownHostException;
-
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -58,7 +56,7 @@ public final class MongoDbUtilsTest {
     }
 
     @Test
-    public void realUrl() throws UnknownHostException {
+    public void realUrl() {
         SimpleMongoDbFactory mongoDbFactory = new SimpleMongoDbFactory(new MongoClientURI("mongodb://localhost/test-database"));
         assertThat(this.mongoDbUtils.getUrl(mongoDbFactory)).isEqualTo("mongodb://localhost:27017/test-database");
     }
