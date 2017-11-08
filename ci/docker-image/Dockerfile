@@ -7,5 +7,5 @@ RUN apk add --update \
     libstdc++ \
  && rm -rf /var/cache/apk/*
 
-RUN curl http://repo.spring.io/release/org/springframework/boot/spring-boot-cli/1.4.1.RELEASE/spring-boot-cli-1.4.1.RELEASE-bin.tar.gz | tar xzf - -C $HOME \
- && ln -s $HOME/spring-1.4.1.RELEASE/bin/spring /usr/local/bin
+RUN curl http://repo.spring.io/snapshot/org/springframework/boot/spring-boot-cli/2.0.0.BUILD-SNAPSHOT/spring-boot-cli-2.0.0.BUILD-SNAPSHOT-bin.tar.gz | tar xzf - -C $HOME \
+ && ln -s $HOME/spring-2.0.0.BUILD-SNAPSHOT/bin/spring /usr/local/bin
