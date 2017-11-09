@@ -38,7 +38,6 @@
     <orderEntry type="library" name="Gradle: com.h2database:h2:1.4.196" level="project" />
     <orderEntry type="library" name="Gradle: com.zaxxer:HikariCP:2.7.2" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-tomcat:2.0.0.BUILD-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.tomcat.embed:tomcat-embed-websocket:8.5.23" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.tomcat.embed:tomcat-embed-core:8.5.23" level="project" />
     <orderEntry type="library" name="Gradle: org.mongodb:mongodb-driver:3.5.0" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.amqp:spring-rabbit:2.0.0.RELEASE" level="project" />
