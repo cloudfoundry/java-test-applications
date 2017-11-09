@@ -31,6 +31,7 @@ import javax.sql.DataSource
 
 @Configuration
 @ComponentScan('org.cloudfoundry.test')
+@DependencyManagementBom('io.spring.platform:platform-bom:Brussels-SR5')
 @EnableWebMvc
 @Grab('org.cloudfoundry.test:core:1.0.0.BUILD-SNAPSHOT')
 class ApplicationConfiguration {
