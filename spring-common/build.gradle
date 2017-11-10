@@ -25,6 +25,7 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter-jdbc'
     compile('org.springframework.boot:spring-boot-starter-web') {
         exclude group: 'org.apache.tomcat.embed', module: 'tomcat-embed-websocket'
+        exclude group: 'org.hibernate.validator', module: 'hibernate-validator'
     }
 }
 

@@ -72,7 +72,6 @@
           <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot-starter-json:2.0.0.BUILD-SNAPSHOT" />
           <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot-starter:2.0.0.BUILD-SNAPSHOT" />
           <element id="library" level="project" name="Gradle: io.lettuce:lettuce-core:5.0.0.RELEASE" />
-          <element id="library" level="project" name="Gradle: org.hibernate.validator:hibernate-validator:6.0.4.Final" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-webmvc:5.0.1.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot-starter-logging:2.0.0.BUILD-SNAPSHOT" />
           <element id="library" level="project" name="Gradle: ch.qos.logback:logback-classic:1.2.3" />
@@ -95,9 +94,6 @@
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.module:jackson-module-parameter-names:2.9.2" />
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.module:jackson-module-kotlin:2.9.2" />
           <element id="library" level="project" name="Gradle: org.apache.tomcat.embed:tomcat-embed-el:8.5.23" />
-          <element id="library" level="project" name="Gradle: javax.validation:validation-api:2.0.0.Final" />
-          <element id="library" level="project" name="Gradle: org.jboss.logging:jboss-logging:3.3.1.Final" />
-          <element id="library" level="project" name="Gradle: com.fasterxml:classmate:1.3.4" />
           <element id="library" level="project" name="Gradle: org.reactivestreams:reactive-streams:1.0.1" />
           <element id="library" level="project" name="Gradle: ch.qos.logback:logback-core:1.2.3" />
           <element id="library" level="project" name="Gradle: org.apache.logging.log4j:log4j-api:2.9.1" />
