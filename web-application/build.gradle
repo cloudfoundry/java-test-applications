@@ -18,4 +18,6 @@ apply plugin: 'war'
 
 dependencies {
     compile project(':spring-common')
+
+    compileOnly 'javax.servlet:javax.servlet-api'
 }
