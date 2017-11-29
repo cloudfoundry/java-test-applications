@@ -63,9 +63,8 @@ ratpack {
         }
 
         get('request-headers') {
-            Map<String, List<String>> headers = new HashMap<>();
-            for (String headerName : request.getHeaders().getNames()) {
-                headers.put(headerName, request.getHeaders().getAll(headerName))
+            TreeMap<String, List<String>> headers = request.getHeaders().getNames().collectEntries { name ->
+                [(name): request.getHeaders().getAll(name)]
             }
             render json(headers)
         }
