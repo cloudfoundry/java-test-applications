@@ -27,7 +27,6 @@
           </element>
           <element id="library" level="project" name="Gradle: com.h2database:h2:1.4.196" />
           <element id="library" level="project" name="Gradle: com.zaxxer:HikariCP:2.5.1" />
-          <element id="library" level="project" name="Gradle: org.apache.tomcat.embed:tomcat-embed-core:8.5.20" />
           <element id="library" level="project" name="Gradle: org.mongodb:mongodb-driver:3.4.3" />
           <element id="library" level="project" name="Gradle: org.springframework.amqp:spring-rabbit:1.7.4.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework.data:spring-data-mongodb:1.10.7.RELEASE" />
@@ -67,9 +66,9 @@
           <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot-starter-data-redis:1.5.7.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot-starter-jdbc:1.5.7.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot-starter-web:1.5.7.RELEASE" />
-          <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot-starter-tomcat:1.5.7.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot-starter:1.5.7.RELEASE" />
           <element id="library" level="project" name="Gradle: org.apache.tomcat:tomcat-jdbc:8.5.20" />
+          <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot-starter-tomcat:1.5.7.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-webmvc:4.3.11.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot-starter-logging:1.5.7.RELEASE" />
           <element id="library" level="project" name="Gradle: ch.qos.logback:logback-classic:1.1.11" />
@@ -79,6 +78,7 @@
           <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot:1.5.7.RELEASE" />
           <element id="library" level="project" name="Gradle: org.yaml:snakeyaml:1.17" />
           <element id="library" level="project" name="Gradle: org.apache.tomcat:tomcat-juli:8.5.20" />
+          <element id="library" level="project" name="Gradle: org.apache.tomcat.embed:tomcat-embed-core:8.5.20" />
           <element id="library" level="project" name="Gradle: org.apache.tomcat.embed:tomcat-embed-el:8.5.20" />
           <element id="library" level="project" name="Gradle: ch.qos.logback:logback-core:1.1.11" />
         </element>

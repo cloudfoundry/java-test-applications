@@ -20,7 +20,6 @@ apply plugin: 'maven'
 dependencies {
     compile 'com.h2database:h2'
     compile 'com.zaxxer:HikariCP'
-    compile 'org.apache.tomcat.embed:tomcat-embed-core'
     compile 'org.mongodb:mongodb-driver'
     compile 'org.springframework.amqp:spring-rabbit'
     compile 'org.springframework.data:spring-data-mongodb'
@@ -28,6 +27,9 @@ dependencies {
     compile 'org.springframework:spring-jdbc'
     compile 'redis.clients:jedis'
 
+    compileOnly 'javax.servlet:javax.servlet-api'
+
+    testCompile 'javax.servlet:javax.servlet-api'
     testCompile 'org.apache.tomcat:tomcat-jdbc'
     testCompile 'org.springframework.boot:spring-boot-starter-test'
 }
