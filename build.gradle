@@ -17,7 +17,7 @@
 buildscript {
     ext {
         ratpackVersion    = '1.5.0'
-        springBootVersion = '1.5.8.RELEASE'
+        springBootVersion = '1.5.9.RELEASE'
     }
 
     repositories {
@@ -51,7 +51,7 @@ subprojects {
 
     dependencyManagement {
         imports {
-            mavenBom 'io.spring.platform:platform-bom:Brussels-SR5'
+            mavenBom 'io.spring.platform:platform-bom:Brussels-SR6'
         }
 
         dependencies {
