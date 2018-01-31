@@ -16,7 +16,7 @@
 
 buildscript {
     ext {
-        ratpackVersion    = '1.5.0'
+        ratpackVersion    = '1.5.1'
         springBootVersion = '2.0.0.BUILD-SNAPSHOT'
     }
 
@@ -34,7 +34,7 @@ buildscript {
 }
 
 plugins {
-    id 'io.spring.dependency-management' version '1.0.3.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.4.RELEASE'
 }
 
 subprojects {
