@@ -8,77 +8,73 @@
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output-test url="file://$MODULE_DIR$/../../../ratpack-application/out/test/classes" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$/../../../ratpack-application/src/test">
-      <sourceFolder url="file://$MODULE_DIR$/../../../ratpack-application/src/test/groovy" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/../../../ratpack-application/src/test/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/../../../ratpack-application/src/test/resources" type="java-test-resource" />
-    </content>
+    <content url="file://$MODULE_DIR$/../../../ratpack-application/src/test" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="ratpack-application_main" />
-    <orderEntry type="library" name="Gradle: io.ratpack:ratpack-groovy-test:1.5.1" level="project" />
-    <orderEntry type="library" name="Gradle: io.ratpack:ratpack-groovy:1.5.1" level="project" />
-    <orderEntry type="library" name="Gradle: io.ratpack:ratpack-test:1.5.1" level="project" />
-    <orderEntry type="library" name="Gradle: io.ratpack:ratpack-guice:1.5.1" level="project" />
-    <orderEntry type="library" name="Gradle: io.ratpack:ratpack-core:1.5.1" level="project" />
+    <orderEntry type="library" name="Gradle: io.ratpack:ratpack-groovy-test:1.5.4" level="project" />
+    <orderEntry type="library" name="Gradle: io.ratpack:ratpack-groovy:1.5.4" level="project" />
+    <orderEntry type="library" name="Gradle: io.ratpack:ratpack-test:1.5.4" level="project" />
+    <orderEntry type="library" name="Gradle: io.ratpack:ratpack-guice:1.5.4" level="project" />
+    <orderEntry type="library" name="Gradle: io.ratpack:ratpack-core:1.5.4" level="project" />
     <orderEntry type="module" module-name="core_main" />
-    <orderEntry type="library" name="Gradle: io.ratpack:ratpack-exec:1.5.1" level="project" />
-    <orderEntry type="library" name="Gradle: io.netty:netty-codec-http:4.1.17.Final" level="project" />
-    <orderEntry type="library" name="Gradle: io.netty:netty-handler:4.1.17.Final" level="project" />
-    <orderEntry type="library" name="Gradle: com.github.ben-manes.caffeine:caffeine:2.3.5" level="project" />
+    <orderEntry type="library" name="Gradle: io.ratpack:ratpack-exec:1.5.4" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-codec-http:4.1.22.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-handler:4.1.22.Final" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: javax.servlet:javax.servlet-api:3.1.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.ben-manes.caffeine:caffeine:2.3.5" level="project" />
     <orderEntry type="library" name="Gradle: org.javassist:javassist:3.21.0-GA" level="project" />
-    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-guava:2.8.10" level="project" />
-    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.8.10" level="project" />
-    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.8.10" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework.amqp:spring-rabbit:1.7.6.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-guava:2.8.11" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.8.11" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.8.11" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.amqp:spring-rabbit:1.7.7.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: com.rabbitmq:http-client:1.1.1.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.8.10" level="project" />
-    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.8.10" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.8.11.1" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.8.11" level="project" />
     <orderEntry type="library" name="Gradle: org.yaml:snakeyaml:1.17" level="project" />
-    <orderEntry type="library" name="Gradle: org.codehaus.groovy:groovy-all:2.4.13" level="project" />
-    <orderEntry type="library" name="Gradle: com.h2database:h2:1.4.196" level="project" />
+    <orderEntry type="library" name="Gradle: org.codehaus.groovy:groovy-all:2.4.15" level="project" />
+    <orderEntry type="library" name="Gradle: com.h2database:h2:1.4.197" level="project" />
     <orderEntry type="library" name="Gradle: com.zaxxer:HikariCP:2.5.1" level="project" />
     <orderEntry type="library" name="Gradle: org.mongodb:mongodb-driver:3.4.3" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-mongodb:1.10.10.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-redis:1.8.10.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-jdbc:4.3.14.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-mongodb:1.10.12.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-redis:1.8.12.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-jdbc:4.3.17.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: redis.clients:jedis:2.9.0" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-keyvalue:1.2.10.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-commons:1.13.10.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-keyvalue:1.2.12.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-commons:1.13.12.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.slf4j:jcl-over-slf4j:1.7.25" level="project" />
-    <orderEntry type="library" name="Gradle: io.ratpack:ratpack-base:1.5.1" level="project" />
+    <orderEntry type="library" name="Gradle: io.ratpack:ratpack-base:1.5.4" level="project" />
     <orderEntry type="library" name="Gradle: com.rabbitmq:amqp-client:4.0.3" level="project" />
     <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.25" level="project" />
-    <orderEntry type="library" name="Gradle: io.netty:netty-transport-native-epoll:linux-x86_64:4.1.17.Final" level="project" />
-    <orderEntry type="library" name="Gradle: io.netty:netty-codec:4.1.17.Final" level="project" />
-    <orderEntry type="library" name="Gradle: io.netty:netty-transport-native-unix-common:4.1.17.Final" level="project" />
-    <orderEntry type="library" name="Gradle: io.netty:netty-transport:4.1.17.Final" level="project" />
-    <orderEntry type="library" name="Gradle: io.netty:netty-buffer:4.1.17.Final" level="project" />
-    <orderEntry type="library" name="Gradle: org.reactivestreams:reactive-streams:1.0.2" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-transport-native-epoll:linux-x86_64:4.1.22.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-codec:4.1.22.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-transport-native-unix-common:4.1.22.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-transport:4.1.22.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-buffer:4.1.22.Final" level="project" />
+    <orderEntry type="library" name="Gradle: org.reactivestreams:reactive-streams:1.0.0.final" level="project" />
     <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.8.0" level="project" />
-    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.8.10" level="project" />
-    <orderEntry type="library" name="Gradle: com.google.inject:guice:3.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.8.11" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.inject:guice:4.1.0" level="project" />
     <orderEntry type="library" name="Gradle: com.google.inject.extensions:guice-multibindings:4.1.0" level="project" />
     <orderEntry type="library" name="Gradle: org.mongodb:mongodb-driver-core:3.4.3" level="project" />
     <orderEntry type="library" name="Gradle: org.mongodb:bson:3.4.3" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework.amqp:spring-amqp:1.7.6.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-tx:4.3.14.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-tx:4.3.17.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.retry:spring-retry:1.2.2.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-messaging:4.3.14.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-web:4.3.14.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-context-support:4.3.14.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-context:4.3.14.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-oxm:4.3.14.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-aop:4.3.14.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-beans:4.3.14.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-expression:4.3.14.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-core:4.3.14.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-messaging:4.3.17.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-web:4.3.17.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-context-support:4.3.17.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-context:4.3.17.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.amqp:spring-amqp:1.7.7.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-oxm:4.3.17.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-aop:4.3.17.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-beans:4.3.17.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-expression:4.3.17.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-core:4.3.17.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.mongodb:mongo-java-driver:3.4.3" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.commons:commons-pool2:2.4.3" level="project" />
-    <orderEntry type="library" name="Gradle: com.google.guava:guava:20.0" level="project" />
-    <orderEntry type="library" name="Gradle: io.netty:netty-resolver:4.1.17.Final" level="project" />
-    <orderEntry type="library" name="Gradle: io.netty:netty-common:4.1.17.Final" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.guava:guava:21.0" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-resolver:4.1.22.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-common:4.1.22.Final" level="project" />
     <orderEntry type="library" name="Gradle: javax.inject:javax.inject:1" level="project" />
     <orderEntry type="library" name="Gradle: aopalliance:aopalliance:1.0" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.httpcomponents:httpclient:4.5.5" level="project" />
