@@ -31,7 +31,7 @@ import javax.sql.DataSource
 
 @Configuration
 @ComponentScan('org.cloudfoundry.test')
-@DependencyManagementBom('io.spring.platform:platform-bom:Cairo-BUILD-SNAPSHOT')
+@DependencyManagementBom('org.springframework.boot:spring-boot-dependencies:2.0.2.RELEASE')
 @EnableWebMvc
 @Grab('org.cloudfoundry.test:core:1.0.0.BUILD-SNAPSHOT')
 class ApplicationConfiguration {
