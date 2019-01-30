@@ -1,4 +1,4 @@
-# Copyright 2014-2017 the original author or authors.
+# Copyright 2014-2019 the original author or authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,6 +16,8 @@
 applications:
 - name: ejb-application
   path: build/libs/ejb-application-1.0.0.BUILD-SNAPSHOT.war
-  buildpack: https://github.com/cloudfoundry-community/tomee-buildpack.git
+  buildpacks:
+  - https://github.com/cloudfoundry/java-buildpack.git
+  stack: cflinuxfs3
   env:
     JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '{ enabled: false }'

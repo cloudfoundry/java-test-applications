@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2018 the original author or authors.
+ * Copyright 2014-2019 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,11 +20,11 @@ dependencies {
     compile project(':core')
 }
 
-task jar(overwrite: true, type: Exec, dependsOn: ':spring-common:install') {
+task springJar(type: Exec, dependsOn: ':spring-common:install') {
     inputs.file 'ApplicationConfiguration.groovy'
     outputs.files 'spring-boot-cli-jar-application-1.0.0.BUILD-SNAPSHOT.jar', 'spring-boot-cli-jar-application-1.0.0.BUILD-SNAPSHOT.jar.original'
     commandLine 'spring', 'jar', 'spring-boot-cli-jar-application-1.0.0.BUILD-SNAPSHOT.jar', 'ApplicationConfiguration.groovy'
 }
 
-build.dependsOn jar
-clean.dependsOn cleanJar
+build.dependsOn springJar
+clean.dependsOn cleanSpringJar

@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2018 the original author or authors.
+ * Copyright 2014-2019 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ import javax.sql.DataSource
 
 @Configuration
 @ComponentScan('org.cloudfoundry.test')
-@DependencyManagementBom('org.springframework.boot:spring-boot-dependencies:1.5.13.RELEASE')
+@DependencyManagementBom('org.springframework.boot:spring-boot-dependencies:1.5.19.RELEASE')
 @EnableWebMvc
 @Grab('org.cloudfoundry.test:core:1.0.0.BUILD-SNAPSHOT')
 class ApplicationConfiguration {
