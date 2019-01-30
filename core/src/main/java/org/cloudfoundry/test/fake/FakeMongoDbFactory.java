@@ -16,7 +16,9 @@
 
 package org.cloudfoundry.test.fake;
 
+import com.mongodb.ClientSessionOptions;
 import com.mongodb.DB;
+import com.mongodb.client.ClientSession;
 import com.mongodb.client.MongoDatabase;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.support.PersistenceExceptionTranslator;
@@ -47,6 +49,16 @@ public final class FakeMongoDbFactory implements MongoDbFactory {
 
     @Override
     public DB getLegacyDb() {
+        return null;
+    }
+
+    @Override
+    public ClientSession getSession(ClientSessionOptions options) {
+        return null;
+    }
+
+    @Override
+    public MongoDbFactory withSession(ClientSession session) {
         return null;
     }
 

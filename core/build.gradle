@@ -28,6 +28,7 @@ dependencies {
     compile 'redis.clients:jedis'
 
     compileOnly 'javax.servlet:javax.servlet-api'
+    compileOnly 'org.springframework.boot:spring-boot-starter-web'
 
     testCompile 'javax.servlet:javax.servlet-api'
     testCompile 'org.apache.tomcat:tomcat-jdbc'
