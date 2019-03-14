@@ -22,45 +22,45 @@
             <element id="dir-copy" path="$PROJECT_DIR$/core/out/production/resources" />
           </element>
           <element id="library" level="project" name="Gradle: com.h2database:h2:1.4.197" />
-          <element id="library" level="project" name="Gradle: com.zaxxer:HikariCP:2.5.1" />
-          <element id="library" level="project" name="Gradle: org.mongodb:mongodb-driver:3.4.3" />
-          <element id="library" level="project" name="Gradle: org.springframework.amqp:spring-rabbit:1.7.12.RELEASE" />
-          <element id="library" level="project" name="Gradle: org.springframework.data:spring-data-mongodb:1.10.18.RELEASE" />
-          <element id="library" level="project" name="Gradle: org.springframework.data:spring-data-redis:1.8.18.RELEASE" />
-          <element id="library" level="project" name="Gradle: org.springframework:spring-jdbc:4.3.22.RELEASE" />
           <element id="library" level="project" name="Gradle: redis.clients:jedis:2.9.1" />
-          <element id="library" level="project" name="Gradle: com.rabbitmq:amqp-client:4.8.3" />
-          <element id="library" level="project" name="Gradle: org.springframework.data:spring-data-keyvalue:1.2.18.RELEASE" />
-          <element id="library" level="project" name="Gradle: org.springframework.data:spring-data-commons:1.13.18.RELEASE" />
           <element id="library" level="project" name="Gradle: org.slf4j:slf4j-api:1.7.25" />
           <element id="library" level="project" name="Gradle: org.slf4j:jcl-over-slf4j:1.7.25" />
-          <element id="library" level="project" name="Gradle: org.mongodb:mongodb-driver-core:3.4.3" />
-          <element id="library" level="project" name="Gradle: org.mongodb:bson:3.4.3" />
-          <element id="library" level="project" name="Gradle: org.springframework:spring-tx:4.3.22.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework.retry:spring-retry:1.2.3.RELEASE" />
-          <element id="library" level="project" name="Gradle: com.rabbitmq:http-client:1.1.1.RELEASE" />
-          <element id="library" level="project" name="Gradle: org.springframework.amqp:spring-amqp:1.7.12.RELEASE" />
-          <element id="library" level="project" name="Gradle: org.springframework:spring-messaging:4.3.22.RELEASE" />
-          <element id="library" level="project" name="Gradle: org.springframework:spring-web:4.3.22.RELEASE" />
-          <element id="library" level="project" name="Gradle: org.springframework:spring-context-support:4.3.22.RELEASE" />
-          <element id="library" level="project" name="Gradle: org.springframework:spring-context:4.3.22.RELEASE" />
-          <element id="library" level="project" name="Gradle: org.springframework:spring-oxm:4.3.22.RELEASE" />
-          <element id="library" level="project" name="Gradle: org.springframework:spring-aop:4.3.22.RELEASE" />
-          <element id="library" level="project" name="Gradle: org.springframework:spring-beans:4.3.22.RELEASE" />
-          <element id="library" level="project" name="Gradle: org.springframework:spring-expression:4.3.22.RELEASE" />
-          <element id="library" level="project" name="Gradle: org.springframework:spring-core:4.3.22.RELEASE" />
-          <element id="library" level="project" name="Gradle: org.mongodb:mongo-java-driver:3.4.3" />
-          <element id="library" level="project" name="Gradle: org.apache.commons:commons-pool2:2.4.3" />
-          <element id="library" level="project" name="Gradle: org.apache.httpcomponents:httpclient:4.5.6" />
-          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.8.11.3" />
-          <element id="library" level="project" name="Gradle: org.apache.httpcomponents:httpcore:4.4.10" />
-          <element id="library" level="project" name="Gradle: commons-codec:commons-codec:1.10" />
-          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.8.0" />
-          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.8.11" />
-          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.8.11" />
           <element id="library" level="project" name="Gradle: org.apache.openejb:javaee-api:6.0-6" />
-          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:2.8.11" />
-          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.8.11" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider/2.8.11/79894d1dfcff1bca147fd58f263602a6942a5d24/jackson-jaxrs-json-provider-2.8.11.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.zaxxer/HikariCP/2.5.1/b896b711e2d98fedf403de590559a123b5fbf1a6/HikariCP-2.5.1.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mongodb/mongodb-driver/3.4.3/a1c708919fdca8da4a527cb4ea9df30f8db9993b/mongodb-driver-3.4.3.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.amqp/spring-rabbit/1.7.12.RELEASE/62787de731f8140c6c115450d05ebaecd0466038/spring-rabbit-1.7.12.RELEASE.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-mongodb/1.10.18.RELEASE/862ae86cca79443dcab93516fcd5a03fe606a763/spring-data-mongodb-1.10.18.RELEASE.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-redis/1.8.18.RELEASE/e06adbfbc39558a8feab4295e370690f0cb8d999/spring-data-redis-1.8.18.RELEASE.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jdbc/4.3.22.RELEASE/86db27c5cdeef6d36d2bbb7bfe5bd4bb8543c522/spring-jdbc-4.3.22.RELEASE.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.jaxrs/jackson-jaxrs-base/2.8.11/b3b174cb9c0b1ba6afdfdd6cd1aec0fb39ad9a94/jackson-jaxrs-base-2.8.11.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-jaxb-annotations/2.8.11/7b52a95f0fed65cb8526d6aa2be090502226c449/jackson-module-jaxb-annotations-2.8.11.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.rabbitmq/http-client/1.1.1.RELEASE/a3c71766981a70137aa4570e3830c542a7631d3e/http-client-1.1.1.RELEASE.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.8.11.3/844df5aba5a1a56e00905b165b12bb34116ee858/jackson-databind-2.8.11.3.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.8.11/876ead1db19f0c9e79c9789273a3ef8c6fd6c29b/jackson-core-2.8.11.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.rabbitmq/amqp-client/4.8.3/c9ec08737a801358261e2f1b7f30f328f9d42315/amqp-client-4.8.3.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-keyvalue/1.2.18.RELEASE/5ccd6589bf7f2a8b060742f767a9ff956243fedc/spring-data-keyvalue-1.2.18.RELEASE.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-commons/1.13.18.RELEASE/18c6ff250e3806710b9ba0750ca5e05b5e5ec0f1/spring-data-commons-1.13.18.RELEASE.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mongodb/mongodb-driver-core/3.4.3/c588da4e7b4ac9330e58d4d5b414508ccb14367b/mongodb-driver-core-3.4.3.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mongodb/bson/3.4.3/83a9328ce8ffbdf29f4b46b531012427983ad3ec/bson-3.4.3.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/4.3.22.RELEASE/9dc7a0c676de844395485664d59b9221d9a13025/spring-tx-4.3.22.RELEASE.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.amqp/spring-amqp/1.7.12.RELEASE/fc4babcb76a175665232c7ae3d351f0b4617b250/spring-amqp-1.7.12.RELEASE.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-messaging/4.3.22.RELEASE/aa8eefb5f5dce7c367f40a7a26747e6bcccf015f/spring-messaging-4.3.22.RELEASE.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/4.3.22.RELEASE/8e4e5b1089ddba1a65dc48cffeab2cae28d74f05/spring-web-4.3.22.RELEASE.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context-support/4.3.22.RELEASE/26af64f25a2ce901344a6db84d3992286c2fd08e/spring-context-support-4.3.22.RELEASE.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/4.3.22.RELEASE/1edff23a32bb7b02ad258294688173672e671ada/spring-context-4.3.22.RELEASE.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-oxm/4.3.22.RELEASE/122ca36dd94b00e1db6a47b73056168d34b8f3b5/spring-oxm-4.3.22.RELEASE.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/4.3.22.RELEASE/ad29b1de008c3398bfaa6e177f0675c47864aa1b/spring-aop-4.3.22.RELEASE.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/4.3.22.RELEASE/b996bdca37e04a9e875dd40db184df208a315356/spring-beans-4.3.22.RELEASE.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/4.3.22.RELEASE/314e4169b2559085f390b042ed14685877109b1e/spring-expression-4.3.22.RELEASE.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/4.3.22.RELEASE/644c452cb43edf55f3cc8a1252a6e5a28316f42e/spring-core-4.3.22.RELEASE.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mongodb/mongo-java-driver/3.4.3/e8fa9a9ce6ea827cbff320dc0d46c6483777654c/mongo-java-driver-3.4.3.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-pool2/2.4.3/e7ab2a5143cb4e0b21d8ca81c265095e4567dd22/commons-pool2-2.4.3.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.8.0/45b426f7796b741035581a176744d91090e2e6fb/jackson-annotations-2.8.0.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.5.6/1afe5621985efe90a92d0fbc9be86271efbe796f/httpclient-4.5.6.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.4.10/acc54d9b28bdffe4bbde89ed2e4a1e86b5285e2b/httpcore-4.4.10.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.10/4b95f4897fa13f2cd904aee711aeafc0c5295cd8/commons-codec-1.10.jar" />
         </element>
       </element>
     </root>

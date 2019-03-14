@@ -53,6 +53,8 @@ public final class DataSourceUtils extends AbstractServiceUtils<DataSource> {
             return invokeMethod(dataSource, "getJdbcUrl");
         } else if (isClass(dataSource, "org.apache.tomcat.jdbc.pool.DataSource")) {
             return invokeMethod(dataSource, "getUrl");
+        } else if (isClass(dataSource, "org.cloudfoundry.reconfiguration.org.springframework.cloud.service.relational.UrlDecodingDataSource")) {
+            return getUrl(invokeMethod(dataSource, "getTargetDataSource"));
         } else if (isClass(dataSource, "org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy")) {
             return getUrl(getField(dataSource, "dataSource"));
         } else if (isClass(dataSource, "org.springframework.jdbc.datasource.SimpleDriverDataSource")) {
