@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-set -e -u
+set -euo pipefail
 
 export TERM=${TERM:-dumb}
 
