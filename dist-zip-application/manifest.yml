@@ -18,4 +18,3 @@ applications:
   path: build/distributions/dist-zip-application-1.0.0.BUILD-SNAPSHOT.zip
   buildpacks:
   - https://github.com/cloudfoundry/java-buildpack.git
-  stack: cflinuxfs3
