@@ -41,7 +41,7 @@ All applications support the following REST operations:
 
 Before building the project, the following tools must be installed:
 * [JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-* [Spring Boot CLI](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-started-installing-the-cli)
+* [Spring Boot 2 CLI](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-started-installing-the-cli)
 
 This project is built with Gradle. After installing the pre-requisites, run:
 

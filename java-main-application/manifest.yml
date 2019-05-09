@@ -18,4 +18,3 @@ applications:
   path: build/libs/java-main-application-1.0.0.BUILD-SNAPSHOT.jar
   buildpacks:
   - https://github.com/cloudfoundry/java-buildpack.git
-  stack: cflinuxfs3
