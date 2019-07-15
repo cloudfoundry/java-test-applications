@@ -20,7 +20,7 @@
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
-    <output url="file://$MODULE_DIR$/../../../web-servlet-2-application/out/production/classes" />
+    <output url="file://$MODULE_DIR$/../../../web-servlet-2-application/build/classes/java/main" />
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../../web-servlet-2-application/src/main">
       <sourceFolder url="file://$MODULE_DIR$/../../../web-servlet-2-application/src/main/java" isTestSource="false" />

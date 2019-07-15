@@ -16,7 +16,7 @@
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
-    <output url="file://$MODULE_DIR$/../../../groovy-application/out/production/classes" />
+    <output url="file://$MODULE_DIR$/../../../groovy-application/build/classes/java/main" />
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../../groovy-application/src/main" />
     <orderEntry type="inheritedJdk" />

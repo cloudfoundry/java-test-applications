@@ -14,16 +14,16 @@
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="web-application_main" />
-          <element id="dir-copy" path="$PROJECT_DIR$/web-application/out/production/resources" />
+          <element id="dir-copy" path="$PROJECT_DIR$/web-application/build/resources/main" />
         </element>
         <element id="directory" name="lib">
           <element id="archive" name="org.cloudfoundry.test-spring-common-1.0.0.BUILD-SNAPSHOT.jar">
             <element id="module-output" name="spring-common_main" />
-            <element id="dir-copy" path="$PROJECT_DIR$/spring-common/out/production/resources" />
+            <element id="dir-copy" path="$PROJECT_DIR$/spring-common/build/resources/main" />
           </element>
           <element id="archive" name="org.cloudfoundry.test-core-1.0.0.BUILD-SNAPSHOT.jar">
             <element id="module-output" name="core_main" />
-            <element id="dir-copy" path="$PROJECT_DIR$/core/out/production/resources" />
+            <element id="dir-copy" path="$PROJECT_DIR$/core/build/resources/main" />
           </element>
           <element id="library" level="project" name="Gradle: com.h2database:h2:1.4.197" />
           <element id="library" level="project" name="Gradle: com.zaxxer:HikariCP:3.2.0" />

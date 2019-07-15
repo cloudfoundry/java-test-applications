@@ -11,7 +11,7 @@
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
-    <output url="file://$MODULE_DIR$/../../../ratpack-application/out/production/classes" />
+    <output url="file://$MODULE_DIR$/../../../ratpack-application/build/classes/java/main" />
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../../ratpack-application/src/main" />
     <content url="file://$MODULE_DIR$/../../../ratpack-application/src/ratpack">
