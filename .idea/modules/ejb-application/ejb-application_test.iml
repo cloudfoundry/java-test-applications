@@ -17,42 +17,44 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="ejb-application_main" />
-    <orderEntry type="module" module-name="core_main" />
-    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.9.8" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.10.1" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.openejb:javaee-api:6.0-6" level="project" />
-    <orderEntry type="library" name="Gradle: com.h2database:h2:1.4.197" level="project" />
-    <orderEntry type="library" name="Gradle: com.zaxxer:HikariCP:3.2.0" level="project" />
-    <orderEntry type="library" name="Gradle: org.mongodb:mongodb-driver:3.8.2" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework.amqp:spring-rabbit:2.1.4.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-mongodb:2.1.5.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-redis:2.1.5.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-jdbc:5.1.5.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: redis.clients:jedis:2.9.1" level="project" />
-    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:2.9.8" level="project" />
-    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.9.8" level="project" />
-    <orderEntry type="library" name="Gradle: com.rabbitmq:amqp-client:5.4.3" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-keyvalue:2.1.5.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-commons:2.1.5.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.25" level="project" />
-    <orderEntry type="library" name="Gradle: org.mongodb:mongodb-driver-core:3.8.2" level="project" />
-    <orderEntry type="library" name="Gradle: org.mongodb:bson:3.8.2" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework.amqp:spring-amqp:2.1.4.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-context-support:5.1.5.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-context:5.1.5.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-messaging:5.1.5.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-tx:5.1.5.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-oxm:5.1.5.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-aop:5.1.5.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-beans:5.1.5.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-expression:5.1.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: com.h2database:h2:1.4.200" level="project" />
+    <orderEntry type="library" name="Gradle: com.zaxxer:HikariCP:3.4.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.mongodb:mongodb-driver:3.11.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.amqp:spring-rabbit:2.2.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-mongodb:2.2.3.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-redis:2.2.3.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-jdbc:5.2.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:2.10.1" level="project" />
+    <orderEntry type="library" name="Gradle: redis.clients:jedis:3.1.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.10.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-jcl:5.2.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-messaging:5.2.2.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.retry:spring-retry:1.2.4.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-core:5.1.5.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.mongodb:mongo-java-driver:3.8.2" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.commons:commons-pool2:2.6.1" level="project" />
-    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.9.8" level="project" />
-    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.9.8" level="project" />
-    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.9.0" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-jcl:5.1.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.commons:commons-pool2:2.7.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.mongodb:mongo-java-driver:3.11.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-core:5.2.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: com.rabbitmq:amqp-client:5.7.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-keyvalue:2.2.3.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-commons:2.2.3.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-expression:5.2.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-beans:5.2.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-aop:5.2.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-oxm:5.2.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.29" level="project" />
+    <orderEntry type="library" name="Gradle: org.mongodb:mongodb-driver-core:3.11.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.mongodb:bson:3.11.2" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.10.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.amqp:spring-amqp:2.2.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.10.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-context-support:5.2.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.10.1" level="project" />
+    <orderEntry type="library" name="Gradle: jakarta.xml.bind:jakarta.xml.bind-api:2.3.2" level="project" />
+    <orderEntry type="library" name="Gradle: jakarta.activation:jakarta.activation-api:1.2.1" level="project" />
+    <orderEntry type="module" module-name="core_main" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-context:5.2.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-tx:5.2.2.RELEASE" level="project" />
   </component>
   <component name="TestModuleProperties" production-module="ejb-application_main" />
 </module>

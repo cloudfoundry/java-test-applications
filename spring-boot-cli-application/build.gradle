@@ -17,10 +17,10 @@
 apply plugin: 'groovy'
 
 dependencies {
-    compile project(':core')
+    implementation project(':core')
 }
 
-task repository(type: Exec, dependsOn: ':spring-common:install') {
+task repository(type: Exec, dependsOn: ':spring-common:publishToMavenLocal') {
     inputs.file 'ApplicationConfiguration.groovy'
     outputs.dir 'repository'
     commandLine 'spring', 'grab', 'ApplicationConfiguration.groovy'

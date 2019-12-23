@@ -16,15 +16,12 @@
 
 buildscript {
     ext {
-        ratpackVersion    = '1.6.0'
-        springBootVersion = '2.1.3.RELEASE'
+        ratpackVersion    = '1.7.5'
+        springBootVersion = '2.2.2.RELEASE'
     }
 
     repositories {
-        jcenter()
         mavenCentral()
-        maven { url 'https://repo.spring.io/milestone' }
-        maven { url 'https://repo.spring.io/snapshot' }
     }
 
     dependencies {
@@ -34,7 +31,7 @@ buildscript {
 }
 
 plugins {
-    id 'io.spring.dependency-management' version '1.0.7.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 }
 
 subprojects {
@@ -45,16 +42,15 @@ subprojects {
 
     repositories {
         mavenCentral()
-        maven { url 'https://repo.spring.io/snapshot' }
-        maven { url 'https://repo.spring.io/milestone' }
     }
 
     dependencyManagement {
         imports {
-            mavenBom 'org.springframework.boot:spring-boot-dependencies:2.1.3.RELEASE'
+            mavenBom 'org.springframework.boot:spring-boot-dependencies:2.2.2.RELEASE'
         }
 
         dependencies {
+            dependency 'com.google.code.findbugs:jsr305:3.0.1'
             dependency 'org.apache.openejb:javaee-api:6.0-6'
         }
     }

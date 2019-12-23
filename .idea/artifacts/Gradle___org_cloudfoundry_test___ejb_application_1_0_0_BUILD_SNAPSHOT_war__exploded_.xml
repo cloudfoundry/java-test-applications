@@ -17,45 +17,47 @@
           <element id="dir-copy" path="$PROJECT_DIR$/ejb-application/build/resources/main" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.10.1" />
+          <element id="library" level="project" name="Gradle: org.apache.openejb:javaee-api:6.0-6" />
+          <element id="library" level="project" name="Gradle: org.springframework.retry:spring-retry:1.2.4.RELEASE" />
+          <element id="library" level="project" name="Gradle: jakarta.activation:jakarta.activation-api:1.2.1" />
+          <element id="library" level="project" name="Gradle: jakarta.xml.bind:jakarta.xml.bind-api:2.3.2" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.10.1" />
+          <element id="library" level="project" name="Gradle: com.h2database:h2:1.4.200" />
+          <element id="library" level="project" name="Gradle: com.zaxxer:HikariCP:3.4.1" />
+          <element id="library" level="project" name="Gradle: org.mongodb:mongodb-driver:3.11.2" />
+          <element id="library" level="project" name="Gradle: org.springframework.amqp:spring-rabbit:2.2.2.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework.data:spring-data-mongodb:2.2.3.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework.data:spring-data-redis:2.2.3.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-jdbc:5.2.2.RELEASE" />
+          <element id="library" level="project" name="Gradle: redis.clients:jedis:3.1.0" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:2.10.1" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.10.1" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.10.1" />
+          <element id="library" level="project" name="Gradle: org.apache.commons:commons-pool2:2.7.0" />
+          <element id="library" level="project" name="Gradle: org.mongodb:mongo-java-driver:3.11.2" />
+          <element id="library" level="project" name="Gradle: org.mongodb:bson:3.11.2" />
+          <element id="library" level="project" name="Gradle: org.springframework.data:spring-data-keyvalue:2.2.3.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-context-support:5.2.2.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.mongodb:mongodb-driver-core:3.11.2" />
+          <element id="library" level="project" name="Gradle: org.slf4j:slf4j-api:1.7.29" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-messaging:5.2.2.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-tx:5.2.2.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework.data:spring-data-commons:2.2.3.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-oxm:5.2.2.RELEASE" />
+          <element id="library" level="project" name="Gradle: com.rabbitmq:amqp-client:5.7.3" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-jcl:5.2.2.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework.amqp:spring-amqp:2.2.2.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-beans:5.2.2.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-expression:5.2.2.RELEASE" />
           <element id="archive" name="org.cloudfoundry.test-core-1.0.0.BUILD-SNAPSHOT.jar">
             <element id="module-output" name="core_main" />
             <element id="dir-copy" path="$PROJECT_DIR$/core/build/resources/main" />
           </element>
-          <element id="library" level="project" name="Gradle: com.h2database:h2:1.4.197" />
-          <element id="library" level="project" name="Gradle: com.zaxxer:HikariCP:3.2.0" />
-          <element id="library" level="project" name="Gradle: org.mongodb:mongodb-driver:3.8.2" />
-          <element id="library" level="project" name="Gradle: org.springframework.amqp:spring-rabbit:2.1.4.RELEASE" />
-          <element id="library" level="project" name="Gradle: org.springframework.data:spring-data-mongodb:2.1.5.RELEASE" />
-          <element id="library" level="project" name="Gradle: org.springframework.data:spring-data-redis:2.1.5.RELEASE" />
-          <element id="library" level="project" name="Gradle: org.springframework:spring-jdbc:5.1.5.RELEASE" />
-          <element id="library" level="project" name="Gradle: redis.clients:jedis:2.9.1" />
-          <element id="library" level="project" name="Gradle: com.rabbitmq:amqp-client:5.4.3" />
-          <element id="library" level="project" name="Gradle: org.springframework.data:spring-data-keyvalue:2.1.5.RELEASE" />
-          <element id="library" level="project" name="Gradle: org.springframework.data:spring-data-commons:2.1.5.RELEASE" />
-          <element id="library" level="project" name="Gradle: org.springframework:spring-jcl:5.1.5.RELEASE" />
-          <element id="library" level="project" name="Gradle: org.apache.commons:commons-pool2:2.6.1" />
-          <element id="library" level="project" name="Gradle: org.mongodb:mongo-java-driver:3.8.2" />
-          <element id="library" level="project" name="Gradle: org.springframework:spring-core:5.1.5.RELEASE" />
-          <element id="library" level="project" name="Gradle: org.slf4j:slf4j-api:1.7.25" />
-          <element id="library" level="project" name="Gradle: org.mongodb:mongodb-driver-core:3.8.2" />
-          <element id="library" level="project" name="Gradle: org.mongodb:bson:3.8.2" />
-          <element id="library" level="project" name="Gradle: org.springframework.amqp:spring-amqp:2.1.4.RELEASE" />
-          <element id="library" level="project" name="Gradle: org.springframework:spring-context-support:5.1.5.RELEASE" />
-          <element id="library" level="project" name="Gradle: org.springframework.retry:spring-retry:1.2.4.RELEASE" />
-          <element id="library" level="project" name="Gradle: org.springframework:spring-expression:5.1.5.RELEASE" />
-          <element id="library" level="project" name="Gradle: org.springframework:spring-beans:5.1.5.RELEASE" />
-          <element id="library" level="project" name="Gradle: org.springframework:spring-context:5.1.5.RELEASE" />
-          <element id="library" level="project" name="Gradle: org.springframework:spring-messaging:5.1.5.RELEASE" />
-          <element id="library" level="project" name="Gradle: org.springframework:spring-tx:5.1.5.RELEASE" />
-          <element id="library" level="project" name="Gradle: org.springframework:spring-oxm:5.1.5.RELEASE" />
-          <element id="library" level="project" name="Gradle: org.springframework:spring-aop:5.1.5.RELEASE" />
-          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.9.8" />
-          <element id="library" level="project" name="Gradle: org.apache.openejb:javaee-api:6.0-6" />
-          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:2.9.8" />
-          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.9.8" />
-          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.9.8" />
-          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.9.8" />
-          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.9.0" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-context:5.2.2.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-aop:5.2.2.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-core:5.2.2.RELEASE" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.10.1" />
         </element>
       </element>
     </root>

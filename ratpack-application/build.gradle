@@ -17,7 +17,7 @@
 apply plugin: 'io.ratpack.ratpack-groovy'
 
 dependencies {
-    compile project(':core')
+    implementation project(':core')
 
-    runtime 'javax.servlet:javax.servlet-api'
+    runtimeOnly 'javax.servlet:javax.servlet-api'
 }

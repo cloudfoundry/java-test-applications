@@ -18,5 +18,5 @@ apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
 
 dependencies {
-    compile project(':spring-common')
+    implementation project(':spring-common')
 }

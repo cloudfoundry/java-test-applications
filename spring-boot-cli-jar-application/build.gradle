@@ -17,10 +17,10 @@
 apply plugin: 'groovy'
 
 dependencies {
-    compile project(':core')
+    implementation project(':core')
 }
 
-task springJar(type: Exec, dependsOn: ':spring-common:install') {
+task springJar(type: Exec, dependsOn: ':spring-common:publishToMavenLocal') {
     inputs.file 'ApplicationConfiguration.groovy'
     outputs.files 'spring-boot-cli-jar-application-1.0.0.BUILD-SNAPSHOT.jar', 'spring-boot-cli-jar-application-1.0.0.BUILD-SNAPSHOT.jar.original'
     commandLine 'spring', 'jar', 'spring-boot-cli-jar-application-1.0.0.BUILD-SNAPSHOT.jar', 'ApplicationConfiguration.groovy'

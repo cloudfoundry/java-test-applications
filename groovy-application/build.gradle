@@ -17,11 +17,11 @@
 apply plugin: 'groovy'
 
 dependencies {
-    compile project(':spring-common')
+    implementation project(':spring-common')
 }
 
 task libraries(type: Copy) {
-    from configurations.runtime
+    from configurations.runtimeClasspath
     into 'lib'
 }
 

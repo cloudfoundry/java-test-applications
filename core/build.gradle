@@ -14,23 +14,43 @@
  * limitations under the License.
  */
 
-apply plugin: 'java'
-apply plugin: 'maven'
+apply plugin: 'java-library'
+apply plugin: 'maven-publish'
 
 dependencies {
-    compile 'com.h2database:h2'
-    compile 'com.zaxxer:HikariCP'
-    compile 'org.mongodb:mongodb-driver'
-    compile 'org.springframework.amqp:spring-rabbit'
-    compile 'org.springframework.data:spring-data-mongodb'
-    compile 'org.springframework.data:spring-data-redis'
-    compile 'org.springframework:spring-jdbc'
-    compile 'redis.clients:jedis'
+    api 'com.h2database:h2'
+    api 'com.zaxxer:HikariCP'
+    api 'org.mongodb:mongodb-driver'
+    api 'org.springframework.amqp:spring-rabbit'
+    api 'org.springframework.data:spring-data-mongodb'
+    api 'org.springframework.data:spring-data-redis'
+    api 'org.springframework:spring-jdbc'
+    api 'redis.clients:jedis'
 
+    compileOnly 'com.google.code.findbugs:jsr305'
     compileOnly 'javax.servlet:javax.servlet-api'
     compileOnly 'org.springframework.boot:spring-boot-starter-web'
 
-    testCompile 'javax.servlet:javax.servlet-api'
-    testCompile 'org.apache.tomcat:tomcat-jdbc'
-    testCompile 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'javax.servlet:javax.servlet-api'
+    testImplementation 'org.apache.tomcat:tomcat-jdbc'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    testCompileOnly 'org.springframework.boot:spring-boot-starter-web'
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+
+            versionMapping {
+                usage('java-api') {
+                    fromResolutionOf('runtimeClasspath')
+                }
+                usage('java-runtime') {
+                    fromResolutionResult()
+                }
+            }
+        }
+    }
 }

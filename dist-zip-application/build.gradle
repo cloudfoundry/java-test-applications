@@ -19,5 +19,5 @@ apply plugin: 'application'
 mainClassName = 'org.cloudfoundry.test.Application'
 
 dependencies {
-    compile project(':spring-common')
+    implementation project(':spring-common')
 }
