@@ -14,46 +14,14 @@
  * limitations under the License.
  */
 
-import org.cloudfoundry.test.fake.FakeMongoDbFactory
-import org.cloudfoundry.test.fake.FakeRedisConnectionFactory
-import org.springframework.amqp.rabbit.connection.CachingConnectionFactory
-import org.springframework.amqp.rabbit.connection.ConnectionFactory
-import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.ComponentScan
 import org.springframework.context.annotation.Configuration
-import org.springframework.data.mongodb.MongoDbFactory
-import org.springframework.data.redis.connection.RedisConnectionFactory
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType
 import org.springframework.web.servlet.config.annotation.EnableWebMvc
-
-import javax.sql.DataSource
 
 @Configuration
 @ComponentScan('org.cloudfoundry.test')
-@DependencyManagementBom('org.springframework.boot:spring-boot-dependencies:2.2.2.RELEASE')
+@DependencyManagementBom('org.springframework.boot:spring-boot-dependencies:2.3.5.RELEASE')
 @EnableWebMvc
 @Grab('org.cloudfoundry.test:core:1.0.0.BUILD-SNAPSHOT')
 class ApplicationConfiguration {
-
-    @Bean
-    DataSource dataSource() {
-        return new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2).build();
-    }
-
-    @Bean
-    MongoDbFactory mongoDbFactory() {
-        return new FakeMongoDbFactory();
-    }
-
-    @Bean
-    ConnectionFactory rabbitConnectionFactory() {
-        return new CachingConnectionFactory(null, 0);
-    }
-
-    @Bean
-    RedisConnectionFactory redisConnectionFactory() {
-        return new FakeRedisConnectionFactory();
-    }
-
 }

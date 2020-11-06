@@ -14,19 +14,11 @@
  * limitations under the License.
  */
 
-import org.cloudfoundry.test.core.DataSourceUtils
+
 import org.cloudfoundry.test.core.HealthUtils
 import org.cloudfoundry.test.core.InitializationUtils
 import org.cloudfoundry.test.core.MemoryUtils
-import org.cloudfoundry.test.core.MongoDbUtils
-import org.cloudfoundry.test.core.RabbitUtils
-import org.cloudfoundry.test.core.RedisUtils
 import org.cloudfoundry.test.core.RuntimeUtils
-import org.cloudfoundry.test.fake.FakeMongoDbFactory
-import org.cloudfoundry.test.fake.FakeRedisConnectionFactory
-import org.springframework.amqp.rabbit.connection.CachingConnectionFactory
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType
 
 import static ratpack.groovy.Groovy.ratpack
 import static ratpack.jackson.Jackson.json
@@ -37,15 +29,7 @@ ratpack {
     def memoryUtils = new MemoryUtils()
     memoryUtils.outOfMemoryOnStart()
 
-    def connectionFactory = new CachingConnectionFactory(null, 0)
-    def dataSource = new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2).build()
-    def dataSourceUtils = new DataSourceUtils()
     def healthUtils = new HealthUtils()
-    def mongoDbFactory = new FakeMongoDbFactory()
-    def mongoDbUtils = new MongoDbUtils()
-    def rabbitUtils = new RabbitUtils()
-    def redisConnectionFactory = new FakeRedisConnectionFactory()
-    def redisUtils = new RedisUtils()
     def runtimeUtils = new RuntimeUtils()
 
     handlers {
@@ -83,38 +67,6 @@ ratpack {
 
         get('system-properties') {
             render json(runtimeUtils.systemProperties())
-        }
-
-        get('datasource/check-access') {
-            response.send dataSourceUtils.checkAccess(dataSource)
-        }
-
-        get('datasource/url') {
-            response.send dataSourceUtils.getUrl(dataSource)
-        }
-
-        get('redis/check-access') {
-            response.send redisUtils.checkAccess(redisConnectionFactory)
-        }
-
-        get('redis/url') {
-            response.send redisUtils.getUrl(redisConnectionFactory)
-        }
-
-        get('mongodb/check-access') {
-            response.send mongoDbUtils.checkAccess(mongoDbFactory)
-        }
-
-        get('mongodb/url') {
-            response.send mongoDbUtils.getUrl(mongoDbFactory)
-        }
-
-        get('rabbit/check-access') {
-            response.send rabbitUtils.checkAccess(connectionFactory)
-        }
-
-        get('rabbit/url') {
-            response.send rabbitUtils.getUrl(connectionFactory)
         }
 
     }

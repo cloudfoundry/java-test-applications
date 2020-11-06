@@ -17,19 +17,8 @@
 package org.cloudfoundry.test;
 
 import org.cloudfoundry.test.core.InitializationUtils;
-import org.cloudfoundry.test.fake.FakeMongoDbFactory;
-import org.cloudfoundry.test.fake.FakeRedisConnectionFactory;
-import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
-import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import org.springframework.data.mongodb.MongoDbFactory;
-import org.springframework.data.redis.connection.RedisConnectionFactory;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
-
-import javax.sql.DataSource;
 
 @SpringBootApplication
 public class Application {
@@ -38,26 +27,5 @@ public class Application {
         new InitializationUtils().fail();
         SpringApplication.run(Application.class, args);
     }
-
-    @Bean
-    DataSource dataSource() {
-        return new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2).build();
-    }
-
-    @Bean
-    MongoDbFactory mongoDbFactory() {
-        return new FakeMongoDbFactory();
-    }
-
-    @Bean
-    ConnectionFactory rabbitConnectionFactory() {
-        return new CachingConnectionFactory(null, 0);
-    }
-
-    @Bean
-    RedisConnectionFactory redisConnectionFactory() {
-        return new FakeRedisConnectionFactory();
-    }
-
 }
 

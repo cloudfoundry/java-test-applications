@@ -22,17 +22,9 @@ All applications support the following REST operations:
 | --- | -----------
 | `GET  /` | The health of the application
 | `GET  /class-path` | The classpath of the application
-| `GET  /datasource/check-access` | The ability of the application to access a RDBMS
-| `GET  /datasource/url` | The URL of the application's `DataSource`
 | `GET  /environment-variables` | The environment variables available to the application
 | `GET  /input-arguments` | The list of JVM input arguments for the application
-| `GET  /mongodb/check-access` | The ability of the application to access MongoDB
-| `GET  /mongodb/url` | The URL of the application's MongoDB
 | `POST /out-of-memory` | The URL to trigger an out of memory error
-| `GET  /rabbit/check-access` | The ability of the application to access RabbitMQ
-| `GET  /rabbit/url` | The URL of the application's RabbitMQ
-| `GET  /redis/check-access` | The ability of the application to access Redis
-| `GET  /redis/url` | The URL of the application's Redis
 | `GET  /request-headers` | The http request headers of the current request
 | `GET  /security-providers` | The system security providers available to the application
 | `GET  /system-properties` | The system properties available to the application
@@ -40,7 +32,7 @@ All applications support the following REST operations:
 ## Building
 
 Before building the project, the following tools must be installed:
-* [JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+* [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 * [Spring Boot 2 CLI](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-started-installing-the-cli)
 
 This project is built with Gradle. After installing the pre-requisites, run:

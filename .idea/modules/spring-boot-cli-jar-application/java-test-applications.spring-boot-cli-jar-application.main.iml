@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":spring-boot-cli-jar-application:main" external.linked.project.path="$MODULE_DIR$/../../../spring-boot-cli-jar-application" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="org.cloudfoundry.test" external.system.module.type="sourceSet" external.system.module.version="1.0.0.BUILD-SNAPSHOT" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="Spring" name="Spring">
+      <configuration />
+    </facet>
+  </component>
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/../../../spring-boot-cli-jar-application/build/classes/java/main" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../spring-boot-cli-jar-application/src/main" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="java-test-applications.core.main" />
+    <orderEntry type="library" name="Gradle: com.h2database:h2:1.4.200" level="project" />
+    <orderEntry type="library" name="Gradle: com.zaxxer:HikariCP:3.4.5" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-mongodb:3.0.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.mongodb:mongodb-driver-core:4.0.5" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.amqp:spring-rabbit:2.2.12.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-redis:2.3.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-jdbc:5.2.10.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: redis.clients:jedis:3.3.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.30" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-commons:2.3.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-context:5.2.10.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-tx:5.2.10.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-beans:5.2.10.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-expression:5.2.10.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-core:5.2.10.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.mongodb:bson:4.0.5" level="project" />
+    <orderEntry type="library" name="Gradle: com.rabbitmq:amqp-client:5.9.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.amqp:spring-amqp:2.2.12.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-messaging:5.2.10.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-keyvalue:2.3.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-context-support:5.2.10.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-oxm:5.2.10.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-aop:5.2.10.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.commons:commons-pool2:2.8.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-jcl:5.2.10.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.retry:spring-retry:1.2.5.RELEASE" level="project" />
+  </component>
+</module>
