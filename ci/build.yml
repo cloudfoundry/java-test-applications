@@ -6,6 +6,8 @@ image_resource:
   source:
     repository: cfje/java-test-applications
     tag:        boot-2
+    username: ((docker-username))
+    password: ((docker-password))
 
 inputs:
 - name: java-test-applications
