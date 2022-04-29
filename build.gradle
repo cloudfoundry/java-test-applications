@@ -16,8 +16,8 @@
 
 buildscript {
     ext {
-        ratpackVersion    = '1.8.0'
-        springBootVersion = '2.3.5.RELEASE'
+        ratpackVersion    = '1.9.0'
+        springBootVersion = '2.6.7'
     }
 
     repositories {
@@ -31,7 +31,7 @@ buildscript {
 }
 
 plugins {
-    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 }
 
 subprojects {
@@ -46,7 +46,7 @@ subprojects {
 
     dependencyManagement {
         imports {
-            mavenBom 'org.springframework.boot:spring-boot-dependencies:2.3.5.RELEASE'
+            mavenBom 'org.springframework.boot:spring-boot-dependencies:2.6.7'
         }
 
         dependencies {
