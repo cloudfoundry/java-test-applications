@@ -16,8 +16,32 @@
 
 apply plugin: 'io.ratpack.ratpack-groovy'
 
+String groovyVersion = "2.5.16"
+
 dependencies {
     implementation project(':core')
+    implementation "org.codehaus.groovy:groovy:${groovyVersion}"
+    implementation "org.codehaus.groovy:groovy-ant:${groovyVersion}"
+    implementation "org.codehaus.groovy:groovy-cli-commons:${groovyVersion}"
+    implementation "org.codehaus.groovy:groovy-cli-picocli:${groovyVersion}"
+    implementation "org.codehaus.groovy:groovy-console:${groovyVersion}"
+    implementation "org.codehaus.groovy:groovy-datetime:${groovyVersion}"
+    implementation "org.codehaus.groovy:groovy-docgenerator:${groovyVersion}"
+    implementation "org.codehaus.groovy:groovy-groovydoc:${groovyVersion}"
+    implementation "org.codehaus.groovy:groovy-groovysh:${groovyVersion}"
+    implementation "org.codehaus.groovy:groovy-jmx:${groovyVersion}"
+    implementation "org.codehaus.groovy:groovy-json:${groovyVersion}"
+    implementation "org.codehaus.groovy:groovy-jsr223:${groovyVersion}"
+    implementation "org.codehaus.groovy:groovy-macro:${groovyVersion}"
+    implementation "org.codehaus.groovy:groovy-nio:${groovyVersion}"
+    implementation "org.codehaus.groovy:groovy-servlet:${groovyVersion}"
+    implementation "org.codehaus.groovy:groovy-sql:${groovyVersion}"
+    implementation "org.codehaus.groovy:groovy-swing:${groovyVersion}"
+    implementation "org.codehaus.groovy:groovy-templates:${groovyVersion}"
+    implementation "org.codehaus.groovy:groovy-test:${groovyVersion}"
+    implementation "org.codehaus.groovy:groovy-test-junit5:${groovyVersion}"
+    implementation "org.codehaus.groovy:groovy-testng:${groovyVersion}"
+    implementation "org.codehaus.groovy:groovy-xml:${groovyVersion}"
 
     runtimeOnly 'javax.servlet:javax.servlet-api'
 }
