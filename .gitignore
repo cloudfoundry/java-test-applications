@@ -15,5 +15,7 @@
 .gradle
 .idea/libraries
 .idea/workspace.xml
+.vscode/
 build
 out
+bin
