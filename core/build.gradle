@@ -22,7 +22,7 @@ dependencies {
     compileOnly 'javax.servlet:javax.servlet-api'
     compileOnly 'org.springframework.boot:spring-boot-starter-web'
 
-    runtime 'org.reactivestreams:reactive-streams'
+    runtimeOnly 'org.reactivestreams:reactive-streams'
 
     testImplementation 'javax.servlet:javax.servlet-api'
     testImplementation 'org.apache.tomcat:tomcat-jdbc'

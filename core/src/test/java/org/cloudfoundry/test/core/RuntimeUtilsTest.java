@@ -16,8 +16,10 @@
 
 package org.cloudfoundry.test.core;
 
-import org.junit.Test;
-import org.springframework.mock.web.MockHttpServletRequest;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.entry;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 import java.lang.management.RuntimeMXBean;
 import java.security.Provider;
@@ -25,10 +27,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Map;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.entry;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import org.junit.jupiter.api.Test;
+import org.springframework.mock.web.MockHttpServletRequest;
 
 public final class RuntimeUtilsTest {
 

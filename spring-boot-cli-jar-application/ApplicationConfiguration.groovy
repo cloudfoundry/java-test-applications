@@ -20,7 +20,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc
 
 @Configuration
 @ComponentScan('org.cloudfoundry.test')
-@DependencyManagementBom('org.springframework.boot:spring-boot-dependencies:2.3.5.RELEASE')
+@DependencyManagementBom('org.springframework.boot:spring-boot-dependencies:2.6.7')
 @EnableWebMvc
 @Grab('org.cloudfoundry.test:core:1.0.0.BUILD-SNAPSHOT')
 class ApplicationConfiguration {

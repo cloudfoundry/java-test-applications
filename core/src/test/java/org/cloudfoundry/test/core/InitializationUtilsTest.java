@@ -16,10 +16,11 @@
 
 package org.cloudfoundry.test.core;
 
-import org.junit.Test;
-
 import java.util.Collections;
 import java.util.Map;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public final class InitializationUtilsTest {
 
@@ -35,10 +36,12 @@ public final class InitializationUtilsTest {
         new InitializationUtils(environment).fail();
     }
 
-    @Test(expected = RuntimeException.class)
+    @Test
     public void failTrue() {
-        Map<String, String> environment = Collections.singletonMap("FAIL_INIT", "true");
-        new InitializationUtils(environment).fail();
+        Assertions.assertThrows(RuntimeException.class, () -> {
+            Map<String, String> environment = Collections.singletonMap("FAIL_INIT", "true");
+            new InitializationUtils(environment).fail();
+        });
     }
 
 }
