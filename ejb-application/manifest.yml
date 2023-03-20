@@ -20,3 +20,4 @@ applications:
   - https://github.com/cloudfoundry/java-buildpack.git
   env:
     JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '{ enabled: false }'
+  stack: cflinuxfs4

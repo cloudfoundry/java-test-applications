@@ -18,3 +18,4 @@ applications:
   path: '.'
   buildpacks:
   - https://github.com/cloudfoundry/java-buildpack.git
+  stack: cflinuxfs4
