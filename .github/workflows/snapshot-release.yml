@@ -26,7 +26,7 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
 
       - name: Build main modules
-        run: ./gradlew assemble -x test
+        run: ./gradlew build
 
       - name: Set up Java 17 for boot3 module
         uses: actions/setup-java@v4
@@ -36,7 +36,7 @@ jobs:
 
       - name: Build boot3 standalone module
         working-directory: java-main-application-boot3
-        run: ./gradlew bootJar -x test
+        run: ./gradlew bootJar
 
       - name: Collect release artifacts
         run: |

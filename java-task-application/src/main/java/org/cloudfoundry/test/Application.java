@@ -28,7 +28,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * the Start-Class MANIFEST.MF attribute set by the Spring Boot Gradle plugin.
  *
  * Deploy:  cf push java-task-application
- * Run:     cf run-task java-task-application --command "java -jar *.jar" --name task
+ * Run:     cf run-task java-task-application --name task
  */
 @SpringBootApplication
 public class Application implements ApplicationRunner {

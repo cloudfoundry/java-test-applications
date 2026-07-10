@@ -54,8 +54,8 @@ sdk install java 21.0.10-librca
 sdk install java 17.0.19-tem
 ```
 
-> **Note:** Gradle 9.6.1 ships with ASM 9.9, which supports Java class files up to Java 26.
-> The daemon can run on Java 21–26. Java 27+ requires a newer Gradle release. Java 21
+> **Note:** This applies to the root multi-module build (Gradle 9.6.1 / ASM 9.9, supports Java 21–26).
+> `java-main-application-boot3` is a standalone project with its own Gradle wrapper — check its wrapper version separately. Java 27+ requires a newer Gradle release. Java 21
 > is recommended — it matches the project toolchain. To pin the daemon, add
 > `org.gradle.java.home=/path/to/java21` in a local (uncommitted) `gradle.properties`.
 

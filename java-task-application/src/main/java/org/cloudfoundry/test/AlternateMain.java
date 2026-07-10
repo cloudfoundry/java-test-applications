@@ -25,8 +25,8 @@ package org.cloudfoundry.test;
  * To run via buildpack main-class override, set in manifest.yml or cf push env:
  *   JBP_CONFIG_JAVA_MAIN: '{class: "org.cloudfoundry.test.AlternateMain"}'
  *
- * Run task:
- *   cf run-task java-task-application --command "java -cp . org.cloudfoundry.test.AlternateMain" --name alt-task
+ * Then run as a one-off task (buildpack uses the overridden main class):
+ *   cf run-task java-task-application --name alt-task
  */
 public class AlternateMain {
 
