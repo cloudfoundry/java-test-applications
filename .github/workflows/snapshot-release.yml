@@ -1,0 +1,93 @@
+name: Build and Publish Snapshot Release
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java 21 (Temurin)
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Build main modules
+        run: ./gradlew assemble -x test
+
+      - name: Set up Java 17 for boot3 module
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Build boot3 standalone module
+        working-directory: java-main-application-boot3
+        run: ./gradlew bootJar -x test
+
+      - name: Collect release artifacts
+        run: |
+          mkdir -p release-artifacts
+
+          # Boot fat jars (exclude -plain.jar, exclude library jars from core/spring-common)
+          find . \
+            -path './.gradle' -prune -o \
+            -path '*/core/build/libs' -prune -o \
+            -path '*/spring-common/build/libs' -prune -o \
+            -name '*.jar' -path '*/build/libs/*' ! -name '*-plain.jar' \
+            -print -exec cp {} release-artifacts/ \;
+
+          # Boot WARs
+          find . \
+            -path './.gradle' -prune -o \
+            -name '*.war' -path '*/build/libs/*' \
+            -print -exec cp {} release-artifacts/ \;
+
+          # dist-zip distribution archive
+          find dist-zip-application/build/distributions -name '*.zip' -exec cp {} release-artifacts/ \; 2>/dev/null || true
+
+          echo "Artifacts to release:"
+          ls -lh release-artifacts/
+
+      - name: Delete existing snapshot release (if any)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release delete v1.0.0-SNAPSHOT --yes --repo ${{ github.repository }} 2>/dev/null || true
+          git push origin :refs/tags/v1.0.0-SNAPSHOT 2>/dev/null || true
+
+      - name: Create snapshot release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.0.0-SNAPSHOT
+          name: 1.0.0-SNAPSHOT
+          prerelease: true
+          generate_release_notes: false
+          body: |
+            ## Snapshot build — updated on every push
+
+            Built from branch `${{ github.ref_name }}` (commit `${{ github.sha }}`).
+
+            | Artifact | Description | Java | Spring Boot |
+            |----------|-------------|------|-------------|
+            | `java-main-application-*.jar` | Standalone main-class app | 21 | 4.1 |
+            | `web-application-*.war` | Embedded Tomcat WAR | 21 | 4.1 |
+            | `ejb-application-*.war` | Jakarta EE 10 EJB WAR | 21 | 4.1 |
+            | `dist-zip-application-*.zip` | Distribution zip (scripts + libs) | 21 | 4.1 |
+            | `java-main-application-boot3-*.jar` | Standalone main-class app | 17 | 3.5 |
+
+            Related: [cloudfoundry/java-buildpack#1357](https://github.com/cloudfoundry/java-buildpack/issues/1357)
+          files: release-artifacts/*
