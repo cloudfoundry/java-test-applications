@@ -12,6 +12,7 @@ A collection of applications used for testing the Java buildpack.
 | `ejb-application` | A Jakarta EE 10 EJB application
 | `groovy-application` | A Spring Boot 4.1 application started with `groovy`
 | `java-main-application` | A Spring Boot 4.1 application started with `java -jar`
+| `java-task-application` | A Spring Boot 4.1 CF task application. Tests Spring Boot `Start-Class` detection and `JBP_CONFIG_JAVA_MAIN` class override. Push with `instances: 0`, run via `cf run-task`
 | `web-application` | A Spring MVC 4.1 application (Servlet 6 / WAR)
 
 ### Spring Boot 3.5 (Java 17) — standalone projects
