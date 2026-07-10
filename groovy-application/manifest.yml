@@ -15,6 +15,9 @@
 ---
 applications:
 - name: groovy-application
+  memory: 512M
   path: '.'
   buildpacks:
   - https://github.com/cloudfoundry/java-buildpack.git
+  env:
+    JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 21.+ } }'

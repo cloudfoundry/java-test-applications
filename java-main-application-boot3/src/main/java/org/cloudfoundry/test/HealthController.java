@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2019 the original author or authors.
+ * Copyright 2014-2026 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +14,19 @@
  * limitations under the License.
  */
 
-apply plugin: 'groovy'
+package org.cloudfoundry.test;
 
-dependencies {
-    implementation project(':core')
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Collections;
+import java.util.Map;
+
+@RestController
+public class HealthController {
+
+    @GetMapping("/")
+    public Map<String, String> health() {
+        return Collections.singletonMap("status", "ok");
+    }
 }
-
-task repository(type: Exec, dependsOn: ':spring-common:publishToMavenLocal') {
-    inputs.file 'ApplicationConfiguration.groovy'
-    outputs.dir 'repository'
-    commandLine 'spring', 'grab', 'ApplicationConfiguration.groovy'
-}
-
-jar.enabled = false
-
-build.dependsOn repository
-clean.dependsOn cleanRepository

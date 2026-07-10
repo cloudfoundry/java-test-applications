@@ -18,3 +18,12 @@
 build
 out
 bin
+.sdkmanrc
+.agents/
+.clinerules/
+.cursor/
+.opencode/
+.windsurf/
+AGENTS.md
+skills-lock.json
+.github/copilot-instructions.md

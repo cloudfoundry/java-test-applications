@@ -15,6 +15,9 @@
 ---
 applications:
 - name: dist-zip-application
+  memory: 512M
   path: build/distributions/dist-zip-application-1.0.0.BUILD-SNAPSHOT.zip
   buildpacks:
   - https://github.com/cloudfoundry/java-buildpack.git
+  env:
+    JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 21.+ } }'

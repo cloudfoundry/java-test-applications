@@ -18,8 +18,6 @@ apply plugin: 'war'
 
 dependencies {
     implementation project(':core')
-    implementation 'com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider'
-    implementation 'org.apache.openejb:javaee-api'
-
-    compileOnly 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'com.fasterxml.jackson.jakarta.rs:jackson-jakarta-rs-json-provider'
+    compileOnly 'jakarta.platform:jakarta.jakartaee-api:10.0.0'
 }

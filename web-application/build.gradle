@@ -19,5 +19,5 @@ apply plugin: 'war'
 dependencies {
     implementation project(':spring-common')
 
-    compileOnly 'javax.servlet:javax.servlet-api'
+    compileOnly 'jakarta.servlet:jakarta.servlet-api'
 }

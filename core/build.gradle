@@ -19,14 +19,15 @@ apply plugin: 'maven-publish'
 
 dependencies {
     compileOnly 'com.google.code.findbugs:jsr305'
-    compileOnly 'javax.servlet:javax.servlet-api'
+    compileOnly 'jakarta.servlet:jakarta.servlet-api'
     compileOnly 'org.springframework.boot:spring-boot-starter-web'
 
     runtimeOnly 'org.reactivestreams:reactive-streams'
 
-    testImplementation 'javax.servlet:javax.servlet-api'
+    testImplementation 'jakarta.servlet:jakarta.servlet-api'
     testImplementation 'org.apache.tomcat:tomcat-jdbc'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
     testCompileOnly 'org.springframework.boot:spring-boot-starter-web'
 }
