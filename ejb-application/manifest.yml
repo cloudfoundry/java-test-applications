@@ -16,7 +16,7 @@
 applications:
 - name: ejb-application
   memory: 512M
-  path: build/libs/ejb-application-1.0.0.BUILD-SNAPSHOT.war
+  path: build/libs/ejb-application-1.0.0-SNAPSHOT.war
   buildpacks:
   - https://github.com/cloudfoundry/java-buildpack.git
   env:

@@ -54,10 +54,10 @@ sdk install java 21.0.10-librca
 sdk install java 17.0.19-tem
 ```
 
-> **Note:** The Gradle daemon must run on Java 21. Gradle 8.x uses ASM 9.x which does
-> not support Java 22+ class files. Set `JAVA_HOME` to your Java 21 installation before
-> running `./gradlew`, or add `org.gradle.java.home=/path/to/java21` in a local
-> (uncommitted) `gradle.properties`.
+> **Note:** Gradle 9.6.1 ships with ASM 9.9, which supports Java class files up to Java 26.
+> The daemon can run on Java 21–26. Java 27+ requires a newer Gradle release. Java 21
+> is recommended — it matches the project toolchain. To pin the daemon, add
+> `org.gradle.java.home=/path/to/java21` in a local (uncommitted) `gradle.properties`.
 
 ### Multi-module build (Spring Boot 4.1)
 

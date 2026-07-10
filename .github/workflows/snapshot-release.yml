@@ -44,7 +44,7 @@ jobs:
 
           # Boot fat jars (exclude -plain.jar, exclude library jars from core/spring-common)
           find . \
-            -path './.gradle' -prune -o \
+            -name '.gradle' -prune -o \
             -path '*/core/build/libs' -prune -o \
             -path '*/spring-common/build/libs' -prune -o \
             -name '*.jar' -path '*/build/libs/*' ! -name '*-plain.jar' \
@@ -52,7 +52,7 @@ jobs:
 
           # Boot WARs
           find . \
-            -path './.gradle' -prune -o \
+            -name '.gradle' -prune -o \
             -name '*.war' -path '*/build/libs/*' \
             -print -exec cp {} release-artifacts/ \;
 
@@ -84,6 +84,7 @@ jobs:
             | Artifact | Description | Java | Spring Boot |
             |----------|-------------|------|-------------|
             | `java-main-application-*.jar` | Standalone main-class app | 21 | 4.1 |
+            | `java-task-application-*.jar` | CF run-task app | 21 | 4.1 |
             | `web-application-*.war` | Embedded Tomcat WAR | 21 | 4.1 |
             | `ejb-application-*.war` | Jakarta EE 10 EJB WAR | 21 | 4.1 |
             | `dist-zip-application-*.zip` | Distribution zip (scripts + libs) | 21 | 4.1 |

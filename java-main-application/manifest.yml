@@ -16,7 +16,7 @@
 applications:
 - name: java-main-application
   memory: 512M
-  path: build/libs/java-main-application-1.0.0.BUILD-SNAPSHOT.jar
+  path: build/libs/java-main-application-1.0.0-SNAPSHOT.jar
   buildpacks:
   - https://github.com/cloudfoundry/java-buildpack.git
   env:

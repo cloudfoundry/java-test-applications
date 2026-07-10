@@ -19,9 +19,9 @@ applications:
   no-route: true
   health-check-type: process
   instances: 0
-  path: build/libs/java-task-application-1.0.0.BUILD-SNAPSHOT.jar
+  path: build/libs/java-task-application-1.0.0-SNAPSHOT.jar
   buildpacks:
-  - java_buildpack
+  - https://github.com/cloudfoundry/java-buildpack.git
   env:
     JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 21.+ } }'
     # Default: buildpack detects Spring Boot via Start-Class in MANIFEST.MF.

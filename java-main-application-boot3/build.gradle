@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'org.cloudfoundry.test'
-version = '1.0.0.BUILD-SNAPSHOT'
+version = '1.0.0-SNAPSHOT'
 
 java {
     toolchain {
