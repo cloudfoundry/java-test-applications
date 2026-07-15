@@ -18,10 +18,10 @@ package org.cloudfoundry.test;
 
 import org.cloudfoundry.test.core.InitializationUtils;
 
-import javax.ws.rs.ApplicationPath;
+import jakarta.ws.rs.ApplicationPath;
 
 @ApplicationPath("/")
-public class Application extends javax.ws.rs.core.Application {
+public class Application extends jakarta.ws.rs.core.Application {
 
     public Application() {
         new InitializationUtils().fail();

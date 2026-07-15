@@ -1,0 +1,9 @@
+---
+applications:
+- name: java-main-application-boot3
+  memory: 512M
+  path: build/libs/java-main-application-boot3-1.0.0-SNAPSHOT.jar
+  buildpacks:
+  - https://github.com/cloudfoundry/java-buildpack.git
+  env:
+    JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 17.+ } }'

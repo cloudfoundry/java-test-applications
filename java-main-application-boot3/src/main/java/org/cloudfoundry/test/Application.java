@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2019 the original author or authors.
+ * Copyright 2014-2026 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,25 +16,13 @@
 
 package org.cloudfoundry.test;
 
-import org.cloudfoundry.test.core.MemoryUtils;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import jakarta.inject.Inject;
-import jakarta.ws.rs.POST;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.Produces;
-import jakarta.ws.rs.core.MediaType;
+@SpringBootApplication
+public class Application {
 
-@Path("/")
-@Produces(MediaType.APPLICATION_JSON)
-public class EjbMemoryUtils {
-
-    @Inject
-    private MemoryUtils memoryUtils;
-
-    @POST
-    @Path("/out-of-memory")
-    public byte[][] outOfMemory() {
-        return this.memoryUtils.outOfMemory();
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
     }
-
 }

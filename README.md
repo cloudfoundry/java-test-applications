@@ -3,17 +3,26 @@
 A collection of applications used for testing the Java buildpack.
 
 ## Applications
+
+### Spring Boot 4.1 (Java 21) — multi-module build
+
 | Name | Description
 | ---- | -----------
-| `dist-zip-application` | A Spring Boot application, deployed as a `distZip`
-| `ejb-application` | A JEE EJB application using Servlet 3
-| `groovy-application` | An application started with `groovy`
-| `java-main-application` | A Spring Boot application started with `java -jar`
-| `ratpack-application` | A Ratpack application, deployed as a `distZip`
-| `spring-boot-cli-application` | A Spring Boot CLI application, deployed with `spring grab`
-| `spring-boot-cli-jar-application` | A Spring Boot CLI application, deployed with `spring jar`
-| `web-application` | A Spring MVC application using Servlet 3
-| `web-servlet-2-application` | A Spring MVC application using Servlet 2
+| `dist-zip-application` | A Spring Boot 4.1 application, deployed as a `distZip`
+| `ejb-application` | A Jakarta EE 10 EJB application
+| `groovy-application` | A Spring Boot 4.1 application started with `groovy`
+| `java-main-application` | A Spring Boot 4.1 application started with `java -jar`
+| `java-task-application` | A Spring Boot 4.1 CF task application. Tests Spring Boot `Start-Class` detection and `JBP_CONFIG_JAVA_MAIN` class override. Push with `instances: 0`, run via `cf run-task`
+| `web-application` | A Spring MVC 4.1 application (Servlet 6 / WAR)
+
+### Spring Boot 3.5 (Java 17) — standalone projects
+
+| Name | Description
+| ---- | -----------
+| `java-main-application-boot3` | A Spring Boot 3.5 application started with `java -jar`
+
+> Standalone projects have their own `build.gradle` and Gradle wrapper and are not
+> included in the root multi-module build. Build them from their own directory.
 
 ### Output Content
 All applications support the following REST operations:
@@ -29,20 +38,44 @@ All applications support the following REST operations:
 | `GET  /security-providers` | The system security providers available to the application
 | `GET  /system-properties` | The system properties available to the application
 
+> `java-main-application-boot3` exposes only `GET /` (health).
+
 ## Building
 
-Before building the project, the following tools must be installed:
-* [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-* [Spring Boot 2 CLI](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-started-installing-the-cli)
+### Prerequisites
 
-This project is built with Gradle. After installing the pre-requisites, run:
+* JDK 21 for the multi-module build (Spring Boot 4.1 modules)
+* JDK 17 for standalone Spring Boot 3.5 projects
+
+Both JDKs can be managed with [sdkman](https://sdkman.io):
+
+```bash
+sdk install java 21.0.10-librca
+sdk install java 17.0.19-tem
+```
+
+> **Note:** This applies to the root multi-module build (Gradle 9.6.1 / ASM 9.9, supports Java 21–26).
+> `java-main-application-boot3` is a standalone project with its own Gradle wrapper — check its wrapper version separately. Java 27+ requires a newer Gradle release. Java 21
+> is recommended — it matches the project toolchain. To pin the daemon, add
+> `org.gradle.java.home=/path/to/java21` in a local (uncommitted) `gradle.properties`.
+
+### Multi-module build (Spring Boot 4.1)
 
 ```plain
 ./gradlew
 ```
 
+### Standalone projects (Spring Boot 3.5)
+
+```plain
+cd java-main-application-boot3
+./gradlew bootJar
+```
+
 ### Building Behind a Proxy
-Since this project downloads its dependencies from the internet, building behing a proxy requires some extra effort.  In order configure gradle properly, use the following system properties.  More information can be found [here][].
+Since this project downloads its dependencies from the internet, building behind a proxy
+requires some extra effort. Configure Gradle with the following system properties
+(more information [here][]):
 
 ```plain
 ./gradlew -Dhttp.proxyHost=<HOST> -Dhttp.proxyPort=<PORT>
@@ -80,7 +113,7 @@ To run the tests, do the following:
 ```
 
 ## License
-The Tomcat Builder is released under version 2.0 of the [Apache License][].
+The project is released under version 2.0 of the [Apache License][].
 
 [Apache License]: http://www.apache.org/licenses/LICENSE-2.0
 [here]: http://stackoverflow.com/questions/5991194/gradle-proxy-configuration

@@ -16,8 +16,7 @@
 
 buildscript {
     ext {
-        ratpackVersion    = '1.9.0'
-        springBootVersion = '2.6.7'
+        springBootVersion = '4.1.0'
     }
 
     repositories {
@@ -25,20 +24,19 @@ buildscript {
     }
 
     dependencies {
-        classpath "io.ratpack:ratpack-gradle:${ratpackVersion}"
         classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
     }
 }
 
 plugins {
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'io.spring.dependency-management' version '1.1.7'
 }
 
 subprojects {
     apply plugin: 'io.spring.dependency-management'
 
     group   = 'org.cloudfoundry.test'
-    version = '1.0.0.BUILD-SNAPSHOT'
+    version = '1.0.0-SNAPSHOT'
 
     repositories {
         mavenCentral()
@@ -46,12 +44,22 @@ subprojects {
 
     dependencyManagement {
         imports {
-            mavenBom 'org.springframework.boot:spring-boot-dependencies:2.6.7'
+            mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
         }
 
         dependencies {
             dependency 'com.google.code.findbugs:jsr305:3.0.1'
-            dependency 'org.apache.openejb:javaee-api:6.0-6'
+        }
+    }
+
+    plugins.withType(JavaPlugin) {
+        java {
+            toolchain {
+                languageVersion = JavaLanguageVersion.of(21)
+            }
+        }
+        test {
+            useJUnitPlatform()
         }
     }
 }
