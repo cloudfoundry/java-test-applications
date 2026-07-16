@@ -25,17 +25,26 @@ A collection of applications used for testing the Java buildpack.
 > included in the root multi-module build. Build them from their own directory.
 
 ### Output Content
+
+> ⚠️ **These applications are for CI/integration testing only.** Endpoints such as
+> `/spring-env`, `/environment-variables`, and `/system-properties` can expose sensitive
+> runtime values (credentials, service bindings, system properties). Never deploy to
+> production or shared environments.
+
 All applications support the following REST operations:
 
 | URI | Description
 | --- | -----------
 | `GET  /` | The health of the application
-| `GET  /class-path` | The classpath of the application
+| `GET  /active-profiles` | The active Spring profiles (e.g. `["cloud"]` when java-cfenv is active)
+| `GET  /class-path` | The JVM system classpath (boot loader only — see `/loaded-jars` for full picture)
 | `GET  /environment-variables` | The environment variables available to the application
 | `GET  /input-arguments` | The list of JVM input arguments for the application
+| `GET  /loaded-jars` | All jars loaded by the full classloader chain including `BOOT-INF/lib/`
 | `POST /out-of-memory` | The URL to trigger an out of memory error
 | `GET  /request-headers` | The http request headers of the current request
 | `GET  /security-providers` | The system security providers available to the application
+| `GET  /spring-env?key=<property>` | A single Spring Environment property value (404 if absent)
 | `GET  /system-properties` | The system properties available to the application
 
 > `java-main-application-boot3` exposes only `GET /` (health).

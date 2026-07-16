@@ -1,0 +1,108 @@
+name: Publish Fixed Release
+
+on:
+  push:
+    tags:
+      - 'v[0-9]*.[0-9]*.[0-9]*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Release version (e.g. 1.0.0)"
+        required: true
+        default: "1.0.0"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Resolve version
+        id: version
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            # Strip leading 'v' from tag name
+            VERSION="${GITHUB_REF_NAME#v}"
+          else
+            VERSION="${{ inputs.version }}"
+          fi
+          echo "value=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Validate version format
+        run: |
+          VERSION="${{ steps.version.outputs.value }}"
+          if ! echo "$VERSION" | grep -qE '^[0-9]+\.[0-9]+\.[0-9]+$'; then
+            echo "ERROR: version must be in X.Y.Z format, got: $VERSION"
+            exit 1
+          fi
+
+      - name: Set up Java 21 (Temurin)
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Build main modules
+        run: ./gradlew build -Pversion=${{ steps.version.outputs.value }}
+
+      - name: Set up Java 17 for boot3 module
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Build boot3 standalone module
+        working-directory: java-main-application-boot3
+        run: ./gradlew bootJar -Pversion=${{ steps.version.outputs.value }}
+
+      - name: Collect release artifacts
+        run: |
+          mkdir -p release-artifacts
+
+          find . \
+            -name '.gradle' -prune -o \
+            -path '*/core/build/libs' -prune -o \
+            -path '*/spring-common/build/libs' -prune -o \
+            -name '*.jar' -path '*/build/libs/*' ! -name '*-plain.jar' \
+            -print -exec cp {} release-artifacts/ \;
+
+          find . \
+            -name '.gradle' -prune -o \
+            -name '*.war' -path '*/build/libs/*' \
+            -print -exec cp {} release-artifacts/ \;
+
+          find dist-zip-application/build/distributions -name '*.zip' -exec cp {} release-artifacts/ \; 2>/dev/null || true
+
+          echo "Artifacts to release:"
+          ls -lh release-artifacts/
+
+      - name: Create fixed release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.version.outputs.value }}
+          name: ${{ steps.version.outputs.value }}
+          prerelease: false
+          generate_release_notes: false
+          body: |
+            ## Release ${{ steps.version.outputs.value }}
+
+            Built from commit `${{ github.sha }}` on branch/tag `${{ github.ref_name }}`.
+
+            | Artifact | Description | Java | Spring Boot |
+            |----------|-------------|------|-------------|
+            | `java-main-application-${{ steps.version.outputs.value }}.jar` | Standalone main-class app | 21 | 4.1 |
+            | `java-task-application-${{ steps.version.outputs.value }}.jar` | CF run-task app | 21 | 4.1 |
+            | `web-application-${{ steps.version.outputs.value }}.war` | Embedded Tomcat WAR | 21 | 4.1 |
+            | `ejb-application-${{ steps.version.outputs.value }}.war` | Jakarta EE 10 EJB WAR | 21 | 4.1 |
+            | `dist-zip-application-${{ steps.version.outputs.value }}.zip` | Distribution zip (scripts + libs) | 21 | 4.1 |
+            | `java-main-application-boot3-${{ steps.version.outputs.value }}.jar` | Standalone main-class app | 17 | 3.5 |
+
+            Related: [cloudfoundry/java-buildpack#1357](https://github.com/cloudfoundry/java-buildpack/issues/1357)
+          files: release-artifacts/*
