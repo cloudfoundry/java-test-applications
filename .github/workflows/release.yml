@@ -50,7 +50,7 @@ jobs:
         uses: gradle/actions/setup-gradle@v6
 
       - name: Build main modules
-        run: ./gradlew build -Pversion=${{ steps.version.outputs.value }}
+        run: ./gradlew build -PreleaseVersion=${{ steps.version.outputs.value }}
 
       - name: Set up Java 17 for boot3 module
         uses: actions/setup-java@v5
@@ -60,7 +60,7 @@ jobs:
 
       - name: Build boot3 standalone module
         working-directory: java-main-application-boot3
-        run: ./gradlew build -Pversion=${{ steps.version.outputs.value }}
+        run: ./gradlew build -PreleaseVersion=${{ steps.version.outputs.value }}
 
       - name: Collect release artifacts
         run: |

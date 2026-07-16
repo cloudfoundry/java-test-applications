@@ -38,7 +38,7 @@ The workflow triggers automatically, derives version from the tag, builds, and p
 3. Click **Run workflow**
 
 Both paths:
-- Build all modules with `-Pversion=<version>` (no file changes needed)
+- Build all modules with `-PreleaseVersion=<version>` (no file changes needed)
 - Run tests as a quality gate
 - Create a GitHub release tagged `v<version>` with all artifacts attached
 
@@ -58,11 +58,11 @@ If you need to release without the workflow:
 2. **Or build locally** and upload artifacts by hand:
    ```bash
    # Multi-module (Java 21)
-   ./gradlew build -Pversion=1.0.0
+   ./gradlew build -PreleaseVersion=1.0.0
 
    # Standalone boot3 module (Java 17)
    cd java-main-application-boot3
-   ./gradlew bootJar -Pversion=1.0.0
+   ./gradlew bootJar -PreleaseVersion=1.0.0
    ```
 
 ---
