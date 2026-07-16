@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2019 the original author or authors.
+ * Copyright 2014-2026 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,11 +28,18 @@ import java.util.Collections;
 import java.util.Map;
 
 import org.junit.jupiter.api.Test;
+import java.net.URL;
+import java.net.URLClassLoader;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.core.env.Environment;
 import org.springframework.mock.web.MockHttpServletRequest;
 
 public final class RuntimeUtilsTest {
 
     private final Map<String, String> environment = Collections.singletonMap("test-key-1", "test-value-1");
+
+    private final Environment springEnvironment = mock(Environment.class);
 
     private final Provider provider = mock(Provider.class);
 
@@ -42,8 +49,20 @@ public final class RuntimeUtilsTest {
 
     private Provider[] securityProviders = new Provider[]{this.provider};
 
-    private final RuntimeUtils runtimeUtils = new RuntimeUtils(this.environment, this.runtimeMXBean,
-        this.securityProviders, this.systemProperties);
+    private final RuntimeUtils runtimeUtils = new RuntimeUtils(this.environment, this.springEnvironment,
+        this.runtimeMXBean, this.securityProviders, this.systemProperties);
+
+    @Test
+    public void activeProfiles() {
+        when(this.springEnvironment.getActiveProfiles()).thenReturn(new String[]{"cloud", "prod"});
+        assertThat(this.runtimeUtils.activeProfiles()).containsExactly("cloud", "prod");
+    }
+
+    @Test
+    public void activeProfilesEmpty() {
+        when(this.springEnvironment.getActiveProfiles()).thenReturn(new String[]{});
+        assertThat(this.runtimeUtils.activeProfiles()).isEmpty();
+    }
 
     @Test
     public void classPath() {
@@ -63,6 +82,19 @@ public final class RuntimeUtilsTest {
     }
 
     @Test
+    public void loadedJars() throws Exception {
+        URL testUrl = new URL("file:///tmp/test-loadedJars.jar");
+        URLClassLoader testClassLoader = new URLClassLoader(new URL[]{testUrl}, Thread.currentThread().getContextClassLoader());
+        Thread.currentThread().setContextClassLoader(testClassLoader);
+        try {
+            assertThat(this.runtimeUtils.loadedJars()).contains(testUrl.toString());
+        } finally {
+            Thread.currentThread().setContextClassLoader(testClassLoader.getParent());
+            testClassLoader.close();
+        }
+    }
+
+    @Test
     public void requestHeaders() {
         MockHttpServletRequest request = new MockHttpServletRequest();
         request.addHeader("test-key", "test-value-1");
@@ -75,6 +107,21 @@ public final class RuntimeUtilsTest {
     public void securityProviders() {
         when(this.provider.toString()).thenReturn("test-provider");
         assertThat(this.runtimeUtils.securityProviders()).containsExactly("test-provider");
+    }
+
+    @Test
+    public void springEnvFound() {
+        when(this.springEnvironment.getProperty("spring.datasource.url")).thenReturn("jdbc:postgresql://host/db");
+        ResponseEntity<String> response = this.runtimeUtils.springEnv("spring.datasource.url");
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(response.getBody()).isEqualTo("jdbc:postgresql://host/db");
+    }
+
+    @Test
+    public void springEnvNotFound() {
+        when(this.springEnvironment.getProperty("missing.key")).thenReturn(null);
+        ResponseEntity<String> response = this.runtimeUtils.springEnv("missing.key");
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
     }
 
     @Test

@@ -21,42 +21,49 @@ You can also trigger it manually from any branch via **Actions → Run workflow*
 
 ---
 
-## Fixed releases (manual)
+## Fixed releases (via GitHub Actions)
 
-To publish a numbered release (e.g. `1.0.0`):
+Two ways to trigger a fixed release:
 
-1. **Update versions** in both build files:
+**Option A — push a git tag** (fully automated):
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
+The workflow triggers automatically, derives version from the tag, builds, and publishes the release.
 
-   `build.gradle` (root — applies to all multi-module subprojects):
-   ```groovy
-   version = '1.0.0'
-   ```
+**Option B — manual dispatch** (no tag needed):
+1. Go to **Actions → Publish Fixed Release → Run workflow**
+2. Enter the version in `X.Y.Z` format (e.g. `1.0.0`)
+3. Click **Run workflow**
 
-   `java-main-application-boot3/build.gradle`:
-   ```groovy
-   version = '1.0.0'
-   ```
+Both paths:
+- Build all modules with `-Pversion=<version>` (no file changes needed)
+- Run tests as a quality gate
+- Create a GitHub release tagged `v<version>` with all artifacts attached
 
-2. **Update manifest paths** in each `manifest.yml` if the version is hardcoded in the `path:` field.
+> **Note:** Run from `main` (or the branch/commit you want to release).
+> The version is applied at build time only — source files are not modified.
 
-3. **Commit, tag, and push:**
+### Manual alternative (without GitHub Actions)
+
+If you need to release without the workflow:
+
+1. **Commit, tag, and push** (pushing the tag triggers the workflow automatically):
    ```bash
-   git add -A
-   git commit -m "chore: release 1.0.0"
    git tag v1.0.0
-   git push origin main --tags
+   git push origin v1.0.0
    ```
 
-4. **Trigger the release workflow** manually via **Actions → Run workflow** on the `v1.0.0` tag,
-   or add a tag trigger to the workflow:
-   ```yaml
-   on:
-     push:
-       tags:
-         - 'v*'
+2. **Or build locally** and upload artifacts by hand:
+   ```bash
+   # Multi-module (Java 21)
+   ./gradlew build -Pversion=1.0.0
+
+   # Standalone boot3 module (Java 17)
+   cd java-main-application-boot3
+   ./gradlew bootJar -Pversion=1.0.0
    ```
-   When using a tag trigger the release will use the tag name instead of `v1.0.0-SNAPSHOT`
-   and should be marked `prerelease: false`.
 
 ---
 
