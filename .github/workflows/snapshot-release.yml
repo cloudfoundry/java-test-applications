@@ -36,7 +36,10 @@ jobs:
 
       - name: Build boot3 standalone module
         working-directory: java-main-application-boot3
-        run: ./gradlew bootJar
+        run: ./gradlew test
+
+      - name: Smoke test — verify fat jars start without wiring errors
+        run: ./gradlew :java-main-application:test :java-task-application:test
 
       - name: Collect release artifacts
         run: |
