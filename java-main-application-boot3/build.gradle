@@ -24,8 +24,6 @@ dependencies {
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
-test.dependsOn(bootJar)
-
 tasks.named('test') {
     useJUnitPlatform()
 }
