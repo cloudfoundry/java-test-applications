@@ -18,14 +18,18 @@ package org.cloudfoundry.test;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.InputStreamReader;
+import java.util.concurrent.TimeUnit;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.fail;
 
 /**
  * Smoke test: builds the boot jar and starts it with web-application-type=none.
- * Spring Boot loads the full application context and exits with code 0 on success,
- * non-zero on bean wiring or startup failures.
+ * Spring Boot loads the full application context; "Started" in output means success.
+ * Process is destroyed after startup (it may keep running if keep-alive is enabled).
  *
  * Run: ./gradlew test (bootJar is built first via task dependency)
  */
@@ -48,11 +52,26 @@ class SmokeTest {
                 .redirectErrorStream(true)
                 .start();
 
-        String output = new String(process.getInputStream().readAllBytes());
-        int exitCode = process.waitFor();
+        StringBuilder output = new StringBuilder();
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
+            String line;
+            long deadline = System.currentTimeMillis() + 30_000;
+            while ((line = reader.readLine()) != null) {
+                output.append(line).append('\n');
+                if (line.contains("Started ")) {
+                    return; // success
+                }
+                if (System.currentTimeMillis() > deadline) {
+                    fail("App did not start within 30s:\n%s", output);
+                }
+            }
+        } finally {
+            process.destroyForcibly().waitFor(5, TimeUnit.SECONDS);
+        }
 
-        assertThat(exitCode)
-                .as("App startup failed with exit code %d:\n%s", exitCode, output)
-                .isEqualTo(0);
+        int exitCode = process.exitValue();
+        if (exitCode != 0) {
+            fail("App startup failed with exit code %d:\n%s", exitCode, output);
+        }
     }
 }
