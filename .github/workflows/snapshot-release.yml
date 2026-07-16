@@ -14,22 +14,22 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Java 21 (Temurin)
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: 21
 
       - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v4
+        uses: gradle/actions/setup-gradle@v6
 
       - name: Build main modules
         run: ./gradlew build
 
       - name: Set up Java 17 for boot3 module
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: 17
@@ -70,7 +70,7 @@ jobs:
           git push origin :refs/tags/v1.0.0-SNAPSHOT 2>/dev/null || true
 
       - name: Create snapshot release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           tag_name: v1.0.0-SNAPSHOT
           name: 1.0.0-SNAPSHOT
