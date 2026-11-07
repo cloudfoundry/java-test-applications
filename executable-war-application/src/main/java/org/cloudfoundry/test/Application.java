@@ -20,17 +20,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.Collections;
-import java.util.Map;
 
 /**
  * Spring Boot executable WAR: runs with {@code java -cp . <WarLauncher>} and can also be deployed to a servlet container.
+ * Endpoints come from the shared {@code core} module.
  */
 @SpringBootApplication
-@RestController
 public class Application extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
@@ -40,10 +35,5 @@ public class Application extends SpringBootServletInitializer {
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
         return builder.sources(Application.class);
-    }
-
-    @GetMapping("/")
-    public Map<String, String> health() {
-        return Collections.singletonMap("status", "ok");
     }
 }
