@@ -68,7 +68,7 @@ If you need to release without the workflow:
    ./gradlew bootJar -PreleaseVersion=1.0.0
 
    # Standalone boot3 executable WAR module (Java 17)
-   cd executable-war-application-boot3
+   cd ../executable-war-application-boot3
    ./gradlew bootWar -PreleaseVersion=1.0.0
    ```
 
@@ -87,6 +87,6 @@ cd java-main-application-boot3
 ./gradlew bootJar
 
 # Standalone boot3 executable WAR module (Java 17)
-cd executable-war-application-boot3
+cd ../executable-war-application-boot3
 ./gradlew bootWar
 ```
