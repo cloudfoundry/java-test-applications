@@ -62,6 +62,10 @@ jobs:
         working-directory: java-main-application-boot3
         run: ./gradlew build -PreleaseVersion=${{ steps.version.outputs.value }}
 
+      - name: Build boot3 executable WAR module
+        working-directory: executable-war-application-boot3
+        run: ./gradlew build -PreleaseVersion=${{ steps.version.outputs.value }}
+
       - name: Collect release artifacts
         run: |
           mkdir -p release-artifacts
@@ -103,6 +107,9 @@ jobs:
             | `ejb-application-${{ steps.version.outputs.value }}.war` | Jakarta EE 10 EJB WAR | 21 | 4.1 |
             | `dist-zip-application-${{ steps.version.outputs.value }}.zip` | Distribution zip (scripts + libs) | 21 | 4.1 |
             | `java-main-application-boot3-${{ steps.version.outputs.value }}.jar` | Standalone main-class app | 17 | 3.5 |
+            | `executable-war-application-${{ steps.version.outputs.value }}.war` | Spring Boot executable WAR (`WarLauncher`) | 21 | 4.1 |
+            | `executable-war-application-boot3-${{ steps.version.outputs.value }}.war` | Spring Boot executable WAR (`WarLauncher`) | 17 | 3.5 |
+            | `main-class-war-application-${{ steps.version.outputs.value }}.war` | Non-Boot WAR with a `Main-Class` manifest entry | 21 | - |
 
             Related: [cloudfoundry/java-buildpack#1357](https://github.com/cloudfoundry/java-buildpack/issues/1357)
           files: release-artifacts/*
