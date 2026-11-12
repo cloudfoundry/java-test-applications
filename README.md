@@ -14,12 +14,16 @@ A collection of applications used for testing the Java buildpack.
 | `java-main-application` | A Spring Boot 4.1 application started with `java -jar`
 | `java-task-application` | A Spring Boot 4.1 CF task application. Tests Spring Boot `Start-Class` detection and `JBP_CONFIG_JAVA_MAIN` class override. Push with `instances: 0`, run via `cf run-task`
 | `web-application` | A Spring MVC 4.1 application (Servlet 6 / WAR)
+| `executable-war-application` | A Spring Boot 4.1 executable WAR (`bootWar`, `WarLauncher`)
+| `main-class-war-application` | A non-Boot WAR with a `Main-Class` manifest entry that starts a tiny HTTP server on `$PORT`
 
 ### Spring Boot 3.5 (Java 17) — standalone projects
 
 | Name | Description
 | ---- | -----------
+| `simple-java-application` | A dependency-free JDK `HttpServer` app started with `java -jar`, runs on Java 8 and up, starts in under a second; serves `GET /`, `/input-arguments`, `/system-properties`, `/environment-variables`, `/class-path`
 | `java-main-application-boot3` | A Spring Boot 3.5 application started with `java -jar`
+| `executable-war-application-boot3` | A Spring Boot 3.5 executable WAR (`bootWar`, `WarLauncher`), serves `GET /`
 
 > Standalone projects have their own `build.gradle` and Gradle wrapper and are not
 > included in the root multi-module build. Build them from their own directory.
@@ -55,13 +59,6 @@ All applications support the following REST operations:
 
 * JDK 21 for the multi-module build (Spring Boot 4.1 modules)
 * JDK 17 for standalone Spring Boot 3.5 projects
-
-Both JDKs can be managed with [sdkman](https://sdkman.io):
-
-```bash
-sdk install java 21.0.10-librca
-sdk install java 17.0.19-tem
-```
 
 > **Note:** This applies to the root multi-module build (Gradle 9.6.1 / ASM 9.9, supports Java 21–26).
 > `java-main-application-boot3` is a standalone project with its own Gradle wrapper — check its wrapper version separately. Java 27+ requires a newer Gradle release. Java 21
