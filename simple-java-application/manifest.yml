@@ -1,0 +1,9 @@
+---
+applications:
+- name: simple-java-application
+  memory: 512M
+  path: build/libs/simple-java-application-1.0.0-SNAPSHOT.jar
+  buildpacks:
+  - https://github.com/cloudfoundry/java-buildpack.git
+  env:
+    JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 8.+ } }'

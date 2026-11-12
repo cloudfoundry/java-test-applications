@@ -21,6 +21,7 @@ A collection of applications used for testing the Java buildpack.
 
 | Name | Description
 | ---- | -----------
+| `simple-java-application` | A dependency-free JDK `HttpServer` app started with `java -jar`, runs on Java 8 and up, starts in under a second; serves `GET /`, `/input-arguments`, `/system-properties`, `/environment-variables`, `/class-path`
 | `java-main-application-boot3` | A Spring Boot 3.5 application started with `java -jar`
 | `executable-war-application-boot3` | A Spring Boot 3.5 executable WAR (`bootWar`, `WarLauncher`), serves `GET /`
 

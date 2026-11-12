@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.cloudfoundry.test'
+version = findProperty('releaseVersion') ?: '1.0.0-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.release = 8
+}
+
+jar {
+    archiveBaseName = 'simple-java-application'
+    manifest {
+        attributes 'Main-Class': 'org.cloudfoundry.test.Main'
+    }
+}

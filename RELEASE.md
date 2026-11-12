@@ -17,6 +17,7 @@ You can also trigger it manually from any branch via **Actions → Run workflow*
 | `web-application-*.war` | Embedded Tomcat WAR | 21 | 4.1 |
 | `ejb-application-*.war` | Jakarta EE 10 EJB WAR | 21 | 4.1 |
 | `dist-zip-application-*.zip` | Distribution zip (scripts + libs) | 21 | 4.1 |
+| `simple-java-application-*.jar` | Dependency-free JDK `HttpServer` app | 8 | - |
 | `java-main-application-boot3-*.jar` | Standalone main-class app | 17 | 3.5 |
 | `executable-war-application-*.war` | Spring Boot executable WAR (`WarLauncher`) | 21 | 4.1 |
 | `executable-war-application-boot3-*.war` | Spring Boot executable WAR (`WarLauncher`) | 17 | 3.5 |
@@ -70,6 +71,10 @@ If you need to release without the workflow:
    # Standalone boot3 executable WAR module (Java 17)
    cd ../executable-war-application-boot3
    ./gradlew bootWar -PreleaseVersion=1.0.0
+
+   # Standalone simple module (Java 17 toolchain, Java 8 bytecode)
+   cd ../simple-java-application
+   ./gradlew build -PreleaseVersion=1.0.0
    ```
 
 ---
@@ -89,4 +94,8 @@ cd java-main-application-boot3
 # Standalone boot3 executable WAR module (Java 17)
 cd ../executable-war-application-boot3
 ./gradlew bootWar
+
+# Standalone simple module (Java 17 toolchain, Java 8 bytecode)
+cd ../simple-java-application
+./gradlew build
 ```
